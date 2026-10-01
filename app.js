@@ -1069,20 +1069,54 @@ function renderCatalog(params, activeCategory = null, searchTerm = '') {
       ? `<span class="model-live-indicator"><span class="model-live-dot"></span> Modelo 100% Interativo</span>`
       : '';
 
+    const categoryIcon = {
+      odontologia: '🦷',
+      gastronomia: '🍽️',
+      beleza: '✂️',
+      servicos: '⚖️',
+      comercio: '🏪'
+    }[m.category] || '★';
+
+    const cleanTitle = m.title.split('(')[0].trim();
+    const miniHeadline = m.demoContent ? m.demoContent.headline : m.title;
+    const miniSub = m.demoContent ? m.demoContent.sub : m.desc;
+    const miniCta = m.demoContent ? m.demoContent.ctaText : 'Pedir no WhatsApp';
+    const miniChips = m.demoContent && m.demoContent.services
+      ? m.demoContent.services.slice(0, 2).map(s => `<span class="mini-chip">${s.title.split('&')[0].trim()}</span>`).join('')
+      : '';
+
     return `
       <div class="model-card">
-        <div class="model-preview-box">
+        <div class="model-preview-box" onclick="openDemoModal('${m.id}')" style="cursor: pointer;">
           <span class="model-badge-top ${badgeClass}">${m.tag}</span>
-          <div class="model-mockup-frame">
-            <div class="mockup-hero-block">
-              <div class="mockup-line-title"></div>
-              <div class="mockup-line-sub"></div>
-              <div class="mockup-btn-wa"></div>
+
+          <div class="mini-browser-window mini-theme-${m.category}">
+            <div class="mini-browser-bar">
+              <div class="mini-browser-dots">
+                <span class="mini-dot mini-dot-red"></span>
+                <span class="mini-dot mini-dot-yellow"></span>
+                <span class="mini-dot mini-dot-green"></span>
+              </div>
+              <div class="mini-browser-url">
+                🔒 https://${m.id}.com.br
+              </div>
             </div>
-            <div class="mockup-cards-row">
-              <div class="mockup-mini-card"></div>
-              <div class="mockup-mini-card"></div>
-              <div class="mockup-mini-card"></div>
+
+            <div class="mini-browser-content">
+              <div class="mini-page-header">
+                <span class="mini-logo-icon">${categoryIcon}</span>
+                <span class="mini-brand-name">${cleanTitle}</span>
+              </div>
+              <div class="mini-hero-headline">${miniHeadline}</div>
+              <div class="mini-hero-sub">${miniSub}</div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto;">
+                <div class="mini-wa-badge">${miniCta.slice(0, 24)}</div>
+                <div class="mini-chips-row">${miniChips}</div>
+              </div>
+            </div>
+
+            <div class="mini-hover-hint">
+              <span>👁️ Ver Modelo no Celular</span>
             </div>
           </div>
         </div>

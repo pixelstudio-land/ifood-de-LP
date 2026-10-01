@@ -279,6 +279,12 @@ body {
   overflow-x: auto;
   padding-bottom: 8px;
   justify-content: center;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.categories-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .cat-btn {
@@ -380,64 +386,198 @@ body {
   justify-content: center;
 }
 
-.model-mockup-frame {
-  width: 90%;
+.mini-browser-window {
+  width: 92%;
   height: 90%;
-  background: #111827;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0d121f;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+
+.model-card:hover .mini-browser-window {
+  transform: translateY(-2px) scale(1.02);
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.mini-browser-bar {
+  height: 24px;
+  background: #171d2c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mini-browser-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.mini-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.mini-dot-red { background: #ef4444; }
+.mini-dot-yellow { background: #eab308; }
+.mini-dot-green { background: #22c55e; }
+
+.mini-browser-url {
+  font-size: 0.65rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: #94a3b8;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1px 8px;
+  border-radius: 4px;
+  max-width: 170px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-browser-content {
+  flex: 1;
   padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 0, 0, 0.2) 100%);
 }
 
-.mockup-hero-block {
-  height: 50%;
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(6, 182, 212, 0.2));
-  border-radius: 6px;
-  padding: 10px;
+.mini-page-header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.mini-logo-icon {
+  font-size: 0.85rem;
+}
+
+.mini-brand-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  letter-spacing: -0.01em;
+}
+
+.mini-hero-headline {
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #fff;
+  margin: 4px 0 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mini-hero-sub {
+  font-size: 0.67rem;
+  color: #94a3b8;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.mini-wa-badge {
+  display: inline-flex;
+  align-items: center;
   gap: 4px;
-}
-
-.mockup-line-title {
-  height: 10px;
-  width: 65%;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 3px;
-}
-
-.mockup-line-sub {
-  height: 6px;
-  width: 85%;
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 3px;
-}
-
-.mockup-btn-wa {
-  align-self: flex-start;
-  height: 16px;
-  width: 75px;
   background: #10b981;
-  border-radius: 3px;
+  color: #fff;
+  font-size: 0.64rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  align-self: flex-start;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.mini-chips-row {
+  display: flex;
+  gap: 5px;
   margin-top: 4px;
 }
 
-.mockup-cards-row {
-  display: flex;
-  gap: 6px;
-  flex: 1;
+.mini-chip {
+  font-size: 0.6rem;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
 }
 
-.mockup-mini-card {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+/* Temas Visuais por Categoria */
+.mini-theme-odontologia {
+  border-top: 2px solid #0284c7;
+}
+.mini-theme-odontologia .mini-browser-content {
+  background: linear-gradient(180deg, rgba(2, 132, 199, 0.15) 0%, rgba(13, 18, 31, 0.95) 100%);
+}
+
+.mini-theme-gastronomia {
+  border-top: 2px solid #ef4444;
+}
+.mini-theme-gastronomia .mini-browser-content {
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.15) 0%, rgba(13, 18, 31, 0.95) 100%);
+}
+
+.mini-theme-beleza {
+  border-top: 2px solid #ec4899;
+}
+.mini-theme-beleza .mini-browser-content {
+  background: linear-gradient(180deg, rgba(236, 72, 153, 0.15) 0%, rgba(13, 18, 31, 0.95) 100%);
+}
+
+.mini-theme-servicos {
+  border-top: 2px solid #d97706;
+}
+.mini-theme-servicos .mini-browser-content {
+  background: linear-gradient(180deg, rgba(217, 119, 6, 0.15) 0%, rgba(13, 18, 31, 0.95) 100%);
+}
+
+.mini-theme-comercio {
+  border-top: 2px solid #38bdf8;
+}
+.mini-theme-comercio .mini-browser-content {
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.15) 0%, rgba(13, 18, 31, 0.95) 100%);
+}
+
+.mini-hover-hint {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: 10px;
+}
+
+.model-card:hover .mini-hover-hint {
+  opacity: 1;
 }
 
 .model-cover-img {
