@@ -923,7 +923,7 @@ function applyContextualPersonalization(params) {
 
   // Atualiza Título da Página
   if (nicho) {
-    document.getElementById('page-title').innerText = `Modelos de Sites para ${capitalize(nicho)} | Vitrine Pro`;
+    document.getElementById('page-title').innerText = `Modelos de Sites para ${capitalize(nicho)} | Pixel Studio`;
   }
 
   // Hero Badge
@@ -1069,13 +1069,14 @@ function renderCatalog(params, activeCategory = null, searchTerm = '') {
       ? `<span class="model-live-indicator"><span class="model-live-dot"></span> Modelo 100% Interativo</span>`
       : '';
 
-    const categoryIcon = {
-      odontologia: '🦷',
-      gastronomia: '🍽️',
-      beleza: '✂️',
-      servicos: '⚖️',
-      comercio: '🏪'
-    }[m.category] || '★';
+    const categorySvgMap = {
+      odontologia: '<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 10.5V6a2 2 0 0 0-2-2h-3V2h-4v2H7a2 2 0 0 0-2 2v4.5C5 15.5 8 19 12 22c4-3 7-6.5 7-11.5z"/></svg>',
+      gastronomia: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2v20M2 2v20M6 2v7a3 3 0 0 0 6 0V2"/></svg>',
+      beleza: '<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
+      servicos: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
+      comercio: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>'
+    };
+    const categoryIcon = categorySvgMap[m.category] || '<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>';
 
     const cleanTitle = m.title.split('(')[0].trim();
     const miniHeadline = m.demoContent ? m.demoContent.headline : m.title;
@@ -1098,7 +1099,7 @@ function renderCatalog(params, activeCategory = null, searchTerm = '') {
                 <span class="mini-dot mini-dot-green"></span>
               </div>
               <div class="mini-browser-url">
-                🔒 https://${m.id}.com.br
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:4px;vertical-align:-1px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>https://${m.id}.com.br
               </div>
             </div>
 
@@ -1116,7 +1117,7 @@ function renderCatalog(params, activeCategory = null, searchTerm = '') {
             </div>
 
             <div class="mini-hover-hint">
-              <span>👁️ Ver Modelo no Celular</span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:5px;vertical-align:-2px;"><rect x="5" y="2" width="14" height="20" rx="3"></rect><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"></line></svg>Ver Demonstração Interativa</span>
             </div>
           </div>
         </div>

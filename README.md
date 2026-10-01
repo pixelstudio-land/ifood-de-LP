@@ -1,4 +1,4 @@
-# iFood de LPs & Sites — Vitrine Pro 🚀
+# Pixel Studio — Soluções Digitais | Catálogo Interativo de Sites & LPs
 
 Marketplace dinâmico, adaptativo e interativo de Landing Pages e Sites de Alta Conversão para pequenas e médias empresas.
 
@@ -6,7 +6,7 @@ Desenvolvido em **HTML5, Vanilla CSS3 e JavaScript puro**, ultra-leve, sem depen
 
 ---
 
-## 🌟 Recursos Principais
+## Recursos Principais
 
 ### 1. Motor de Personalização Contextual em Tempo Real
 A vitrine adapta títulos, badges, headlines, simulador mobile e valores com base em parâmetros passados na URL:
