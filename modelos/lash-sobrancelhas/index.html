@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Lash Designer & Sobrancelhas | Extensão de Cílios & Nanoblading</title>
+  <meta name="description" content="Extensão de cílios de alta retenção (Fio a Fio, Volume Brasileiro, Volume Russo) e design estratégico de sobrancelhas para valorizar seu olhar com elegância.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-nude: #fdfaf8;
+      --card-white: #ffffff;
+      --terracotta: #b86249;
+      --terracotta-dark: #91442e;
+      --nude-accent: #f5ebe6;
+      --text-dark: #26211e;
+      --text-muted: #786f6a;
+      --border-nude: #f0e4dc;
+      --whatsapp-green: #10b981;
+      --whatsapp-hover: #059669;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --shadow-chic: 0 10px 25px -5px rgba(184, 98, 73, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-nude);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background: #26211e;
+      color: #d6cfcb;
+      font-size: 0.78rem;
+      padding: 8px 0;
+      text-align: center;
+    }
+    .top-bar strong { color: #f5ebe6; }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(253, 250, 248, 0.96);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-nude);
+      padding: 16px 0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-dark);
+    }
+    .logo-symbol {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 12px rgba(184, 98, 73, 0.3);
+    }
+    .logo-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .logo-text p {
+      font-size: 0.72rem;
+      color: var(--terracotta);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-wa {
+      background: var(--whatsapp-green);
+      color: #fff;
+    }
+    .btn-wa:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-2px);
+    }
+    .btn-terracotta {
+      background: var(--terracotta);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(184, 98, 73, 0.35);
+    }
+    .btn-terracotta:hover {
+      background: var(--terracotta-dark);
+      transform: translateY(-2px);
+    }
+    .btn-lg {
+      padding: 16px 36px;
+      font-size: 1rem;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 80px 0 70px;
+      border-bottom: 1px solid var(--border-nude);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--nude-accent);
+      color: var(--terracotta-dark);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.3rem;
+      line-height: 1.15;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--terracotta); font-style: italic; }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .hero-card {
+      background: var(--card-white);
+      border: 1px solid var(--border-nude);
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      box-shadow: var(--shadow-chic);
+      position: relative;
+    }
+    .hero-card-badge {
+      position: absolute;
+      top: -14px;
+      right: 28px;
+      background: var(--terracotta);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 9999px;
+    }
+    .hero-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      margin-bottom: 10px;
+    }
+    .hero-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+    .lash-benefits {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+    .lash-benefits li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+    .lash-check {
+      width: 22px;
+      height: 22px;
+      background: var(--nude-accent);
+      color: var(--terracotta);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    /* TÉCNICAS */
+    .section { padding: 80px 0; }
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 50px;
+    }
+    .section-badge {
+      color: var(--terracotta);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+    .section-desc { color: var(--text-muted); font-size: 0.95rem; }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .tech-card {
+      background: var(--card-white);
+      border: 1px solid var(--border-nude);
+      border-radius: var(--radius-md);
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-chic);
+      transition: all 0.3s ease;
+    }
+    .tech-card:hover {
+      transform: translateY(-5px);
+      border-color: #d1b5a5;
+      box-shadow: 0 15px 30px rgba(184, 98, 73, 0.15);
+    }
+    .tech-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+    .tech-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+    .tech-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #26211e;
+      color: #a89f9a;
+      padding: 30px 0;
+      font-size: 0.82rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* FLOATING WA */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--whatsapp-green);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      z-index: 999;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .tech-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.3rem; }
+      .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    Atendimento exclusivo com hora marcada em <strong id="top-city">Campinas - SP</strong> | Isolamento perfeito que protege seus fios naturais
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-symbol">L</div>
+        <div class="logo-text">
+          <h3 id="brand-name-nav">Lash & Brow Studio</h3>
+          <p>Especialista em Olhar</p>
+        </div>
+      </a>
+      <a href="#" id="btn-nav-wa" class="btn btn-wa" target="_blank">
+        Agendar Horário
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">Alta Retenção & Conforto nos Olhos</div>
+        <h1>Acorde pronta todos os dias com um <span>olhar marcante</span> e natural</h1>
+        <p>
+          Extensão de cílios com isolamento milimétrico que preserva a saúde dos seus fios naturais. Design estratégico de sobrancelhas desenhado para harmonizar perfeitamente com o seu rosto.
+        </p>
+        <a href="#" id="btn-hero-wa" class="btn btn-terracotta btn-lg" target="_blank">
+          Consultar Horários Disponíveis no WhatsApp
+        </a>
+      </div>
+
+      <div>
+        <div class="hero-card">
+          <span class="hero-card-badge">Durabilidade 30 Dias</span>
+          <h3>Garantia de Adaptação</h3>
+          <p>Utilizamos colas certificadas pela Anvisa com baixa emissão de vapores e fios de seda levíssimos.</p>
+          <ul class="lash-benefits">
+            <li><span class="lash-check">&#10003;</span> Mapeamento facial personalizado (Mapping)</li>
+            <li><span class="lash-check">&#10003;</span> Zero peso ou incômodo ao piscar</li>
+            <li><span class="lash-check">&#10003;</span> Escovinha e kit de cuidados pós-procedimento grátis</li>
+            <li><span class="lash-check">&#10003;</span> Ambiente aconchegante com maca aquecida e manta</li>
+          </ul>
+          <a href="#" id="btn-card-wa" class="btn btn-wa btn-lg" style="width: 100%;" target="_blank">
+            Agendar Aplicação no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TÉCNICAS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Nossos Procedimentos</span>
+        <h2 class="section-title">Técnicas Mais Amadas</h2>
+        <p class="section-desc">Escolha a intensidade que melhor combina com o seu estilo.</p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div>
+            <div class="tech-icon">👁️</div>
+            <h3>Volume Brasileiro (Fio Y)</h3>
+            <p>A técnica mais pedida do momento. Proporciona um volume expressivo com acabamento leve e textura plumosa impecável.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-tech-wa" data-tech="Volume Brasileiro" target="_blank">Agendar Volume Brasileiro</a>
+        </div>
+
+        <div class="tech-card">
+          <div>
+            <div class="tech-icon">✨</div>
+            <h3>Fio a Fio Clássico</h3>
+            <p>Efeito máscara de cílios para quem ama sutileza e elegância. Alonga e preenche com extrema discrição para o dia a dia.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-tech-wa" data-tech="Fio a Fio Clássico" target="_blank">Agendar Fio a Fio</a>
+        </div>
+
+        <div class="tech-card">
+          <div>
+            <div class="tech-icon">🌿</div>
+            <h3>Brow Lamination & Nanoblading</h3>
+            <p>Alinhamento dos fios naturais das sobrancelhas para efeito encorpado e preenchimento de falhas fio a fio hiper-realista.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-tech-wa" data-tech="Brow Lamination e Sobrancelhas" target="_blank">Cuidar das Sobrancelhas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">Lash & Brow Studio</h4>
+        <p id="brand-city-footer">Designer de Cílios & Sobrancelhas | Campinas - SP</p>
+      </div>
+      <div>
+        <p>&copy; 2026. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WA -->
+  <a href="#" id="floating-wa" class="floating-wa" target="_blank">
+    <span>WhatsApp Studio</span>
+  </a>
+
+  <!-- SCRIPT DINÂMICO VIA URL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const empresa = params.get('empresa') || 'Lash & Brow Studio';
+      const cidade = params.get('cidade') || 'Campinas';
+      const whatsapp = params.get('whatsapp') || '5511913393797';
+
+      document.getElementById('page-title').innerText = `${empresa} | Lash Designer em ${cidade}`;
+      document.getElementById('brand-name-nav').innerText = empresa;
+      document.getElementById('brand-name-footer').innerText = empresa;
+      document.getElementById('top-city').innerText = `${cidade} - SP`;
+      document.getElementById('brand-city-footer').innerText = `Designer de Cílios & Micropigmentação | ${cidade} - SP`;
+
+      const defaultMsg = encodeURIComponent(`Olá! Vi o site da ${empresa} em ${cidade} e gostaria de consultar horários disponíveis para cílios.`);
+      const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
+
+      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-card-wa, #floating-wa').forEach(el => {
+        el.href = defaultWaUrl;
+      });
+
+      document.querySelectorAll('.btn-tech-wa').forEach(btn => {
+        const tech = btn.getAttribute('data-tech');
+        const tMsg = encodeURIComponent(`Olá! Gostaria de agendar o procedimento de "${tech}" com a ${empresa} em ${cidade}. Quais os valores e horários disponíveis?`);
+        btn.href = `https://wa.me/${whatsapp}?text=${tMsg}`;
+      });
+    });
+  </script>
+</body>
+</html>

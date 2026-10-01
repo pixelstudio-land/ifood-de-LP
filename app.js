@@ -154,6 +154,7 @@ const MODELS_CATALOG = [
     title: 'Psicologia Clínica & Terapia Online / Presencial',
     desc: 'Página sóbria e acolhedora para psicólogos e terapeutas, transmitindo sigilo, confiança e empatia.',
     tag: 'Acolhimento',
+    liveUrl: 'modelos/psicologia-clinica/index.html',
     highlights: [
       'Explicação clara de como funciona a primeira sessão',
       'Opções de atendimento online e presencial',
@@ -229,6 +230,7 @@ const MODELS_CATALOG = [
     title: 'Restaurante Japonês & Sushi Bar',
     desc: 'Visual contemporâneo sofisticado (preto e dourado) para combinados de sushi, sashimi, temakis e rodízio.',
     tag: 'Design Premium',
+    liveUrl: 'modelos/sushi-contemporaneo/index.html',
     highlights: [
       'Cardápio premium de combinados e festivais',
       'Destaque para peixes frescos diários (salmão, atum)',
@@ -298,6 +300,7 @@ const MODELS_CATALOG = [
     title: 'Marmitas Saudáveis, Fit & Congeladas',
     desc: 'Focada em quem busca praticidade, perda de peso ou ganho de massa com kits semanais e mensais de refeições congeladas.',
     tag: 'Recorrência',
+    liveUrl: 'modelos/marmitaria-fit/index.html',
     highlights: [
       'Cardápio semanal com contagem de calorias e macros',
       'Kits econômicos de 10, 14 e 20 refeições',
@@ -443,6 +446,7 @@ const MODELS_CATALOG = [
     title: 'Lash Designer, Extensão de Cílios & Sobrancelhas',
     desc: 'Voltada para profissionais de extensão de cílios, lash lifting, design de sobrancelhas e micropigmentação.',
     tag: 'Tendência',
+    liveUrl: 'modelos/lash-sobrancelhas/index.html',
     highlights: [
       'Guia visual de técnicas de cílios (Fio a Fio, Volume Russo)',
       'Orientações de cuidados pós-aplicação',
@@ -610,6 +614,7 @@ const MODELS_CATALOG = [
     title: 'Escritório de Arquitetura & Design de Interiores',
     desc: 'Design contemporâneo e minimalista com portfólio visual de projetos residenciais, reformas comerciais e renderizações 3D.',
     tag: 'Design Moderno',
+    liveUrl: 'modelos/arquitetura-interiores/index.html',
     highlights: [
       'Galeria de projetos residenciais e comerciais entregues',
       'Passo a passo do processo (Briefing, 3D, Projeto Executivo, Obra)',
@@ -633,6 +638,7 @@ const MODELS_CATALOG = [
     title: 'Marcenaria & Móveis Planejados Sob Medida',
     desc: 'Destaque visual para cozinhas planejadas, dormitórios, closets e home offices com 100% MDF e ferragens com amortecimento.',
     tag: 'Mais Vendido',
+    liveUrl: 'modelos/marcenaria-fina/index.html',
     highlights: [
       'Galeria de ambientes planejados entregues',
       'Diferenciais de materiais e garantia de 5 anos',
@@ -656,6 +662,7 @@ const MODELS_CATALOG = [
     title: 'Escritório de Contabilidade & BPO Financeiro',
     desc: 'Página corporativa moderna para atração de novas empresas, abertura grátis de CNPJ, transição de contador e redução de impostos.',
     tag: 'B2B',
+    liveUrl: 'modelos/contabilidade-consultiva/index.html',
     highlights: [
       'Abertura de empresa com taxa zero de honorários',
       'Simulador de economia tributária (Simples Nacional vs Lucro Presumido)',
@@ -679,6 +686,7 @@ const MODELS_CATALOG = [
     title: 'Energia Solar Fotovoltaica & Instalações',
     desc: 'Layout focado em conversão de orçamentos para residências, comércios e indústrias que desejam reduzir até 95% na conta de luz.',
     tag: 'Alto Ticket',
+    liveUrl: 'modelos/energia-solar/index.html',
     highlights: [
       'Simulador rápido de economia mensal na conta de energia',
       'Projetos homologados com a concessionária local',
@@ -777,6 +785,7 @@ const MODELS_CATALOG = [
     title: 'Estética Automotiva & Car Detailing',
     desc: 'Visual moderno escuro focado em vitrificação cerâmica de pintura, polimento técnico, lavagem detalhada e higienização interna.',
     tag: 'Visual Premium',
+    liveUrl: 'modelos/estetica-automotiva/index.html',
     highlights: [
       'Fotos impressionantes de reflexo espelhado na lataria',
       'Certificados de vitrificação de até 3 anos',
@@ -823,6 +832,7 @@ const MODELS_CATALOG = [
     title: 'Ótica Especializada & Armações Premium',
     desc: 'Foco na escolha de armações de marcas famosas, lentes multifocais digitais, antirreflexo e teste visual no local.',
     tag: 'Alta Conversão',
+    liveUrl: 'modelos/otica-prime/index.html',
     highlights: [
       'Catálogo de armações femininas, masculinas e infantis',
       'Lentes com filtro de luz azul para telas',

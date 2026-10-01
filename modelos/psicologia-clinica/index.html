@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Psicologia Clínica & Terapia Online e Presencial</title>
+  <meta name="description" content="Atendimento psicológico com acolhimento, escuta ativa e total sigilo profissional. Tratamento para ansiedade, estresse, burnout e autoconhecimento.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #faf7f2;
+      --card-white: #ffffff;
+      --eucalyptus: #2a584f;
+      --eucalyptus-dark: #1b3d36;
+      --eucalyptus-light: #e6edea;
+      --sand-gold: #c29d59;
+      --text-dark: #1a2e2b;
+      --text-muted: #5c706c;
+      --border-soft: #e3ded6;
+      --whatsapp-green: #10b981;
+      --whatsapp-hover: #059669;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --shadow-calm: 0 10px 25px -5px rgba(42, 88, 79, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background: #1b3d36;
+      color: #cbd5d1;
+      font-size: 0.78rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .crp-tag { color: #a7f3d0; font-weight: 600; }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(250, 247, 242, 0.96);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-soft);
+      padding: 16px 0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-dark);
+    }
+    .logo-symbol {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--eucalyptus), var(--eucalyptus-dark));
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 12px rgba(42, 88, 79, 0.25);
+    }
+    .logo-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      color: var(--eucalyptus-dark);
+    }
+    .logo-text p {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-wa {
+      background: var(--whatsapp-green);
+      color: #fff;
+    }
+    .btn-wa:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-2px);
+    }
+    .btn-eucalyptus {
+      background: var(--eucalyptus);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(42, 88, 79, 0.3);
+    }
+    .btn-eucalyptus:hover {
+      background: var(--eucalyptus-dark);
+      transform: translateY(-2px);
+    }
+    .btn-lg {
+      padding: 16px 36px;
+      font-size: 1rem;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 85px 0 75px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--eucalyptus-light);
+      color: var(--eucalyptus);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.3rem;
+      line-height: 1.15;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--eucalyptus); font-style: italic; }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .hero-card {
+      background: var(--card-white);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      box-shadow: var(--shadow-calm);
+    }
+    .hero-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      margin-bottom: 10px;
+      color: var(--eucalyptus-dark);
+    }
+    .hero-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+    .calm-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+    .calm-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+    .calm-check {
+      width: 22px;
+      height: 22px;
+      background: var(--eucalyptus-light);
+      color: var(--eucalyptus);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    /* DEMANDAS */
+    .section { padding: 80px 0; }
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 50px;
+    }
+    .section-badge {
+      color: var(--eucalyptus);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+    .section-desc { color: var(--text-muted); font-size: 0.95rem; }
+
+    .demands-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .demand-card {
+      background: var(--card-white);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-calm);
+      transition: all 0.3s ease;
+    }
+    .demand-card:hover {
+      transform: translateY(-5px);
+      border-color: #bbf7d0;
+      box-shadow: 0 15px 30px rgba(42, 88, 79, 0.12);
+    }
+    .demand-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+    .demand-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--eucalyptus-dark);
+    }
+    .demand-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #1b3d36;
+      color: #cbd5d1;
+      padding: 30px 0;
+      font-size: 0.82rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* FLOATING WA */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--whatsapp-green);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      z-index: 999;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .demands-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.3rem; }
+      .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div>Atendimento Psicológico Presencial e Online em <span id="top-city" style="color:#fff;">Campinas e Região</span></div>
+      <div><span class="crp-tag">CRP Ativo</span> | Total Sigilo Profissional em Conformidade com o CFP</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-symbol">Ψ</div>
+        <div class="logo-text">
+          <h3 id="brand-name-nav">Espaço Viver Bem Psicologia</h3>
+          <p>Saúde Mental & Psicoterapia</p>
+        </div>
+      </a>
+      <a href="#" id="btn-nav-wa" class="btn btn-wa" target="_blank">
+        Agendar Consulta
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">Acolhimento Humanizado & Sem Julgamentos</div>
+        <h1>Um espaço seguro para cuidar das suas <span>emoções</span> e encontrar equilíbrio</h1>
+        <p>
+          A psicoterapia é um caminho de autoconhecimento e alívio para momentos difíceis. Atendimento individual com escuta atenta, ferramentas práticas para lidar com a ansiedade e sigilo absoluto.
+        </p>
+        <a href="#" id="btn-hero-wa" class="btn btn-eucalyptus btn-lg" target="_blank">
+          Conversar com a Psicóloga no WhatsApp
+        </a>
+      </div>
+
+      <div>
+        <div class="hero-card">
+          <h3>Como Funciona a Terapia:</h3>
+          <p>Dê o primeiro passo no seu ritmo, com total comodidade e discrição:</p>
+          <ul class="calm-features">
+            <li><span class="calm-check">&#10003;</span> Primeira sessão de acolhimento e escuta da sua história</li>
+            <li><span class="calm-check">&#10003;</span> Opção de terapia online por videochamada segura</li>
+            <li><span class="calm-check">&#10003;</span> Consultório presencial aconchegante e climatizado</li>
+            <li><span class="calm-check">&#10003;</span> Emissão de recibo para reembolso no plano de saúde</li>
+          </ul>
+          <a href="#" id="btn-card-wa" class="btn btn-wa btn-lg" style="width: 100%;" target="_blank">
+            Agendar Sessão Inicial no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMANDAS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Áreas de Apoio</span>
+        <h2 class="section-title">Principais Queixas Tratadas</h2>
+        <p class="section-desc">Compreensão profunda das causas do sofrimento emocional para construir novos caminhos.</p>
+      </div>
+
+      <div class="demands-grid">
+        <div class="demand-card">
+          <div>
+            <div class="demand-icon">🌿</div>
+            <h3>Ansiedade & Crises de Pânico</h3>
+            <p>Pensamentos acelerados, medo constante e sintomas físicos da ansiedade tratados com técnicas de regulação emocional.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-demand-wa" data-demand="Ansiedade e Pânico" target="_blank">Buscar Ajuda para Ansiedade</a>
+        </div>
+
+        <div class="demand-card">
+          <div>
+            <div class="demand-icon">💼</div>
+            <h3>Burnout & Estresse de Trabalho</h3>
+            <p>Exaustão mental crônica, sensação de insuficiência e sobrecarga profissional. Aprenda a impor limites saudáveis.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-demand-wa" data-demand="Burnout e Estresse" target="_blank">Tratar Sobrecarga</a>
+        </div>
+
+        <div class="demand-card">
+          <div>
+            <div class="demand-icon">🌱</div>
+            <h3>Autoconhecimento & Autoestima</h3>
+            <p>Ressignificação de traumas, fortalecimento da segurança interna e rompimento de padrões repetitivos em relacionamentos.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-demand-wa" data-demand="Autoconhecimento" target="_blank">Iniciar Jornada</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">Espaço Viver Bem Psicologia</h4>
+        <p id="brand-city-footer">CRP Responsável Técnico | Campinas - SP</p>
+      </div>
+      <div>
+        <p>&copy; 2026. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WA -->
+  <a href="#" id="floating-wa" class="floating-wa" target="_blank">
+    <span>WhatsApp Psicóloga</span>
+  </a>
+
+  <!-- SCRIPT DINÂMICO VIA URL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const empresa = params.get('empresa') || 'Espaço Viver Bem Psicologia';
+      const cidade = params.get('cidade') || 'Campinas';
+      const whatsapp = params.get('whatsapp') || '5511913393797';
+
+      document.getElementById('page-title').innerText = `${empresa} | Psicologia Clínica em ${cidade}`;
+      document.getElementById('brand-name-nav').innerText = empresa;
+      document.getElementById('brand-name-footer').innerText = empresa;
+      document.getElementById('top-city').innerText = `${cidade} e Região`;
+      document.getElementById('brand-city-footer').innerText = `CRP Responsável Técnico | ${cidade} - SP`;
+
+      const defaultMsg = encodeURIComponent(`Olá! Vi o site da ${empresa} em ${cidade} e gostaria de saber sobre horários para atendimento psicológico.`);
+      const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
+
+      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-card-wa, #floating-wa').forEach(el => {
+        el.href = defaultWaUrl;
+      });
+
+      document.querySelectorAll('.btn-demand-wa').forEach(btn => {
+        const demand = btn.getAttribute('data-demand');
+        const dMsg = encodeURIComponent(`Olá! Gostaria de informações sobre acompanhamento psicológico focado em "${demand}" na ${empresa} em ${cidade}.`);
+        btn.href = `https://wa.me/${whatsapp}?text=${dMsg}`;
+      });
+    });
+  </script>
+</body>
+</html>

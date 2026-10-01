@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Estética Automotiva & Car Detailing Especializado</title>
+  <meta name="description" content="Vitrificação de pintura cerâmica 9H, polimento técnico de alto brilho, higienização interna e proteção contra arranhões e raios UV.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Teko:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #09090c;
+      --card-bg: #111116;
+      --border-dark: #22222a;
+      --accent-blue: #2563eb;
+      --accent-cyan: #38bdf8;
+      --whatsapp-green: #10b981;
+      --whatsapp-hover: #059669;
+      --text-white: #f8fafc;
+      --text-muted: #94a3b8;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --shadow-car: 0 10px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background: #040406;
+      border-bottom: 1px solid var(--border-dark);
+      padding: 8px 0;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-highlight { color: var(--accent-cyan); font-weight: 700; }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(9, 9, 12, 0.96);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-dark);
+      padding: 16px 0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .logo-symbol {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--accent-blue), #1d4ed8);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Teko', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    }
+    .logo-text h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .logo-text p {
+      font-size: 0.72rem;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .btn-wa {
+      background: var(--whatsapp-green);
+      color: #fff;
+    }
+    .btn-wa:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-2px);
+    }
+    .btn-blue {
+      background: linear-gradient(135deg, var(--accent-blue), #1e40af);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    }
+    .btn-blue:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+    }
+    .btn-lg {
+      padding: 16px 36px;
+      font-size: 1rem;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 85px 0 75px;
+      background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.2) 0%, transparent 60%);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37, 99, 235, 0.15);
+      color: #93c5fd;
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .hero h1 {
+      font-size: 3.3rem;
+      line-height: 1.1;
+      font-weight: 900;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 span { color: var(--accent-cyan); }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .hero-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      box-shadow: var(--shadow-car);
+      position: relative;
+    }
+    .hero-card-badge {
+      position: absolute;
+      top: -14px;
+      right: 28px;
+      background: linear-gradient(135deg, var(--accent-blue), #1d4ed8);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 9999px;
+    }
+    .hero-card h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .hero-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+    .car-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+    .car-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+    .car-check {
+      width: 22px;
+      height: 22px;
+      background: rgba(37, 99, 235, 0.2);
+      color: var(--accent-cyan);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    /* SERVIÇOS */
+    .section { padding: 80px 0; }
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 50px;
+    }
+    .section-badge {
+      color: var(--accent-cyan);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+    .section-desc { color: var(--text-muted); font-size: 0.95rem; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(37, 99, 235, 0.5);
+      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
+    }
+    .service-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+    .service-card h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #040406;
+      color: #64748b;
+      padding: 30px 0;
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border-dark);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* FLOATING WA */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--whatsapp-green);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      z-index: 999;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.4rem; }
+      .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div>Estética Automotiva de Alta Precisão em <span id="top-city" class="top-highlight">Campinas - SP</span></div>
+      <div>Certificação de Vitrificação 9H | Produtos Importados (Menzerna, Vonixx, Koch Chemie)</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-symbol">GT</div>
+        <div class="logo-text">
+          <h3 id="brand-name-nav">Apex Detailing Studio</h3>
+          <p>Estética Automotiva Premium</p>
+        </div>
+      </a>
+      <a href="#" id="btn-nav-wa" class="btn btn-wa" target="_blank">
+        Orçamento no WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">Brilho Espelhado & Proteção Cerâmica</div>
+        <h1>Devolva a cor e o <span>brilho de zero km</span> com polimento técnico</h1>
+        <p>
+          Remoção de micro-riscos, swirls e marcas de lavagem incorreta. Proteção cerâmica que repele água, poeira e raios solares por até 3 anos com garantia em certificado.
+        </p>
+        <a href="#" id="btn-hero-wa" class="btn btn-blue btn-lg" target="_blank">
+          Agendar Avaliação do Meu Carro
+        </a>
+      </div>
+
+      <div>
+        <div class="hero-card">
+          <span class="hero-card-badge">Garantia 3 Anos</span>
+          <h3>Vitrificação Cerâmica 9H</h3>
+          <p>A mais avançada proteção para a lataria do seu veículo contra intempéries e fezes de pássaros.</p>
+          <ul class="car-features">
+            <li><span class="car-check">&#10003;</span> Efeito hidrorrepelente que facilita a lavagem</li>
+            <li><span class="car-check">&#10003;</span> Profundidade e reflexo espelhado da cor original</li>
+            <li><span class="car-check">&#10003;</span> Certificado de garantia e manual de cuidados</li>
+            <li><span class="car-check">&#10003;</span> Descontos especiais na higienização interna completa</li>
+          </ul>
+          <a href="#" id="btn-card-wa" class="btn btn-wa btn-lg" style="width: 100%;" target="_blank">
+            Enviar Foto e Pedir Orçamento
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Detailing Completo</span>
+        <h2 class="section-title">Nossos Procedimentos</h2>
+        <p class="section-desc">Cuidado milimétrico em cada centímetro da lataria, rodas e interior.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div>
+            <div class="service-icon">✨</div>
+            <h3>Polimento Técnico & Espelhamento</h3>
+            <p>Tratamento em 3 etapas (corte, refino e lustro) para eliminar até 95% dos riscos superficiais da verniz.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-serv-wa" data-serv="Polimento Técnico" target="_blank">Consultar Polimento</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon">🛡️</div>
+            <h3>Vitrificação de Pintura & Faróis</h3>
+            <p>Nano-revestimento cerâmico de alta dureza que protege contra raios UV, maresia e pequenos atritos.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-serv-wa" data-serv="Vitrificação de Pintura" target="_blank">Consultar Vitrificação</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon">🧼</div>
+            <h3>Higienização Interna & Oxi-Sanitização</h3>
+            <p>Lavagem detalhada de bancos em couro ou tecido, teto, carpetes e eliminação total de odores com gerador de ozônio.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-serv-wa" data-serv="Higienização Interna" target="_blank">Limpar Interior</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">Apex Detailing Studio</h4>
+        <p id="brand-city-footer">Estética Automotiva de Alta Precisão | Campinas - SP</p>
+      </div>
+      <div>
+        <p>&copy; 2026. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WA -->
+  <a href="#" id="floating-wa" class="floating-wa" target="_blank">
+    <span>WhatsApp Detailing</span>
+  </a>
+
+  <!-- SCRIPT DINÂMICO VIA URL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const empresa = params.get('empresa') || 'Apex Detailing Studio';
+      const cidade = params.get('cidade') || 'Campinas';
+      const whatsapp = params.get('whatsapp') || '5511913393797';
+
+      document.getElementById('page-title').innerText = `${empresa} | Estética Automotiva em ${cidade}`;
+      document.getElementById('brand-name-nav').innerText = empresa;
+      document.getElementById('brand-name-footer').innerText = empresa;
+      document.getElementById('top-city').innerText = `${cidade} - SP`;
+      document.getElementById('brand-city-footer').innerText = `Estética Automotiva & Polimento | ${cidade} - SP`;
+
+      const defaultMsg = encodeURIComponent(`Olá! Vi o site da ${empresa} em ${cidade} e gostaria de solicitar um orçamento para o meu carro.`);
+      const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
+
+      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-card-wa, #floating-wa').forEach(el => {
+        el.href = defaultWaUrl;
+      });
+
+      document.querySelectorAll('.btn-serv-wa').forEach(btn => {
+        const serv = btn.getAttribute('data-serv');
+        const sMsg = encodeURIComponent(`Olá! Gostaria de um orçamento para "${serv}" na ${empresa} em ${cidade}. Qual modelo e cor do carro devo informar?`);
+        btn.href = `https://wa.me/${whatsapp}?text=${sMsg}`;
+      });
+    });
+  </script>
+</body>
+</html>

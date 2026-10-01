@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Studio de Arquitetura & Design de Interiores</title>
+  <meta name="description" content="Projetos arquitetônicos residenciais de alto padrão, design de interiores sofisticado e gestão completa de obras sem imprevistos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #faf9f6;
+      --card-white: #ffffff;
+      --text-charcoal: #1c1917;
+      --text-taupe: #78716c;
+      --border-soft: #e7e5e4;
+      --accent-warm: #a87b51;
+      --whatsapp-green: #10b981;
+      --whatsapp-hover: #059669;
+      --radius-sm: 6px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-arch: 0 10px 30px -5px rgba(28, 25, 23, 0.06);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-charcoal);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background: #1c1917;
+      color: #a8a29e;
+      font-size: 0.78rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cau-tag { color: var(--accent-warm); font-weight: 600; }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(250, 249, 246, 0.96);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-soft);
+      padding: 18px 0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-charcoal);
+    }
+    .logo-symbol {
+      width: 40px;
+      height: 40px;
+      background: #1c1917;
+      color: var(--accent-warm);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+    .logo-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .logo-text p {
+      font-size: 0.72rem;
+      color: var(--text-taupe);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-wa {
+      background: var(--whatsapp-green);
+      color: #fff;
+    }
+    .btn-wa:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-2px);
+    }
+    .btn-charcoal {
+      background: #1c1917;
+      color: #fff;
+    }
+    .btn-charcoal:hover {
+      background: #292524;
+      transform: translateY(-2px);
+    }
+    .btn-lg {
+      padding: 16px 36px;
+      font-size: 1rem;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 85px 0 75px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f5f5f4;
+      color: var(--accent-warm);
+      border: 1px solid var(--border-soft);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.4rem;
+      line-height: 1.15;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--accent-warm); font-style: italic; }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-taupe);
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .hero-card {
+      background: var(--card-white);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      box-shadow: var(--shadow-arch);
+    }
+    .hero-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+    .hero-card p {
+      font-size: 0.9rem;
+      color: var(--text-taupe);
+      margin-bottom: 22px;
+    }
+    .arch-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+    .arch-steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.88rem;
+    }
+    .step-badge {
+      width: 24px;
+      height: 24px;
+      background: #f5f5f4;
+      color: var(--accent-warm);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* PROJETOS */
+    .section { padding: 80px 0; }
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 50px;
+    }
+    .section-badge {
+      color: var(--accent-warm);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+    .section-desc { color: var(--text-taupe); font-size: 0.95rem; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .project-card {
+      background: var(--card-white);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-arch);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px -10px rgba(28, 25, 23, 0.15);
+    }
+    .project-thumb {
+      height: 200px;
+      background: linear-gradient(135deg, #e7e5e4, #d6d3d1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #78716c;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .project-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .project-type {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-warm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .project-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      margin: 6px 0 10px;
+    }
+    .project-desc {
+      font-size: 0.85rem;
+      color: var(--text-taupe);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #1c1917;
+      color: #a8a29e;
+      padding: 30px 0;
+      font-size: 0.82rem;
+      border-top: 1px solid #292524;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* FLOATING WA */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--whatsapp-green);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      z-index: 999;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.3rem; }
+      .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div>Projetos Arquitetônicos & Gestão de Obras em <span id="top-city" style="color:#fff;">Campinas e Região</span></div>
+      <div><span class="cau-tag">CAU Responsável Técnico</span> | Projetos 3D com Renderização Realista</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-symbol">A</div>
+        <div class="logo-text">
+          <h3 id="brand-name-nav">Studio Traço Arquitetura</h3>
+          <p>Arquitetura & Interiores</p>
+        </div>
+      </a>
+      <a href="#" id="btn-nav-wa" class="btn btn-wa" target="_blank">
+        Conversar com Arquiteto
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-tag">Design Funcional & Atemporal</div>
+        <h1>Projetos inteligentes que transformam <span>espaços</span> em experiências de vida</h1>
+        <p>
+          Do conceito inicial em 3D fotorrealista até o último detalhe da obra. Criamos residências e ambientes corporativos que aliam estética, conforto térmico e iluminação natural.
+        </p>
+        <a href="#" id="btn-hero-wa" class="btn btn-charcoal btn-lg" target="_blank">
+          Solicitar Proposta para Meu Projeto
+        </a>
+      </div>
+
+      <div>
+        <div class="hero-card">
+          <h3>Como Trabalhamos:</h3>
+          <p>Nosso método transparente e colaborativo para você não ter surpresas durante a execução:</p>
+          <ul class="arch-steps">
+            <li>
+              <span class="step-badge">1</span>
+              <div>
+                <strong>Briefing & Diagnóstico de Necessidades</strong>
+                <div style="font-size: 0.8rem; color: #78716c;">Entendemos sua rotina familiar e expectativas de investimento.</div>
+              </div>
+            </li>
+            <li>
+              <span class="step-badge">2</span>
+              <div>
+                <strong>Modelagem 3D & Tour Virtual</strong>
+                <div style="font-size: 0.8rem; color: #78716c;">Você visualiza cada ambiente com materiais e iluminação real antes da obra.</div>
+              </div>
+            </li>
+            <li>
+              <span class="step-badge">3</span>
+              <div>
+                <strong>Detalhamento Executivo Completo</strong>
+                <div style="font-size: 0.8rem; color: #78716c;">Plantas elétricas, hidráulicas, paginação de pisos e marcenaria.</div>
+              </div>
+            </li>
+          </ul>
+          <a href="#" id="btn-card-wa" class="btn btn-wa btn-lg" style="width: 100%;" target="_blank">
+            Enviar Planta no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS EM DESTAQUE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Nosso Portfólio</span>
+        <h2 class="section-title">Tipos de Projetos Realizados</h2>
+        <p class="section-desc">Personalização autoral com foco no equilíbrio de materiais e custos de execução.</p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-thumb">Residência Contemporânea 420m²</div>
+          <div class="project-body">
+            <div>
+              <span class="project-type">Residencial Alto Padrão</span>
+              <h3 class="project-title">Casa dos Bosques</h3>
+              <p class="project-desc">Integração total da área social com o jardim, ventilação cruzada e pé-direito duplo imponente.</p>
+            </div>
+            <a href="#" class="btn btn-wa btn-project-wa" data-proj="Casa dos Bosques (Residencial)" target="_blank">Quero Projeto Similar</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-thumb">Apartamento Integrado 180m²</div>
+          <div class="project-body">
+            <div>
+              <span class="project-type">Interiores & Reforma</span>
+              <h3 class="project-title">Apartamento Terraço</h3>
+              <p class="project-desc">Nivelamento de piso entre sala e varanda gourmet, marcenaria sob medida e iluminação cênica em LED.</p>
+            </div>
+            <a href="#" class="btn btn-wa btn-project-wa" data-proj="Apartamento Terraço (Interiores)" target="_blank">Quero Projeto Similar</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-thumb">Consultório & Clínica Médica</div>
+          <div class="project-body">
+            <div>
+              <span class="project-type">Corporativo & Comercial</span>
+              <h3 class="project-title">Clínica Integrada</h3>
+              <p class="project-desc">Ambientes acolhedores em conformidade com as normas sanitárias e acústica perfeita nos consultórios.</p>
+            </div>
+            <a href="#" class="btn btn-wa btn-project-wa" data-proj="Clínica Integrada (Comercial)" target="_blank">Quero Projeto Similar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">Studio Traço Arquitetura</h4>
+        <p id="brand-city-footer">CAU Responsável Técnico | Campinas - SP</p>
+      </div>
+      <div>
+        <p>&copy; 2026. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WA -->
+  <a href="#" id="floating-wa" class="floating-wa" target="_blank">
+    <span>WhatsApp Studio</span>
+  </a>
+
+  <!-- SCRIPT DINÂMICO VIA URL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const empresa = params.get('empresa') || 'Studio Traço Arquitetura';
+      const cidade = params.get('cidade') || 'Campinas';
+      const whatsapp = params.get('whatsapp') || '5511913393797';
+
+      document.getElementById('page-title').innerText = `${empresa} | Escritório de Arquitetura em ${cidade}`;
+      document.getElementById('brand-name-nav').innerText = empresa;
+      document.getElementById('brand-name-footer').innerText = empresa;
+      document.getElementById('top-city').innerText = `${cidade} e Região`;
+      document.getElementById('brand-city-footer').innerText = `CAU Responsável Técnico | ${cidade} - SP`;
+
+      const defaultMsg = encodeURIComponent(`Olá! Estava no site da ${empresa} em ${cidade} e gostaria de agendar uma reunião sobre o meu projeto.`);
+      const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
+
+      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-card-wa, #floating-wa').forEach(el => {
+        el.href = defaultWaUrl;
+      });
+
+      document.querySelectorAll('.btn-project-wa').forEach(btn => {
+        const proj = btn.getAttribute('data-proj');
+        const pMsg = encodeURIComponent(`Olá! Vi o projeto "${proj}" no site da ${empresa} em ${cidade} e gostaria de saber como funciona para desenvolver um projeto com esse perfil.`);
+        btn.href = `https://wa.me/${whatsapp}?text=${pMsg}`;
+      });
+    });
+  </script>
+</body>
+</html>

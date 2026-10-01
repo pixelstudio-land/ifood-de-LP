@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Solarium Energia Solar Fotovoltaica | Reduza até 95% na Conta de Luz</title>
+  <meta name="description" content="Projetos e instalação de energia solar para residências, empresas e agronegócio. Economia garantida com financiamento que se paga com a própria economia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a1120;
+      --card-bg: #111c33;
+      --border-dark: #1e2f52;
+      --solar-gold: #f59e0b;
+      --solar-gold-glow: rgba(245, 158, 11, 0.4);
+      --solar-amber: #d97706;
+      --cyan-accent: #38bdf8;
+      --whatsapp-green: #10b981;
+      --whatsapp-hover: #059669;
+      --text-light: #f8fafc;
+      --text-muted: #94a3b8;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background: #060b14;
+      border-bottom: 1px solid var(--border-dark);
+      padding: 8px 0;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-highlight { color: var(--solar-gold); font-weight: 700; }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(10, 17, 32, 0.96);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-dark);
+      padding: 16px 0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .logo-symbol {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--solar-gold), #ea580c);
+      color: #0f172a;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 900;
+      box-shadow: 0 0 20px var(--solar-gold-glow);
+    }
+    .logo-text h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .logo-text p {
+      font-size: 0.72rem;
+      color: var(--solar-gold);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-wa {
+      background: var(--whatsapp-green);
+      color: #fff;
+    }
+    .btn-wa:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-2px);
+    }
+    .btn-solar {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #0f172a;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+    }
+    .btn-solar:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(245, 158, 11, 0.6);
+    }
+    .btn-lg {
+      padding: 16px 36px;
+      font-size: 1rem;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 80px 0 70px;
+      background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.15) 0%, transparent 60%);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3.2rem;
+      line-height: 1.12;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--solar-gold); }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    /* SIMULADOR DE ECONOMIA SOLAR */
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+    .calc-card-badge {
+      position: absolute;
+      top: -14px;
+      right: 28px;
+      background: linear-gradient(135deg, var(--solar-gold), #ea580c);
+      color: #0f172a;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 9999px;
+    }
+    .calc-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .calc-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+    .calc-input-group {
+      margin-bottom: 22px;
+    }
+    .calc-input-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .calc-range {
+      width: 100%;
+      height: 8px;
+      background: #1e293b;
+      border-radius: 4px;
+      outline: none;
+      accent-color: var(--solar-gold);
+    }
+    .calc-value-display {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--solar-gold);
+      margin-top: 6px;
+    }
+
+    .calc-results-box {
+      background: rgba(10, 17, 32, 0.8);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 22px;
+    }
+    .calc-res-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+    }
+    .calc-res-row:last-child {
+      margin-bottom: 0;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-dark);
+    }
+    .calc-res-highlight {
+      font-weight: 800;
+      color: #34d399;
+    }
+
+    /* SEGMENTOS */
+    .section { padding: 80px 0; }
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 50px;
+    }
+    .section-badge {
+      color: var(--solar-gold);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+    .section-desc { color: var(--text-muted); font-size: 0.95rem; }
+
+    .segments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .segment-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+    .segment-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(245, 158, 11, 0.4);
+      box-shadow: 0 15px 30px rgba(245, 158, 11, 0.1);
+    }
+    .segment-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+    .segment-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .segment-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #060b14;
+      color: #64748b;
+      padding: 30px 0;
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border-dark);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* FLOATING WA */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--whatsapp-green);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      z-index: 999;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .segments-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.3rem; }
+      .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div>Projetos Homologados com a Concessionária de Energia em <span id="top-city" class="top-highlight">Campinas e Região</span></div>
+      <div>Garantia de 25 Anos nos Módulos Solares | Financiamento em até 84x</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-symbol">☀️</div>
+        <div class="logo-text">
+          <h3 id="brand-name-nav">Solarium Solar</h3>
+          <p>Engenharia Fotovoltaica</p>
+        </div>
+      </a>
+      <a href="#" id="btn-nav-wa" class="btn btn-wa" target="_blank">
+        Pedir Orçamento Grátis
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">Chega de Pagar Caro na Conta de Luz</div>
+        <h1>Gere sua própria energia e economize <span>até 95%</span> todo mês</h1>
+        <p>
+          Transforme o sol em economia real para sua casa, comércio ou indústria. Projeto completo com engenharia, homologação e instalação em tempo recorde.
+        </p>
+        <a href="#" id="btn-hero-wa" class="btn btn-solar btn-lg" target="_blank">
+          Simular Meu Projeto no WhatsApp
+        </a>
+      </div>
+
+      <div>
+        <!-- CALCULADORA INTERATIVA -->
+        <div class="calc-card">
+          <span class="calc-card-badge">Simulador Rápido</span>
+          <h3>Quanto você paga de luz hoje?</h3>
+          <p>Arraste o valor para descobrir sua economia estimada:</p>
+          
+          <div class="calc-input-group">
+            <label>Valor Médio da Conta Atual:</label>
+            <input type="range" min="200" max="3000" step="50" value="650" class="calc-range" id="calc-range-slider">
+            <div class="calc-value-display" id="calc-bill-val">R$ 650 / mês</div>
+          </div>
+
+          <div class="calc-results-box">
+            <div class="calc-res-row">
+              <span>Sua conta com energia solar:</span>
+              <strong style="color: #38bdf8;" id="calc-new-bill">~ R$ 75 / mês</strong>
+            </div>
+            <div class="calc-res-row">
+              <span>Economia estimada em 1 ano:</span>
+              <strong class="calc-res-highlight" id="calc-year-save">R$ 6.900</strong>
+            </div>
+            <div class="calc-res-row">
+              <span>Economia estimada em 25 anos:</span>
+              <strong class="calc-res-highlight" id="calc-total-save" style="font-size: 1.1rem;">R$ 172.500</strong>
+            </div>
+          </div>
+
+          <a href="#" id="btn-calc-wa" class="btn btn-wa btn-lg" style="width: 100%;" target="_blank">
+            Quero Economizar esse Valor
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEGMENTOS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Soluções Completas</span>
+        <h2 class="section-title">Onde Podemos Instalar</h2>
+        <p class="section-desc">Dimensionamento exato de acordo com seu consumo diário e tipo de telhado.</p>
+      </div>
+
+      <div class="segments-grid">
+        <div class="segment-card">
+          <div>
+            <div class="segment-icon">🏠</div>
+            <h3>Sistemas Residenciais</h3>
+            <p>Ligue o ar-condicionado, piscina aquecida e eletrodomésticos sem medo da conta no final do mês. Valoriza seu imóvel em até 10%.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-segment-wa" data-segment="Residencial" target="_blank">Orçar para Casa</a>
+        </div>
+
+        <div class="segment-card">
+          <div>
+            <div class="segment-icon">🏢</div>
+            <h3>Comércios & Escritórios</h3>
+            <p>Reduza drasticamente o custo fixo do seu negócio (lojas, mercados, academias e clínicas) e aumente sua margem líquida de lucro.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-segment-wa" data-segment="Comercial" target="_blank">Orçar para Empresa</a>
+        </div>
+
+        <div class="segment-card">
+          <div>
+            <div class="segment-icon">🚜</div>
+            <h3>Agronegócio & Galpões</h3>
+            <p>Soluções de alta potência para pivôs de irrigação, granjas, silos e propriedades rurais com linhas de crédito facilitadas.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-segment-wa" data-segment="Rural e Agronegócio" target="_blank">Orçar para Agro</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">Solarium Engenharia Solar</h4>
+        <p id="brand-city-footer">CREA Responsável Técnico | Campinas - SP</p>
+      </div>
+      <div>
+        <p>&copy; 2026. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WA -->
+  <a href="#" id="floating-wa" class="floating-wa" target="_blank">
+    <span>WhatsApp Solar</span>
+  </a>
+
+  <!-- SCRIPT DINÂMICO & CALCULADORA -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const empresa = params.get('empresa') || 'Solarium Engenharia Solar';
+      const cidade = params.get('cidade') || 'Campinas';
+      const whatsapp = params.get('whatsapp') || '5511913393797';
+
+      document.getElementById('page-title').innerText = `${empresa} | Energia Solar em ${cidade}`;
+      document.getElementById('brand-name-nav').innerText = empresa;
+      document.getElementById('brand-name-footer').innerText = empresa;
+      document.getElementById('top-city').innerText = `${cidade} e Região`;
+      document.getElementById('brand-city-footer').innerText = `CREA Responsável Técnico | ${cidade} - SP`;
+
+      const defaultMsg = encodeURIComponent(`Olá! Vi o site da ${empresa} em ${cidade} e gostaria de solicitar um orçamento de energia solar.`);
+      const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
+
+      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #floating-wa').forEach(el => {
+        el.href = defaultWaUrl;
+      });
+
+      // LÓGICA DA CALCULADORA INTERATIVA
+      const slider = document.getElementById('calc-range-slider');
+      const billDisplay = document.getElementById('calc-bill-val');
+      const yearDisplay = document.getElementById('calc-year-save');
+      const totalDisplay = document.getElementById('calc-total-save');
+      const calcWaBtn = document.getElementById('btn-calc-wa');
+
+      function updateCalculator() {
+        const val = parseInt(slider.value, 10);
+        billDisplay.innerText = `R$ ${val.toLocaleString('pt-BR')} / mês`;
+
+        // Economia aproximada: 90% da conta
+        const monthlySave = val * 0.90;
+        const yearSave = monthlySave * 12;
+        const totalSave = yearSave * 25;
+
+        yearDisplay.innerText = `R$ ${Math.round(yearSave).toLocaleString('pt-BR')}`;
+        totalDisplay.innerText = `R$ ${Math.round(totalSave).toLocaleString('pt-BR')}`;
+
+        const cMsg = encodeURIComponent(`Olá! Fiz a simulação no site da ${empresa} em ${cidade}: pago atualmente R$ ${val}/mês de luz e gostaria de um estudo para economizar cerca de R$ ${Math.round(yearSave).toLocaleString('pt-BR')} por ano.`);
+        calcWaBtn.href = `https://wa.me/${whatsapp}?text=${cMsg}`;
+      }
+
+      slider.addEventListener('input', updateCalculator);
+      updateCalculator();
+
+      document.querySelectorAll('.btn-segment-wa').forEach(btn => {
+        const seg = btn.getAttribute('data-segment');
+        const sMsg = encodeURIComponent(`Olá! Gostaria de um orçamento de energia solar para o segmento "${seg}" com a ${empresa} em ${cidade}.`);
+        btn.href = `https://wa.me/${whatsapp}?text=${sMsg}`;
+      });
+    });
+  </script>
+</body>
+</html>

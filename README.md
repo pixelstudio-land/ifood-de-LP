@@ -34,6 +34,16 @@ Estes modelos possuem páginas completas e responsivas próprias que podem ser t
 8. `modelos/oficina-autocenter/` — AutoCenter Mecânica com Scanner Eletrônico & Botão SOS
 9. `modelos/studio-hair/` — Salão de Beleza Hair Designer, Loiras & Mega Hair
 10. `modelos/pet-veterinaria/` — Hospital Veterinário 24h & Centro de Estética Pet
+11. `modelos/sushi-contemporaneo/` — Restaurante Japonês & Sushi Bar Contemporâneo com Omakase
+12. `modelos/energia-solar/` — Solarium Engenharia Solar com Calculadora Interativa de Economia
+13. `modelos/contabilidade-consultiva/` — Escritório de Contabilidade com Abertura Grátis de CNPJ
+14. `modelos/arquitetura-interiores/` — Studio de Arquitetura, Interiores & Projetos 3D
+15. `modelos/marcenaria-fina/` — Marcenaria de Alto Padrão, Móveis 100% MDF & Ambientes Sob Medida
+16. `modelos/marmitaria-fit/` — Marmitas Saudáveis Congeladas, Kits Semanais & Low Carb
+17. `modelos/lash-sobrancelhas/` — Lash Designer, Extensão de Cílios & Nanoblading
+18. `modelos/estetica-automotiva/` — Estética Automotiva Detailing, Vitrificação 9H & Polimento
+19. `modelos/psicologia-clinica/` — Psicologia Clínica, Terapia Online & Presencial com Sigilo
+20. `modelos/otica-prime/` — Óptica Conceito, Armações de Grife & Lentes Multifocais Digitais
 
 ### 4. Simulador de Celular ao Vivo
 Permite que o prospect visualize a página funcionando diretamente na tela de um smartphone moderno, com botão para abertura em tela cheia e CTA imediato para fechar no WhatsApp.

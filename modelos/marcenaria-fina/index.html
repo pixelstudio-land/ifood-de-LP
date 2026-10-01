@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Marcenaria Fina & Móveis Planejados de Alto Padrão</title>
+  <meta name="description" content="Móveis planejados 100% MDF sob medida para cozinhas, closets, dormitórios e painéis ripados. Ferragens com amortecimento e 5 anos de garantia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #120e0c;
+      --card-dark: #1c1613;
+      --border-dark: #322620;
+      --wood-warm: #a26938;
+      --wood-light: #dfb285;
+      --gold-accent: #d97706;
+      --whatsapp-green: #10b981;
+      --whatsapp-hover: #059669;
+      --text-white: #f8fafc;
+      --text-muted: #a8a29e;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --shadow-wood: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background: #0a0706;
+      border-bottom: 1px solid var(--border-dark);
+      padding: 8px 0;
+      font-size: 0.8rem;
+      color: #a8a29e;
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-tag { color: var(--wood-light); font-weight: 700; }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(18, 14, 12, 0.96);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-dark);
+      padding: 16px 0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .logo-symbol {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--wood-warm), #6e411b);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(162, 105, 56, 0.35);
+    }
+    .logo-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .logo-text p {
+      font-size: 0.72rem;
+      color: var(--wood-light);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-wa {
+      background: var(--whatsapp-green);
+      color: #fff;
+    }
+    .btn-wa:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-2px);
+    }
+    .btn-wood {
+      background: linear-gradient(135deg, var(--wood-warm), #78451e);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(162, 105, 56, 0.4);
+    }
+    .btn-wood:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(162, 105, 56, 0.5);
+    }
+    .btn-lg {
+      padding: 16px 36px;
+      font-size: 1rem;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 85px 0 75px;
+      background: radial-gradient(circle at top right, rgba(162, 105, 56, 0.15) 0%, transparent 60%);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(162, 105, 56, 0.15);
+      color: var(--wood-light);
+      border: 1px solid rgba(162, 105, 56, 0.3);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.3rem;
+      line-height: 1.15;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--wood-light); font-style: italic; }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .hero-card {
+      background: var(--card-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      box-shadow: var(--shadow-wood);
+      position: relative;
+    }
+    .hero-card-badge {
+      position: absolute;
+      top: -14px;
+      right: 28px;
+      background: linear-gradient(135deg, var(--gold-accent), #92400e);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 9999px;
+    }
+    .hero-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .hero-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+    .wood-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+    .wood-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: #e7e5e4;
+    }
+    .wood-check {
+      width: 22px;
+      height: 22px;
+      background: rgba(162, 105, 56, 0.25);
+      color: var(--wood-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    /* AMBIENTES */
+    .section { padding: 80px 0; }
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 50px;
+    }
+    .section-badge {
+      color: var(--wood-light);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+    .section-desc { color: var(--text-muted); font-size: 0.95rem; }
+
+    .spaces-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .space-card {
+      background: var(--card-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+    .space-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(162, 105, 56, 0.5);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+    .space-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+    .space-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .space-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #0a0706;
+      color: #78716c;
+      padding: 30px 0;
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border-dark);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* FLOATING WA */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--whatsapp-green);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      z-index: 999;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .spaces-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.3rem; }
+      .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div>Móveis Planejados Sob Medida & Marcenaria Fina em <span id="top-city" class="top-tag">Campinas e Região</span></div>
+      <div>100% MDF | Ferragens com Amortecimento Blum/Hafele | Garantia de 5 Anos</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-symbol">M</div>
+        <div class="logo-text">
+          <h3 id="brand-name-nav">Madeira & Arte Marcenaria</h3>
+          <p>Móveis Sob Medida de Luxo</p>
+        </div>
+      </a>
+      <a href="#" id="btn-nav-wa" class="btn btn-wa" target="_blank">
+        Pedir Orçamento
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">Acabamento Milimétrico & Matéria-Prima Nobre</div>
+        <h1>Cada centímetro da sua casa planejado com <span>sofisticação</span> e precisão</h1>
+        <p>
+          Transformamos sua planta em ambientes funcionais e acolhedores. Marcenaria própria, ferragens com fechamento suave, iluminação integrada em LED e montagem rápida e limpa.
+        </p>
+        <a href="#" id="btn-hero-wa" class="btn btn-wood btn-lg" target="_blank">
+          Solicitar Visita Técnica no WhatsApp
+        </a>
+      </div>
+
+      <div>
+        <div class="hero-card">
+          <span class="hero-card-badge">Garantia 5 Anos</span>
+          <h3>Orçamento Rápido em 24h</h3>
+          <p>Envie sua planta pelo WhatsApp e receba uma estimativa detalhada sem compromisso.</p>
+          <ul class="wood-features">
+            <li><span class="wood-check">&#10003;</span> 100% MDF naval de alta densidade anti-mofo</li>
+            <li><span class="wood-check">&#10003;</span> Dobradiças e corrediças com amortecimento suave</li>
+            <li><span class="wood-check">&#10003;</span> Projeto 3D realista antes da fabricação</li>
+            <li><span class="wood-check">&#10003;</span> Equipe própria de montadores uniformizados</li>
+          </ul>
+          <a href="#" id="btn-card-wa" class="btn btn-wa btn-lg" style="width: 100%;" target="_blank">
+            Enviar Planta no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMBIENTES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Nossos Ambientes</span>
+        <h2 class="section-title">Especialidades da Marcenaria</h2>
+        <p class="section-desc">Projetamos móveis inteligentes que valorizam o seu patrimônio.</p>
+      </div>
+
+      <div class="spaces-grid">
+        <div class="space-card">
+          <div>
+            <div class="space-icon">🍳</div>
+            <h3>Cozinhas & Ilhas Gourmet</h3>
+            <p>Gavetões com divisórias para talheres, torres quentes embutidas, lixeiras ocultas e acabamentos resistentes ao calor e água.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-space-wa" data-space="Cozinhas e Ilhas Gourmet" target="_blank">Orçar Cozinha</a>
+        </div>
+
+        <div class="space-card">
+          <div>
+            <div class="space-icon">🛏️</div>
+            <h3>Dormitórios & Closets</h3>
+            <p>Portas de correr com espelho, cabideiros iluminados em fita LED, sapateiras extensíveis e nichos sob medida para sua rotina.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-space-wa" data-space="Dormitórios e Closets" target="_blank">Orçar Closet</a>
+        </div>
+
+        <div class="space-card">
+          <div>
+            <div class="space-icon">📺</div>
+            <h3>Home Theaters & Painéis Ripados</h3>
+            <p>Painéis de madeira nobre que escondem toda a fiação da TV e eletrônicos, combinando nichos decorativos e iluminação suave.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-space-wa" data-space="Home Theaters e Painéis" target="_blank">Orçar Home Theater</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">Madeira & Arte Marcenaria</h4>
+        <p id="brand-city-footer">Móveis Planejados Sob Medida | Campinas - SP</p>
+      </div>
+      <div>
+        <p>&copy; 2026. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WA -->
+  <a href="#" id="floating-wa" class="floating-wa" target="_blank">
+    <span>WhatsApp Marcenaria</span>
+  </a>
+
+  <!-- SCRIPT DINÂMICO VIA URL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const empresa = params.get('empresa') || 'Madeira & Arte Marcenaria';
+      const cidade = params.get('cidade') || 'Campinas';
+      const whatsapp = params.get('whatsapp') || '5511913393797';
+
+      document.getElementById('page-title').innerText = `${empresa} | Marcenaria de Alto Padrão em ${cidade}`;
+      document.getElementById('brand-name-nav').innerText = empresa;
+      document.getElementById('brand-name-footer').innerText = empresa;
+      document.getElementById('top-city').innerText = `${cidade} e Região`;
+      document.getElementById('brand-city-footer').innerText = `Móveis Planejados Sob Medida | ${cidade} - SP`;
+
+      const defaultMsg = encodeURIComponent(`Olá! Vi o site da ${empresa} em ${cidade} e gostaria de solicitar um orçamento para móveis planejados.`);
+      const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
+
+      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-card-wa, #floating-wa').forEach(el => {
+        el.href = defaultWaUrl;
+      });
+
+      document.querySelectorAll('.btn-space-wa').forEach(btn => {
+        const space = btn.getAttribute('data-space');
+        const sMsg = encodeURIComponent(`Olá! Gostaria de um orçamento para o ambiente de "${space}" com a ${empresa} em ${cidade}.`);
+        btn.href = `https://wa.me/${whatsapp}?text=${sMsg}`;
+      });
+    });
+  </script>
+</body>
+</html>

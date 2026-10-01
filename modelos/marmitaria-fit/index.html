@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Marmitas Fit & Comida Saudável Congelada</title>
+  <meta name="description" content="Refeições saudáveis, balanceadas e ultracongeladas sem conservantes. Kits semanais Low Carb e Hipertrofia prontos em 5 minutos no micro-ondas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-green: #059669;
+      --green-dark: #047857;
+      --accent-orange: #f97316;
+      --whatsapp-green: #10b981;
+      --whatsapp-hover: #059669;
+      --bg-cream: #f0fdf4;
+      --card-white: #ffffff;
+      --text-main: #064e3b;
+      --text-muted: #64748b;
+      --border-green: #bbf7d0;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --shadow-soft: 0 10px 25px -5px rgba(5, 150, 105, 0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-cream);
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background: #064e3b;
+      color: #d1fae5;
+      font-size: 0.8rem;
+      padding: 8px 0;
+      text-align: center;
+      font-weight: 600;
+    }
+    .top-bar span { color: #fef08a; font-weight: 800; }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-green);
+      padding: 16px 0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-symbol {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--primary-green), #10b981);
+      color: #fff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+    }
+    .logo-text h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: #064e3b;
+    }
+    .logo-text p {
+      font-size: 0.72rem;
+      color: var(--accent-orange);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-wa {
+      background: var(--whatsapp-green);
+      color: #fff;
+    }
+    .btn-wa:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-2px);
+    }
+    .btn-green {
+      background: var(--primary-green);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+    }
+    .btn-green:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+    .btn-lg {
+      padding: 16px 34px;
+      font-size: 1rem;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 75px 0 65px;
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg-cream) 100%);
+      border-bottom: 1px solid var(--border-green);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #dcfce7;
+      color: #15803d;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3.2rem;
+      line-height: 1.15;
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--primary-green); }
+    .hero p {
+      font-size: 1.05rem;
+      color: #475569;
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      border: 1px solid var(--border-green);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+    }
+    .hero-card-badge {
+      position: absolute;
+      top: -14px;
+      right: 28px;
+      background: var(--accent-orange);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 9999px;
+    }
+    .hero-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      color: #064e3b;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+    .hero-card p {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-bottom: 22px;
+    }
+    .fit-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+    .fit-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    .fit-check {
+      width: 22px;
+      height: 22px;
+      background: #dcfce7;
+      color: var(--primary-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    /* KITS */
+    .section { padding: 80px 0; }
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 50px;
+    }
+    .section-badge {
+      color: var(--primary-green);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      color: #0f172a;
+      margin-bottom: 14px;
+      font-weight: 900;
+    }
+    .section-desc { color: #64748b; font-size: 0.95rem; }
+
+    .kits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .kit-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 32px 26px;
+      border: 1px solid var(--border-green);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+    .kit-card:hover {
+      transform: translateY(-5px);
+      border-color: #86efac;
+      box-shadow: 0 15px 35px -5px rgba(5, 150, 105, 0.2);
+    }
+    .kit-price {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--primary-green);
+      margin-bottom: 8px;
+    }
+    .kit-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #064e3b;
+      margin-bottom: 10px;
+    }
+    .kit-card p {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #022c22;
+      color: #a7f3d0;
+      padding: 30px 0;
+      font-size: 0.82rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* FLOATING WA */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--whatsapp-green);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      z-index: 999;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .kits-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.3rem; }
+      .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    🌱 Entrega expressa de marmitas congeladas saudáveis em <span id="top-city">Campinas</span> | Ultracongelamento que preserva nutrientes
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-symbol">🥗</div>
+        <div class="logo-text">
+          <h3 id="brand-name-nav">Vida Leve Marmitaria Fit</h3>
+          <p>Comida Saudável & Prática</p>
+        </div>
+      </a>
+      <a href="#" id="btn-nav-wa" class="btn btn-wa" target="_blank">
+        Pedir Cardápio
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">Comida de Verdade Pronta em 5 Minutos</div>
+        <h1>Alimentação saudável, saborosa e sem esforço na <span>sua rotina corrida</span></h1>
+        <p>
+          Marmitas congeladas preparadas por nutricionistas e chefs com tempero natural. Sem conservantes, ricas em sabor e nutrientes para você atingir seus objetivos de saúde e forma física.
+        </p>
+        <a href="#" id="btn-hero-wa" class="btn btn-green btn-lg" target="_blank">
+          Montar Meu Kit Semanal no WhatsApp
+        </a>
+      </div>
+
+      <div>
+        <div class="hero-card">
+          <span class="hero-card-badge">Frete Grátis nos Kits</span>
+          <h3>Kits Práticos de Refeições</h3>
+          <p>Mantenha sua dieta no foco sem perder horas na cozinha lavando panelas.</p>
+          <ul class="fit-features">
+            <li><span class="fit-check">&#10003;</span> Ultracongelamento que mantém textura e sabor original</li>
+            <li><span class="fit-check">&#10003;</span> Embalagens 100% livres de BPA próprias para micro-ondas</li>
+            <li><span class="fit-check">&#10003;</span> Tabela nutricional com calorias e macros calculados</li>
+            <li><span class="fit-check">&#10003;</span> Opções Low Carb, Hipertrofia e Vegetarianas</li>
+          </ul>
+          <a href="#" id="btn-card-wa" class="btn btn-wa btn-lg" style="width: 100%;" target="_blank">
+            Ver Cardápio Completo da Semana
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KITS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Economia & Praticidade</span>
+        <h2 class="section-title">Kits Mais Pedidos</h2>
+        <p class="section-desc">Garanta seus almoços e jantares da semana com desconto progressivo.</p>
+      </div>
+
+      <div class="kits-grid">
+        <div class="kit-card">
+          <div>
+            <div class="kit-price">R$ 189,90 <span style="font-size: 0.8rem; color: #64748b; font-weight: normal;">(R$ 18,99/un)</span></div>
+            <h3>Kit Essencial 10 Marmitas</h3>
+            <p>Ideal para garantir os 5 almoços e 5 jantares de segunda a sexta. Escolha entre patinho moído com purê de mandioquinha, frango com legumes e tilápia grelhada.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-kit-wa" data-kit="Kit Essencial 10 Marmitas (R$ 189,90)" target="_blank">Pedir Kit 10 Unidades</a>
+        </div>
+
+        <div class="kit-card">
+          <div>
+            <div class="kit-price">R$ 249,90 <span style="font-size: 0.8rem; color: #64748b; font-weight: normal;">(R$ 17,85/un)</span></div>
+            <h3>Kit Semana Completa 14 Marmitas</h3>
+            <p>Refeições completas para todos os dias da semana. Inclui opções Low Carb, carne em tiras ao molho madeira saudável e lasanha de berinjela.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-kit-wa" data-kit="Kit Semana Completa 14 Marmitas (R$ 249,90)" target="_blank">Pedir Kit 14 Unidades</a>
+        </div>
+
+        <div class="kit-card">
+          <div>
+            <div class="kit-price">R$ 339,90 <span style="font-size: 0.8rem; color: #64748b; font-weight: normal;">(R$ 16,99/un)</span></div>
+            <h3>Kit Mensal Casal 20 Marmitas</h3>
+            <p>Máxima economia para casais ou quem quer estocar o freezer para o mês todo. Frete grátis garantido e acompanhamento nutricional básico.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-kit-wa" data-kit="Kit Mensal Casal 20 Marmitas (R$ 339,90)" target="_blank">Pedir Kit 20 Unidades</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">Vida Leve Marmitaria Fit</h4>
+        <p id="brand-city-footer">Alimentação Saudável Ultracongelada | Campinas - SP</p>
+      </div>
+      <div>
+        <p>&copy; 2026. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WA -->
+  <a href="#" id="floating-wa" class="floating-wa" target="_blank">
+    <span>WhatsApp Marmitas</span>
+  </a>
+
+  <!-- SCRIPT DINÂMICO VIA URL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const empresa = params.get('empresa') || 'Vida Leve Marmitaria Fit';
+      const cidade = params.get('cidade') || 'Campinas';
+      const whatsapp = params.get('whatsapp') || '5511913393797';
+
+      document.getElementById('page-title').innerText = `${empresa} | Marmitas Saudáveis em ${cidade}`;
+      document.getElementById('brand-name-nav').innerText = empresa;
+      document.getElementById('brand-name-footer').innerText = empresa;
+      document.getElementById('top-city').innerText = cidade;
+      document.getElementById('brand-city-footer').innerText = `Alimentação Saudável Congelada | ${cidade} - SP`;
+
+      const defaultMsg = encodeURIComponent(`Olá! Vi o site da ${empresa} em ${cidade} e gostaria de ver o cardápio de marmitas congeladas.`);
+      const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
+
+      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-card-wa, #floating-wa').forEach(el => {
+        el.href = defaultWaUrl;
+      });
+
+      document.querySelectorAll('.btn-kit-wa').forEach(btn => {
+        const kit = btn.getAttribute('data-kit');
+        const kMsg = encodeURIComponent(`Olá! Gostaria de pedir o "${kit}" na ${empresa} em ${cidade}. Quais os sabores disponíveis para montar?`);
+        btn.href = `https://wa.me/${whatsapp}?text=${kMsg}`;
+      });
+    });
+  </script>
+</body>
+</html>

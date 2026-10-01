@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Ótica Conceito | Armações Premium & Lentes Multifocais</title>
+  <meta name="description" content="Armações de grifes renomadas, lentes multifocais digitais personalizadas, filtro azul e exame de vista computadorizado com entrega rápida.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --card-bg: #131927;
+      --border-dark: #202b42;
+      --accent-cyan: #38bdf8;
+      --accent-blue: #2563eb;
+      --whatsapp-green: #10b981;
+      --whatsapp-hover: #059669;
+      --text-white: #f8fafc;
+      --text-muted: #94a3b8;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --shadow-optic: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background: #060910;
+      border-bottom: 1px solid var(--border-dark);
+      padding: 8px 0;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-highlight { color: var(--accent-cyan); font-weight: 700; }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(11, 15, 25, 0.96);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-dark);
+      padding: 16px 0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .logo-symbol {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+      color: #0b0f19;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 900;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    }
+    .logo-text h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .logo-text p {
+      font-size: 0.72rem;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-wa {
+      background: var(--whatsapp-green);
+      color: #fff;
+    }
+    .btn-wa:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-2px);
+    }
+    .btn-cyan {
+      background: linear-gradient(135deg, var(--accent-cyan), #0284c7);
+      color: #0b0f19;
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+    }
+    .btn-cyan:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+    }
+    .btn-lg {
+      padding: 16px 36px;
+      font-size: 1rem;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 85px 0 75px;
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.15) 0%, transparent 60%);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 189, 248, 0.15);
+      color: #7dd3fc;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3.3rem;
+      line-height: 1.12;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--accent-cyan); }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .hero-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      box-shadow: var(--shadow-optic);
+      position: relative;
+    }
+    .hero-card-badge {
+      position: absolute;
+      top: -14px;
+      right: 28px;
+      background: var(--accent-cyan);
+      color: #0b0f19;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 9999px;
+    }
+    .hero-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .hero-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+    .optic-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+    .optic-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+    .optic-check {
+      width: 22px;
+      height: 22px;
+      background: rgba(56, 189, 248, 0.2);
+      color: var(--accent-cyan);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    /* PRODUTOS */
+    .section { padding: 80px 0; }
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 50px;
+    }
+    .section-badge {
+      color: var(--accent-cyan);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+    .section-desc { color: var(--text-muted); font-size: 0.95rem; }
+
+    .optic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .optic-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+    .optic-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(56, 189, 248, 0.5);
+      box-shadow: 0 15px 30px rgba(56, 189, 248, 0.12);
+    }
+    .optic-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+    .optic-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .optic-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #060910;
+      color: #64748b;
+      padding: 30px 0;
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border-dark);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* FLOATING WA */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--whatsapp-green);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      z-index: 999;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .optic-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.3rem; }
+      .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div>Ótica Conceito Especializada em Lentes Multifocais em <span id="top-city" class="top-highlight">Campinas - SP</span></div>
+      <div>Exame de Vista Computadorizado | Laboratório Digital com Entrega Expressa</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-symbol">👓</div>
+        <div class="logo-text">
+          <h3 id="brand-name-nav">Óptica Prime Vision</h3>
+          <p>Armações & Alta Tecnologia Visual</p>
+        </div>
+      </a>
+      <a href="#" id="btn-nav-wa" class="btn btn-wa" target="_blank">
+        Consultar Armações
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">Garantia de Adaptação Visual de 100%</div>
+        <h1>Enxergue o mundo com nitidez, <span>conforto</span> e as melhores marcas</h1>
+        <p>
+          Lentes multifocais digitais personalizadas com amplo campo de visão, armações leves em titânio e acetato nobre e tecnologia de filtro de luz azul para proteção contra telas.
+        </p>
+        <a href="#" id="btn-hero-wa" class="btn btn-cyan btn-lg" target="_blank">
+          Agendar Exame de Vista no WhatsApp
+        </a>
+      </div>
+
+      <div>
+        <div class="hero-card">
+          <span class="hero-card-badge">Combo Especial</span>
+          <h3>Armação + Lentes com Desconto</h3>
+          <p>Traga sua receita médica ou faça sua avaliação no laboratório parceiro da ótica.</p>
+          <ul class="optic-features">
+            <li><span class="optic-check">&#10003;</span> Grifes consagradas (Ray-Ban, Oakley, Vogue, Armani)</li>
+            <li><span class="optic-check">&#10003;</span> Lentes digitais antirreflexo e anti-risco ultrarresistentes</li>
+            <li><span class="optic-check">&#10003;</span> Filtro BlueProtect para aliviar a fadiga no celular/PC</li>
+            <li><span class="optic-check">&#10003;</span> Ajuste facial anatômico e estojo rígido premium grátis</li>
+          </ul>
+          <a href="#" id="btn-card-wa" class="btn btn-wa btn-lg" style="width: 100%;" target="_blank">
+            Enviar Receita e Pedir Orçamento
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Tecnologia & Estilo</span>
+        <h2 class="section-title">Nossas Linhas Especializadas</h2>
+        <p class="section-desc">Combinamos a prescrição exata do seu oftalmologista com o design perfeito para o seu rosto.</p>
+      </div>
+
+      <div class="optic-grid">
+        <div class="optic-card">
+          <div>
+            <div class="optic-icon">🔬</div>
+            <h3>Multifocais Digitais Free-Form</h3>
+            <p>Visão suave e sem distorção lateral para perto, meia distância e longe. Adaptação instantânea sem tontura.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-optic-wa" data-opt="Lentes Multifocais" target="_blank">Consultar Multifocais</a>
+        </div>
+
+        <div class="optic-card">
+          <div>
+            <div class="optic-icon">💻</div>
+            <h3>Lentes BlueControl (Filtro Azul)</h3>
+            <p>Bloqueio seletivo da luz azul-violeta nociva emitida por smartphones e computadores. Fim da dor de cabeça e olhos secos.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-optic-wa" data-opt="Lentes Filtro Azul" target="_blank">Proteger Minha Visão</a>
+        </div>
+
+        <div class="optic-card">
+          <div>
+            <div class="optic-icon">☀️</div>
+            <h3>Fotossensíveis (Escurecem no Sol)</h3>
+            <p>Lentes inteligentes que clareiam em ambientes fechados e escurecem automaticamente ao ar livre com 100% de proteção UV.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-optic-wa" data-opt="Lentes Fotossensíveis" target="_blank">Ver Opções no Sol</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">Óptica Prime Vision</h4>
+        <p id="brand-city-footer">Armações Premium & Laboratório Digital | Campinas - SP</p>
+      </div>
+      <div>
+        <p>&copy; 2026. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WA -->
+  <a href="#" id="floating-wa" class="floating-wa" target="_blank">
+    <span>WhatsApp Óptica</span>
+  </a>
+
+  <!-- SCRIPT DINÂMICO VIA URL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const empresa = params.get('empresa') || 'Óptica Prime Vision';
+      const cidade = params.get('cidade') || 'Campinas';
+      const whatsapp = params.get('whatsapp') || '5511913393797';
+
+      document.getElementById('page-title').innerText = `${empresa} | Ótica Especializada em ${cidade}`;
+      document.getElementById('brand-name-nav').innerText = empresa;
+      document.getElementById('brand-name-footer').innerText = empresa;
+      document.getElementById('top-city').innerText = `${cidade} - SP`;
+      document.getElementById('brand-city-footer').innerText = `Armações & Laboratório Digital | ${cidade} - SP`;
+
+      const defaultMsg = encodeURIComponent(`Olá! Vi o site da ${empresa} em ${cidade} e gostaria de consultar valores para óculos de grau.`);
+      const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
+
+      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-card-wa, #floating-wa').forEach(el => {
+        el.href = defaultWaUrl;
+      });
+
+      document.querySelectorAll('.btn-optic-wa').forEach(btn => {
+        const opt = btn.getAttribute('data-opt');
+        const oMsg = encodeURIComponent(`Olá! Gostaria de um orçamento para "${opt}" com a ${empresa} em ${cidade}. Tenho minha receita em mãos.`);
+        btn.href = `https://wa.me/${whatsapp}?text=${oMsg}`;
+      });
+    });
+  </script>
+</body>
+</html>
