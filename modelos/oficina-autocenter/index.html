@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">AutoCenter Especializado | Mecânica & Diagnóstico</title>
+  <title id="page-title">AutoCenter Especializado | Mecânica & Diagnóstico Avançado</title>
   <meta name="description" content="Manutenção automotiva de confiança com diagnóstico eletrônico por scanner, freios, suspensão, revisão preventiva e socorro rápido.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,16 +13,14 @@
       --primary-red: #dc2626;
       --red-hover: #b91c1c;
       --accent-yellow: #f59e0b;
-      --whatsapp-green: #10b981;
-      --whatsapp-hover: #059669;
-      --dark-bg: #090d16;
-      --card-bg: #111827;
-      --border-dark: #1f2937;
-      --text-light: #f3f4f6;
-      --text-muted: #9ca3af;
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 20px;
+      --wa-green: #10b981;
+      --wa-hover: #059669;
+      --dark-bg: #080c14;
+      --card-bg: #101726;
+      --border-dark: #1e293b;
+      --text-light: #f8fafc;
+      --text-muted: #94a3b8;
+      --radius: 14px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,34 +30,32 @@
       background-color: var(--dark-bg);
       color: var(--text-light);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
     /* TOP BAR SOS */
     .top-sos-bar {
       background: #7f1d1d;
       color: #fef2f2;
       font-size: 0.8rem;
-      padding: 8px 0;
+      padding: 9px 0;
       text-align: center;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.04em;
     }
 
     /* NAVBAR */
     .navbar {
-      background: rgba(17, 24, 39, 0.95);
+      background: rgba(16, 23, 38, 0.96);
       backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
       z-index: 100;
       border-bottom: 1px solid var(--border-dark);
-      padding: 14px 0;
+      padding: 16px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
     .nav-inner {
       display: flex;
@@ -78,19 +74,18 @@
       height: 44px;
       background: linear-gradient(135deg, var(--primary-red), #991b1b);
       color: #fff;
-      border-radius: var(--radius-sm);
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Teko', sans-serif;
       font-size: 1.8rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
       box-shadow: 0 4px 14px rgba(220, 38, 38, 0.4);
     }
     .logo-text h3 {
-      font-size: 1.15rem;
-      font-weight: 800;
+      font-size: 1.25rem;
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       line-height: 1.1;
@@ -109,9 +104,9 @@
       justify-content: center;
       gap: 8px;
       padding: 12px 24px;
-      border-radius: var(--radius-sm);
-      font-size: 0.92rem;
-      font-weight: 700;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 800;
       text-decoration: none;
       transition: all 0.25s ease;
       cursor: pointer;
@@ -120,32 +115,31 @@
       letter-spacing: 0.04em;
     }
     .btn-wa {
-      background: var(--whatsapp-green);
+      background: var(--wa-green);
       color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
     }
     .btn-wa:hover {
-      background: var(--whatsapp-hover);
+      background: var(--wa-hover);
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
     }
     .btn-red {
-      background: var(--primary-red);
+      background: linear-gradient(135deg, var(--primary-red), var(--red-hover));
       color: #fff;
-      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.35);
+      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
     }
     .btn-red:hover {
-      background: var(--red-hover);
       transform: translateY(-2px);
-    }
-    .btn-lg {
-      padding: 16px 36px;
-      font-size: 1rem;
+      box-shadow: 0 6px 22px rgba(220, 38, 38, 0.55);
     }
 
     /* HERO */
     .hero {
       position: relative;
-      padding: 80px 0 70px;
-      background: radial-gradient(circle at top right, rgba(220, 38, 38, 0.15) 0%, transparent 60%);
+      padding: 70px 0 85px;
+      background: radial-gradient(circle at 100% 0%, rgba(220, 38, 38, 0.18) 0%, transparent 50%),
+                  var(--dark-bg);
       border-bottom: 1px solid var(--border-dark);
     }
     .hero-grid {
@@ -160,16 +154,16 @@
       gap: 8px;
       background: rgba(220, 38, 38, 0.15);
       color: #f87171;
-      border: 1px solid rgba(220, 38, 38, 0.3);
+      border: 1px solid rgba(220, 38, 38, 0.35);
       padding: 6px 14px;
-      border-radius: 9999px;
+      border-radius: 999px;
       font-size: 0.8rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 20px;
       text-transform: uppercase;
     }
     .hero h1 {
-      font-size: 3.2rem;
+      font-size: 3.3rem;
       line-height: 1.1;
       font-weight: 900;
       margin-bottom: 20px;
@@ -180,151 +174,174 @@
     .hero p {
       font-size: 1.05rem;
       color: var(--text-muted);
-      margin-bottom: 30px;
-      line-height: 1.65;
+      margin-bottom: 34px;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
     }
 
-    .hero-box {
-      background: var(--card-bg);
-      border: 1px solid var(--border-dark);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    .hero-stats-row {
+      display: flex;
+      gap: 30px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border-dark);
     }
-    .hero-box h3 {
-      font-size: 1.3rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      text-transform: uppercase;
+    .hero-stat-item h4 {
+      font-size: 1.6rem;
+      font-weight: 900;
       color: #fff;
     }
-    .hero-box p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-    .fast-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-    .fast-list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.88rem;
-      color: #e5e7eb;
-      font-weight: 600;
-    }
-    .fast-icon {
-      width: 22px;
-      height: 22px;
-      background: rgba(16, 185, 129, 0.2);
-      color: #10b981;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .hero-stat-item p {
       font-size: 0.8rem;
+      color: var(--text-muted);
     }
 
-    /* SERVIÇOS */
-    .section { padding: 80px 0; }
+    /* HERO IMAGE */
+    .hero-img-wrap {
+      position: relative;
+    }
+    .hero-main-photo {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+      border: 2px solid rgba(220, 38, 38, 0.35);
+    }
+    .hero-float-card {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: rgba(16, 23, 38, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--primary-red);
+      padding: 16px 22px;
+      border-radius: 12px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* SERVIÇOS COM FOTOS */
+    .section { padding: 85px 0; }
     .section-header {
       text-align: center;
-      max-width: 650px;
-      margin: 0 auto 50px;
+      max-width: 680px;
+      margin: 0 auto 55px;
     }
     .section-badge {
       color: var(--primary-red);
       font-size: 0.82rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 8px;
       display: block;
     }
     .section-title {
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       font-weight: 900;
+      color: #fff;
       text-transform: uppercase;
       margin-bottom: 14px;
-      letter-spacing: -0.01em;
     }
-    .section-desc { color: var(--text-muted); font-size: 0.95rem; }
+    .section-desc { color: var(--text-muted); font-size: 1rem; }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
+      gap: 30px;
     }
     .service-card {
       background: var(--card-bg);
       border: 1px solid var(--border-dark);
-      border-radius: var(--radius-md);
-      padding: 30px 24px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .service-card:hover {
+      border-color: var(--primary-red);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(220, 38, 38, 0.2);
+    }
+    .service-img-box {
+      height: 200px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover .service-img-box img {
+      transform: scale(1.06);
+    }
+    .service-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(8, 12, 20, 0.85);
+      backdrop-filter: blur(4px);
+      color: #f87171;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(220, 38, 38, 0.35);
+    }
+    .service-body {
+      padding: 24px;
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    .service-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(220, 38, 38, 0.5);
-      box-shadow: 0 15px 30px rgba(220, 38, 38, 0.12);
-    }
-    .service-icon-box {
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
-    .service-card h3 {
-      font-size: 1.25rem;
+    .service-body h3 {
+      font-size: 1.35rem;
       font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 10px;
       color: #fff;
+      margin-bottom: 10px;
+      text-transform: uppercase;
     }
-    .service-card p {
+    .service-body p {
       font-size: 0.88rem;
       color: var(--text-muted);
       line-height: 1.6;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
-
-    /* DIFERENCIAIS */
-    .trust-strip {
-      background: #1f2937;
-      border-top: 1px solid #374151;
-      border-bottom: 1px solid #374151;
-      padding: 40px 0;
-    }
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-      text-align: center;
-    }
-    .trust-item h4 {
-      font-size: 1.1rem;
+    .service-link {
+      font-size: 0.88rem;
       font-weight: 800;
-      color: #fff;
-      margin-bottom: 6px;
+      color: var(--primary-red);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: gap 0.2s;
     }
-    .trust-item p {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
+    .service-link:hover { gap: 10px; }
 
     /* FOOTER */
     .footer {
-      background: #050811;
-      color: #6b7280;
-      padding: 30px 0;
+      background: #04060a;
+      border-top: 1px solid var(--border-dark);
+      padding: 35px 0;
       font-size: 0.82rem;
-      border-top: 1px solid #111827;
+      color: #64748b;
     }
     .footer-inner {
       display: flex;
@@ -335,27 +352,34 @@
     /* FLOATING WA */
     .floating-wa {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: var(--whatsapp-green);
+      bottom: 28px;
+      right: 28px;
+      background: var(--wa-green);
       color: #fff;
       padding: 14px 22px;
-      border-radius: 9999px;
+      border-radius: 999px;
       font-weight: 800;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       display: flex;
       align-items: center;
       gap: 10px;
       text-decoration: none;
-      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.45);
       z-index: 999;
+      transition: all 0.25s ease;
+      border: 2px solid #ffffff;
+    }
+    .floating-wa:hover {
+      transform: scale(1.06);
+      background: var(--wa-hover);
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
-      .trust-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-      .hero h1 { font-size: 2.4rem; }
+      .hero h1 { font-size: 2.3rem; }
+      .hero-main-photo { height: 350px; }
+      .hero-float-card { position: static; margin-top: 15px; }
       .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
     }
   </style>
@@ -364,21 +388,21 @@
 
   <!-- TOP BAR SOS -->
   <div class="top-sos-bar">
-    🚨 Precisa de socorro mecânico ou guincho rápido em <span id="top-city" style="text-decoration: underline;">Campinas</span>? Atendimento prioritário no WhatsApp!
+    🚨 SOS MECÂNICA & GUINCHO RÁPIDO EM <span id="top-city">CAMPINAS</span> | DIAGNÓSTICO ELETRÔNICO NA HORA
   </div>
 
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container nav-inner">
       <a href="#" class="logo">
-        <div class="logo-symbol">AC</div>
+        <div class="logo-symbol">AUTO</div>
         <div class="logo-text">
-          <h3 id="brand-name-nav">AutoCenter Especializado</h3>
-          <p>Mecânica Geral & Injeção Eletrônica</p>
+          <h3 id="brand-name-nav">Veloce Auto Center</h3>
+          <p>Mecânica de Precisão & Performance</p>
         </div>
       </a>
       <a href="#" id="btn-nav-wa" class="btn btn-wa" target="_blank">
-        Pedir Orçamento
+        Orçamento no WhatsApp
       </a>
     </div>
   </nav>
@@ -387,126 +411,102 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="hero-badge">Diagnóstico Computadorizado com Scanner</div>
-        <h1>Mecânica de confiança com <span>preço justo</span> e sem enrolação</h1>
+        <div class="hero-badge">Tecnologia & Equipamentos de Ponta</div>
+        <h1>Manutenção Automotiva com <span>precisão alemã</span> e transparência</h1>
         <p>
-          Cuidamos do seu carro com equipamentos de ponta, peças com garantia de fábrica e orçamento detalhado aprovado por você antes de qualquer serviço.
+          Diagnóstico computadorizado de injeção eletrônica, revisão preventiva para viagens, manutenção de câmbio automático e freios com peças originais e garantia documentada.
         </p>
-        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-          <a href="#" id="btn-hero-wa" class="btn btn-red btn-lg" target="_blank">
-            Agendar Revisão no WhatsApp
+        <div class="hero-actions">
+          <a href="#" id="btn-hero-wa" class="btn btn-red" target="_blank">
+            Agendar Diagnóstico Grátis
           </a>
-          <a href="#" id="btn-hero-sos" class="btn btn-wa btn-lg" target="_blank">
-            Chamar Socorro Imediato
+          <a href="#" id="btn-hero-sos" class="btn btn-wa" target="_blank">
+            Solicitar Guincho SOS
           </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="hero-stat-item">
+            <h4>+8.500</h4>
+            <p>Veículos Revisados</p>
+          </div>
+          <div class="hero-stat-item">
+            <h4>1 Ano</h4>
+            <p>Garantia em Peças</p>
+          </div>
+          <div class="hero-stat-item">
+            <h4>4.9 ★★★★★</h4>
+            <p>Nota Google Avaliações</p>
+          </div>
         </div>
       </div>
 
-      <div>
-        <div class="hero-box">
-          <h3>Revisão Preventiva Rápida</h3>
-          <p>Evite ficar na rua ou gastar o triplo com quebras inesperadas no motor.</p>
-          <ul class="fast-list">
-            <li><span class="fast-icon">&#10003;</span> Scanner eletrônico de injeção e sensores</li>
-            <li><span class="fast-icon">&#10003;</span> Checagem completa de pastilhas e discos de freio</li>
-            <li><span class="fast-icon">&#10003;</span> Inspeção de amortecedores, buchas e suspensão</li>
-            <li><span class="fast-icon">&#10003;</span> Teste de bateria e sistema de carga</li>
-            <li><span class="fast-icon">&#10003;</span> Troca de óleo rápida com lubrificantes homologados</li>
-          </ul>
-          <a href="#" id="btn-box-wa" class="btn btn-wa" style="width: 100%;" target="_blank">
-            Consultar Valor da Revisão
-          </a>
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1000&q=80" alt="Oficina Mecânica Especializada" class="hero-main-photo">
+        <div class="hero-float-card">
+          <div style="font-size: 1.8rem;">🔧</div>
+          <div>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: #fff;">Scanner Bosch KTS</h4>
+            <p style="font-size: 0.76rem; color: #f87171;">Check-up completo em 15 minutos</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TRUST STRIP -->
-  <div class="trust-strip">
-    <div class="container">
-      <div class="trust-grid">
-        <div class="trust-item">
-          <h4>Peças Originais</h4>
-          <p>Garantia de 3 a 12 meses direto com nota fiscal</p>
-        </div>
-        <div class="trust-item">
-          <h4>Orçamento Transparente</h4>
-          <p>Nada é trocado sem sua autorização prévia</p>
-        </div>
-        <div class="trust-item">
-          <h4>Entrega no Prazo</h4>
-          <p>Seu carro pronto no dia combinado</p>
-        </div>
-        <div class="trust-item">
-          <h4>Até 12x no Cartão</h4>
-          <p>Facilidade para não pesar no seu bolso</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- SERVIÇOS -->
-  <section class="section">
+  <section id="servicos" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge">Manutenção Completa</span>
-        <h2 class="section-title">Principais Serviços Especializados</h2>
-        <p class="section-desc">Atendemos todas as marcas nacionais e importadas com mecânicos treinados.</p>
+        <span class="section-badge">Nossos Serviços</span>
+        <h2 class="section-title">Especialidades Mecânicas</h2>
+        <p class="section-desc">Atendimento para todas as marcas nacionais e importadas com ferramental técnico atualizado.</p>
       </div>
 
       <div class="services-grid">
+        <!-- 1 -->
         <div class="service-card">
-          <div>
-            <div class="service-icon-box">💻</div>
-            <h3>Injeção Eletrônica & Scanner</h3>
-            <p>Luz da injeção acesa no painel? Nosso scanner identifica a falha exata sem troca de peças desnecessárias.</p>
+          <div class="service-img-box">
+            <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=800&q=80" alt="Diagnóstico por Scanner">
+            <span class="service-tag">Eletrônica</span>
           </div>
-          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Injeção Eletrônica" target="_blank">Agendar Scanner</a>
+          <div class="service-body">
+            <div>
+              <h3>Diagnóstico Eletrônico & Scanner</h3>
+              <p>Mapeamento de falhas de injeção, sensores, módulos eletrônicos e luz de injeção acesa no painel com precisão cirúrgica.</p>
+            </div>
+            <a href="#" class="service-link btn-service-wa" data-servico="Diagnóstico por Scanner">Agendar Check-up &rarr;</a>
+          </div>
         </div>
 
+        <!-- 2 -->
         <div class="service-card">
-          <div>
-            <div class="service-icon-box">🛑</div>
-            <h3>Freios & ABS</h3>
-            <p>Troca de pastilhas, discos, fluido de freio DOT4 e sangria completa do sistema para frenagem segura.</p>
+          <div class="service-img-box">
+            <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=800&q=80" alt="Freios e Suspensão">
+            <span class="service-tag">Segurança</span>
           </div>
-          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Freios & ABS" target="_blank">Revisar Freios</a>
+          <div class="service-body">
+            <div>
+              <h3>Freios & Suspensão Completa</h3>
+              <p>Troca de pastilhas, discos, fluido de freio DOT 4/5.1, amortecedores pressurizados e alinhamento 3D a laser.</p>
+            </div>
+            <a href="#" class="service-link btn-service-wa" data-servico="Freios e Suspensão">Consultar Valores &rarr;</a>
+          </div>
         </div>
 
+        <!-- 3 -->
         <div class="service-card">
-          <div>
-            <div class="service-icon-box">🚗</div>
-            <h3>Suspensão & Amortecedores</h3>
-            <p>Barulho em buracos e instabilidade? Avaliamos pivôs, bandejas, terminais e amortecedores com precisão.</p>
+          <div class="service-img-box">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Câmbio Automático e Óleo">
+            <span class="service-tag">Transmissão</span>
           </div>
-          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Suspensão" target="_blank">Orçar Suspensão</a>
-        </div>
-
-        <div class="service-card">
-          <div>
-            <div class="service-icon-box">🛢️</div>
-            <h3>Troca de Óleo & Filtros</h3>
-            <p>Lubrificantes sintéticos e semi-sintéticos com especificação correta para a vida útil do seu motor.</p>
+          <div class="service-body">
+            <div>
+              <h3>Câmbio Automático & Diálise</h3>
+              <p>Troca de óleo de transmissão 100% por máquina de diálise, prevenindo trancos, desgastes e quebras de alto custo.</p>
+            </div>
+            <a href="#" class="service-link btn-service-wa" data-servico="Câmbio Automático">Solicitar Orçamento &rarr;</a>
           </div>
-          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Troca de Óleo" target="_blank">Ver Opções de Óleo</a>
-        </div>
-
-        <div class="service-card">
-          <div>
-            <div class="service-icon-box">❄️</div>
-            <h3>Ar Condicionado Automotivo</h3>
-            <p>Higienização com ozônio, recarga de gás ecológica e troca de filtro de cabine para ar gelando de verdade.</p>
-          </div>
-          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Ar Condicionado" target="_blank">Higienizar Ar</a>
-        </div>
-
-        <div class="service-card">
-          <div>
-            <div class="service-icon-box">⚙️</div>
-            <h3>Correia Dentada & Embreagem</h3>
-            <p>Troca preventiva de correias, tensores e kit de embreagem macia para não correr risco de quebra de válvulas.</p>
-          </div>
-          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Correia e Embreagem" target="_blank">Consultar Preço</a>
         </div>
       </div>
     </div>
@@ -516,8 +516,8 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div>
-        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">AutoCenter Especializado</h4>
-        <p id="brand-city-footer">Centro Automotivo & Diagnóstico Computadorizado | Campinas - SP</p>
+        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">Veloce Auto Center</h4>
+        <p id="brand-city-footer">Oficina Credenciada &bull; Campinas - SP</p>
       </div>
       <div>
         <p>&copy; 2026. Todos os direitos reservados.</p>
@@ -527,41 +527,38 @@
 
   <!-- FLOATING WA -->
   <a href="#" id="floating-wa" class="floating-wa" target="_blank">
-    <span>WhatsApp Oficina</span>
+    <span>Orçamento WhatsApp</span>
   </a>
 
   <!-- SCRIPT DINÂMICO VIA URL -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
-      const empresa = params.get('empresa') || 'AutoCenter Especializado';
+      const empresa = params.get('empresa') || 'Veloce Auto Center';
       const cidade = params.get('cidade') || 'Campinas';
       const whatsapp = params.get('whatsapp') || '5511913393797';
 
-      // Textos
-      document.getElementById('page-title').innerText = `${empresa} | Oficina Mecânica em ${cidade}`;
+      document.getElementById('page-title').innerText = `${empresa} | Auto Center em ${cidade}`;
       document.getElementById('brand-name-nav').innerText = empresa;
       document.getElementById('brand-name-footer').innerText = empresa;
-      document.getElementById('top-city').innerText = cidade;
-      document.getElementById('brand-city-footer').innerText = `Centro Automotivo & Diagnóstico | ${cidade} - SP`;
+      document.getElementById('top-city').innerText = cidade.toUpperCase();
+      document.getElementById('brand-city-footer').innerText = `Oficina Credenciada • ${cidade} - SP`;
 
-      // Links do WhatsApp
-      const defaultMsg = encodeURIComponent(`Olá! Vi o site da ${empresa} em ${cidade} e gostaria de agendar uma revisão para o meu carro.`);
-      const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
+      const msg = encodeURIComponent(`Olá! Estava no site da ${empresa} em ${cidade} e gostaria de um orçamento mecânico para o meu veículo.`);
+      const waUrl = `https://wa.me/${whatsapp}?text=${msg}`;
 
-      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-box-wa, #floating-wa').forEach(el => {
-        el.href = defaultWaUrl;
-      });
-
-      // SOS
-      const sosMsg = encodeURIComponent(`URGENTE: Olá! Meu carro deu problema em ${cidade} e preciso de assistência mecânica ou guincho da ${empresa}!`);
+      const sosMsg = encodeURIComponent(`🚨 SOCORRO GUINCHO: Meu veículo quebrou em ${cidade} e preciso de assistência da ${empresa}.`);
       document.getElementById('btn-hero-sos').href = `https://wa.me/${whatsapp}?text=${sosMsg}`;
 
-      // Botões individuais de serviço
+      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #floating-wa').forEach(el => {
+        el.href = waUrl;
+      });
+
       document.querySelectorAll('.btn-service-wa').forEach(btn => {
-        const serv = btn.getAttribute('data-serv');
-        const sMsg = encodeURIComponent(`Olá! Gostaria de um orçamento para o serviço de "${serv}" na ${empresa} em ${cidade}. Qual modelo e ano do carro devo informar?`);
+        const servico = btn.getAttribute('data-servico') || 'Serviço Mecânico';
+        const sMsg = encodeURIComponent(`Olá! Gostaria de um orçamento para "${servico}" na ${empresa} em ${cidade}.`);
         btn.href = `https://wa.me/${whatsapp}?text=${sMsg}`;
+        btn.target = '_blank';
       });
     });
   </script>

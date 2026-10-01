@@ -7,23 +7,21 @@
   <meta name="description" content="A mais refinada experiência da culinária japonesa: peixes frescos selecionados, festivais exclusivos, combinados de salmão e delivery premium.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-dark: #0a0a0d;
-      --card-bg: #131318;
-      --border-dark: #22222b;
+      --bg-dark: #07070a;
+      --card-bg: #111116;
+      --border-dark: #1f1f28;
       --accent-red: #e11d48;
+      --accent-red-hover: #be123c;
       --accent-gold: #c5a059;
       --gold-light: #fef08a;
       --text-main: #f4f4f5;
       --text-muted: #a1a1aa;
-      --whatsapp-green: #10b981;
-      --whatsapp-hover: #059669;
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 22px;
-      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.6);
+      --wa-green: #10b981;
+      --wa-hover: #059669;
+      --radius: 16px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -36,15 +34,11 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
     /* TOP BAR */
     .top-bar {
-      background: #050507;
+      background: #030305;
       border-bottom: 1px solid var(--border-dark);
       padding: 9px 0;
       font-size: 0.8rem;
@@ -55,17 +49,18 @@
       justify-content: space-between;
       align-items: center;
     }
-    .top-highlight { color: var(--accent-gold); font-weight: 600; }
+    .top-highlight { color: var(--accent-gold); font-weight: 700; }
 
     /* NAVBAR */
     .navbar {
-      background: rgba(10, 10, 13, 0.95);
-      backdrop-filter: blur(12px);
+      background: rgba(7, 7, 10, 0.96);
+      backdrop-filter: blur(14px);
       position: sticky;
       top: 0;
       z-index: 100;
       border-bottom: 1px solid var(--border-dark);
       padding: 16px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
     .nav-inner {
       display: flex;
@@ -80,8 +75,8 @@
       color: #fff;
     }
     .logo-symbol {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       background: linear-gradient(135deg, var(--accent-red), #9f1239);
       color: #fff;
       border-radius: 50%;
@@ -89,22 +84,23 @@
       align-items: center;
       justify-content: center;
       font-family: 'Cinzel', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
+      font-size: 1.4rem;
+      font-weight: 800;
       box-shadow: 0 4px 15px rgba(225, 29, 72, 0.4);
     }
     .logo-text h3 {
       font-family: 'Cinzel', serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
       line-height: 1.1;
     }
     .logo-text p {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: var(--accent-gold);
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+      font-weight: 700;
     }
 
     .btn {
@@ -113,45 +109,45 @@
       justify-content: center;
       gap: 8px;
       padding: 12px 24px;
-      border-radius: 9999px;
+      border-radius: 999px;
       font-size: 0.92rem;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
       transition: all 0.25s ease;
       cursor: pointer;
       border: none;
     }
     .btn-wa {
-      background: var(--whatsapp-green);
+      background: var(--wa-green);
       color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
     }
     .btn-wa:hover {
-      background: var(--whatsapp-hover);
+      background: var(--wa-hover);
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
     }
     .btn-red {
-      background: linear-gradient(135deg, var(--accent-red), #be123c);
+      background: linear-gradient(135deg, var(--accent-red), var(--accent-red-hover));
       color: #fff;
-      box-shadow: 0 4px 15px rgba(225, 29, 72, 0.35);
+      box-shadow: 0 4px 15px rgba(225, 29, 72, 0.4);
     }
     .btn-red:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 22px rgba(225, 29, 72, 0.5);
+      box-shadow: 0 6px 22px rgba(225, 29, 72, 0.6);
     }
     .btn-gold {
       background: linear-gradient(135deg, #c5a059, #99742e);
-      color: #fff;
-    }
-    .btn-lg {
-      padding: 16px 36px;
-      font-size: 1rem;
+      color: #07070a;
+      font-weight: 800;
     }
 
     /* HERO */
     .hero {
       position: relative;
-      padding: 85px 0 75px;
-      background: radial-gradient(circle at top right, rgba(225, 29, 72, 0.15) 0%, transparent 60%);
+      padding: 75px 0 85px;
+      background: radial-gradient(circle at 100% 0%, rgba(225, 29, 72, 0.15) 0%, transparent 50%),
+                  var(--bg-dark);
       border-bottom: 1px solid var(--border-dark);
     }
     .hero-grid {
@@ -166,99 +162,93 @@
       gap: 8px;
       background: rgba(197, 160, 89, 0.12);
       color: #eab308;
-      border: 1px solid rgba(197, 160, 89, 0.3);
+      border: 1px solid rgba(197, 160, 89, 0.35);
       padding: 6px 16px;
-      border-radius: 9999px;
+      border-radius: 999px;
       font-size: 0.82rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 20px;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
     .hero h1 {
       font-family: 'Cinzel', serif;
       font-size: 3.3rem;
       line-height: 1.15;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 20px;
       color: #fff;
     }
     .hero h1 span { color: var(--accent-gold); }
     .hero p {
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       color: var(--text-muted);
-      margin-bottom: 32px;
+      margin-bottom: 34px;
       line-height: 1.7;
     }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
 
-    .hero-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-dark);
-      border-radius: var(--radius-lg);
-      padding: 34px 28px;
-      box-shadow: var(--shadow-soft);
+    .hero-stats-row {
+      display: flex;
+      gap: 30px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border-dark);
+    }
+    .hero-stat-item h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+    }
+    .hero-stat-item p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* HERO IMAGE */
+    .hero-img-wrap {
       position: relative;
     }
-    .hero-card-badge {
+    .hero-main-photo {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+      border: 2px solid rgba(225, 29, 72, 0.35);
+    }
+    .hero-float-card {
       position: absolute;
-      top: -14px;
-      right: 28px;
-      background: linear-gradient(135deg, var(--accent-red), #9f1239);
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 5px 14px;
-      border-radius: 9999px;
-    }
-    .hero-card h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.55rem;
-      margin-bottom: 12px;
-      color: #fff;
-    }
-    .hero-card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
-    .sushi-list {
-      list-style: none;
+      bottom: -20px;
+      left: -20px;
+      background: rgba(17, 17, 22, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--accent-red);
+      padding: 16px 22px;
+      border-radius: 12px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
       display: flex;
-      flex-direction: column;
+      align-items: center;
       gap: 12px;
-      margin-bottom: 28px;
-    }
-    .sushi-list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.88rem;
-      color: #e4e4e7;
-    }
-    .sushi-dot {
-      width: 20px;
-      height: 20px;
-      background: rgba(225, 29, 72, 0.2);
-      color: #fda4af;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 800;
     }
 
-    /* CARDÁPIO SEÇÃO */
-    .section { padding: 80px 0; }
+    /* CARDÁPIO COM FOTOS */
+    .section { padding: 85px 0; }
     .section-header {
       text-align: center;
-      max-width: 650px;
-      margin: 0 auto 50px;
+      max-width: 680px;
+      margin: 0 auto 55px;
     }
     .section-badge {
       color: var(--accent-gold);
       font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      font-weight: 800;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 8px;
       display: block;
@@ -266,82 +256,99 @@
     .section-title {
       font-family: 'Cinzel', serif;
       font-size: 2.6rem;
+      color: #fff;
       margin-bottom: 14px;
-      line-height: 1.15;
     }
-    .section-desc { color: var(--text-muted); font-size: 0.95rem; }
+    .section-desc { color: var(--text-muted); font-size: 1rem; }
 
     .menu-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 30px;
     }
-    .menu-card {
+    .sushi-card {
       background: var(--card-bg);
       border: 1px solid var(--border-dark);
-      border-radius: var(--radius-md);
-      padding: 30px 24px;
+      border-radius: var(--radius);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
-    .menu-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(197, 160, 89, 0.4);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    .sushi-card:hover {
+      border-color: var(--accent-red);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(225, 29, 72, 0.2);
     }
-    .menu-card-price {
-      font-size: 1.35rem;
-      font-weight: 800;
+    .sushi-img-box {
+      height: 200px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .sushi-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .sushi-card:hover .sushi-img-box img {
+      transform: scale(1.06);
+    }
+    .sushi-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(7, 7, 10, 0.85);
+      backdrop-filter: blur(4px);
       color: var(--accent-gold);
-      margin-bottom: 12px;
-      display: block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(197, 160, 89, 0.35);
     }
-    .menu-card h3 {
+    .sushi-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .sushi-body h3 {
       font-family: 'Cinzel', serif;
-      font-size: 1.35rem;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-    .menu-card p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 22px;
-    }
-
-    /* DIFERENCIAIS */
-    .diff-strip {
-      background: #101015;
-      border-top: 1px solid var(--border-dark);
-      border-bottom: 1px solid var(--border-dark);
-      padding: 50px 0;
-    }
-    .diff-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-      text-align: center;
-    }
-    .diff-item h4 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.15rem;
+      font-size: 1.4rem;
       color: #fff;
       margin-bottom: 8px;
     }
-    .diff-item p {
-      font-size: 0.82rem;
+    .sushi-body p {
+      font-size: 0.88rem;
       color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .sushi-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-dark);
+      padding-top: 16px;
+    }
+    .sushi-price {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--accent-gold);
     }
 
     /* FOOTER */
     .footer {
-      background: #050507;
-      color: #71717a;
-      padding: 30px 0;
-      font-size: 0.82rem;
+      background: #030305;
       border-top: 1px solid var(--border-dark);
+      padding: 35px 0;
+      font-size: 0.82rem;
+      color: #71717a;
     }
     .footer-inner {
       display: flex;
@@ -352,27 +359,34 @@
     /* FLOATING WA */
     .floating-wa {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: var(--whatsapp-green);
+      bottom: 28px;
+      right: 28px;
+      background: var(--wa-green);
       color: #fff;
       padding: 14px 22px;
-      border-radius: 9999px;
-      font-weight: 700;
-      font-size: 0.95rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.92rem;
       display: flex;
       align-items: center;
       gap: 10px;
       text-decoration: none;
-      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.45);
       z-index: 999;
+      transition: all 0.25s ease;
+      border: 2px solid #ffffff;
+    }
+    .floating-wa:hover {
+      transform: scale(1.06);
+      background: var(--wa-hover);
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; }
       .menu-grid { grid-template-columns: 1fr; }
-      .diff-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-      .hero h1 { font-size: 2.3rem; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-main-photo { height: 350px; }
+      .hero-float-card { position: static; margin-top: 15px; }
       .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
     }
   </style>
@@ -382,8 +396,8 @@
   <!-- TOP BAR -->
   <div class="top-bar">
     <div class="container top-bar-inner">
-      <div>Experiência Gastronômica & Delivery Exclusivo em <span id="top-city" class="top-highlight">Campinas</span></div>
-      <div>Terça a Domingo: 18h30 às 23h30 | Almoço Sex, Sáb e Dom: 12h às 15h</div>
+      <div>Experiência Gastronômica Oriental em <span id="top-city" class="top-highlight">Campinas</span></div>
+      <div>Salmão Fresco Norueguês &bull; Festival Exclusivo &bull; Reservas e Delivery VIP</div>
     </div>
   </div>
 
@@ -393,12 +407,12 @@
       <a href="#" class="logo">
         <div class="logo-symbol">鮨</div>
         <div class="logo-text">
-          <h3 id="brand-name-nav">Kuro Contemporâneo</h3>
-          <p>Sushi Bar & Omakase</p>
+          <h3 id="brand-name-nav">Komorebi Sushi Bar</h3>
+          <p>Culinária Japonesa de Origem</p>
         </div>
       </a>
       <a href="#" id="btn-nav-wa" class="btn btn-wa" target="_blank">
-        Pedir no WhatsApp
+        Reservar Mesa no WhatsApp
       </a>
     </div>
   </nav>
@@ -407,102 +421,111 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="hero-tag">Peixes Nobres & Salmão Fresco Diário</div>
-        <h1>A arte milenar japonesa com o toque da <span>alta gastronomia</span></h1>
+        <div class="hero-tag">Peixes Nobres de Corte Diário</div>
+        <h1>A arte e sofisticação da alta gastronomia <span>japonesa contemporânea</span></h1>
         <p>
-          Cortes precisos, matérias-primas selecionadas e uma experiência que desperta todos os seus sentidos, tanto no nosso salão intimista quanto no conforto da sua casa.
+          Combinados artesanais montados na hora pelo Sushiman, sashimis curados com azeite trufado, niguiris maçaricados com flor de sal e festivais à vontade.
         </p>
-        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-          <a href="#" id="btn-hero-wa" class="btn btn-red btn-lg" target="_blank">
-            Ver Cardápio & Fazer Pedido
+        <div class="hero-actions">
+          <a href="#cardapio" class="btn btn-red">
+            Conhecer o Cardápio
           </a>
-          <a href="#" id="btn-hero-reserva" class="btn btn-gold btn-lg" target="_blank">
-            Reservar Mesa no Salão
+          <a href="#" id="btn-hero-wa" class="btn btn-wa" target="_blank">
+            Fazer Pedido Delivery
           </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="hero-stat-item">
+            <h4>100%</h4>
+            <p>Salmão Premium Certificado</p>
+          </div>
+          <div class="hero-stat-item">
+            <h4>4.9 ★★★★★</h4>
+            <p>Avaliação Google</p>
+          </div>
+          <div class="hero-stat-item">
+            <h4>35 min</h4>
+            <p>Média Delivery Térmico</p>
+          </div>
         </div>
       </div>
 
-      <div>
-        <div class="hero-card">
-          <span class="hero-card-badge">Zero Taxas</span>
-          <h3>Delivery Direto Kuro</h3>
-          <p>Embalagens térmicas especiais desenvolvidas para manter o frescor dos sashimis e a temperatura ideal dos pratos quentes.</p>
-          <ul class="sushi-list">
-            <li><span class="sushi-dot">&#10003;</span> Salmão e atum frescos fatiados após o pedido</li>
-            <li><span class="sushi-dot">&#10003;</span> Shoyu artesanal e wasabi fresco de verdade</li>
-            <li><span class="sushi-dot">&#10003;</span> Sem taxas abusivas de aplicativos de entrega</li>
-            <li><span class="sushi-dot">&#10003;</span> Tempo estimado de entrega informado em tempo real</li>
-          </ul>
-          <a href="#" id="btn-card-wa" class="btn btn-wa btn-lg" style="width: 100%;" target="_blank">
-            Pedir pelo WhatsApp
-          </a>
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1000&q=80" alt="Sushi Contemporâneo Salmão" class="hero-main-photo">
+        <div class="hero-float-card">
+          <div style="font-size: 1.8rem;">🥢</div>
+          <div>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: #fff;">Omakase do Chef</h4>
+            <p style="font-size: 0.76rem; color: var(--accent-gold);">Criações exclusivas da temporada</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DIFERENCIAIS -->
-  <div class="diff-strip">
-    <div class="container">
-      <div class="diff-grid">
-        <div class="diff-item">
-          <h4>Peixes Frescos</h4>
-          <p>Fornecedores homologados e recebimento diário</p>
-        </div>
-        <div class="diff-item">
-          <h4>Arroz Shari Perfeito</h4>
-          <p>Tempero tradicional com vinagre nobre importado</p>
-        </div>
-        <div class="diff-item">
-          <h4>Embalagem Térmica</h4>
-          <p>O peixe chega impecável e gelado na sua mesa</p>
-        </div>
-        <div class="diff-item">
-          <h4>Atendimento Rápido</h4>
-          <p>Confirmação imediata do pedido pelo WhatsApp</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CARDÁPIO DESTAQUES -->
-  <section class="section">
+  <!-- CARDÁPIO -->
+  <section id="cardapio" class="section">
     <div class="container">
       <div class="section-header">
         <span class="section-badge">Seleção do Chef</span>
-        <h2 class="section-title">Combinados Mais Pedidos</h2>
-        <p class="section-desc">Criações autorais e os clássicos mais amados da culinária nipônica.</p>
+        <h2 class="section-title">Combinados & Destaques</h2>
+        <p class="section-desc">Ingredientes importados e frescor absoluto em cada peça.</p>
       </div>
 
       <div class="menu-grid">
-        <!-- COMBINADO 1 -->
-        <div class="menu-card">
-          <div>
-            <span class="menu-card-price">R$ 89,90</span>
-            <h3>Combinado Salmão Premium (24 Peças)</h3>
-            <p>8 Sashimis de salmão maçaricado com azeite trufado, 4 Joy de salmão com cream cheese e geleia de pimenta, 4 Uramakis especiais e 8 Hot Rolls crocantes.</p>
+        <!-- 1 -->
+        <div class="sushi-card">
+          <div class="sushi-img-box">
+            <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=800&q=80" alt="Combinado Omakase Salmão">
+            <span class="sushi-tag">Mais Pedido</span>
           </div>
-          <a href="#" class="btn btn-wa btn-combo-wa" data-combo="Combinado Salmão Premium (24 Peças)" target="_blank">Pedir Este Combinado</a>
+          <div class="sushi-body">
+            <div>
+              <h3>Combinado Omakase Gold (32 peças)</h3>
+              <p>Sashimis maçaricados com azeite trufado e flor de sal, niguiris de salmão com raspas de limão siciliano, dyo de codorna e uramakis especiais.</p>
+            </div>
+            <div class="sushi-bottom">
+              <span class="sushi-price">R$ 139</span>
+              <a href="#" class="btn btn-wa btn-sushi-item" data-item="Combinado Omakase Gold (32 peças)" data-price="139">Pedir &rarr;</a>
+            </div>
+          </div>
         </div>
 
-        <!-- COMBINADO 2 -->
-        <div class="menu-card">
-          <div>
-            <span class="menu-card-price">R$ 139,90</span>
-            <h3>Festival do Chef (40 Peças)</h3>
-            <p>12 Sashimis variados (salmão, atum e peixe branco do dia), 8 Niguiris maçaricados, 8 Uramakis Philadelphia, 6 Joys de camarão empanado e 6 Hots especiais.</p>
+        <!-- 2 -->
+        <div class="sushi-card">
+          <div class="sushi-img-box">
+            <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80" alt="Hot Roll Especial">
+            <span class="sushi-tag">Crocante & Quente</span>
           </div>
-          <a href="#" class="btn btn-wa btn-combo-wa" data-combo="Festival do Chef (40 Peças)" target="_blank">Pedir Este Combinado</a>
+          <div class="sushi-body">
+            <div>
+              <h3>Hot Roll Trufado Crispy (10 peças)</h3>
+              <p>Roll empanado na farinha panko ultra crocante, recheado com salmão e cream cheese Philadelphia, finalizado com couve crispy e tarê artesanal.</p>
+            </div>
+            <div class="sushi-bottom">
+              <span class="sushi-price">R$ 48</span>
+              <a href="#" class="btn btn-wa btn-sushi-item" data-item="Hot Roll Trufado Crispy" data-price="48">Pedir &rarr;</a>
+            </div>
+          </div>
         </div>
 
-        <!-- COMBINADO 3 -->
-        <div class="menu-card">
-          <div>
-            <span class="menu-card-price">R$ 49,90</span>
-            <h3>Duo de Temakis Especiais</h3>
-            <p>2 Temakis generosos à sua escolha: Salmão Completo com cebolinha e cream cheese ou Salmão Empanado crocante com molho tarê artesanal.</p>
+        <!-- 3 -->
+        <div class="sushi-card">
+          <div class="sushi-img-box">
+            <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80" alt="Festival Completo na Mesa">
+            <span class="sushi-tag">Experiência Salão</span>
           </div>
-          <a href="#" class="btn btn-wa btn-combo-wa" data-combo="Duo de Temakis Especiais" target="_blank">Pedir Este Combinado</a>
+          <div class="sushi-body">
+            <div>
+              <h3>Festival Completo à Vontade</h3>
+              <p>Entradas quentes (shimeji, guioza, harumaki), carpaccio de salmão trufado, combinados ilimitados e sobremesa especial da casa.</p>
+            </div>
+            <div class="sushi-bottom">
+              <span class="sushi-price">R$ 119<span style="font-size: 0.8rem; color: #a1a1aa;">/pessoa</span></span>
+              <a href="#" class="btn btn-wa btn-sushi-item" data-item="Festival Completo à Vontade" data-price="119">Reservar &rarr;</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -512,8 +535,8 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div>
-        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">Kuro Sushi Bar Contemporâneo</h4>
-        <p id="brand-city-footer">Alta Gastronomia Japonesa | Campinas - SP</p>
+        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">Komorebi Sushi Bar</h4>
+        <p id="brand-city-footer">Alta Culinária Japonesa &bull; Campinas - SP</p>
       </div>
       <div>
         <p>&copy; 2026. Todos os direitos reservados.</p>
@@ -523,37 +546,36 @@
 
   <!-- FLOATING WA -->
   <a href="#" id="floating-wa" class="floating-wa" target="_blank">
-    <span>WhatsApp Delivery</span>
+    <span>WhatsApp Sushi</span>
   </a>
 
   <!-- SCRIPT DINÂMICO VIA URL -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
-      const empresa = params.get('empresa') || 'Kuro Sushi Bar Contemporâneo';
+      const empresa = params.get('empresa') || 'Komorebi Sushi Bar';
       const cidade = params.get('cidade') || 'Campinas';
       const whatsapp = params.get('whatsapp') || '5511913393797';
 
-      document.getElementById('page-title').innerText = `${empresa} | Restaurante Japonês em ${cidade}`;
+      document.getElementById('page-title').innerText = `${empresa} | Sushi Contemporâneo em ${cidade}`;
       document.getElementById('brand-name-nav').innerText = empresa;
       document.getElementById('brand-name-footer').innerText = empresa;
       document.getElementById('top-city').innerText = cidade;
-      document.getElementById('brand-city-footer').innerText = `Alta Gastronomia Japonesa | ${cidade} - SP`;
+      document.getElementById('brand-city-footer').innerText = `Alta Culinária Japonesa • ${cidade} - SP`;
 
-      const defaultMsg = encodeURIComponent(`Olá! Vi o site do ${empresa} em ${cidade} e gostaria de ver o cardápio de delivery.`);
-      const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
+      const msg = encodeURIComponent(`Olá! Gostaria de fazer uma reserva ou pedido delivery no ${empresa} em ${cidade}.`);
+      const waUrl = `https://wa.me/${whatsapp}?text=${msg}`;
 
-      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-card-wa, #floating-wa').forEach(el => {
-        el.href = defaultWaUrl;
+      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #floating-wa').forEach(el => {
+        el.href = waUrl;
       });
 
-      const reservaMsg = encodeURIComponent(`Olá! Gostaria de consultar disponibilidade para reserva de mesa no ${empresa} em ${cidade}.`);
-      document.getElementById('btn-hero-reserva').href = `https://wa.me/${whatsapp}?text=${reservaMsg}`;
-
-      document.querySelectorAll('.btn-combo-wa').forEach(btn => {
-        const combo = btn.getAttribute('data-combo');
-        const cMsg = encodeURIComponent(`Olá! Gostaria de pedir o "${combo}" no delivery do ${empresa} em ${cidade}.`);
-        btn.href = `https://wa.me/${whatsapp}?text=${cMsg}`;
+      document.querySelectorAll('.btn-sushi-item').forEach(btn => {
+        const item = btn.getAttribute('data-item');
+        const price = btn.getAttribute('data-price');
+        const sMsg = encodeURIComponent(`Olá! Gostaria de pedir "${item}" (R$ ${price}) no ${empresa} em ${cidade}.`);
+        btn.href = `https://wa.me/${whatsapp}?text=${sMsg}`;
+        btn.target = '_blank';
       });
     });
   </script>

@@ -3,56 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Pizzaria Tradicional | Forno à Lenha & Delivery</title>
-  <meta name="description" content="Pizzas artesanais com massa de fermentação natural, forno à lenha e entrega quentinha. Peça no WhatsApp!">
+  <title id="page-title">Pizzaria Tradicional | Forno à Lenha & Delivery Rápido</title>
+  <meta name="description" content="Pizzas artesanais com massa de fermentação natural de 48h, forno à lenha e entrega quentinha. Peça no WhatsApp sem taxas!">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --terracotta: #c2410c;
       --terracotta-dark: #9a3412;
       --gold-crust: #d97706;
-      --basil-green: #15803d;
-      --bg: #0f0a07;
-      --surface: #18110c;
-      --card: #201712;
-      --border: #332219;
+      --gold-light: #fef3c7;
+      --bg: #0c0806;
+      --surface: #140e0a;
+      --card: #1c140e;
+      --border: #291c14;
       --text: #fef3c7;
       --text-muted: #d6d3d1;
       --wa-green: #10b981;
       --wa-hover: #059669;
+      --radius: 16px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
     /* TOP LIVE */
     .top-live {
-      background: #18110c;
+      background: #140e0a;
       border-bottom: 1px solid var(--border);
       padding: 9px 0;
       font-size: 0.8rem;
       text-align: center;
       color: var(--gold-crust);
+      font-weight: 700;
     }
 
     /* HEADER */
     .header {
-      background: rgba(15, 10, 7, 0.95);
-      backdrop-filter: blur(10px);
+      background: rgba(12, 8, 6, 0.96);
+      backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
       z-index: 100;
       border-bottom: 1px solid var(--border);
       padding: 16px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
     .header-inner {
       display: flex;
@@ -68,247 +73,484 @@
     }
     .brand-pizza h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.45rem;
+      font-size: 1.5rem;
       color: #fff;
+      line-height: 1.1;
     }
     .brand-pizza span {
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       color: var(--gold-crust);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
+      font-weight: 700;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 12px 22px;
-      font-size: 0.88rem;
-      font-weight: 700;
+      padding: 12px 24px;
+      font-size: 0.9rem;
+      font-weight: 800;
       border-radius: 999px;
       text-decoration: none;
       cursor: pointer;
       transition: all 0.25s ease;
       border: none;
     }
-    .btn-wa { background: var(--wa-green); color: #fff; }
-    .btn-wa:hover { background: var(--wa-hover); transform: translateY(-2px); }
-    .btn-pizza { background: var(--terracotta); color: #fff; }
-    .btn-pizza:hover { background: var(--terracotta-dark); transform: translateY(-2px); }
+    .btn-wa {
+      background: var(--wa-green);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+    }
+    .btn-wa:hover {
+      background: var(--wa-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+    }
+    .btn-pizza {
+      background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(194, 65, 12, 0.4);
+    }
+    .btn-pizza:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(194, 65, 12, 0.55);
+    }
 
     /* HERO */
     .hero {
-      padding: 70px 0 80px;
-      text-align: center;
-      background: radial-gradient(circle at 50% 20%, rgba(194, 65, 12, 0.2) 0%, transparent 60%);
+      position: relative;
+      padding: 70px 0 85px;
+      background: radial-gradient(circle at 100% 0%, rgba(194, 65, 12, 0.18) 0%, transparent 50%),
+                  #0c0806;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
     }
     .hero-badge {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       background: rgba(194, 65, 12, 0.2);
       border: 1px solid var(--terracotta);
       color: #fed7aa;
       font-size: 0.8rem;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
-      padding: 6px 18px;
+      padding: 6px 16px;
       border-radius: 999px;
       margin-bottom: 20px;
     }
     .hero-title {
       font-family: 'Playfair Display', serif;
       font-size: 3.4rem;
-      line-height: 1.15;
-      margin-bottom: 18px;
+      line-height: 1.12;
+      margin-bottom: 20px;
       color: #fff;
     }
     .hero-title span { color: var(--gold-crust); }
     .hero-sub {
       font-size: 1.1rem;
       color: var(--text-muted);
-      max-width: 650px;
-      margin: 0 auto 35px;
+      margin-bottom: 34px;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
     }
 
-    /* CARDÁPIO */
+    .hero-stats-row {
+      display: flex;
+      gap: 30px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
+    }
+    .hero-stat-item h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--gold-crust);
+    }
+    .hero-stat-item p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* HERO IMAGE */
+    .hero-img-wrap {
+      position: relative;
+    }
+    .hero-main-photo {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+      border: 2px solid rgba(217, 119, 6, 0.4);
+    }
+    .hero-float-card {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: rgba(20, 14, 10, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--terracotta);
+      padding: 16px 22px;
+      border-radius: 12px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* CARDÁPIO COM FOTOS */
+    .section { padding: 85px 0; }
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 55px;
+    }
+    .section-badge {
+      color: var(--gold-crust);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .section-desc { color: var(--text-muted); font-size: 1rem; }
+
     .menu-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin: 40px 0;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
     }
     .pizza-card {
-      background: var(--surface);
+      background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
+      border-radius: var(--radius);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: all 0.25s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
     .pizza-card:hover {
       border-color: var(--terracotta);
-      transform: translateY(-4px);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(194, 65, 12, 0.2);
     }
-    .pizza-card h3 {
+    .pizza-img-box {
+      height: 200px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .pizza-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .pizza-card:hover .pizza-img-box img {
+      transform: scale(1.06);
+    }
+    .pizza-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(12, 8, 6, 0.85);
+      backdrop-filter: blur(4px);
+      color: var(--gold-crust);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(217, 119, 6, 0.35);
+    }
+    .pizza-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .pizza-body h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       color: #fff;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
-    .pizza-card p {
-      font-size: 0.85rem;
+    .pizza-body p {
+      font-size: 0.88rem;
       color: var(--text-muted);
       line-height: 1.5;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
     .pizza-bottom {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
     }
     .pizza-price {
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       font-weight: 800;
       color: var(--gold-crust);
     }
 
+    /* COMBO BANNER */
+    .banner-combo {
+      background: linear-gradient(135deg, #1c140e 0%, #291c14 100%);
+      border: 1px solid var(--terracotta);
+      border-radius: var(--radius);
+      padding: 50px 40px;
+      margin: 80px auto 0;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+    }
+    .banner-combo h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .banner-combo p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
     /* FOOTER */
     .footer {
-      background: #090604;
+      background: #080504;
       border-top: 1px solid var(--border);
-      padding: 30px 0;
+      padding: 35px 0;
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: #78716c;
     }
 
     /* BOTÃO FLUTUANTE */
     .floating-wa {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
+      bottom: 28px;
+      right: 28px;
       background: var(--wa-green);
       color: #fff;
       padding: 14px 22px;
       border-radius: 999px;
       font-weight: 800;
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       text-decoration: none;
-      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.45);
       z-index: 9999;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      transition: all 0.25s ease;
+      border: 2px solid #ffffff;
+    }
+    .floating-wa:hover {
+      transform: scale(1.06);
+      background: var(--wa-hover);
     }
 
-    @media (max-width: 768px) {
-      .hero-title { font-size: 2.3rem; }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
       .menu-grid { grid-template-columns: 1fr; }
+      .banner-combo { grid-template-columns: 1fr; }
+      .hero-title { font-size: 2.4rem; }
+      .hero-main-photo { height: 350px; }
+      .hero-float-card { position: static; margin-top: 15px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- TOP LIVE -->
   <div class="top-live">
     🔥 FORNO À LENHA ACESO | Entrega rápida em <span id="pizza-city-top">Campinas</span> sem taxas de app!
   </div>
 
+  <!-- HEADER -->
   <header class="header">
     <div class="container header-inner">
       <a href="#" class="brand-pizza">
         <div>
           <h2 id="pizza-name-nav">Pizzaria Tradizionale</h2>
-          <span>Forno à Lenha & Pasta Madre</span>
+          <span>Forno à Lenha & Fermentação Natural</span>
         </div>
       </a>
 
       <a href="#cardapio" class="btn btn-pizza">
-        Ver Cardápio
+        Ver Cardápio Completo
       </a>
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-badge">Fermentação Natural de 48 Horas</span>
+        <h1 class="hero-title" id="hero-title">
+          A Verdadeira Pizza no Forno à Lenha em <span id="hero-city">Campinas</span>
+        </h1>
+        <p class="hero-sub" id="hero-sub">
+          Massa leve e aerada, molho de tomates italianos pelati D.O.P. e queijos nobres gratinados a mais de 450°C. Entrega pontual quentinha na sua casa.
+        </p>
+        <div class="hero-actions">
+          <a href="#cardapio" class="btn btn-pizza">
+            Escolher Sabores
+          </a>
+          <a href="#" id="btn-hero-wa" class="btn btn-wa" target="_blank">
+            Pedir no WhatsApp
+          </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="hero-stat-item">
+            <h4>35-45 min</h4>
+            <p>Tempo Médio de Entrega</p>
+          </div>
+          <div class="hero-stat-item">
+            <h4>450°C</h4>
+            <p>Lenha de Eucalipto Puro</p>
+          </div>
+          <div class="hero-stat-item">
+            <h4>4.9 ★★★★★</h4>
+            <p>Avaliação Google</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1000&q=80" alt="Pizza Napolitana Forno à Lenha" class="hero-main-photo">
+        <div class="hero-float-card">
+          <div style="font-size: 1.8rem;">🍕</div>
+          <div>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: #fff;">Quentinha e Crocante</h4>
+            <p style="font-size: 0.76rem; color: var(--gold-crust);">Embalagem térmica lacrada</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDÁPIO -->
+  <section id="cardapio" class="section">
     <div class="container">
-      <span class="hero-badge">Fermentação Natural de 48 Horas</span>
-      <h1 class="hero-title" id="hero-title">
-        A Verdadeira Pizza no Forno à Lenha em <span id="hero-city">Campinas</span>
-      </h1>
-      <p class="hero-sub" id="hero-sub">
-        Massa leve, queijos artesanais de alta fusão e molho de tomate pelado italiano. Peça direto no WhatsApp e receba quentinha na sua casa.
-      </p>
+      <div class="section-header">
+        <span class="section-badge">Feitas na Hora</span>
+        <h2 class="section-title">Pizzas Artesanais Mais Pedidas</h2>
+        <p class="section-desc">Ingredientes frescos selecionados e bordas naturalmente infladas e crocantes.</p>
+      </div>
 
-      <a href="#cardapio" class="btn btn-wa btn-lg">
-        Fazer Pedido no WhatsApp
-      </a>
+      <div class="menu-grid">
+        <!-- 1 -->
+        <div class="pizza-card">
+          <div class="pizza-img-box">
+            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80" alt="Margherita Tradizionale">
+            <span class="pizza-tag">Clássica Napolitana</span>
+          </div>
+          <div class="pizza-body">
+            <div>
+              <h3>Margherita Tradizionale</h3>
+              <p>Molho pelati italiano, mozzarella fresca de búfala, manjericão gigante da horta e azeite extravirgem.</p>
+            </div>
+            <div class="pizza-bottom">
+              <span class="pizza-price">R$ 68</span>
+              <a href="#" class="btn btn-wa btn-pizza-item" data-pizza="Margherita Tradizionale" data-price="68">Pedir &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="pizza-card">
+          <div class="pizza-img-box">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" alt="Parma & Burrata">
+            <span class="pizza-tag">Especial do Chef</span>
+          </div>
+          <div class="pizza-body">
+            <div>
+              <h3>Parma com Burrata Trufada</h3>
+              <p>Presunto de Parma maturado 18 meses, burrata cremosa fresca e fios de azeite trufado sobre base crocante.</p>
+            </div>
+            <div class="pizza-bottom">
+              <span class="pizza-price">R$ 89</span>
+              <a href="#" class="btn btn-wa btn-pizza-item" data-pizza="Parma com Burrata" data-price="89">Pedir &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="pizza-card">
+          <div class="pizza-img-box">
+            <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=800&q=80" alt="Calabresa Especial">
+            <span class="pizza-tag">Campeã de Vendas</span>
+          </div>
+          <div class="pizza-body">
+            <div>
+              <h3>Calabresa Artesanal Defumada</h3>
+              <p>Calabresa artesanal fininha, cebola roxa marinada, azeitonas pretas azapa e orégano fresco.</p>
+            </div>
+            <div class="pizza-bottom">
+              <span class="pizza-price">R$ 64</span>
+              <a href="#" class="btn btn-wa btn-pizza-item" data-pizza="Calabresa Artesanal" data-price="64">Pedir &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BANNER COMBO -->
+      <div class="banner-combo">
+        <div>
+          <h2>Combo Família no Forno à Lenha</h2>
+          <p>Peça 2 Pizzas Grandes de qualquer sabor tradicional e ganhe 1 Refrigerante 2L + Borda de Catupiry Original grátis.</p>
+          <a href="#" id="btn-combo-wa" class="btn btn-pizza" style="padding: 14px 30px;">
+            Pedir Combo no WhatsApp
+          </a>
+        </div>
+        <div style="text-align: center;">
+          <span style="font-size: 0.9rem; color: var(--gold-crust); font-weight: 700; text-transform: uppercase;">Apenas</span>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: #fff; line-height: 1;">R$ 119<span style="font-size: 1.2rem;">,90</span></h3>
+          <p style="font-size: 0.8rem; color: #a8a29e;">Entrega grátis no primeiro pedido</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="container" id="cardapio" style="padding-bottom: 70px;">
-    <div style="text-align: center; margin-bottom: 40px;">
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #fff;">Sabores em Destaque</h2>
-      <p style="color: var(--text-muted); font-size: 0.9rem;">Pizzas grandes (8 fatias) - aceitamos até 2 sabores por pizza!</p>
-    </div>
-
-    <div class="menu-grid">
-      <div class="pizza-card">
-        <div>
-          <h3>Margherita Especialle</h3>
-          <p>Molho rústico de tomate San Marzano, fatias de mussarela de búfala fresca, parmesão ralado na hora e folhas de manjericão fresco da nossa horta.</p>
-        </div>
-        <div class="pizza-bottom">
-          <span class="pizza-price">R$ 58,90</span>
-          <a href="#" class="btn btn-wa btn-sm btn-pizza-item" data-pizza="Margherita Especialle" data-price="R$ 58,90">Pedir no WhatsApp &rarr;</a>
-        </div>
-      </div>
-
-      <div class="pizza-card">
-        <div>
-          <h3>Calabresa Artesanal Defumada</h3>
-          <p>Fatias finas de calabresa artesanal curada, cebola roxa marinada no azeite extravirgem, azeitonas pretas chilenas e orégano fresco.</p>
-        </div>
-        <div class="pizza-bottom">
-          <span class="pizza-price">R$ 52,90</span>
-          <a href="#" class="btn btn-wa btn-sm btn-pizza-item" data-pizza="Calabresa Artesanal" data-price="R$ 52,90">Pedir no WhatsApp &rarr;</a>
-        </div>
-      </div>
-
-      <div class="pizza-card">
-        <div>
-          <h3>Quatro Queijos Gratinada</h3>
-          <p>Combinação perfeita de mussarela fatiada, provolone defumado, catupiry original cremoso e toques suaves de gorgonzola italiano gratinado.</p>
-        </div>
-        <div class="pizza-bottom">
-          <span class="pizza-price">R$ 64,90</span>
-          <a href="#" class="btn btn-wa btn-sm btn-pizza-item" data-pizza="Quatro Queijos Gratinada" data-price="R$ 64,90">Pedir no WhatsApp &rarr;</a>
-        </div>
-      </div>
-
-      <div class="pizza-card">
-        <div>
-          <h3>Combo Família com Coca-Cola 2L</h3>
-          <p>1x Pizza Salgada Grande à sua escolha + 1x Pizza Doce Broto (Nutella com Morango ou Banana Nevada) + 1x Refrigerante Coca-Cola 2 Litros.</p>
-        </div>
-        <div class="pizza-bottom">
-          <span class="pizza-price">R$ 89,90</span>
-          <a href="#" class="btn btn-wa btn-sm btn-pizza-item" data-pizza="Combo Familia com Coca 2L" data-price="R$ 89,90">Pedir no WhatsApp &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <p id="pizza-footer-name">Pizzaria Tradizionale &copy; 2026. Todos os direitos reservados.</p>
-      <p style="margin-top: 4px; font-size: 0.72rem;">Delivery próprio sem comissão por venda integrado ao WhatsApp.</p>
+      <p style="margin-top: 6px; font-size: 0.76rem;">Feitas com paixão e lenha certificada sustentável.</p>
     </div>
   </footer>
 
+  <!-- BOTÃO FLUTUANTE -->
   <a href="#" id="floating-pizza-wa" class="floating-wa" target="_blank">
-    <span>Pedir Pizza no WhatsApp</span>
+    <span>Pedir pelo WhatsApp</span>
   </a>
 
   <script>
@@ -318,20 +560,26 @@
       const cidade = params.get('cidade') || 'Campinas';
       const whatsapp = params.get('whatsapp') || '5511913393797';
 
-      document.getElementById('page-title').innerText = `${empresa} | Pizzaria Forno à Lenha em ${cidade}`;
+      document.getElementById('page-title').innerText = `${empresa} | Pizza Forno à Lenha em ${cidade}`;
       document.getElementById('pizza-name-nav').innerText = empresa;
-      document.getElementById('hero-city').innerText = cidade;
+      document.getElementById('hero-title').innerHTML = `A Verdadeira Pizza no Forno à Lenha em <span>${cidade}</span>`;
       document.getElementById('pizza-city-top').innerText = cidade;
-      document.getElementById('pizza-footer-name').innerText = `${empresa} &copy; 2026. Todos os direitos reservados.`;
+      document.getElementById('pizza-footer-name').innerHTML = `${empresa} &copy; 2026. Todos os direitos reservados.`;
 
-      const defaultMsg = encodeURIComponent(`Olá! Gostaria de pedir uma pizza na ${empresa} em ${cidade}. Qual o tempo de entrega hoje?`);
-      document.querySelectorAll('#floating-pizza-wa').forEach(el => el.href = `https://wa.me/${whatsapp}?text=${defaultMsg}`);
+      const defaultMsg = encodeURIComponent(`Olá! Gostaria de fazer um pedido de pizza na ${empresa} em ${cidade}. Qual o cardápio de hoje?`);
+      const defaultUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
+      document.querySelectorAll('#btn-hero-wa, #floating-pizza-wa').forEach(el => {
+        el.href = defaultUrl;
+      });
+
+      const comboMsg = encodeURIComponent(`Olá! Gostaria de pedir o Combo Família (2 Pizzas Grandes + Refri) na ${empresa} em ${cidade}!`);
+      document.getElementById('btn-combo-wa').href = `https://wa.me/${whatsapp}?text=${comboMsg}`;
 
       document.querySelectorAll('.btn-pizza-item').forEach(btn => {
         const pizza = btn.getAttribute('data-pizza');
         const price = btn.getAttribute('data-price');
-        const msg = encodeURIComponent(`Olá! Gostaria de pedir: 1x ${pizza} (${price}) na ${empresa}.`);
-        btn.href = `https://wa.me/${whatsapp}?text=${msg}`;
+        const pMsg = encodeURIComponent(`Olá! Gostaria de pedir a pizza "${pizza}" (R$ ${price}) na ${empresa}. Como posso finalizar?`);
+        btn.href = `https://wa.me/${whatsapp}?text=${pMsg}`;
         btn.target = '_blank';
       });
     });

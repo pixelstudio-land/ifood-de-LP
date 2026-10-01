@@ -4,46 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="page-title">Clínica de Estética Avançada & Harmonização Facial</title>
-  <meta name="description" content="Tratamentos estéticos faciais e corporais de alta precisão: Botox, Preenchimento, Bioestimuladores de Colágeno e Rejuvenescimento.">
+  <meta name="description" content="Tratamentos estéticos faciais e corporais de alta precisão: Botox, Preenchimento, Bioestimuladores de Colágeno e Rejuvenescimento natural.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #be185d;
       --primary-dark: #9d174d;
-      --primary-light: #fce7f3;
+      --primary-light: #fdf2f8;
       --accent-gold: #c29d59;
-      --gold-light: #fdf8ee;
-      --whatsapp-green: #10b981;
-      --whatsapp-hover: #059669;
-      --bg-light: #fffafb;
+      --gold-dark: #a17f3e;
+      --gold-light: #fef9ee;
+      --wa-green: #10b981;
+      --wa-hover: #059669;
+      --bg: #fffafb;
       --surface: #ffffff;
-      --text-main: #1f2937;
+      --text: #1f2937;
       --text-muted: #6b7280;
-      --border: #f3e8ee;
+      --border: #f3e4ec;
+      --radius: 16px;
       --radius-sm: 8px;
-      --radius-md: 16px;
-      --radius-lg: 24px;
-      --shadow-soft: 0 10px 30px -5px rgba(190, 24, 93, 0.08);
-      --shadow-hover: 0 20px 40px -10px rgba(190, 24, 93, 0.16);
+      --shadow-card: 0 10px 30px -5px rgba(190, 24, 93, 0.08);
+      --shadow-hover: 0 20px 45px -10px rgba(190, 24, 93, 0.16);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      color: var(--text-main);
-      background-color: var(--bg-light);
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
     /* TOP BAR */
     .top-bar {
@@ -58,17 +54,18 @@
       justify-content: space-between;
       align-items: center;
     }
-    .top-bar-tag { color: var(--accent-gold); font-weight: 600; }
+    .top-bar-tag { color: var(--accent-gold); font-weight: 700; }
 
     /* NAVBAR */
     .navbar {
       background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
       position: sticky;
       top: 0;
       z-index: 100;
       border-bottom: 1px solid var(--border);
       padding: 16px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
     }
     .nav-inner {
       display: flex;
@@ -80,34 +77,34 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
-      color: var(--text-main);
+      color: var(--text);
     }
     .logo-symbol {
-      width: 42px;
-      height: 42px;
-      background: linear-gradient(135deg, #be185d, #c29d59);
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #be185d 0%, #c29d59 100%);
       color: #fff;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 12px rgba(190, 24, 93, 0.25);
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 14px rgba(190, 24, 93, 0.3);
     }
     .logo-text h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       font-weight: 700;
-      letter-spacing: -0.01em;
       line-height: 1.1;
       color: #111827;
     }
     .logo-text p {
       font-size: 0.72rem;
       color: var(--accent-gold);
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
@@ -117,60 +114,46 @@
       justify-content: center;
       gap: 8px;
       padding: 12px 24px;
-      border-radius: 9999px;
+      border-radius: 999px;
       font-size: 0.92rem;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
       transition: all 0.25s ease;
       cursor: pointer;
       border: none;
     }
     .btn-wa {
-      background: var(--whatsapp-green);
+      background: var(--wa-green);
       color: #fff;
       box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
     }
     .btn-wa:hover {
-      background: var(--whatsapp-hover);
+      background: var(--wa-hover);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
     }
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), #9d174d);
+      background: linear-gradient(135deg, #be185d 0%, #9d174d 100%);
       color: #fff;
-      box-shadow: 0 4px 15px rgba(190, 24, 93, 0.35);
+      box-shadow: 0 4px 16px rgba(190, 24, 93, 0.35);
     }
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 22px rgba(190, 24, 93, 0.45);
+      box-shadow: 0 8px 25px rgba(190, 24, 93, 0.48);
     }
     .btn-gold {
-      background: linear-gradient(135deg, #d4af37, #aa7c11);
+      background: linear-gradient(135deg, #c29d59 0%, #a17f3e 100%);
       color: #fff;
     }
-    .btn-lg {
-      padding: 16px 36px;
-      font-size: 1.05rem;
-      font-weight: 700;
-    }
 
-    /* HERO SECTION */
+    /* HERO */
     .hero {
       position: relative;
-      padding: 80px 0 60px;
-      background: linear-gradient(180deg, #fff 0%, #fdf2f8 100%);
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -100px;
-      right: -100px;
-      width: 450px;
-      height: 450px;
-      background: radial-gradient(circle, rgba(190, 24, 93, 0.08) 0%, rgba(255,255,255,0) 70%);
-      border-radius: 50%;
-      pointer-events: none;
+      padding: 70px 0 80px;
+      background: radial-gradient(circle at 100% 0%, rgba(190, 24, 93, 0.06) 0%, transparent 50%),
+                  radial-gradient(circle at 0% 100%, rgba(194, 157, 89, 0.06) 0%, transparent 40%),
+                  #ffffff;
+      border-bottom: 1px solid var(--border);
     }
     .hero-grid {
       display: grid;
@@ -185,7 +168,7 @@
       background: var(--primary-light);
       color: var(--primary);
       padding: 6px 16px;
-      border-radius: 9999px;
+      border-radius: 999px;
       font-size: 0.82rem;
       font-weight: 700;
       letter-spacing: 0.04em;
@@ -195,7 +178,7 @@
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 3.4rem;
-      line-height: 1.1;
+      line-height: 1.12;
       font-weight: 700;
       color: #111827;
       margin-bottom: 20px;
@@ -206,16 +189,21 @@
       font-style: italic;
     }
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       color: var(--text-muted);
-      margin-bottom: 32px;
+      margin-bottom: 34px;
       line-height: 1.7;
-      max-width: 580px;
     }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 38px;
+    }
+
     .hero-stats-row {
       display: flex;
       gap: 30px;
-      margin-top: 40px;
       padding-top: 25px;
       border-top: 1px solid var(--border);
     }
@@ -225,79 +213,57 @@
       color: #111827;
     }
     .hero-stat-item p {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
-      margin-bottom: 0;
     }
 
-    /* HERO CARD DESTAQUE */
-    .hero-card-preview {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      padding: 36px 30px;
-      box-shadow: 0 20px 45px -10px rgba(190, 24, 93, 0.12);
-      border: 1px solid var(--border);
+    /* HERO IMAGE WRAP */
+    .hero-img-wrap {
       position: relative;
     }
-    .hero-card-badge {
+    .hero-main-photo {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 0 25px 50px -10px rgba(190, 24, 93, 0.18);
+      border: 4px solid #fff;
+    }
+    .hero-float-card {
       position: absolute;
-      top: -14px;
-      right: 28px;
-      background: linear-gradient(135deg, #c29d59, #aa7c11);
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 5px 14px;
-      border-radius: 9999px;
-      box-shadow: 0 4px 10px rgba(194, 157, 89, 0.35);
-    }
-    .hero-card-preview h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem;
-      color: #111827;
-      margin-bottom: 12px;
-    }
-    .hero-card-preview p {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
-    .preview-checklist {
-      list-style: none;
+      bottom: -20px;
+      left: -20px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 16px 22px;
+      border-radius: 12px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      border: 1px solid var(--border);
       display: flex;
-      flex-direction: column;
+      align-items: center;
       gap: 12px;
-      margin-bottom: 28px;
     }
-    .preview-checklist li {
-      font-size: 0.88rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #374151;
-      font-weight: 500;
+    .stars-badge {
+      color: #f59e0b;
+      font-size: 1rem;
+      letter-spacing: 2px;
     }
-    .check-icon {
-      width: 20px;
-      height: 20px;
-      background: #ecfdf5;
-      color: #059669;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
+    .float-text h4 {
+      font-size: 0.95rem;
       font-weight: 800;
+      color: #111827;
+    }
+    .float-text p {
+      font-size: 0.76rem;
+      color: var(--text-muted);
     }
 
-    /* SERVIÇOS */
-    .section {
-      padding: 80px 0;
-    }
+    /* SEÇÃO DE TRATAMENTOS */
+    .section { padding: 85px 0; }
     .section-header {
       text-align: center;
-      max-width: 650px;
-      margin: 0 auto 50px;
+      max-width: 680px;
+      margin: 0 auto 55px;
     }
     .section-badge {
       color: var(--primary);
@@ -310,7 +276,7 @@
     }
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.6rem;
+      font-size: 2.7rem;
       color: #111827;
       margin-bottom: 14px;
       line-height: 1.15;
@@ -323,47 +289,68 @@
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 30px;
     }
     .service-card {
       background: #fff;
-      border-radius: var(--radius-md);
-      padding: 32px 26px;
+      border-radius: var(--radius);
+      overflow: hidden;
       border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--shadow-card);
       transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
     }
     .service-card:hover {
       transform: translateY(-6px);
       box-shadow: var(--shadow-hover);
       border-color: #fbcfe8;
     }
-    .service-icon {
-      width: 52px;
-      height: 52px;
-      background: var(--primary-light);
-      color: var(--primary);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 20px;
+    .service-img-box {
+      height: 200px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
     }
-    .service-card h3 {
+    .service-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover .service-img-box img {
+      transform: scale(1.06);
+    }
+    .service-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(4px);
+      color: var(--primary-dark);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .service-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .service-body h3 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.55rem;
       color: #111827;
       margin-bottom: 10px;
     }
-    .service-card p {
-      font-size: 0.9rem;
+    .service-body p {
+      font-size: 0.88rem;
       color: var(--text-muted);
       line-height: 1.6;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
     .service-link {
       font-size: 0.88rem;
@@ -375,54 +362,48 @@
       gap: 6px;
       transition: gap 0.2s;
     }
-    .service-link:hover {
-      gap: 10px;
-    }
+    .service-link:hover { gap: 10px; }
 
-    /* DIFERENCIAIS */
-    .diff-section {
-      background: #111827;
-      color: #fff;
-      padding: 80px 0;
+    /* ANTES E DEPOIS SHOWCASE */
+    .showcase-section {
+      background: linear-gradient(180deg, #fff 0%, #fdf2f8 100%);
+      padding: 85px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
-    .diff-grid {
+    .showcase-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
     }
-    .diff-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 28px 22px;
-      border-radius: var(--radius-md);
-      transition: background 0.3s;
+    .showcase-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
     }
-    .diff-card:hover {
-      background: rgba(255, 255, 255, 0.08);
+    .showcase-photo {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
     }
-    .diff-number {
+    .showcase-body {
+      padding: 20px;
+    }
+    .showcase-body h4 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--accent-gold);
-      margin-bottom: 8px;
+      font-size: 1.35rem;
+      color: #111827;
+      margin-bottom: 6px;
     }
-    .diff-card h4 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      color: #f9fafb;
-    }
-    .diff-card p {
-      font-size: 0.85rem;
-      color: #9ca3af;
-      line-height: 1.5;
+    .showcase-body p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
     }
 
     /* FAQ */
-    .faq-wrapper {
-      max-width: 760px;
-      margin: 0 auto;
-    }
+    .faq-wrapper { max-width: 760px; margin: 0 auto; }
     .faq-item {
       background: #fff;
       border: 1px solid var(--border);
@@ -432,7 +413,7 @@
     }
     .faq-q {
       padding: 18px 24px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.96rem;
       cursor: pointer;
       display: flex;
@@ -448,22 +429,18 @@
       line-height: 1.6;
       display: none;
     }
-    .faq-item.active .faq-a {
-      display: block;
-    }
-    .faq-item.active .faq-q {
-      color: var(--primary);
-    }
+    .faq-item.active .faq-a { display: block; }
+    .faq-item.active .faq-q { color: var(--primary); }
 
     /* BANNER FINAL */
     .banner-cta {
-      background: linear-gradient(135deg, #831843, #be185d);
+      background: linear-gradient(135deg, #831843 0%, #be185d 100%);
       color: #fff;
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius);
       padding: 60px 40px;
       text-align: center;
       box-shadow: 0 20px 40px rgba(131, 24, 67, 0.3);
-      margin-bottom: 70px;
+      margin: 80px auto 0;
     }
     .banner-cta h2 {
       font-family: 'Cormorant Garamond', serif;
@@ -482,7 +459,7 @@
     .footer {
       background: #0f172a;
       color: #94a3b8;
-      padding: 30px 0;
+      padding: 35px 0;
       font-size: 0.85rem;
       border-top: 1px solid #1e293b;
     }
@@ -495,32 +472,35 @@
     /* FLOATING WA */
     .floating-wa {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: var(--whatsapp-green);
+      bottom: 28px;
+      right: 28px;
+      background: var(--wa-green);
       color: #fff;
       padding: 14px 22px;
-      border-radius: 9999px;
+      border-radius: 999px;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       display: flex;
       align-items: center;
       gap: 10px;
       text-decoration: none;
-      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.45);
       z-index: 999;
       transition: all 0.25s ease;
+      border: 2px solid #ffffff;
     }
     .floating-wa:hover {
-      transform: scale(1.05);
-      background: var(--whatsapp-hover);
+      transform: scale(1.06);
+      background: var(--wa-hover);
     }
 
     @media (max-width: 850px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 35px; }
+      .hero-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
-      .diff-grid { grid-template-columns: 1fr 1fr; }
+      .showcase-grid { grid-template-columns: 1fr; }
       .hero h1 { font-size: 2.4rem; }
+      .hero-main-photo { height: 350px; }
+      .hero-float-card { position: static; margin-top: 15px; }
       .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
     }
   </style>
@@ -530,7 +510,7 @@
   <!-- TOP BAR -->
   <div class="top-bar">
     <div class="container top-bar-inner">
-      <div>Atendimento Exclusivo com Agendamento Prévio em <span id="top-city" class="top-bar-tag">São Paulo</span></div>
+      <div>Atendimento Exclusivo e Agendamento Prévio em <span id="top-city" class="top-bar-tag">São Paulo</span></div>
       <div>Horários: Seg a Sex 09h às 19h | Sáb 09h às 14h</div>
     </div>
   </div>
@@ -560,14 +540,19 @@
         <p>
           Procedimentos minimamente invasivos executados por profissionais pós-graduados, focados em preservar seus traços naturais e devolver a firmeza e o viço da sua pele.
         </p>
-        <a href="#" id="btn-hero-wa" class="btn btn-primary btn-lg" target="_blank">
-          Solicitar Avaliação Personalizada
-        </a>
+        <div class="hero-actions">
+          <a href="#" id="btn-hero-wa" class="btn btn-primary" target="_blank">
+            Solicitar Avaliação Facial
+          </a>
+          <a href="#procedimentos" class="btn btn-wa">
+            Ver Procedimentos
+          </a>
+        </div>
 
         <div class="hero-stats-row">
           <div class="hero-stat-item">
-            <h4>+2.500</h4>
-            <p>Procedimentos Realizados</p>
+            <h4>+2.800</h4>
+            <p>Pacientes Satisfeitas</p>
           </div>
           <div class="hero-stat-item">
             <h4>100%</h4>
@@ -575,120 +560,157 @@
           </div>
           <div class="hero-stat-item">
             <h4>4.9/5</h4>
-            <p>Avaliações no Google</p>
+            <p>Nota Google Avaliações</p>
           </div>
         </div>
       </div>
 
-      <div>
-        <div class="hero-card-preview">
-          <span class="hero-card-badge">Exclusividade</span>
-          <h3>Plano de Beleza Individual</h3>
-          <p>Aqui você não faz procedimentos padronizados. Analisamos sua simetria facial para indicar apenas o que você realmente precisa.</p>
-          <ul class="preview-checklist">
-            <li><span class="check-icon">&#10003;</span> Análise facial 3D personalizada</li>
-            <li><span class="check-icon">&#10003;</span> Produtos premium (Juvederm, Sculptra, Botox Allergan)</li>
-            <li><span class="check-icon">&#10003;</span> Retorno incluso e suporte pós-procedimento</li>
-            <li><span class="check-icon">&#10003;</span> Condições facilitadas em até 10x sem juros</li>
-          </ul>
-          <a href="#" id="btn-card-wa" class="btn btn-wa btn-lg" style="width: 100%;" target="_blank">
-            Falar com a Especialista
-          </a>
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80" alt="Estética Avançada Paciente" class="hero-main-photo">
+        <div class="hero-float-card">
+          <div class="stars-badge">★★★★★</div>
+          <div class="float-text">
+            <h4>Padrão Ouro Mundial</h4>
+            <p>Juvederm, Sculptra & Botox Allergan</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
-  <section class="section">
+  <!-- PROCEDIMENTOS -->
+  <section id="procedimentos" class="section">
     <div class="container">
       <div class="section-header">
         <span class="section-badge">Nossos Tratamentos</span>
-        <h2 class="section-title">Procedimentos Mais Procurados</h2>
+        <h2 class="section-title">Procedimentos em Destaque</h2>
         <p class="section-desc">Resultados sutis, sofisticados e que respeitam a harmonia e jovialidade do seu rosto.</p>
       </div>
 
       <div class="services-grid">
+        <!-- 1 -->
         <div class="service-card">
-          <div>
-            <div class="service-icon">✨</div>
-            <h3>Toxina Botulínica (Botox)</h3>
-            <p>Prevenção e suavização de rugas na testa, glabela e pés de galinha, mantendo expressão facial leve e descansada.</p>
+          <div class="service-img-box">
+            <img src="https://images.unsplash.com/photo-1512290900672-1f55b9a5e128?auto=format&fit=crop&w=800&q=80" alt="Toxina Botulínica">
+            <span class="service-tag">Rugas de Expressão</span>
           </div>
-          <a href="#" class="service-link btn-service-wa" target="_blank">Agendar Botox &rarr;</a>
+          <div class="service-body">
+            <div>
+              <h3>Toxina Botulínica (Botox)</h3>
+              <p>Prevenção e suavização de linhas na testa, pés de galinha e glabela, preservando sua naturalidade sem efeito congelado.</p>
+            </div>
+            <a href="#" class="service-link btn-service-wa" data-proc="Botox">Agendar Avaliação &rarr;</a>
+          </div>
         </div>
 
+        <!-- 2 -->
         <div class="service-card">
-          <div>
-            <div class="service-icon">💧</div>
-            <h3>Preenchimento Labial & Facial</h3>
-            <p>Definição de contorno, hidratação profunda e volume labial na medida certa, além de malar, mento e mandíbula.</p>
+          <div class="service-img-box">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Preenchimento Labial">
+            <span class="service-tag">Volume & Contorno</span>
           </div>
-          <a href="#" class="service-link btn-service-wa" target="_blank">Consultar Valores &rarr;</a>
+          <div class="service-body">
+            <div>
+              <h3>Preenchimento Labial & Facial</h3>
+              <p>Definição de contorno labial, hidratação profunda (gloss effect) e volumização de malar e mento com ácido hialurônico premium.</p>
+            </div>
+            <a href="#" class="service-link btn-service-wa" data-proc="Preenchimento Labial">Consultar Valores &rarr;</a>
+          </div>
         </div>
 
+        <!-- 3 -->
         <div class="service-card">
-          <div>
-            <div class="service-icon">🌟</div>
-            <h3>Bioestimuladores de Colágeno</h3>
-            <p>Sculptra e Radiesse para combater a flacidez facial e corporal, estimulando seu organismo a produzir novo colágeno por até 2 anos.</p>
+          <div class="service-img-box">
+            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" alt="Bioestimuladores de Colágeno">
+            <span class="service-tag">Firmeza & Rejuvenescimento</span>
           </div>
-          <a href="#" class="service-link btn-service-wa" target="_blank">Saber Mais &rarr;</a>
+          <div class="service-body">
+            <div>
+              <h3>Bioestimuladores de Colágeno</h3>
+              <p>Protocolos com Sculptra e Radiesse para combater flacidez, reestruturar tecidos e promover viço duradouro por até 2 anos.</p>
+            </div>
+            <a href="#" class="service-link btn-service-wa" data-proc="Bioestimulador">Saber Mais &rarr;</a>
+          </div>
         </div>
 
+        <!-- 4 -->
         <div class="service-card">
-          <div>
-            <div class="service-icon">🌸</div>
-            <h3>Fios de PDO (Sustentação)</h3>
-            <p>Efeito lifting suave e imediato com estímulo contínuo de colágeno, reposicionando tecidos sem cortes ou cirurgia.</p>
+          <div class="service-img-box">
+            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" alt="Fios de Sustentação PDO">
+            <span class="service-tag">Lifting Imediato</span>
           </div>
-          <a href="#" class="service-link btn-service-wa" target="_blank">Ver Indicações &rarr;</a>
+          <div class="service-body">
+            <div>
+              <h3>Fios de PDO de Sustentação</h3>
+              <p>Efeito lifting não-cirúrgico para reposicionamento do terço médio e contorno mandibular com ativação celular contínua.</p>
+            </div>
+            <a href="#" class="service-link btn-service-wa" data-proc="Fios de PDO">Ver Indicações &rarr;</a>
+          </div>
         </div>
 
+        <!-- 5 -->
         <div class="service-card">
-          <div>
-            <div class="service-icon">💎</div>
-            <h3>Peelings Químicos & Clareamento</h3>
-            <p>Renovação celular intensa para tratamento de manchas, melasma, cicatrizes de acne e uniformização da textura da pele.</p>
+          <div class="service-img-box">
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Peeling e Melasma">
+            <span class="service-tag">Uniformização & Glow</span>
           </div>
-          <a href="#" class="service-link btn-service-wa" target="_blank">Tirar Dúvidas &rarr;</a>
+          <div class="service-body">
+            <div>
+              <h3>Peelings Químicos & Melasma</h3>
+              <p>Clareamento seguro de manchas solares e hormonais, redução de poros dilatados e renovação celular com textura aveludada.</p>
+            </div>
+            <a href="#" class="service-link btn-service-wa" data-proc="Peeling Clareador">Tirar Dúvidas &rarr;</a>
+          </div>
         </div>
 
+        <!-- 6 -->
         <div class="service-card">
-          <div>
-            <div class="service-icon">✨</div>
-            <h3>Microagulhamento com Drug Delivery</h3>
-            <p>Aplicação de ativos rejuvenescedores em camadas profundas da derme para fechar poros e devolver o viço radiante.</p>
+          <div class="service-img-box">
+            <img src="https://images.unsplash.com/photo-1512290900672-1f55b9a5e128?auto=format&fit=crop&w=800&q=80" alt="Harmonização Facial Full Face">
+            <span class="service-tag">Protocolo Completo</span>
           </div>
-          <a href="#" class="service-link btn-service-wa" target="_blank">Solicitar Sessão &rarr;</a>
+          <div class="service-body">
+            <div>
+              <h3>Harmonização Facial Full Face</h3>
+              <p>Planejamento sob medida para valorizar os pontos fortes do seu rosto com equilíbrio visual e rejuvenescimento harmônico.</p>
+            </div>
+            <a href="#" class="service-link btn-service-wa" data-proc="Harmonização Full Face">Solicitar Sessão &rarr;</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DIFERENCIAIS -->
-  <section class="diff-section">
+  <!-- SHOWCASE ANTES E DEPOIS -->
+  <section class="showcase-section">
     <div class="container">
-      <div class="diff-grid">
-        <div class="diff-card">
-          <div class="diff-number">01</div>
-          <h4>Naturalidade Acima de Tudo</h4>
-          <p>Nosso lema é o "menos é mais". Realçamos o que você tem de melhor sem exageros ou artificialidade.</p>
+      <div class="section-header">
+        <span class="section-badge">Resultados Reais</span>
+        <h2 class="section-title">Galeria de Transformações</h2>
+        <p class="section-desc">Evolução de tratamentos com foco na naturalidade e harmonia estética individual.</p>
+      </div>
+
+      <div class="showcase-grid">
+        <div class="showcase-card">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Lábios Hidratados" class="showcase-photo">
+          <div class="showcase-body">
+            <h4>Preenchimento Labial Sutil</h4>
+            <p>1ml de ácido hialurônico de alta pureza. Realce do arco do cupido e hidratação profunda.</p>
+          </div>
         </div>
-        <div class="diff-card">
-          <div class="diff-number">02</div>
-          <h4>Marcas Reconhecidas</h4>
-          <p>Utilizamos exclusivamente produtos de padrão ouro mundial com procedência e lacres rastreáveis.</p>
+        <div class="showcase-card">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Rejuvenescimento Facial" class="showcase-photo">
+          <div class="showcase-body">
+            <h4>Protocolo Firmeza & Viço</h4>
+            <p>2 sessões de Sculptra combinadas com microagulhamento com ativos regenerativos.</p>
+          </div>
         </div>
-        <div class="diff-card">
-          <div class="diff-number">03</div>
-          <h4>Ambiente Seguro & Estéril</h4>
-          <p>Consultórios esterilizados dentro de rigorosos padrões de biossegurança médica e sanitária.</p>
-        </div>
-        <div class="diff-card">
-          <div class="diff-number">04</div>
-          <h4>Acompanhamento Pós</h4>
-          <p>Sessão de retorno obrigatória para avaliar os resultados e garantir a sua total satisfação.</p>
+        <div class="showcase-card">
+          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Terço Médio" class="showcase-photo">
+          <div class="showcase-body">
+            <h4>Top Model Look (Malar & Mandíbula)</h4>
+            <p>Definição de ângulos mandibulares com sustentação graciosa e sem exageros volumétricos.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -705,34 +727,32 @@
       <div class="faq-wrapper">
         <div class="faq-item active">
           <div class="faq-q">O procedimento de Botox dói? <span>+</span></div>
-          <div class="faq-a">Utilizamos pomadas anestésicas tópicas potentes e agulhas ultra-finas de alta precisão. O desconforto é mínimo e a aplicação dura menos de 20 minutos.</div>
+          <div class="faq-a">Utilizamos pomadas anestésicas tópicas potentes e microagulhas ultra-finas. O desconforto é muito brando e a sessão costuma durar menos de 20 minutos.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Quanto tempo dura o efeito do preenchimento com ácido hialurônico? <span>+</span></div>
-          <div class="faq-a">A duração varia entre 12 a 18 meses, dependendo da densidade do produto aplicado e do metabolismo de cada paciente.</div>
+          <div class="faq-q">Quanto tempo dura o efeito do ácido hialurônico? <span>+</span></div>
+          <div class="faq-a">A média é de 12 a 18 meses, variando conforme a região tratada, a densidade do produto e o metabolismo do paciente.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Como funciona a primeira consulta de avaliação? <span>+</span></div>
-          <div class="faq-a">Nossa especialista faz uma anamnese detalhada, escuta suas queixas e expectativas, analisa as proporções da sua face e apresenta um plano de tratamento personalizado sem compromisso.</div>
+          <div class="faq-q">Como funciona a primeira avaliação? <span>+</span></div>
+          <div class="faq-a">Fazemos uma análise fotográfica e mapeamento facial completo, escutamos seus desejos e indicamos apenas o que você realmente precisa.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Posso voltar a trabalhar no mesmo dia? <span>+</span></div>
-          <div class="faq-a">Sim! A maioria dos procedimentos permite retorno imediato às atividades cotidianas, apenas evitando atividades físicas pesadas nas primeiras 24 horas.</div>
+          <div class="faq-q">Posso retomar minhas atividades normais no mesmo dia? <span>+</span></div>
+          <div class="faq-a">Sim! Você pode trabalhar e seguir sua rotina habitual, apenas evitando treinos intensos e exposição direta ao sol nas primeiras 24 horas.</div>
         </div>
+      </div>
+
+      <!-- BANNER FINAL -->
+      <div class="banner-cta">
+        <h2>Pronta para viver a sua melhor versão?</h2>
+        <p>Reserve agora o seu horário na recepção da clínica e garanta condições especiais de avaliação facial.</p>
+        <a href="#" id="btn-banner-wa" class="btn btn-gold" style="padding: 16px 36px; font-size: 1rem;" target="_blank">
+          Conversar com a Recepção no WhatsApp
+        </a>
       </div>
     </div>
   </section>
-
-  <!-- BANNER FINAL -->
-  <div class="container">
-    <div class="banner-cta">
-      <h2>Pronta para viver a sua melhor versão?</h2>
-      <p>Reserve agora o seu horário na recepção da clínica e garanta condições especiais de lançamento.</p>
-      <a href="#" id="btn-banner-wa" class="btn btn-gold btn-lg" target="_blank">
-        Conversar com a Recepção no WhatsApp
-      </a>
-    </div>
-  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -752,7 +772,6 @@
     <span>WhatsApp Direto</span>
   </a>
 
-  <!-- SCRIPT DE PERSONALIZAÇÃO DINÂMICA VIA URL -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
@@ -760,19 +779,24 @@
       const cidade = params.get('cidade') || 'São Paulo';
       const whatsapp = params.get('whatsapp') || '5511913393797';
 
-      // Atualiza textos na página
       document.getElementById('page-title').innerText = `${empresa} | Clínica de Estética em ${cidade}`;
       document.getElementById('brand-name-nav').innerText = empresa;
       document.getElementById('brand-name-footer').innerText = empresa;
       document.getElementById('top-city').innerText = cidade;
       document.getElementById('brand-city-footer').innerText = `Responsável Técnica Especialista | ${cidade} - SP`;
 
-      // Monta link do WhatsApp com mensagem contextualizada
       const msg = encodeURIComponent(`Olá! Estava visualizando o site da ${empresa} em ${cidade} e gostaria de agendar uma avaliação estética facial.`);
       const waUrl = `https://wa.me/${whatsapp}?text=${msg}`;
 
-      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-card-wa, #btn-banner-wa, #floating-wa, .btn-service-wa').forEach(el => {
+      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-banner-wa, #floating-wa').forEach(el => {
         el.href = waUrl;
+      });
+
+      document.querySelectorAll('.btn-service-wa').forEach(btn => {
+        const proc = btn.getAttribute('data-proc') || 'Procedimento';
+        const pMsg = encodeURIComponent(`Olá! Gostaria de mais informações e valores para "${proc}" na ${empresa}.`);
+        btn.href = `https://wa.me/${whatsapp}?text=${pMsg}`;
+        btn.target = '_blank';
       });
 
       // FAQ Accordion

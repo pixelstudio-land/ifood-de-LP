@@ -3,28 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Escritório de Advocacia & Consultoria Jurídica</title>
-  <meta name="description" content="Atuação estratégica em Direito Trabalhista, Civil, Empresarial e Família. Atendimento ágil e confidencial.">
+  <title id="page-title">Advocacia & Consultoria Jurídica Estratégica</title>
+  <meta name="description" content="Assessoria jurídica de excelência para empresas e pessoas físicas. Atuação em Direito Empresarial, Tributário, Trabalhista e Patrimonial.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #0f1c2e;
-      --navy-light: #18283f;
+      --navy: #0b1320;
+      --navy-card: #111d2e;
+      --navy-light: #192a42;
       --gold: #c5a059;
-      --gold-dark: #a6823d;
+      --gold-dark: #a8823b;
+      --gold-glow: rgba(197, 160, 89, 0.25);
       --bg: #f8fafc;
       --surface: #ffffff;
       --text: #0f172a;
-      --muted: #64748b;
-      --wa-green: #10b981;
-      --wa-hover: #059669;
+      --text-muted: #64748b;
       --border: #e2e8f0;
       --radius: 12px;
+      --wa-green: #10b981;
+      --wa-hover: #059669;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: var(--bg);
@@ -33,7 +36,26 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* TOP BAR */
+    .top-bar {
+      background: #060b12;
+      color: #94a3b8;
+      font-size: 0.78rem;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .oab-tag {
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
 
     /* HEADER */
     .header {
@@ -41,6 +63,10 @@
       color: #fff;
       padding: 18px 0;
       border-bottom: 2px solid var(--gold);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
     .header-inner {
       display: flex;
@@ -50,32 +76,34 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       text-decoration: none;
       color: #fff;
     }
     .brand-symbol {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border: 1px solid var(--gold);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Cinzel', serif;
       color: var(--gold);
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: 800;
+      background: rgba(197, 160, 89, 0.08);
+      border-radius: 4px;
     }
     .brand-text h2 {
       font-family: 'Cinzel', serif;
-      font-size: 1.2rem;
-      letter-spacing: 0.05em;
+      font-size: 1.25rem;
+      letter-spacing: 0.04em;
     }
     .brand-text span {
       font-size: 0.7rem;
       color: #94a3b8;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
     }
 
     .btn {
@@ -94,117 +122,225 @@
     .btn-wa {
       background: var(--wa-green);
       color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
     }
     .btn-wa:hover {
       background: var(--wa-hover);
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
     }
     .btn-gold {
-      background: var(--gold);
-      color: #000;
+      background: linear-gradient(135deg, #c5a059 0%, #a8823b 100%);
+      color: #060b12;
       font-weight: 800;
+      box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
     }
     .btn-gold:hover {
-      background: var(--gold-dark);
-      color: #fff;
       transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(197, 160, 89, 0.45);
+      color: #000;
     }
 
     /* HERO */
     .hero {
-      background: linear-gradient(180deg, var(--navy) 0%, #162438 100%);
+      background: radial-gradient(circle at 100% 0%, rgba(197, 160, 89, 0.08) 0%, transparent 40%),
+                  linear-gradient(180deg, var(--navy) 0%, #111d2e 100%);
       color: #fff;
       padding: 70px 0 90px;
-      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
     }
     .hero-badge {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       color: var(--gold);
       font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       margin-bottom: 20px;
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 4px;
+      background: rgba(197, 160, 89, 0.12);
+      border: 1px solid rgba(197, 160, 89, 0.25);
+      padding: 6px 14px;
+      border-radius: 4px;
     }
     .hero-title {
       font-family: 'Cinzel', serif;
-      font-size: 3rem;
+      font-size: 2.9rem;
       letter-spacing: 0.02em;
       line-height: 1.2;
-      max-width: 850px;
-      margin: 0 auto 20px;
+      margin-bottom: 20px;
     }
     .hero-title span { color: var(--gold); }
     .hero-desc {
       font-size: 1.05rem;
       color: #cbd5e1;
-      max-width: 680px;
-      margin: 0 auto 35px;
+      line-height: 1.7;
+      margin-bottom: 35px;
     }
-    .hero-trust-pills {
+    .hero-actions {
       display: flex;
-      justify-content: center;
-      gap: 20px;
+      gap: 16px;
       flex-wrap: wrap;
-      margin-top: 35px;
-      font-size: 0.85rem;
-      color: #94a3b8;
-    }
-    .trust-pill {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 8px 18px;
-      border-radius: 999px;
+      margin-bottom: 40px;
     }
 
-    /* AREAS DE ATUAÇÃO */
-    .section {
-      padding: 70px 0;
+    /* STATS ROW */
+    .hero-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
+    .hero-stat h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.9rem;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .hero-stat p {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* HERO IMAGE COMPONENT */
+    .hero-img-wrap {
+      position: relative;
+    }
+    .hero-main-photo {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+      border: 2px solid rgba(197, 160, 89, 0.3);
+    }
+    .hero-float-card {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: rgba(11, 19, 32, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--gold);
+      padding: 16px 22px;
+      border-radius: 8px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .float-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--gold);
+      color: #060b12;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+    .float-text h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      color: #fff;
+    }
+    .float-text p {
+      font-size: 0.78rem;
+      color: var(--gold);
+    }
+
+    /* AREAS DE ATUAÇÃO COM FOTOS */
+    .section { padding: 85px 0; }
     .section-header {
       text-align: center;
-      max-width: 650px;
-      margin: 0 auto 50px;
+      max-width: 680px;
+      margin: 0 auto 55px;
     }
     .section-badge {
       font-size: 0.78rem;
       font-weight: 700;
-      color: var(--gold);
+      color: var(--gold-dark);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       margin-bottom: 8px;
       display: inline-block;
     }
     .section-title {
       font-family: 'Cinzel', serif;
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       color: var(--navy);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     .section-desc {
-      font-size: 0.95rem;
-      color: var(--muted);
+      font-size: 0.98rem;
+      color: var(--text-muted);
     }
 
     .areas-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
     }
     .area-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 30px;
+      overflow: hidden;
       transition: all 0.3s ease;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
     }
     .area-card:hover {
       border-color: var(--gold);
-      transform: translateY(-4px);
-      box-shadow: 0 15px 30px rgba(15, 28, 46, 0.08);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(11, 19, 32, 0.1);
+    }
+    .area-img-box {
+      height: 180px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .area-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .area-card:hover .area-img-box img {
+      transform: scale(1.06);
+    }
+    .area-badge-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(11, 19, 32, 0.85);
+      backdrop-filter: blur(4px);
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(197, 160, 89, 0.4);
+    }
+    .area-card-content {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .area-card h3 {
       font-family: 'Cinzel', serif;
@@ -214,174 +350,347 @@
     }
     .area-card p {
       font-size: 0.88rem;
-      color: var(--muted);
+      color: var(--text-muted);
       line-height: 1.6;
       margin-bottom: 18px;
     }
     .area-link {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       font-weight: 700;
       color: var(--navy);
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      transition: all 0.2s;
     }
-    .area-link:hover { color: var(--gold-dark); }
+    .area-link:hover {
+      color: var(--gold-dark);
+      gap: 10px;
+    }
 
     /* PILARES */
     .pillars-section {
       background: var(--navy);
       color: #fff;
-      padding: 70px 0;
+      padding: 85px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
     }
     .pillars-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .pillar-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 30px 22px;
       text-align: center;
+      transition: all 0.3s;
+    }
+    .pillar-box:hover {
+      border-color: var(--gold);
+      background: rgba(197, 160, 89, 0.05);
+      transform: translateY(-4px);
+    }
+    .pillar-icon {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: 1.6rem;
+      margin-bottom: 14px;
     }
     .pillar-box h4 {
       font-family: 'Cinzel', serif;
-      color: var(--gold);
-      font-size: 1.2rem;
+      font-size: 1.15rem;
+      color: #fff;
       margin-bottom: 10px;
     }
     .pillar-box p {
       font-size: 0.85rem;
       color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    /* CTA BANNER */
+    .banner-cta {
+      background: linear-gradient(135deg, #111d2e 0%, #060b12 100%);
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      border-radius: var(--radius);
+      padding: 60px 40px;
+      text-align: center;
+      color: #fff;
+      margin: 80px auto 0;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .banner-cta h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+    }
+    .banner-cta h2 span { color: var(--gold); }
+    .banner-cta p {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 650px;
+      margin: 0 auto 30px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #060b12;
+      color: #64748b;
+      padding: 35px 0;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.85rem;
     }
 
     /* BOTÃO FLUTUANTE */
     .floating-wa {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
+      bottom: 28px;
+      right: 28px;
       background: var(--wa-green);
       color: #fff;
       padding: 14px 22px;
       border-radius: 999px;
       font-weight: 700;
-      font-size: 0.88rem;
-      text-decoration: none;
-      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
-      z-index: 9999;
+      font-size: 0.92rem;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.45);
+      z-index: 999;
+      transition: all 0.25s ease;
+      border: 2px solid #ffffff;
+    }
+    .floating-wa:hover {
+      transform: scale(1.06);
+      background: var(--wa-hover);
     }
 
-    /* FOOTER */
-    .footer {
-      background: #080f1a;
-      color: #64748b;
-      padding: 40px 0;
-      text-align: center;
-      font-size: 0.8rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .areas-grid { grid-template-columns: 1fr; }
+      .pillars-grid { grid-template-columns: 1fr 1fr; }
       .hero-title { font-size: 2.2rem; }
-      .areas-grid, .pillars-grid { grid-template-columns: 1fr; }
+      .hero-main-photo { height: 350px; }
+      .hero-float-card { position: static; margin-top: 15px; }
+      .top-bar-inner { flex-direction: column; gap: 4px; text-align: center; }
     }
   </style>
 </head>
 <body>
 
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div>Atendimento Jurídico Especializado em <span id="hero-city" class="oab-tag">São Paulo e Região</span></div>
+      <div>Atuação em conformidade com o Código de Ética da OAB &bull; Sigilo Absoluto</div>
+    </div>
+  </div>
+
   <!-- HEADER -->
   <header class="header">
     <div class="container header-inner">
       <a href="#" class="brand">
-        <div class="brand-symbol">&#9878;</div>
+        <div class="brand-symbol">§</div>
         <div class="brand-text">
-          <h2 id="law-name-nav">Advocacia & Consultoria</h2>
-          <span>Assessoria Jurídica Estratégica</span>
+          <h2 id="law-name-nav">Vanguard Advocacia</h2>
+          <span>Consultoria & Litigância Estratégica</span>
         </div>
       </a>
-
       <a href="#" id="btn-header-wa" class="btn btn-wa" target="_blank">
-        Atendimento Confidencial
+        Consulta Sigilosa WhatsApp
       </a>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container">
-      <span class="hero-badge">Atuação Técnica & Segurança Jurídica</span>
-      <h1 class="hero-title" id="hero-title">
-        Defesa Estratégica dos Seus Direitos e Patrimônio em <span id="hero-city">Campinas</span>
-      </h1>
-      <p class="hero-desc" id="hero-desc">
-        Atendimento humanizado, ético e resolutivo. Oferecemos assessoria jurídica completa para pessoas físicas e empresas com agilidade e total sigilo profissional.
-      </p>
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">Defesa Patrimonial & Corporativa</div>
+        <h1 class="hero-title">Segurança jurídica e estratégia para <span>decisões de alto impacto</span></h1>
+        <p class="hero-desc">
+          Banca de advocacia focada na resolução célere de conflitos empresariais, blindagem patrimonial preventiva e defesas tributárias de alta complexidade.
+        </p>
+        <div class="hero-actions">
+          <a href="#" id="btn-hero-wa" class="btn btn-gold" target="_blank">
+            Agendar Análise Preliminar
+          </a>
+          <a href="#areas" class="btn btn-wa">
+            Conhecer Áreas de Atuação
+          </a>
+        </div>
 
-      <a href="#" id="btn-hero-wa" class="btn btn-gold btn-lg" target="_blank">
-        Falar com Advogado pelo WhatsApp
-      </a>
+        <div class="hero-stats-row">
+          <div class="hero-stat">
+            <h3>+15 Anos</h3>
+            <p>Tradição Jurídica</p>
+          </div>
+          <div class="hero-stat">
+            <h3>R$ 180M+</h3>
+            <p>Patrimônio Protegido</p>
+          </div>
+          <div class="hero-stat">
+            <h3>98.4%</h3>
+            <p>Acordos Favoráveis</p>
+          </div>
+        </div>
+      </div>
 
-      <div class="hero-trust-pills">
-        <div class="trust-pill">Inscrição Regular na OAB</div>
-        <div class="trust-pill">Canal 100% Confidencial</div>
-        <div class="trust-pill">Atendimento Presencial e Online</div>
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1000&q=80" alt="Equipe Jurídica Executiva" class="hero-main-photo">
+        <div class="hero-float-card">
+          <div class="float-icon">§</div>
+          <div class="float-text">
+            <h4>Banca Premiada</h4>
+            <p>Reconhecida em Direito Corporativo</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ÁREAS DE ATUAÇÃO -->
-  <section class="section" id="areas">
+  <!-- AREAS DE ATUAÇÃO -->
+  <section id="areas" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge">Especialidades</span>
-        <h2 class="section-title">Principais Áreas de Atuação</h2>
-        <p class="section-desc">Assessoria preventiva e contenciosa conduzida por advogados especialistas.</p>
+        <span class="section-badge">Áreas de Especialidade</span>
+        <h2 class="section-title">Assessoria Completa nas Principais Ramificações</h2>
+        <p class="section-desc">Atuação sob medida com advogados especialistas dedicados a cada núcleo de litígio ou consultoria preventiva.</p>
       </div>
 
       <div class="areas-grid">
+        <!-- Area 1 -->
         <div class="area-card">
-          <h3>Direito Civil & Contratos</h3>
-          <p>Elaboração e revisão minuciosa de contratos, ações indenizatórias, cobranças judiciais e extrajudiciais, e resolução de conflitos patrimoniais.</p>
-          <a href="#" class="area-link btn-area-wa" data-area="Direito Civil">Consultar Especialista &rarr;</a>
+          <div class="area-img-box">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Direito Empresarial">
+            <span class="area-badge-tag">Corporativo</span>
+          </div>
+          <div class="area-card-content">
+            <div>
+              <h3>Direito Empresarial & Societário</h3>
+              <p>Estruturação de contratos comerciais complexos, fusões e aquisições (M&A), resolução de conflitos entre sócios e governança preventiva.</p>
+            </div>
+            <a href="#" class="area-link btn-area-wa" data-area="Direito Empresarial">Consultar Especialista &rarr;</a>
+          </div>
         </div>
 
+        <!-- Area 2 -->
         <div class="area-card">
-          <h3>Direito do Trabalho Empresarial</h3>
-          <p>Defesa técnica em reclamações trabalhistas, auditoria de conformidade para evitar passivos e negociações com colaboradores e sindicatos.</p>
-          <a href="#" class="area-link btn-area-wa" data-area="Direito Trabalhista">Consultar Especialista &rarr;</a>
+          <div class="area-img-box">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80" alt="Direito Tributário">
+            <span class="area-badge-tag">Fiscal</span>
+          </div>
+          <div class="area-card-content">
+            <div>
+              <h3>Direito Tributário & Recuperação</h3>
+              <p>Planejamento tributário estratégico, compensação de créditos fiscais e defesa ativa contra autuações da Receita Federal e Fazenda Estadual.</p>
+            </div>
+            <a href="#" class="area-link btn-area-wa" data-area="Direito Tributário">Consultar Especialista &rarr;</a>
+          </div>
         </div>
 
+        <!-- Area 3 -->
         <div class="area-card">
-          <h3>Direito de Família & Sucessões</h3>
-          <p>Condução ágil e discreta de inventários judiciais e em cartório, divórcios consensuais e litigiosos, guarda e partilha de bens.</p>
-          <a href="#" class="area-link btn-area-wa" data-area="Família e Sucessões">Consultar Especialista &rarr;</a>
+          <div class="area-img-box">
+            <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80" alt="Direito Trabalhista">
+            <span class="area-badge-tag">Preventivo & Defesa</span>
+          </div>
+          <div class="area-card-content">
+            <div>
+              <h3>Direito do Trabalho Patronal</h3>
+              <p>Auditorias preventivas em folhas e benefícios, gestão de passivo trabalhista e defesas estratégicas em reclamações de alta repercussão.</p>
+            </div>
+            <a href="#" class="area-link btn-area-wa" data-area="Direito Trabalhista">Consultar Especialista &rarr;</a>
+          </div>
         </div>
 
+        <!-- Area 4 -->
         <div class="area-card">
-          <h3>Direito Imobiliário & Regularização</h3>
-          <p>Assessoria completa na compra e venda segura de imóveis, usucapião, despejo, contratos de locação e regularização registral.</p>
-          <a href="#" class="area-link btn-area-wa" data-area="Direito Imobiliário">Consultar Especialista &rarr;</a>
+          <div class="area-img-box">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Família e Sucessões">
+            <span class="area-badge-tag">Patrimônio</span>
+          </div>
+          <div class="area-card-content">
+            <div>
+              <h3>Planejamento Sucessório & Família</h3>
+              <p>Elaboração de holdings familiares, inventários extrajudiciais ágeis, partilha de bens complexa e proteção patrimonial de herdeiros.</p>
+            </div>
+            <a href="#" class="area-link btn-area-wa" data-area="Família e Sucessões">Consultar Especialista &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Area 5 -->
+        <div class="area-card">
+          <div class="area-img-box">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Direito Imobiliário">
+            <span class="area-badge-tag">Imobiliário</span>
+          </div>
+          <div class="area-card-content">
+            <div>
+              <h3>Direito Imobiliário & Negócios</h3>
+              <p>Due diligence em aquisições de alto valor, regularização fundiária de áreas urbanas e rurais, distratos e litígios contratuais imobiliários.</p>
+            </div>
+            <a href="#" class="area-link btn-area-wa" data-area="Direito Imobiliário">Consultar Especialista &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Area 6 -->
+        <div class="area-card">
+          <div class="area-img-box">
+            <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=800&q=80" alt="Litigância Cível">
+            <span class="area-badge-tag">Litígios</span>
+          </div>
+          <div class="area-card-content">
+            <div>
+              <h3>Contencioso Cível Estratégico</h3>
+              <p>Atuação incisiva perante Tribunais de Justiça estaduais e Tribunais Superiores (STJ e STF) com sustentação oral e defesas de teses.</p>
+            </div>
+            <a href="#" class="area-link btn-area-wa" data-area="Contencioso Cível">Consultar Especialista &rarr;</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PILARES -->
+  <!-- PILARES DE ATUAÇÃO -->
   <section class="pillars-section">
     <div class="container">
       <div class="pillars-grid">
         <div class="pillar-box">
-          <h4>Sigilo Absoluto</h4>
-          <p>Todas as comunicações e documentos compartilhados são protegidos por rigoroso segredo profissional.</p>
+          <div class="pillar-icon">I</div>
+          <h4>Sigilo Inegociável</h4>
+          <p>Proteção integral de dados sensíveis e comunicações resguardadas pelo mais alto nível de sigilo profissional.</p>
         </div>
         <div class="pillar-box">
-          <h4>Transparência Total</h4>
-          <p>Acompanhamento claro do andamento do seu caso sem jargões jurídicos desnecessários.</p>
+          <div class="pillar-icon">II</div>
+          <h4>Comunicação Direta</h4>
+          <p>Sem burocracia ou termos herméticos: relatórios transparentes com acesso direto ao sócio responsável.</p>
         </div>
         <div class="pillar-box">
-          <h4>Agilidade de Resposta</h4>
-          <p>Canal direto de WhatsApp para sanar dúvidas e prestar contas com rapidez.</p>
+          <div class="pillar-icon">III</div>
+          <h4>Atuação Preventiva</h4>
+          <p>Antecipamos riscos e passivos antes que se transformem em litígios demorados e onerosos.</p>
         </div>
+        <div class="pillar-box">
+          <div class="pillar-icon">IV</div>
+          <h4>Foco em Resultados</h4>
+          <p>Alinhamento estrito com os objetivos econômicos e operacionais do cliente em cada movimentação processual.</p>
+        </div>
+      </div>
+
+      <!-- BANNER CTA -->
+      <div class="banner-cta">
+        <h2>Precisa de orientação jurídica <span>confidencial</span>?</h2>
+        <p>Converse diretamente com nossa equipe de advogados especialistas e receba um diagnóstico preliminar do seu caso em até 2 horas úteis.</p>
+        <a href="#" id="btn-banner-wa" class="btn btn-gold" style="padding: 16px 36px; font-size: 1rem;" target="_blank">
+          Falar com um Advogado pelo WhatsApp
+        </a>
       </div>
     </div>
   </section>
@@ -389,37 +698,37 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p id="law-footer-name">Escritório de Advocacia &copy; 2026. Todos os direitos reservados.</p>
-      <p style="margin-top: 6px; font-size: 0.72rem;">Em estrita conformidade com o Código de Ética e Disciplina da OAB.</p>
+      <p id="law-footer-name">Vanguard Advocacia &copy; 2026. Todos os direitos reservados.</p>
+      <p style="margin-top: 8px; font-size: 0.74rem; color: #475569;">Atuação estritamente pautada no Código de Ética e Disciplina da OAB (Ordem dos Advogados do Brasil).</p>
     </div>
   </footer>
 
   <!-- BOTÃO FLUTUANTE -->
   <a href="#" id="floating-law-wa" class="floating-wa" target="_blank">
-    <span>Atendimento WhatsApp</span>
+    <span>Plantão WhatsApp</span>
   </a>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
-      const empresa = params.get('empresa') || 'Advocacia & Consultoria Jurídica';
-      const cidade = params.get('cidade') || 'Campinas';
+      const empresa = params.get('empresa') || 'Vanguard Advocacia & Consultoria';
+      const cidade = params.get('cidade') || 'São Paulo';
       const whatsapp = params.get('whatsapp') || '5511913393797';
 
       document.getElementById('page-title').innerText = `${empresa} | Advocacia em ${cidade}`;
       document.getElementById('law-name-nav').innerText = empresa;
-      document.getElementById('hero-city').innerText = cidade;
-      document.getElementById('law-footer-name').innerText = `${empresa} &copy; 2026. Todos os direitos reservados.`;
+      document.getElementById('hero-city').innerText = `${cidade} e Região`;
+      document.getElementById('law-footer-name').innerHTML = `${empresa} &copy; 2026. Todos os direitos reservados.`;
 
-      const defaultMsg = encodeURIComponent(`Olá! Gostaria de consultar um advogado da ${empresa} em ${cidade} sobre um caso. Como posso agendar?`);
+      const defaultMsg = encodeURIComponent(`Olá! Gostaria de consultar um advogado da ${empresa} em ${cidade} sobre um caso. Como podemos agendar?`);
       const defaultUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
-      document.querySelectorAll('#btn-header-wa, #btn-hero-wa, #floating-law-wa').forEach(el => {
+      document.querySelectorAll('#btn-header-wa, #btn-hero-wa, #btn-banner-wa, #floating-law-wa').forEach(el => {
         el.href = defaultUrl;
       });
 
       document.querySelectorAll('.btn-area-wa').forEach(btn => {
         const area = btn.getAttribute('data-area');
-        const areaMsg = encodeURIComponent(`Olá! Gostaria de uma orientação jurídica em "${area}" com a equipe da ${empresa}.`);
+        const areaMsg = encodeURIComponent(`Olá! Gostaria de uma consulta jurídica na área de "${area}" com a equipe da ${empresa}.`);
         btn.href = `https://wa.me/${whatsapp}?text=${areaMsg}`;
         btn.target = '_blank';
       });

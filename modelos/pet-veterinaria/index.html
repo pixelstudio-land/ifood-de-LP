@@ -7,47 +7,44 @@
   <meta name="description" content="Atendimento veterinário 24 horas, vacinas, cirurgias, exames laboratoriais, banho e tosa com amor e dedicação ao seu melhor amigo.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-teal: #0d9488;
+      --teal: #0d9488;
       --teal-dark: #0f766e;
-      --accent-orange: #f97316;
-      --whatsapp-green: #10b981;
-      --whatsapp-hover: #059669;
-      --bg-light: #f0fdfa;
+      --teal-deep: #042f2e;
+      --teal-light: #f0fdfa;
+      --coral: #f97316;
+      --coral-dark: #ea580c;
+      --wa-green: #10b981;
+      --wa-hover: #059669;
       --surface: #ffffff;
-      --text-dark: #134e4a;
+      --text: #0f172a;
       --text-muted: #64748b;
       --border: #ccfbf1;
-      --radius-sm: 8px;
-      --radius-md: 16px;
-      --radius-lg: 24px;
+      --radius: 16px;
       --shadow-card: 0 10px 25px -5px rgba(13, 148, 136, 0.08);
-      --shadow-hover: 0 20px 35px -8px rgba(13, 148, 136, 0.16);
+      --shadow-hover: 0 20px 35px -8px rgba(13, 148, 136, 0.18);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-light);
-      color: #1e293b;
+      background-color: var(--teal-light);
+      color: var(--text);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* TOP BAR SOS */
+    /* TOP SOS BAR */
     .top-sos-bar {
-      background: #0f766e;
+      background: var(--teal-dark);
       color: #fff;
       font-size: 0.8rem;
-      padding: 8px 0;
+      padding: 9px 0;
       text-align: center;
       font-weight: 600;
     }
@@ -55,13 +52,14 @@
 
     /* NAVBAR */
     .navbar {
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
       z-index: 100;
       border-bottom: 1px solid var(--border);
       padding: 16px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
     }
     .nav-inner {
       display: flex;
@@ -73,30 +71,32 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
-      color: var(--text-dark);
+      color: var(--teal-dark);
     }
     .logo-symbol {
-      width: 42px;
-      height: 42px;
-      background: linear-gradient(135deg, var(--primary-teal), #14b8a6);
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--teal), #14b8a6);
       color: #fff;
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
-      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
     }
     .logo-text h3 {
       font-family: 'Outfit', sans-serif;
       font-size: 1.25rem;
       font-weight: 800;
       line-height: 1.1;
-      color: #0f766e;
+      color: var(--teal-dark);
     }
     .logo-text p {
       font-size: 0.72rem;
-      color: var(--accent-orange);
+      color: var(--coral);
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -108,7 +108,7 @@
       justify-content: center;
       gap: 8px;
       padding: 12px 24px;
-      border-radius: 9999px;
+      border-radius: 999px;
       font-size: 0.92rem;
       font-weight: 700;
       text-decoration: none;
@@ -117,36 +117,41 @@
       border: none;
     }
     .btn-wa {
-      background: var(--whatsapp-green);
+      background: var(--wa-green);
       color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
     }
     .btn-wa:hover {
-      background: var(--whatsapp-hover);
+      background: var(--wa-hover);
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
     }
     .btn-teal {
-      background: var(--primary-teal);
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
       color: #fff;
       box-shadow: 0 4px 14px rgba(13, 148, 136, 0.3);
     }
     .btn-teal:hover {
-      background: var(--teal-dark);
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(13, 148, 136, 0.45);
     }
-    .btn-orange {
-      background: var(--accent-orange);
+    .btn-coral {
+      background: linear-gradient(135deg, var(--coral), var(--coral-dark));
       color: #fff;
+      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
     }
-    .btn-lg {
-      padding: 16px 34px;
-      font-size: 1rem;
+    .btn-coral:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(249, 115, 22, 0.48);
     }
 
     /* HERO */
     .hero {
       position: relative;
-      padding: 70px 0 60px;
-      background: linear-gradient(180deg, #ffffff 0%, var(--bg-light) 100%);
+      padding: 70px 0 80px;
+      background: radial-gradient(circle at 100% 0%, rgba(13, 148, 136, 0.08) 0%, transparent 45%),
+                  #ffffff;
+      border-bottom: 1px solid var(--border);
     }
     .hero-grid {
       display: grid;
@@ -161,83 +166,100 @@
       background: #ccfbf1;
       color: #0f766e;
       padding: 6px 16px;
-      border-radius: 9999px;
+      border-radius: 999px;
       font-size: 0.82rem;
       font-weight: 800;
       margin-bottom: 20px;
     }
     .hero h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: 3.2rem;
+      font-size: 3.3rem;
       line-height: 1.12;
       font-weight: 800;
       color: #0f172a;
       margin-bottom: 20px;
+      letter-spacing: -0.02em;
     }
-    .hero h1 span { color: var(--primary-teal); }
+    .hero h1 span { color: var(--teal); }
     .hero p {
-      font-size: 1.05rem;
-      color: #475569;
-      margin-bottom: 30px;
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      margin-bottom: 34px;
       line-height: 1.7;
     }
-
-    .hero-card {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      padding: 34px 28px;
-      border: 1px solid var(--border);
-      box-shadow: 0 20px 40px -10px rgba(13, 148, 136, 0.12);
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
     }
-    .hero-card h3 {
+
+    .hero-stats-row {
+      display: flex;
+      gap: 30px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
+    }
+    .hero-stat-item h4 {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.5rem;
-      color: #0f766e;
-      margin-bottom: 12px;
+      font-size: 1.6rem;
       font-weight: 800;
+      color: var(--teal-dark);
     }
-    .hero-card p {
-      font-size: 0.9rem;
-      color: #64748b;
-      margin-bottom: 22px;
-    }
-    .pet-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 26px;
-    }
-    .pet-features li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: #334155;
-    }
-    .pet-check {
-      width: 22px;
-      height: 22px;
-      background: #ccfbf1;
-      color: #0d9488;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .hero-stat-item p {
       font-size: 0.8rem;
-      font-weight: 800;
+      color: var(--text-muted);
     }
 
-    /* SERVIÇOS */
-    .section { padding: 80px 0; }
+    /* HERO IMAGE */
+    .hero-img-wrap {
+      position: relative;
+    }
+    .hero-main-photo {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 0 25px 50px -10px rgba(13, 148, 136, 0.2);
+      border: 4px solid #fff;
+    }
+    .hero-float-card {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      padding: 16px 22px;
+      border-radius: 12px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .emergency-pulse {
+      width: 14px;
+      height: 14px;
+      background: #ef4444;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+      animation: pulse-red 2s infinite;
+    }
+    @keyframes pulse-red {
+      0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+    }
+
+    /* SEÇÃO DE SERVIÇOS */
+    .section { padding: 85px 0; }
     .section-header {
       text-align: center;
-      max-width: 650px;
-      margin: 0 auto 50px;
+      max-width: 680px;
+      margin: 0 auto 55px;
     }
     .section-badge {
-      color: var(--primary-teal);
+      color: var(--teal);
       font-size: 0.82rem;
       font-weight: 800;
       letter-spacing: 0.08em;
@@ -247,57 +269,120 @@
     }
     .section-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       color: #0f172a;
       margin-bottom: 14px;
       font-weight: 800;
     }
-    .section-desc { color: #64748b; font-size: 0.95rem; }
+    .section-desc { color: var(--text-muted); font-size: 1rem; }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 30px;
     }
     .service-card {
       background: #fff;
-      border-radius: var(--radius-md);
-      padding: 32px 26px;
+      border-radius: var(--radius);
+      overflow: hidden;
       border: 1px solid var(--border);
       box-shadow: var(--shadow-card);
+      transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.3s ease;
     }
     .service-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
       box-shadow: var(--shadow-hover);
       border-color: #5eead4;
     }
-    .service-icon {
-      font-size: 2.2rem;
-      margin-bottom: 16px;
+    .service-img-box {
+      height: 200px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
     }
-    .service-card h3 {
+    .service-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover .service-img-box img {
+      transform: scale(1.06);
+    }
+    .service-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(4, 47, 46, 0.85);
+      backdrop-filter: blur(4px);
+      color: #5eead4;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .service-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .service-body h3 {
       font-family: 'Outfit', sans-serif;
       font-size: 1.35rem;
       font-weight: 800;
-      color: #0f766e;
+      color: var(--teal-dark);
       margin-bottom: 10px;
     }
-    .service-card p {
+    .service-body p {
       font-size: 0.88rem;
-      color: #64748b;
+      color: var(--text-muted);
       line-height: 1.6;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+    }
+    .service-link {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--teal);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+    .service-link:hover { gap: 10px; }
+
+    /* BANNER FINAL */
+    .banner-cta {
+      background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-dark) 100%);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 60px 40px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(4, 47, 46, 0.3);
+      margin: 80px auto 0;
+    }
+    .banner-cta h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.6rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+    .banner-cta p {
+      font-size: 1.05rem;
+      color: #ccfbf1;
+      max-width: 600px;
+      margin: 0 auto 30px;
     }
 
     /* FOOTER */
     .footer {
-      background: #042f2e;
+      background: var(--teal-deep);
       color: #99f6e4;
-      padding: 30px 0;
+      padding: 35px 0;
       font-size: 0.82rem;
     }
     .footer-inner {
@@ -309,42 +394,50 @@
     /* FLOATING WA */
     .floating-wa {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: var(--whatsapp-green);
+      bottom: 28px;
+      right: 28px;
+      background: var(--wa-green);
       color: #fff;
       padding: 14px 22px;
-      border-radius: 9999px;
-      font-weight: 800;
-      font-size: 0.95rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
       display: flex;
       align-items: center;
       gap: 10px;
       text-decoration: none;
-      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.45);
       z-index: 999;
+      transition: all 0.25s ease;
+      border: 2px solid #ffffff;
+    }
+    .floating-wa:hover {
+      transform: scale(1.06);
+      background: var(--wa-hover);
     }
 
     @media (max-width: 850px) {
       .hero-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 2.3rem; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-main-photo { height: 350px; }
+      .hero-float-card { position: static; margin-top: 15px; }
       .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOP BAR SOS -->
+  <!-- TOP SOS BAR -->
   <div class="top-sos-bar">
-    🐾 Plantão Veterinário e Emergências 24 Horas em <span id="top-city">Campinas</span> | UTI e Raio-X Digital
+    Plantão Veterinário & Emergências 24 Horas em <span id="top-city">Campinas</span> | UTI Intensiva e Raio-X Digital
   </div>
 
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container nav-inner">
       <a href="#" class="logo">
-        <div class="logo-symbol">🐾</div>
+        <div class="logo-symbol">VET</div>
         <div class="logo-text">
           <h3 id="brand-name-nav">Hospital Veterinário Pet Care</h3>
           <p>Medicina & Estética Animal 24h</p>
@@ -360,102 +453,112 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="hero-badge">Equipe Médica Veterinária Apaixonada</div>
+        <div class="hero-badge">Equipe Médica Veterinária Especializada</div>
         <h1>Todo o cuidado e carinho que a <span>saúde do seu pet</span> precisa</h1>
         <p>
-          Consultas clínicas, vacinação importada, cirurgias avançadas com anestesia inalatória, exames na hora e estética animal com produtos hipoalergênicos.
+          Consultas clínicas, vacinação importada, cirurgias avançadas com anestesia inalatória, exames na hora e estética animal com produtos hipoalergênicos e carinho total.
         </p>
-        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-          <a href="#" id="btn-hero-wa" class="btn btn-teal btn-lg" target="_blank">
+        <div class="hero-actions">
+          <a href="#" id="btn-hero-wa" class="btn btn-teal" target="_blank">
             Agendar Consulta no WhatsApp
           </a>
-          <a href="#" id="btn-hero-emergency" class="btn btn-orange btn-lg" target="_blank">
-            🚨 Emergência 24 Horas
+          <a href="#" id="btn-hero-emergency" class="btn btn-coral" target="_blank">
+            Plantão Emergência 24h
           </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="hero-stat-item">
+            <h4>+12.000</h4>
+            <p>Pets Atendidos</p>
+          </div>
+          <div class="hero-stat-item">
+            <h4>24 Horas</h4>
+            <p>Portas Abertas</p>
+          </div>
+          <div class="hero-stat-item">
+            <h4>4.9/5</h4>
+            <p>Avaliação Google</p>
+          </div>
         </div>
       </div>
 
-      <div>
-        <div class="hero-card">
-          <h3>Check-up Preventivo Pet</h3>
-          <p>Detecte precocemente qualquer alteração e garanta uma vida longa e alegre para o seu cão ou gato.</p>
-          <ul class="pet-features">
-            <li><span class="pet-check">&#10003;</span> Consulta clínica minuciosa com veterinário especialista</li>
-            <li><span class="pet-check">&#10003;</span> Carteirinha de vacinação digital com lembretes</li>
-            <li><span class="pet-check">&#10003;</span> Laboratório próprio com resultado no mesmo dia</li>
-            <li><span class="pet-check">&#10003;</span> Banho e tosa monitorado por câmeras</li>
-          </ul>
-          <a href="#" id="btn-card-wa" class="btn btn-wa" style="width: 100%;" target="_blank">
-            Consultar Valores de Vacinas e Consultas
-          </a>
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1000&q=80" alt="Veterinária Cuidando de Cachorro" class="hero-main-photo">
+        <div class="hero-float-card">
+          <div class="emergency-pulse"></div>
+          <div>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: #0f172a;">Pronto Atendimento 24h</h4>
+            <p style="font-size: 0.76rem; color: #64748b;">UTI, Oxigênio e Cirurgião de Plantão</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SERVIÇOS -->
-  <section class="section">
+  <section id="servicos" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge">Atendimento Integral</span>
-        <h2 class="section-title">Especialidades Veterinárias</h2>
-        <p class="section-desc">Estrutura hospitalar completa para atender desde vacinas de rotina até procedimentos de alta complexidade.</p>
+        <span class="section-badge">Cuidados Médicos Completos</span>
+        <h2 class="section-title">Especialidades e Procedimentos</h2>
+        <p class="section-desc">Infraestrutura hospitalar moderna para diagnósticos rápidos e tratamentos com máximo conforto.</p>
       </div>
 
       <div class="services-grid">
+        <!-- 1 -->
         <div class="service-card">
-          <div>
-            <div class="service-icon">🩺</div>
-            <h3>Consultas & Vacinas Importadas</h3>
-            <p>Vacinas V10/V8, antirrábica e gripe com reforços pontuais e controle de vermífugos e antipulgas.</p>
+          <div class="service-img-box">
+            <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=800&q=80" alt="Consultas e Vacinas">
+            <span class="service-tag">Preventivo</span>
           </div>
-          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Vacinas e Consultas" target="_blank">Agendar Vacina</a>
+          <div class="service-body">
+            <div>
+              <h3>Consultas & Vacinação Importada</h3>
+              <p>Check-up preventivo completo, vacinas éticas V10/V8, antirrábica e teste rápido para doenças infecciosas.</p>
+            </div>
+            <a href="#" class="service-link btn-service-wa" data-servico="Consultas e Vacinas">Agendar Consulta &rarr;</a>
+          </div>
         </div>
 
+        <!-- 2 -->
         <div class="service-card">
-          <div>
-            <div class="service-icon">🔬</div>
-            <h3>Exames de Sangue & Ultrassom</h3>
-            <p>Diagnóstico por imagem e bioquímico na hora, garantindo conduta rápida para a recuperação do pet.</p>
+          <div class="service-img-box">
+            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Cirurgias Veterinárias">
+            <span class="service-tag">Centro Cirúrgico</span>
           </div>
-          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Exames e Ultrassom" target="_blank">Agendar Exames</a>
+          <div class="service-body">
+            <div>
+              <h3>Cirurgias & Anestesia Inalatória</h3>
+              <p>Castração segura, cirurgias ortopédicas e de tecidos moles com monitoramento multiparamétrico contínuo.</p>
+            </div>
+            <a href="#" class="service-link btn-service-wa" data-servico="Cirurgias">Consultar Cirurgião &rarr;</a>
+          </div>
         </div>
 
+        <!-- 3 -->
         <div class="service-card">
-          <div>
-            <div class="service-icon">🏥</div>
-            <h3>Cirurgias & Castração Segura</h3>
-            <p>Centro cirúrgico estéril com monitor multiparâmetro e anestesia inalatória com mínimo risco operatório.</p>
+          <div class="service-img-box">
+            <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80" alt="Banho e Tosa VIP">
+            <span class="service-tag">Estética & Spa</span>
           </div>
-          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Cirurgia e Castração" target="_blank">Orçar Castração</a>
+          <div class="service-body">
+            <div>
+              <h3>Banho, Tosa da Raça & Hidratação</h3>
+              <p>Ambiente climatizado, toalhas esterilizadas individuais e produtos hipoalergênicos de alta qualidade.</p>
+            </div>
+            <a href="#" class="service-link btn-service-wa" data-servico="Banho e Tosa">Reservar Horário &rarr;</a>
+          </div>
         </div>
+      </div>
 
-        <div class="service-card">
-          <div>
-            <div class="service-icon">🛁</div>
-            <h3>Banho, Tosa & Hidratação</h3>
-            <p>Shampoos hipoalergênicos, toalhas esterilizadas individuais e secagem sem estresse para seu companheiro.</p>
-          </div>
-          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Banho e Tosa" target="_blank">Marcar Banho</a>
-        </div>
-
-        <div class="service-card">
-          <div>
-            <div class="service-icon">🦷</div>
-            <h3>Odontologia Veterinária</h3>
-            <p>Remoção de tártaro ultrassônica para prevenir infecções gengivais, mau hálito e perda precoce dos dentes.</p>
-          </div>
-          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Tratamento Dentário Pet" target="_blank">Avaliar Boca</a>
-        </div>
-
-        <div class="service-card">
-          <div>
-            <div class="service-icon">🚗</div>
-            <h3>Táxi Pet (Leva e Traz)</h3>
-            <p>Transporte com ar condicionado e caixas higienizadas para levar seu pet para a clínica ou banho com conforto.</p>
-          </div>
-          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Taxi Pet" target="_blank">Pedir Táxi Pet</a>
-        </div>
+      <!-- BANNER CTA -->
+      <div class="banner-cta">
+        <h2>Seu amigo merece o melhor cuidado</h2>
+        <p>Agende uma consulta ou tire dúvidas sobre sintomas e vacinas diretamente com nossa equipe no WhatsApp.</p>
+        <a href="#" id="btn-banner-wa" class="btn btn-coral" style="padding: 16px 36px; font-size: 1rem;" target="_blank">
+          Falar com a Recepção no WhatsApp
+        </a>
       </div>
     </div>
   </section>
@@ -475,7 +578,7 @@
 
   <!-- FLOATING WA -->
   <a href="#" id="floating-wa" class="floating-wa" target="_blank">
-    <span>WhatsApp Pet Care</span>
+    <span>WhatsApp Veterinário</span>
   </a>
 
   <!-- SCRIPT DINÂMICO VIA URL -->
@@ -486,27 +589,29 @@
       const cidade = params.get('cidade') || 'Campinas';
       const whatsapp = params.get('whatsapp') || '5511913393797';
 
-      document.getElementById('page-title').innerText = `${empresa} | Clínica Veterinária 24h em ${cidade}`;
+      document.getElementById('page-title').innerText = `${empresa} | Veterinário 24h em ${cidade}`;
       document.getElementById('brand-name-nav').innerText = empresa;
       document.getElementById('brand-name-footer').innerText = empresa;
       document.getElementById('top-city').innerText = cidade;
       document.getElementById('brand-city-footer').innerText = `CRMV Responsável Técnico | ${cidade} - SP`;
 
-      const defaultMsg = encodeURIComponent(`Olá! Estava no site da ${empresa} em ${cidade} e gostaria de agendar uma consulta para o meu pet.`);
-      const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
+      const msg = encodeURIComponent(`Olá! Gostaria de informações sobre atendimento veterinário na ${empresa} em ${cidade}.`);
+      const waUrl = `https://wa.me/${whatsapp}?text=${msg}`;
 
-      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-card-wa, #floating-wa').forEach(el => {
-        el.href = defaultWaUrl;
+      const emergMsg = encodeURIComponent(`🚨 URGENTE: Preciso de atendimento veterinário imediato para meu pet na ${empresa} em ${cidade}.`);
+      const emergUrl = `https://wa.me/${whatsapp}?text=${emergMsg}`;
+
+      document.getElementById('btn-hero-emergency').href = emergUrl;
+
+      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-banner-wa, #floating-wa').forEach(el => {
+        el.href = waUrl;
       });
 
-      // Emergência
-      const emergMsg = encodeURIComponent(`URGENTE: Olá! Meu pet precisa de atendimento emergencial em ${cidade} na ${empresa}! A clínica está recebendo agora?`);
-      document.getElementById('btn-hero-emergency').href = `https://wa.me/${whatsapp}?text=${emergMsg}`;
-
       document.querySelectorAll('.btn-service-wa').forEach(btn => {
-        const serv = btn.getAttribute('data-serv');
-        const sMsg = encodeURIComponent(`Olá! Gostaria de consultar informações sobre o serviço de "${serv}" na ${empresa} em ${cidade}.`);
+        const servico = btn.getAttribute('data-servico') || 'Serviço Veterinário';
+        const sMsg = encodeURIComponent(`Olá! Gostaria de agendar ou saber valores para "${servico}" na ${empresa} em ${cidade}.`);
         btn.href = `https://wa.me/${whatsapp}?text=${sMsg}`;
+        btn.target = '_blank';
       });
     });
   </script>

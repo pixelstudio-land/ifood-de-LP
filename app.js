@@ -1,912 +1,1306 @@
 // ==========================================================================
-// VITRINE PRO - MOTOR DINÂMICO DE PERSONALIZAÇÃO CONTEXTUAL & CATÁLOGO
+// PIXEL STUDIO - MOTOR DINÂMICO DE PERSONALIZAÇÃO CONTEXTUAL & CATÁLOGO
 // ==========================================================================
 
 const PERSONAL_WHATSAPP_PHONE = '5511913393797'; // WhatsApp Pessoal para fechamento
 
-// CATÁLOGO COMPLETO DE MODELOS ESTRUTURADOS POR NICHO (40+ OPÇÕES)
+// CATÁLOGO COMPLETO DE MODELOS ESTRUTURADOS POR NICHO COM IMAGENS HD
 const MODELS_CATALOG = [
-  // ========================================================================
-  // 1. ODONTOLOGIA & SAÚDE
-  // ========================================================================
   {
-    id: 'odonto-estetica',
-    category: 'odontologia',
-    title: 'Odonto Prime (Estética & Implantes)',
-    desc: 'Estrutura de luxo focada em procedimentos de alto valor: clareamento dental a laser, facetas em resina, lentes de contato e implantes guiados.',
-    tag: 'Mais Pedido',
-    liveUrl: 'modelos/odonto-prime/index.html',
-    highlights: [
-      'Galeria de tratamentos com fotos em alta definição',
-      'Botão flutuante de agendamento no WhatsApp',
-      'Carregamento em 0.8s no 4G',
-      'Área com depoimentos de pacientes e FAQ'
+    "id": "odonto-estetica",
+    "category": "odontologia",
+    "title": "Odonto Prime (Estética & Implantes)",
+    "desc": "Estrutura premium focada em procedimentos de alto ticket: clareamento a laser, facetas em resina, lentes de porcelana e implantes guiados.",
+    "tag": "Mais Pedido",
+    "previewImg": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/odonto-prime/index.html",
+    "highlights": [
+      "Agendamento no WhatsApp",
+      "Galeria de Casos Reais",
+      "Carregamento em 0.8s",
+      "Depoimentos em Destaque"
     ],
-    demoContent: {
-      headline: 'Transforme o seu sorriso com estética dental avançada',
-      sub: 'Atendimento humanizado, tecnologia de ponta e especialistas prontos para cuidar do seu sorriso.',
-      ctaText: 'Agendar Consulta de Avaliação no WhatsApp',
-      services: [
-        { title: 'Lentes e Facetas de Contato', desc: 'Harmonia perfeita e naturalidade para o seu sorriso.' },
-        { title: 'Implantes Dentários Guiados', desc: 'Recuperação estética e mastigatória sem dor.' },
-        { title: 'Clareamento Dental a Laser', desc: 'Resultados visíveis e seguros desde a primeira sessão.' }
+    "demoContent": {
+      "headline": "Transforme o seu sorriso com estética dental avançada",
+      "sub": "Atendimento humanizado, tecnologia de ponta e especialistas prontos para cuidar do seu sorriso.",
+      "ctaText": "Agendar Consulta de Avaliação no WhatsApp",
+      "services": [
+        {
+          "title": "Lentes e Facetas de Contato",
+          "desc": "Harmonia perfeita e naturalidade para o seu sorriso."
+        },
+        {
+          "title": "Implantes Dentários Guiados",
+          "desc": "Recuperação estética e mastigatória sem dor."
+        },
+        {
+          "title": "Clareamento Dental a Laser",
+          "desc": "Resultados visíveis e seguros desde a primeira sessão."
+        }
       ]
     }
   },
   {
-    id: 'odonto-clinica-geral',
-    category: 'odontologia',
-    title: 'Clínica Odontológica & Família',
-    desc: 'Ideal para clínicas com múltiplos dentistas, abrangendo desde odontopediatria até prótese, limpeza preventiva e ortodontia.',
-    tag: 'Alta Conversão',
-    highlights: [
-      'Apresentação do corpo clínico completo',
-      'Tabela simplificada de convênios ou formas de pagamento',
-      'Localização integrada com Google Maps',
-      'Botão direto de tira-dúvidas com a recepção'
+    "id": "odonto-clinica-geral",
+    "category": "odontologia",
+    "title": "Clínica Odontológica & Família",
+    "desc": "Ideal para clínicas com equipe multidisciplinar: odontopediatria, ortodontia, próteses e prevenção bucal.",
+    "tag": "Alta Conversão",
+    "previewImg": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Apresentação do Corpo Clínico",
+      "Convênios & Formas de Pagamento",
+      "Localização com Mapa",
+      "Atendimento Humanizado"
     ],
-    demoContent: {
-      headline: 'Cuidado odontológico completo para toda a sua família',
-      sub: 'Clínica multidisciplinar com horários flexíveis e atendimento emergencial.',
-      ctaText: 'Falar com a Recepção no WhatsApp',
-      services: [
-        { title: 'Ortodontia & Alinhadores Invisíveis', desc: 'Correção rápida e discreta para adultos e jovens.' },
-        { title: 'Odontopediatria sem Traumas', desc: 'Cuidado lúdico e acolhedor para os pequenos.' },
-        { title: 'Tratamento de Canal & Restaurações', desc: 'Alívio imediato e máxima conservação dental.' }
+    "demoContent": {
+      "headline": "Cuidado odontológico completo para toda a sua família",
+      "sub": "Clínica multidisciplinar com horários flexíveis e atendimento emergencial.",
+      "ctaText": "Falar com a Recepção no WhatsApp",
+      "services": [
+        {
+          "title": "Ortodontia & Alinhadores",
+          "desc": "Correção rápida e discreta para adultos e jovens."
+        },
+        {
+          "title": "Odontopediatria Acolhedora",
+          "desc": "Cuidado lúdico e sem traumas para os pequenos."
+        },
+        {
+          "title": "Tratamento de Canal & Restaurações",
+          "desc": "Alívio imediato e máxima conservação dental."
+        }
       ]
     }
   },
   {
-    id: 'odonto-alinhadores',
-    category: 'odontologia',
-    title: 'Ortodontia Digital & Alinhadores Invisíveis',
-    desc: 'Focada na venda de tratamentos ortodônticos modernos, com escaneamento intraoral e comparação antes x depois.',
-    tag: 'Tecnologia',
-    highlights: [
-      'Simulador visual do tratamento ortodôntico',
-      'Foco em estética e praticidade no dia a dia',
-      'Depoimentos em vídeo de pacientes',
-      'Condições de parcelamento facilitadas'
+    "id": "odonto-alinhadores",
+    "category": "odontologia",
+    "title": "Ortodontia Digital & Alinhadores Invisíveis",
+    "desc": "Página moderna focada em tratamentos ortodônticos estéticos, escaneamento intraoral e comparação antes e depois.",
+    "tag": "Tecnologia",
+    "previewImg": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Simulador 3D do Sorriso",
+      "Foco em Discrição & Conforto",
+      "Depoimentos de Pacientes",
+      "Parcelamento Facilitado"
     ],
-    demoContent: {
-      headline: 'Alinhe seus dentes com total discrição e conforto',
-      sub: 'Sem peças metálicas, sem dor e com tecnologia de escaneamento 3D.',
-      ctaText: 'Solicitar Simulação 3D no WhatsApp',
-      services: [
-        { title: 'Alinhadores Invisíveis Removíveis', desc: 'Liberdade para comer e higienizar sem incômodos.' },
-        { title: 'Escaneamento Digital em 15 Minutos', desc: 'Veja a previsão do seu novo sorriso na primeira consulta.' },
-        { title: 'Aparelhos Autoligados Estéticos', desc: 'Movimentação rápida e porcelana transparente.' }
+    "demoContent": {
+      "headline": "Alinhe seus dentes com total discrição e conforto",
+      "sub": "Sem peças metálicas, sem dor e com tecnologia de escaneamento 3D.",
+      "ctaText": "Solicitar Simulação 3D no WhatsApp",
+      "services": [
+        {
+          "title": "Alinhadores Invisíveis Removíveis",
+          "desc": "Liberdade para comer e higienizar sem incômodos."
+        },
+        {
+          "title": "Escaneamento Digital em 15 Minutos",
+          "desc": "Veja a previsão do seu novo sorriso na primeira consulta."
+        },
+        {
+          "title": "Aparelhos Autoligados Estéticos",
+          "desc": "Movimentação rápida e porcelana transparente."
+        }
       ]
     }
   },
   {
-    id: 'odonto-pediatria',
-    category: 'odontologia',
-    title: 'Odontopediatria & Espaço Kids',
-    desc: 'Visual lúdico, colorido e reconfortante para mães e pais agendarem a primeira consulta odontológica dos filhos sem medo.',
-    tag: 'Público Família',
-    highlights: [
-      'Ambiente humanizado livre de estresse infantil',
-      'Dicas rápidas de higiene para os pais',
-      'Apresentação da sala temática infantil',
-      'Agendamento rápido em horários convenientes'
+    "id": "odonto-pediatria",
+    "category": "odontologia",
+    "title": "Odontopediatria & Espaço Kids",
+    "desc": "Visual acolhedor e reconfortante para mães e pais agendarem a consulta dos filhos com tranquilidade e sem medo.",
+    "tag": "Público Família",
+    "previewImg": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Ambiente Sem Estresse",
+      "Orientações para os Pais",
+      "Sala Temática Infantil",
+      "Agendamento Flexível"
     ],
-    demoContent: {
-      headline: 'O primeiro dentinho do seu filho cuidado com carinho e amor',
-      sub: 'Dentistas especializados em odontopediatria com atendimento acolhedor.',
-      ctaText: 'Agendar Consulta Infantil no WhatsApp',
-      services: [
-        { title: 'Check-up Preventivo Baby & Kids', desc: 'Prevenção de cáries e orientação precoce para os pais.' },
-        { title: 'Aplicação de Flúor & Selantes', desc: 'Proteção reforçada para os dentes de leite e permanentes.' },
-        { title: 'Tratamento Sem Dor e Lúdico', desc: 'Adaptação comportamental com brinquedoteca interativa.' }
+    "demoContent": {
+      "headline": "O primeiro dentinho do seu filho cuidado com carinho e amor",
+      "sub": "Dentistas especializados em odontopediatria com atendimento acolhedor.",
+      "ctaText": "Agendar Consulta Infantil no WhatsApp",
+      "services": [
+        {
+          "title": "Check-up Preventivo Baby & Kids",
+          "desc": "Prevenção de cáries e orientação precoce para os pais."
+        },
+        {
+          "title": "Aplicação de Flúor & Selantes",
+          "desc": "Proteção reforçada para os dentes de leite e permanentes."
+        },
+        {
+          "title": "Tratamento de Traumas e Emergências",
+          "desc": "Atendimento calmo e rápido para quedas e acidentes."
+        }
       ]
     }
   },
   {
-    id: 'clinica-medica-integrada',
-    category: 'odontologia',
-    title: 'Clínica Médica & Consultas Populares',
-    desc: 'Voltada para policlínicas e consultórios particulares que oferecem consultas acessíveis e exames rápidos no mesmo local.',
-    tag: 'Mais Vendido',
-    highlights: [
-      'Lista completa de especialidades médicas',
-      'Tabela de exames laboratoriais e de imagem',
-      'Agendamento sem filas pelo WhatsApp',
-      'Credenciais do responsável técnico'
+    "id": "clinica-medica-integrada",
+    "category": "odontologia",
+    "title": "Policlínica Médica & Exames",
+    "desc": "Apresentação de especialidades médicas (cardiologia, ginecologia, dermatologia, ultrassom e exames laboratoriais).",
+    "tag": "Alta Demanda",
+    "previewImg": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Múltiplas Especialidades",
+      "Agendamento Unificado",
+      "Resultados de Exames",
+      "Estrutura Completa"
     ],
-    demoContent: {
-      headline: 'Consultas médicas e exames com agilidade e preço justo',
-      sub: 'Mais de 15 especialidades com atendimento humanizado sem mensalidade.',
-      ctaText: 'Consultar Especialidades no WhatsApp',
-      services: [
-        { title: 'Clínica Geral & Cardiologia', desc: 'Check-ups, eletrocardiograma e acompanhamento preventivo.' },
-        { title: 'Ginecologia & Ultrassonografia', desc: 'Saúde da mulher com exames diagnósticos no mesmo dia.' },
-        { title: 'Exames de Sangue & Laboratório', desc: 'Resultados rápidos disponíveis online com alta precisão.' }
+    "demoContent": {
+      "headline": "Consultas médicas e exames em um só lugar com agilidade",
+      "sub": "Mais de 15 especialidades com preços acessíveis e agendamento sem filas.",
+      "ctaText": "Consultar Horários Disponíveis no WhatsApp",
+      "services": [
+        {
+          "title": "Consultas Médicas Especializadas",
+          "desc": "Cardiologia, ginecologia, ortopedia, clínico geral e mais."
+        },
+        {
+          "title": "Ultrassonografia & Eletrocardiograma",
+          "desc": "Equipamentos modernos com laudos rápidos e precisos."
+        },
+        {
+          "title": "Exames Laboratoriais Completos",
+          "desc": "Coletas de sangue, urina e hormonais com entrega online."
+        }
       ]
     }
   },
   {
-    id: 'fisioterapia-pilates',
-    category: 'odontologia',
-    title: 'Fisioterapia, RPG & Studio de Pilates',
-    desc: 'Design focado em bem-estar, reabilitação física, alívio de dores na coluna e condicionamento postural.',
-    tag: 'Bem-Estar',
-    highlights: [
-      'Apresentação dos aparelhos e do espaço',
-      'Planos mensais e pacotes de sessões',
-      'Foco em alívio de dores crônicas',
-      'Agendamento de aula experimental'
+    "id": "fisioterapia-pilates",
+    "category": "odontologia",
+    "title": "Studio de Pilates & Fisioterapia",
+    "desc": "Alívio de dores nas costas, reabilitação postural, fisioterapia esportiva e pilates clínico com avaliação individual.",
+    "tag": "Saúde & Bem-Estar",
+    "previewImg": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Avaliação Postural Gratuita",
+      "Turmas de até 3 Alunos",
+      "Reabilitação de Coluna",
+      "Fisioterapeutas Dedicados"
     ],
-    demoContent: {
-      headline: 'Livre-se das dores nas costas e recupere sua mobilidade',
-      sub: 'Fisioterapia personalizada e Pilates em aparelhos com turmas reduzidas.',
-      ctaText: 'Agendar Aula Experimental no WhatsApp',
-      services: [
-        { title: 'Pilates Clínico em Aparelhos', desc: 'Fortalecimento do core e correção de postura guiada.' },
-        { title: 'Tratamento de Coluna & Hérnia de Disco', desc: 'Técnicas manuais e tração para alívio imediato da dor.' },
-        { title: 'Reabilitação Ortopédica & Pós-Operatório', desc: 'Recuperação funcional completa com fisioterapeutas dedicados.' }
+    "demoContent": {
+      "headline": "Viva sem dores na coluna e recupere sua mobilidade e postura",
+      "sub": "Aulas personalizadas de Pilates com fisioterapeutas pós-graduados.",
+      "ctaText": "Agendar Aula Experimental no WhatsApp",
+      "services": [
+        {
+          "title": "Pilates Clínico em Aparelhos",
+          "desc": "Exercícios orientados para fortalecimento lombar e flexibilidade."
+        },
+        {
+          "title": "Fisioterapia Traumato-Ortopédica",
+          "desc": "Tratamento de hérnia de disco, tendinites e recuperação pós-cirúrgica."
+        },
+        {
+          "title": "Liberação Miofascial & Dry Needling",
+          "desc": "Alívio imediato de tensões musculares, nódulos e contraturas."
+        }
       ]
     }
   },
   {
-    id: 'psicologia-terapia',
-    category: 'odontologia',
-    title: 'Psicologia Clínica & Terapia Online / Presencial',
-    desc: 'Página sóbria e acolhedora para psicólogos e terapeutas, transmitindo sigilo, confiança e empatia.',
-    tag: 'Acolhimento',
-    liveUrl: 'modelos/psicologia-clinica/index.html',
-    highlights: [
-      'Explicação clara de como funciona a primeira sessão',
-      'Opções de atendimento online e presencial',
-      'Abordagens terapêuticas (TCC, Psicanálise)',
-      'Canal 100% sigiloso no WhatsApp'
+    "id": "psicologia-terapia",
+    "category": "odontologia",
+    "title": "Clínica de Psicologia & Psicoterapia",
+    "desc": "Ambiente seguro e acolhedor para terapia individual, de casal e online, com foco em ansiedade, burnout e autoconhecimento.",
+    "tag": "Acolhimento",
+    "previewImg": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/psicologia-clinica/index.html",
+    "highlights": [
+      "Atendimento Online e Presencial",
+      "Sigilo Ético Absoluto",
+      "Terapia Cognitivo-Comportamental",
+      "Primeira Sessão Acessível"
     ],
-    demoContent: {
-      headline: 'Um espaço seguro para cuidar da sua saúde mental e emocional',
-      sub: 'Atendimento psicológico individual para ansiedade, estresse e autoconhecimento.',
-      ctaText: 'Agendar Sessão Inicial no WhatsApp',
-      services: [
-        { title: 'Terapia para Ansiedade e Burnout', desc: 'Ferramentas práticas para recuperar o equilíbrio na rotina.' },
-        { title: 'Terapia de Casal & Relacionamentos', desc: 'Comunicação assertiva e resolução de conflitos conjugais.' },
-        { title: 'Sessões Online para Todo o Brasil', desc: 'Comodidade e sigilo diretamente do conforto da sua casa.' }
-      ]
-    }
-  },
-
-  // ========================================================================
-  // 2. GASTRONOMIA & DELIVERY
-  // ========================================================================
-  {
-    id: 'burger-delivery',
-    category: 'gastronomia',
-    title: 'Hamburgueria Artesanal & Smash Burger',
-    desc: 'Página escura, moderna e focada em abrir o apetite do cliente e receber o pedido no WhatsApp sem taxa do iFood.',
-    tag: 'Zero Taxas',
-    liveUrl: 'modelos/burger-artesanal/index.html',
-    highlights: [
-      'Cardápio digital com fotos grandes dos lanches',
-      'Montador de combos e adicionais interativo',
-      'Cálculo automático de taxa de entrega',
-      'Pedido chega formatado no WhatsApp'
-    ],
-    demoContent: {
-      headline: 'O melhor hambúrguer artesanal da cidade na sua mesa',
-      sub: 'Carnes nobres grelhadas no fogo, pães artesanais e molhos exclusivos.',
-      ctaText: 'Ver Cardápio & Pedir no WhatsApp',
-      services: [
-        { title: 'Smash Burgers Crocantes', desc: 'Pão brioche, blend duplo e queijo cheddar derretido.' },
-        { title: 'Burgers Especiais de Picanha', desc: 'Cortes premium com cebola caramelizada e bacon crocante.' },
-        { title: 'Batatas Rústicas & Shakes', desc: 'Acompanhamentos exclusivos para completar seu pedido.' }
+    "demoContent": {
+      "headline": "Um espaço seguro e sigiloso para cuidar da sua saúde mental",
+      "sub": "Psicólogos clínicos especialistas em ansiedade, depressão e relacionamentos.",
+      "ctaText": "Agendar Primeira Sessão no WhatsApp",
+      "services": [
+        {
+          "title": "Psicoterapia Individual para Adultos",
+          "desc": "Abordagens modernas para lidar com estresse, ansiedade e tomada de decisões."
+        },
+        {
+          "title": "Terapia de Casal e Conflitos",
+          "desc": "Mediação de comunicação, superação de crises e fortalecimento do vínculo."
+        },
+        {
+          "title": "Atendimento Psicológico Online",
+          "desc": "Sessões confortáveis por videochamada com a mesma eficácia presencial."
+        }
       ]
     }
   },
   {
-    id: 'pizzaria-tradicional',
-    category: 'gastronomia',
-    title: 'Pizzaria Forno a Lenha & Delivery',
-    desc: 'Perfeita para pizzarias que buscam pedidos rápidos, separando pizzas salgadas, doces, bordas recheadas e bebidas.',
-    tag: 'Mais Vendido',
-    liveUrl: 'modelos/pizzaria-forno/index.html',
-    highlights: [
-      'Divisão fácil de 2 sabores na mesma pizza',
-      'Tempo estimado de entrega na tela',
-      'Botão de atendimento telefônico e WhatsApp',
-      'Carregamento instantâneo no celular'
+    "id": "burger-delivery",
+    "category": "gastronomia",
+    "title": "Burger Artesanal & Smash Burger",
+    "desc": "Página moderna focada em fotos apetitosas e recepção de pedidos no WhatsApp com cardápio interativo e sem taxas de app.",
+    "tag": "Mais Pedido",
+    "previewImg": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/burger-artesanal/index.html",
+    "highlights": [
+      "Cardápio Interativo com Fotos",
+      "Pedido Direto no WhatsApp",
+      "Cálculo de Entrega por Bairro",
+      "Zero Comissão de Apps"
     ],
-    demoContent: {
-      headline: 'Pizzas artesanais com fermentação natural e forno à lenha',
-      sub: 'Massa leve, queijos selecionados e entrega rápida e quentinha na sua casa.',
-      ctaText: 'Fazer Pedido Direto no WhatsApp',
-      services: [
-        { title: 'Pizzas Tradicionais e Especiais', desc: 'Mais de 40 sabores entre clássicas e criações da casa.' },
-        { title: 'Bordas Recheadas Gourmet', desc: 'Catupiry original, cheddar cremoso e chocolate.' },
-        { title: 'Combos Família com Refrigerante', desc: 'Economia e qualidade para o jantar de toda a família.' }
+    "demoContent": {
+      "headline": "O melhor smash burger artesanal da cidade na sua casa",
+      "sub": "Pão brioche selado, blend de carnes frescas e queijo derretido de verdade.",
+      "ctaText": "Fazer Pedido no WhatsApp",
+      "services": [
+        {
+          "title": "Smash Duplo Cheddar Bacon",
+          "desc": "Dois discos de 90g ultra esmagados com crosta perfeita e muito bacon."
+        },
+        {
+          "title": "Clássico Artesanal da Casa",
+          "desc": "Blend 160g suculento, cebola caramelizada e maionese secreta."
+        },
+        {
+          "title": "Batata Rústica com Páprica",
+          "desc": "Crocante por fora e macia por dentro com molho especial."
+        }
       ]
     }
   },
   {
-    id: 'sushi-bar',
-    category: 'gastronomia',
-    title: 'Restaurante Japonês & Sushi Bar',
-    desc: 'Visual contemporâneo sofisticado (preto e dourado) para combinados de sushi, sashimi, temakis e rodízio.',
-    tag: 'Design Premium',
-    liveUrl: 'modelos/sushi-contemporaneo/index.html',
-    highlights: [
-      'Cardápio premium de combinados e festivais',
-      'Destaque para peixes frescos diários (salmão, atum)',
-      'Reserva de mesas para o salão e delivery exclusivo',
-      'Opções de pratos quentes (Yakisoba, Guioza)'
+    "id": "pizzaria-tradicional",
+    "category": "gastronomia",
+    "title": "Pizzaria Forno a Lenha & Delivery",
+    "desc": "Cardápio visual com escolha de 2 sabores, bordas recheadas, refrigerantes e fechamento direto no WhatsApp.",
+    "tag": "Alta Conversão",
+    "previewImg": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/pizzaria-forno/index.html",
+    "highlights": [
+      "Montagem Meio a Meio",
+      "Seletor de Borda Recheada",
+      "Promoções Diárias",
+      "Tempo Médio de Entrega"
     ],
-    demoContent: {
-      headline: 'A autêntica culinária japonesa com peixes frescos selecionados',
-      sub: 'Experiência gastronômica única no salão e delivery com embalagens térmicas.',
-      ctaText: 'Pedir Combinado de Sushi no WhatsApp',
-      services: [
-        { title: 'Combinados de Salmão & Atum', desc: 'Sashimis fatiados na hora, niguiris e uramakis especiais.' },
-        { title: 'Temakis Especiais & Hot Rolls', desc: 'Algas crocantes e recheios generosos com cream cheese.' },
-        { title: 'Festivais & Rodízio Completo', desc: 'Variedade ilimitada com entradas quentes e sobremesas.' }
+    "demoContent": {
+      "headline": "Pizzas artesanais de fermentação lenta assadas no forno a lenha",
+      "sub": "Massa crocante, molho de tomate pelado italiano e queijo de verdade.",
+      "ctaText": "Ver Cardápio e Pedir no WhatsApp",
+      "services": [
+        {
+          "title": "Pizzas Tradicionais e Especiais",
+          "desc": "Mais de 30 sabores clássicos com ingredientes selecionados."
+        },
+        {
+          "title": "Bordas Vulcão e Recheadas",
+          "desc": "Catupiry original, cheddar cremoso e chocolate belga."
+        },
+        {
+          "title": "Combos Família com Refrigerante",
+          "desc": "Pizza grande + broto doce + guaraná com super desconto."
+        }
       ]
     }
   },
   {
-    id: 'churrascaria-espetaria',
-    category: 'gastronomia',
-    title: 'Churrascaria, Espetaria & Carnes Nobres',
-    desc: 'Destaque para cortes nobres na brasa, guarnições de churrasco, marmitex executivo e chopp gelado.',
-    tag: 'Alta Conversão',
-    highlights: [
-      'Fotos apetitosas de picanha e cortes na brasa',
-      'Cardápio de almoço executivo diário',
-      'Reserva de confraternizações e aniversários',
-      'Combos de carnes com arroz, farofa e vinagrete'
+    "id": "sushi-bar",
+    "category": "gastronomia",
+    "title": "Sushi Contemporâneo & Comida Japonesa",
+    "desc": "Design refinado e sofisticado com foco em combinados de salmão fresco, hot rolls e festivais orientais.",
+    "tag": "Gourmet",
+    "previewImg": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/sushi-contemporaneo/index.html",
+    "highlights": [
+      "Embalagens Térmicas Premium",
+      "Salmão Fresco do Dia",
+      "Combinados para Casal e Família",
+      "Opções Vegetarianas"
     ],
-    demoContent: {
-      headline: 'O verdadeiro sabor do churrasco feito no fogo forte',
-      sub: 'Cortes premium, espetos artesanais e acompanhamentos que todo mundo ama.',
-      ctaText: 'Pedir Marmitex ou Churrasco no WhatsApp',
-      services: [
-        { title: 'Picanha na Brasa & Cortes Nobres', desc: 'Ancho, fraldinha e costela com ponto perfeito.' },
-        { title: 'Espetos Artesanais Variados', desc: 'Mais de 15 opções de espetos assados na hora.' },
-        { title: 'Almoço Executivo Completo', desc: 'A melhor refeição do meio-dia entregue rapidinho.' }
+    "demoContent": {
+      "headline": "A melhor experiência da culinária japonesa na sua mesa",
+      "sub": "Peixes frescos selecionados diariamente, cortes precisos e sabor inigualável.",
+      "ctaText": "Pedir Combinado Japonês no WhatsApp",
+      "services": [
+        {
+          "title": "Combinado do Chef 40 Peças",
+          "desc": "Variedade impecável de sashimis, uramakis, niguiris e jows especiais."
+        },
+        {
+          "title": "Hot Rolls Crocantes com Cream Cheese",
+          "desc": "Empanados na hora com molho tarê artesanal e cebolinha."
+        },
+        {
+          "title": "Temakis Especiais sem Arroz",
+          "desc": "Puro salmão em cubos com cream cheese e amêndoas laminadas."
+        }
       ]
     }
   },
   {
-    id: 'confeitaria-doces',
-    category: 'gastronomia',
-    title: 'Confeitaria Gourmet, Bolos & Doces Finos',
-    desc: 'Paleta delicada em tons pastéis para bolos de festa decorados, bentô cakes, brigadeiros gourmet e sobremesas de taça.',
-    tag: 'Visual Encantador',
-    highlights: [
-      'Catálogo de bolos temáticos para festas',
-      'Tabela de tamanhos por número de fatias',
-      'Encomendas programadas com antecedência',
-      'Sobremesas prontas para entrega imediata'
+    "id": "churrascaria-espetaria",
+    "category": "gastronomia",
+    "title": "Churrascaria, Espetaria & Carnes Nobres",
+    "desc": "Fotos de picanha na brasa, cortes nobres, marmitex executivas de churrasco e acompanhamentos caprichados.",
+    "tag": "Sucesso Local",
+    "previewImg": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Cortes de Carnes Selecionados",
+      "Espetos Assados na Hora",
+      "Marmitex Executiva de Churrasco",
+      "Farofa e Vinagrete da Casa"
     ],
-    demoContent: {
-      headline: 'Doces artesanais que transformam qualquer momento em celebração',
-      sub: 'Bolos decorados sob encomenda e sobremesas individuais irresistíveis.',
-      ctaText: 'Encomendar Bolo de Aniversário no WhatsApp',
-      services: [
-        { title: 'Bolos de Festa & Casamento', desc: 'Decorações personalizadas com chantininho ou pasta americana.' },
-        { title: 'Docinhos Gourmet & Brigadeiros', desc: 'Cento de doces finos para festas e eventos corporativos.' },
-        { title: 'Fatias & Taças da Felicidade', desc: 'Sobremesas caprichadas para matar a vontade hoje mesmo.' }
+    "demoContent": {
+      "headline": "Churrasco no ponto certo entregue quentinho na sua casa",
+      "sub": "Cortes premium, espetos artesanais e acompanhamentos tradicionais.",
+      "ctaText": "Pedir Churrasco no WhatsApp",
+      "services": [
+        {
+          "title": "Espetos Artesanais Variados",
+          "desc": "Mais de 15 opções de espetos assados na brasa na hora."
+        },
+        {
+          "title": "Marmita Churrasco Picanha",
+          "desc": "Arroz, feijão tropeiro, vinagrete, mandioca na manteiga e picanha suculenta."
+        },
+        {
+          "title": "Kits Churrasco para Fim de Semana",
+          "desc": "Carnes temperadas prontas para assar com carvão e acompanhamentos."
+        }
       ]
     }
   },
   {
-    id: 'marmitaria-fit',
-    category: 'gastronomia',
-    title: 'Marmitas Saudáveis, Fit & Congeladas',
-    desc: 'Focada em quem busca praticidade, perda de peso ou ganho de massa com kits semanais e mensais de refeições congeladas.',
-    tag: 'Recorrência',
-    liveUrl: 'modelos/marmitaria-fit/index.html',
-    highlights: [
-      'Cardápio semanal com contagem de calorias e macros',
-      'Kits econômicos de 10, 14 e 20 refeições',
-      'Embalagens próprias para micro-ondas livres de BPA',
-      'Entrega programada no domingo ou segunda-feira'
+    "id": "marmitaria-fit",
+    "category": "gastronomia",
+    "title": "Marmitaria Saudável & Comida Fit Congelada",
+    "desc": "Cardápio semanal de marmitas fitness ultracongeladas, cálculo de calorias e kits de 10, 14 ou 28 refeições práticas.",
+    "tag": "Alta Recorrência",
+    "previewImg": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/marmitaria-fit/index.html",
+    "highlights": [
+      "Kits Semanais e Mensais",
+      "Ingredientes 100% Naturais",
+      "Congelamento Ultrarrápido",
+      "Entrega Programada"
     ],
-    demoContent: {
-      headline: 'Comida de verdade, saudável e saborosa na sua rotina corrida',
-      sub: 'Marmitas congeladas ultrarrápidas sem conservantes. É só aquecer e saborear.',
-      ctaText: 'Pedir Kit Semanal no WhatsApp',
-      services: [
-        { title: 'Linha Low Carb & Emagrecimento', desc: 'Refeições equilibradas com vegetais frescos e proteínas magras.' },
-        { title: 'Linha Hipertrofia & Ganho de Massa', desc: 'Porções reforçadas de frango, patinho e carboidratos complexos.' },
-        { title: 'Sopas & Cremes Funcionais', desc: 'Jantares leves e nutritivos para noites práticas.' }
+    "demoContent": {
+      "headline": "Alimentação saudável, prática e deliciosa para a sua semana",
+      "sub": "Marmitas fit elaboradas por nutricionistas sem conservantes artificiais.",
+      "ctaText": "Ver Cardápio da Semana no WhatsApp",
+      "services": [
+        {
+          "title": "Kits Low Carb & Emagrecimento",
+          "desc": "Combinações leves ricas em fibras e proteínas selecionadas."
+        },
+        {
+          "title": "Linha Hipertrofia & Ganho de Massa",
+          "desc": "Porções generosas de frango, carne magra, batata doce e arroz integral."
+        },
+        {
+          "title": "Opções Vegetarianas & Veganas",
+          "desc": "Cores, nutrientes e sabores equilibrados com grão-de-bico e lentilha."
+        }
       ]
     }
   },
   {
-    id: 'cafeteria-brunch',
-    category: 'gastronomia',
-    title: 'Cafeteria Especial, Brunch & Padaria Artesanal',
-    desc: 'Ambiente aconchegante para cafés filtrados especiais, pães de fermentação natural, croissants e brunch.',
-    tag: 'Design Moderno',
-    highlights: [
-      'Cardápio de cafés especiais e métodos de extração',
-      'Vitrine de pães artesanais e folhados',
-      'Combos matinais e da tarde',
-      'Horários de atendimento e fotos do ambiente'
+    "id": "confeitaria-doces",
+    "category": "gastronomia",
+    "title": "Doceria Gourmet, Bolos & Festas",
+    "desc": "Vitrine visual para bolos decorados de aniversário, fatias gourmet, brigadeiros artesanais e encomendas de eventos.",
+    "tag": "Visual Encantador",
+    "previewImg": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Encomenda de Bolos Personalizados",
+      "Docinhos Finos para Festas",
+      "Cardápio de Pronta-Entrega",
+      "Embalagens para Presente"
     ],
-    demoContent: {
-      headline: 'Pausa perfeita para o seu café da manhã ou da tarde',
-      sub: 'Grãos selecionados de pequenos produtores e receitas artesanais feitas todo dia.',
-      ctaText: 'Ver Cardápio & Reservar Mesa no WhatsApp',
-      services: [
-        { title: 'Cafés Especiais & Bebidas Autorais', desc: 'Espressos, cappuccinos e cold brews com grãos 100% arábica.' },
-        { title: 'Pães Artesanais & Croissants', desc: 'Fermentação longa natural com textura crocante por fora e macia por dentro.' },
-        { title: 'Combos de Brunch & Sanduíches', desc: 'Opções completas com ovos mexidos, bacon e sucos naturais.' }
+    "demoContent": {
+      "headline": "Bolos e doces artesanais que transformam qualquer momento em festa",
+      "sub": "Ingredientes de alta qualidade, recheios fartos e acabamento impecável.",
+      "ctaText": "Fazer Encomenda no WhatsApp",
+      "services": [
+        {
+          "title": "Bolos Decorados sob Medida",
+          "desc": "Massa fofinha, recheios nobres e decoração artística personalizada."
+        },
+        {
+          "title": "Cento de Brigadeiros Gourmet",
+          "desc": "Pistache, ninho com nutella, belga ao leite e churros artesanal."
+        },
+        {
+          "title": "Fatias Supremas e Sobremesas",
+          "desc": "Disponíveis diariamente para pronta-entrega rápida na sua casa."
+        }
       ]
     }
   },
   {
-    id: 'acai-sorveteria',
-    category: 'gastronomia',
-    title: 'Açaíteria & Gelateria Express',
-    desc: 'Montador rápido de copo de açaí (tamanho, acompanhamentos, frutas e coberturas) com envio direto para o delivery.',
-    tag: 'Venda Rápida',
-    highlights: [
-      'Seletor simples de acompanhamentos ilimitados',
-      'Cremes especiais (ninho, nutella, pistache)',
-      'Entrega térmica que não deixa derreter',
-      'Fidelidade com pontos por pedido'
+    "id": "cafeteria-brunch",
+    "category": "gastronomia",
+    "title": "Cafeteria Especial & Brunch",
+    "desc": "Cardápio de cafés especiais, métodos de extração, croissants folhados e ambiente agradável para encontros e trabalho.",
+    "tag": "Experiência",
+    "previewImg": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Grãos 100% Arábica Premiados",
+      "Croissants e Toast Artesanais",
+      "Ambiente com Wi-Fi Rápido",
+      "Opções Veganas e Sem Lactose"
     ],
-    demoContent: {
-      headline: 'O açaí mais cremoso e geladinho entregue na sua porta',
-      sub: 'Açaí puro do Pará com dezenas de adicionais para você montar do seu jeito.',
-      ctaText: 'Montar Meu Copo no WhatsApp',
-      services: [
-        { title: 'Copos e Tigelas de 300ml a 1 Litro', desc: 'Monte com camadas fartas das suas frutas e doces favoritos.' },
-        { title: 'Cremes Especiais & Frutas Frescas', desc: 'Creme de cupuaçu, pitaya, morango, banana e leite em pó.' },
-        { title: 'Potes Família de 2 Litros', desc: 'Ideal para ter no freezer e servir para toda a família.' }
-      ]
-    }
-  },
-
-  // ========================================================================
-  // 3. BARBEARIA, BELEZA & ESTÉTICA
-  // ========================================================================
-  {
-    id: 'barbearia-premium',
-    category: 'beleza',
-    title: 'Barbearia Vintage & Gentlemen Club',
-    desc: 'Visual masculino premium com couro escuro e madeira, com tabela de serviços e botão para marcar horário.',
-    tag: 'Mais Pedido',
-    liveUrl: 'modelos/barbearia-vintage/index.html',
-    highlights: [
-      'Tabela clara de corte, barba e tratamentos',
-      'Integração com sistema de agendamento',
-      'Horário de funcionamento e mapa',
-      'Espaço para fotos da equipe de barbeiros'
-    ],
-    demoContent: {
-      headline: 'Tradição, estilo e cuidado com a sua imagem',
-      sub: 'Cortes clássicos e modernos, barba com toalha quente e ambiente com chopp gelado.',
-      ctaText: 'Agendar Horário no WhatsApp',
-      services: [
-        { title: 'Corte Cabelo & Fade', desc: 'Degradê na navalha, tesoura ou máquina com acabamento impecável.' },
-        { title: 'Barboterapia Tradicional', desc: 'Toalha quente, óleos essenciais e navalha afiada.' },
-        { title: 'Combo Cabelo + Barba + Sobrancelha', desc: 'Alinhamento completo do seu visual.' }
+    "demoContent": {
+      "headline": "O café perfeito para desacelerar o seu dia com aconchego",
+      "sub": "Grãos especiais de pequenos produtores e confeitaria artesanal diária.",
+      "ctaText": "Ver Cardápio Completo no WhatsApp",
+      "services": [
+        {
+          "title": "Métodos de Extração Filtrados",
+          "desc": "V60, Chemex, Prensa Francesa e Aeropress com notas sensoriais únicas."
+        },
+        {
+          "title": "Croissants Folhados na Manteiga",
+          "desc": "Massa leve e crocante com opções doces e salgadas recheadas na hora."
+        },
+        {
+          "title": "Combos de Café da Manhã e Brunch",
+          "desc": "Toast de avocado com ovos mexidos, suco natural e cappuccino cremoso."
+        }
       ]
     }
   },
   {
-    id: 'estetica-facial',
-    category: 'beleza',
-    title: 'Clínica de Estética & Harmonização Facial',
-    desc: 'Layout sofisticado com tons neutros e foco visual em Botox, preenchimento labial, bioestimuladores e fios de sustentação.',
-    tag: 'Design Premium',
-    liveUrl: 'modelos/clinica-estetica/index.html',
-    highlights: [
-      'Visual minimalista e elegante',
-      'Seção de perguntas frequentes (FAQ)',
-      'Formulário rápido de pré-agendamento',
-      'Integração direta com o Instagram'
+    "id": "acai-sorveteria",
+    "category": "gastronomia",
+    "title": "Açaíterias, Sorvetes & Taças Recheadas",
+    "desc": "Montador interativo de copo de açaí (tamanho, acompanhamentos e caldas) com pedido calculado direto no WhatsApp.",
+    "tag": "Jovem & Refrescante",
+    "previewImg": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Açaí Puro Sem Xarope",
+      "Mais de 30 Acompanhamentos",
+      "Copos de 300ml a 1 Litro",
+      "Entrega Rápida Sem Derreter"
     ],
-    demoContent: {
-      headline: 'Realce sua beleza natural com procedimentos seguros',
-      sub: 'Harmonização facial, bioestimuladores de colágeno e tratamentos personalizados.',
-      ctaText: 'Solicitar Avaliação Personalizada',
-      services: [
-        { title: 'Toxina Botulínica (Botox)', desc: 'Prevenção e suavização de linhas de expressão.' },
-        { title: 'Preenchimento com Ácido Hialurônico', desc: 'Volume e contorno labial com extrema naturalidade.' },
-        { title: 'Bioestimuladores de Colágeno', desc: 'Firmeza e rejuvenescimento duradouro da pele.' }
+    "demoContent": {
+      "headline": "O açaí mais cremoso e recheado do seu bairro no WhatsApp",
+      "sub": "Monte do seu jeito com frutas frescas, cremes artesanais e coberturas crocantes.",
+      "ctaText": "Montar Meu Copo no WhatsApp",
+      "services": [
+        {
+          "title": "Copo Tradicional de Açaí",
+          "desc": "Escolha seu tamanho e adicione leite condensado, paçoca e granola crocante."
+        },
+        {
+          "title": "Taças Vulcão Especiais",
+          "desc": "Nutella pura, morangos selecionados, leite ninho e bombons triturados."
+        },
+        {
+          "title": "Sorvetes Artesanais por Quilo",
+          "desc": "Potes de 1 litro e 2 litros com sabores clássicos e exclusivos da casa."
+        }
       ]
     }
   },
   {
-    id: 'studio-beleza',
-    category: 'beleza',
-    title: 'Studio Hair, Loiros & Mega Hair',
-    desc: 'Design moderno e requintado para cabeleireiros especialistas em loiras, morenas iluminadas, mega hair e noivas.',
-    tag: 'Alta Conversão',
-    liveUrl: 'modelos/studio-hair/index.html',
-    highlights: [
-      'Galeria de transformações antes x depois',
-      'Apresentação de mechas com teste de mecha seguro',
-      'Depoimentos de clientes satisfeitas',
-      'Botão de consulta de orçamento no WhatsApp'
+    "id": "barbearia-premium",
+    "category": "beleza",
+    "title": "Barbearia Vintage & Espaço Masculino",
+    "desc": "Ambiente clássico masculino com foco em corte degradê, barba na toalha quente, cerveja artesanal e agendamento sem espera.",
+    "tag": "Mais Pedido",
+    "previewImg": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/barbearia-vintage/index.html",
+    "highlights": [
+      "Agendamento em 2 Cliques",
+      "Tabela de Serviços & Valores",
+      "Barba Terapia com Toalha Quente",
+      "Avaliações de Clientes"
     ],
-    demoContent: {
-      headline: 'Sua melhor versão com profissionais especialistas em beleza',
-      sub: 'Coloração, mechas, tratamentos capilares intensivos e cuidados para o seu dia a dia.',
-      ctaText: 'Solicitar Orçamento no WhatsApp',
-      services: [
-        { title: 'Loiras & Mechas Personalizadas', desc: 'Técnicas modernas que preservam a saúde dos fios.' },
-        { title: 'Tratamentos de Cronograma Capilar', desc: 'Nutrição, hidratação e reconstrução profunda.' },
-        { title: 'Mega Hair Invisível Nanopele', desc: 'Comprimento e volume imediato com fios 100% humanos.' }
+    "demoContent": {
+      "headline": "O cuidado que seu visual merece com estilo, cerveja e tradição",
+      "sub": "Barbeiros experientes, navalha afiada e ambiente exclusivo para você relaxar.",
+      "ctaText": "Agendar Meu Horário no WhatsApp",
+      "services": [
+        {
+          "title": "Corte Cabelo Degradê Navalhado",
+          "desc": "Acabamento milimétrico, fade moderno e finalização com pomada modeladora."
+        },
+        {
+          "title": "Barboterapia com Toalha Quente",
+          "desc": "Esfoliação, óleo nutritivo, massagem facial e navalha tradicional."
+        },
+        {
+          "title": "Combo Cabelo + Barba + Sobrancelha",
+          "desc": "Visual completo alinhado com desconto especial no pacote."
+        }
       ]
     }
   },
   {
-    id: 'lash-sobrancelhas',
-    category: 'beleza',
-    title: 'Lash Designer, Extensão de Cílios & Sobrancelhas',
-    desc: 'Voltada para profissionais de extensão de cílios, lash lifting, design de sobrancelhas e micropigmentação.',
-    tag: 'Tendência',
-    liveUrl: 'modelos/lash-sobrancelhas/index.html',
-    highlights: [
-      'Guia visual de técnicas de cílios (Fio a Fio, Volume Russo)',
-      'Orientações de cuidados pós-aplicação',
-      'Tabela de manutenção e primeira colocação',
-      'Agendamento rápido de horário'
+    "id": "estetica-facial",
+    "category": "beleza",
+    "title": "Clínica de Estética & Harmonização Facial",
+    "desc": "Visual refinado com foco em procedimentos como botox, preenchimento labial, bioestimuladores e limpeza de pele profunda.",
+    "tag": "Alta Conversão",
+    "previewImg": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/clinica-estetica/index.html",
+    "highlights": [
+      "Antes e Depois com Alta Resolução",
+      "Exclusividade e Privacidade",
+      "Produtos Originais Certificados",
+      "Avaliação Individualizada"
     ],
-    demoContent: {
-      headline: 'Olhar marcante e sofisticado todos os dias ao acordar',
-      sub: 'Extensão de cílios com isolamento perfeito e design estratégico de sobrancelhas.',
-      ctaText: 'Agendar Horário no WhatsApp',
-      services: [
-        { title: 'Extensão Fio a Fio & Volume Brasileiro', desc: 'Volume leve e natural que valoriza o formato dos seus olhos.' },
-        { title: 'Volume Russo & Efeito Fox Eyes', desc: 'Densidade elegante com fios ultra-leves e curvatura perfeita.' },
-        { title: 'Design com Henna & Brow Lamination', desc: 'Alinhamento dos fios naturais para sobrancelhas encorpadas.' }
+    "demoContent": {
+      "headline": "Realce sua beleza natural com segurança, elegância e sutileza",
+      "sub": "Procedimentos estéticos avançados realizados por profissionais biomédicos e dermatologistas.",
+      "ctaText": "Agendar Consulta Estética no WhatsApp",
+      "services": [
+        {
+          "title": "Toxina Botulínica Preventiva e Reparadora",
+          "desc": "Suavização de rugas de expressão na testa, glabela e pés de galinha."
+        },
+        {
+          "title": "Preenchimento Labial com Ácido Hialurônico",
+          "desc": "Volume, contorno definido e hidratação sem perder a naturalidade."
+        },
+        {
+          "title": "Bioestimuladores de Colágeno",
+          "desc": "Firmeza e rejuvenescimento profundo da pele com durabilidade de até 2 anos."
+        }
       ]
     }
   },
   {
-    id: 'esmalteria-unhas',
-    category: 'beleza',
-    title: 'Esmalteria & Alongamento de Unhas em Gel',
-    desc: 'Layout elegante e feminino focado em alongamento em fibra de vidro, gel moldado, blindagem e nail art.',
-    tag: 'Mais Vendido',
-    highlights: [
-      'Fotos detalhadas de formatos (Stiletto, Almond, Quadrada)',
-      'Tabela de colocação inicial vs manutenção mensal',
-      'Protocolos rígidos de esterilização em autoclave',
-      'Agendamento de combos mão + pé'
+    "id": "studio-beleza",
+    "category": "beleza",
+    "title": "Studio Hair, Loiras & Mega Hair",
+    "desc": "Ideal para cabeleireiros especialistas em mechas, loiro platinado, morena iluminada, cronograma capilar e mega hair.",
+    "tag": "Público Feminino",
+    "previewImg": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/studio-hair/index.html",
+    "highlights": [
+      "Galeria de Loiras e Mechas",
+      "Avaliação de Saúde do Fio",
+      "Tratamentos de Reconstrução",
+      "Equipe de Cabeleireiros"
     ],
-    demoContent: {
-      headline: 'Unhas impecáveis, resistentes e com acabamento de joia',
-      sub: 'Alongamento em fibra de vidro e blindagem com esmaltação de alta durabilidade.',
-      ctaText: 'Agendar Manutenção no WhatsApp',
-      services: [
-        { title: 'Alongamento em Fibra de Vidro', desc: 'Resistência máxima e espessura ultrafina imperceptível.' },
-        { title: 'Blindagem de Unhas Naturais', desc: 'Camada protetora para o esmalte durar até 20 dias sem descascar.' },
-        { title: 'Nail Art & Francesinha Reversa', desc: 'Decorações exclusivas, encapsuladas e elegantes.' }
+    "demoContent": {
+      "headline": "O loiro dos seus sonhos com máxima saúde capilar e brilho",
+      "sub": "Técnicas exclusivas de mechas sem quebra com produtos internacionais de ponta.",
+      "ctaText": "Solicitar Teste de Mecha no WhatsApp",
+      "services": [
+        {
+          "title": "Mechas Criativas & Morena Iluminada",
+          "desc": "Degradê suave que valoriza o tom de pele sem marcas grosseiras."
+        },
+        {
+          "title": "Alisamento Orgânico Sem Formol",
+          "desc": "Cabelos lisos com brilho espelhado, balanço natural e zero agressão."
+        },
+        {
+          "title": "Mega Hair Fita Invisível",
+          "desc": "Volume e comprimento instantâneos com acabamento imperceptível ao toque."
+        }
       ]
     }
   },
   {
-    id: 'depilacao-laser',
-    category: 'beleza',
-    title: 'Clínica de Depilação a Laser & Cuidados Corporais',
-    desc: 'Estrutura comercial com foco em pacotes de sessões de laser, criolipólise, drenagem linfática e combate à celulite.',
-    tag: 'Pacotes & Recorrência',
-    highlights: [
-      'Calculadora de áreas do corpo com desconto em pacotes',
-      'Tecnologia de ponteira resfriada sem dor',
-      'Sessão experimental gratuita para novos clientes',
-      'Agendamento de avaliação corporal'
+    "id": "lash-sobrancelhas",
+    "category": "beleza",
+    "title": "Lash Designer & Micropigmentação",
+    "desc": "Foco na extensão de cílios (volume russo, fio a fio, híbrido), design de sobrancelhas e nanoblading natural.",
+    "tag": "Mais Vendido",
+    "previewImg": "https://images.unsplash.com/photo-1512290900672-1f55a1532f6a?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/lash-sobrancelhas/index.html",
+    "highlights": [
+      "Técnicas de Alta Durabilidade",
+      "Fios Leves de Seda",
+      "Design Personalizado para seu Rosto",
+      "Cuidados Pós-Aplicação"
     ],
-    demoContent: {
-      headline: 'Diga adeus às lâminas e à dor com depilação a laser definitiva',
-      sub: 'Pele lisa, sem foliculite e com a tecnologia mais moderna e confortável do mercado.',
-      ctaText: 'Garantir Sessão Experimental no WhatsApp',
-      services: [
-        { title: 'Depilação a Laser com Ponteira Resfriada', desc: 'Sessões rápidas e confortáveis para todas as tonalidades de pele.' },
-        { title: 'Drenagem Linfática Pós-Operatório & Detox', desc: 'Eliminação de retenção de líquidos e alívio do inchaço.' },
-        { title: 'Tratamentos para Gordura Localizada', desc: 'Protocolos combinados para modelar o contorno corporal.' }
+    "demoContent": {
+      "headline": "Olhar marcante, prático e acordar pronta todos os dias",
+      "sub": "Extensão de cílios com isolamento perfeito e nanoblading hiper-realista.",
+      "ctaText": "Agendar Meus Cílios no WhatsApp",
+      "services": [
+        {
+          "title": "Extensão de Cílios Volume Russo",
+          "desc": "Fans montados à mão com leveza e densidade na medida certa."
+        },
+        {
+          "title": "Nanoblading Fio a Fio Realista",
+          "desc": "Desenho de fios ultrafinos que preenchem falhas com total naturalidade."
+        },
+        {
+          "title": "Lash Lifting & Hidratação de Fios",
+          "desc": "Curvatura e coloração dos próprios cílios naturais sem necessidade de cola."
+        }
       ]
     }
   },
   {
-    id: 'spa-massoterapia',
-    category: 'beleza',
-    title: 'SPA Urbano, Massoterapia & Relaxamento',
-    desc: 'Página zen com cores quentes e relaxantes, perfeita para vendas de massagens relaxantes, pedras quentes e day spa.',
-    tag: 'Alto Ticket',
-    highlights: [
-      'Menu sensorial de massagens com duração em minutos',
-      'Vouchers de presentes (Gift Card Day SPA)',
-      'Ambiente com aromaterapia e banhos de imersão',
-      'Agendamento individual ou para casal'
+    "id": "esmalteria-unhas",
+    "category": "beleza",
+    "title": "Esmalteria & Spa dos Pés",
+    "desc": "Unhas em gel, fibra de vidro, blindagem de diamante, nail art e spa dos pés com esfoliação e hidratação profunda.",
+    "tag": "Sucesso Local",
+    "previewImg": "https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Alongamento em Fibra de Vidro",
+      "Materiais Esterilizados em Autoclave",
+      "Coleção de Esmaltes Importados",
+      "Horários Flexíveis"
     ],
-    demoContent: {
-      headline: 'Desconecte da correria e recarregue suas energias vitais',
-      sub: 'Terapias corporais, massagens relaxantes e rituais de bem-estar em um refúgio de paz.',
-      ctaText: 'Reservar Sessão de Massagem no WhatsApp',
-      services: [
-        { title: 'Massagem Relaxante com Óleos Essenciais', desc: 'Alívio profundo de tensões musculares e redução do estresse.' },
-        { title: 'Terapia com Pedras Quentes Vulcânicas', desc: 'Melhora da circulação e relaxamento térmico profundo.' },
-        { title: 'Day SPA Individual ou para Casal', desc: 'Circuito completo com banho de ofurô, esfoliação e massagem.' }
-      ]
-    }
-  },
-
-  // ========================================================================
-  // 4. ADVOCACIA, IMÓVEIS & SERVIÇOS
-  // ========================================================================
-  {
-    id: 'advocacia-corporativa',
-    category: 'servicos',
-    title: 'Escritório de Advocacia & Consultoria',
-    desc: 'Visual sóbrio, formal e corporativo transmitindo autoridade, seriedade e facilidade de contato jurídico em conformidade com a OAB.',
-    tag: 'Corporativo',
-    liveUrl: 'modelos/advocacia-corporativa/index.html',
-    highlights: [
-      'Apresentação das áreas de atuação do escritório',
-      'Perfil e credenciais dos advogados (OAB)',
-      'Canal de atendimento confidencial no WhatsApp',
-      'Artigos e publicações do escritório'
-    ],
-    demoContent: {
-      headline: 'Segurança jurídica e atuação estratégica para seus direitos',
-      sub: 'Soluções especializadas em Direito Empresarial, Trabalhista, Cível e Previdenciário.',
-      ctaText: 'Falar com um Advogado no WhatsApp',
-      services: [
-        { title: 'Direito Civil & Sucessões', desc: 'Contratos, inventários, divórcios e planejamento patrimonial.' },
-        { title: 'Assessoria Trabalhista Empresarial', desc: 'Prevenção de passivos e defesa técnica contenciosa.' },
-        { title: 'Consultoria Tributária e Societária', desc: 'Planejamento e estruturação eficiente para empresas.' }
+    "demoContent": {
+      "headline": "Unhas longas, resistentes e impecáveis por semanas a fio",
+      "sub": "Alongamento em fibra de vidro e esmaltação em gel sem descascar.",
+      "ctaText": "Agendar Horário de Manicure no WhatsApp",
+      "services": [
+        {
+          "title": "Alongamento em Fibra de Vidro",
+          "desc": "Resistência incomparável, curvatura natural e formato impecável."
+        },
+        {
+          "title": "Blindagem de Diamante",
+          "desc": "Camada protetora para unhas naturais crescerem sem quebras constantes."
+        },
+        {
+          "title": "Spa dos Pés com Parafina",
+          "desc": "Remoção de calosidades, esfoliação relaxante e hidratação profunda."
+        }
       ]
     }
   },
   {
-    id: 'imobiliaria-vitrine',
-    category: 'servicos',
-    title: 'Horizon Prime Imóveis & Alto Padrão',
-    desc: 'Página focada em captar proprietários para anunciar imóveis e compradores buscando lançamentos, condomínios fechados ou locação.',
-    tag: 'Alto Valor',
-    liveUrl: 'modelos/imobiliaria-prime/index.html',
-    highlights: [
-      'Destaque para imóveis selecionados com fotos e m²',
-      'Filtro rápido por tipo, bairro e faixa de valor',
-      'Canal exclusivo para avaliação e venda de imóveis',
-      'Credenciais do CRECI e suporte jurídico completo'
+    "id": "depilacao-laser",
+    "category": "beleza",
+    "title": "Clínica de Depilação a Laser & LED",
+    "desc": "Livre-se dos pelos e da foliculite com ponteira resfriada sem dor para mulheres e homens.",
+    "tag": "Tecnologia",
+    "previewImg": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Ponteira Ultrarresfriada Sem Dor",
+      "Pacotes para Axilas, Pernas e Barba",
+      "Atendimento Masculino e Feminino",
+      "Fim da Foliculite"
     ],
-    demoContent: {
-      headline: 'Encontre o imóvel perfeito para morar ou investir',
-      sub: 'Casas em condomínio, apartamentos e lançamentos com assessoria completa.',
-      ctaText: 'Consultar Imóveis Disponíveis no WhatsApp',
-      services: [
-        { title: 'Venda de Imóveis Residenciais', desc: 'As melhores opções nos bairros mais valorizados da cidade.' },
-        { title: 'Lançamentos na Planta', desc: 'Condições facilitadas direto com as melhores construtoras.' },
-        { title: 'Avaliação Imobiliária Gratuita', desc: 'Descubra o valor real de mercado para vender seu imóvel com rapidez.' }
+    "demoContent": {
+      "headline": "Pele lisa e livre de pelos definitivamente sem dor",
+      "sub": "Laser com tecnologia de resfriamento duplo seguro para todos os fototipos.",
+      "ctaText": "Garantir Pacote Promocional no WhatsApp",
+      "services": [
+        {
+          "title": "Depilação a Laser Axilas e Virilha",
+          "desc": "Redução progressiva de 90% dos pelos já nas primeiras sessões."
+        },
+        {
+          "title": "Barba Masculina e Contorno de Pescoço",
+          "desc": "Fim dos pelos encravados, vermelhidão e irritações de gilete."
+        },
+        {
+          "title": "Pacote Pernas Inteiras",
+          "desc": "Liberdade total em viagens e no dia a dia com pele acetinada."
+        }
       ]
     }
   },
   {
-    id: 'advocacia-trabalhista',
-    category: 'servicos',
-    title: 'Advocacia Trabalhista & Previdenciária (INSS)',
-    desc: 'Estrutura direta focada no trabalhador e segurado, facilitando triagem de rescisões, horas extras, acidentes e aposentadorias.',
-    tag: 'Alta Demanda',
-    highlights: [
-      'Calculadora simplificada de direitos',
-      'Exemplos comuns de abusos e verbas não pagas',
-      'Agendamento rápido de análise documental',
-      'Atendimento 100% online sem necessidade de deslocamento'
+    "id": "spa-massoterapia",
+    "category": "beleza",
+    "title": "Spa Urbano, Drenagem & Massagens",
+    "desc": "Experiência de relaxamento profundo, drenagem linfática pós-operatória, massagem relaxante com pedras quentes e reflexologia.",
+    "tag": "Relaxamento",
+    "previewImg": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Ambiente com Cromoterapia e Aromas",
+      "Drenagem Linfática Certificada",
+      "Day Spa para Casais e Noivas",
+      "Vale-Presente Disponível"
     ],
-    demoContent: {
-      headline: 'Garanta seus direitos trabalhistas e seu benefício do INSS',
-      sub: 'Análise detalhada do seu caso por advogados especialistas com resposta rápida.',
-      ctaText: 'Analisar Meu Caso no WhatsApp',
-      services: [
-        { title: 'Rescisão Indireta & Horas Extras', desc: 'Cobrança de direitos atrasados, desvio de função e adicional noturno.' },
-        { title: 'Acidentes de Trabalho & Doenças Ocupacionais', desc: 'Indenizações e estabilidade para o trabalhador lesionado.' },
-        { title: 'Aposentadoria & Revisão da Vida Toda', desc: 'Planejamento previdenciário para obter o maior valor de aposentadoria.' }
+    "demoContent": {
+      "headline": "Desconecte da rotina e renove suas energias corporais",
+      "sub": "Massoterapeutas qualificadas em ambiente silencioso, aromatizado e acolhedor.",
+      "ctaText": "Agendar Sessão de Massagem no WhatsApp",
+      "services": [
+        {
+          "title": "Massagem Relaxante com Pedras Quentes",
+          "desc": "Alívio instantâneo de dores musculares, estresse mental e insônia."
+        },
+        {
+          "title": "Drenagem Linfática Método Renata França",
+          "desc": "Eliminação imediata de retenção de líquidos e sensação de inchaço."
+        },
+        {
+          "title": "Day Spa Individual ou Casal",
+          "desc": "Ritual completo com esfoliação corporal, banho de imersão e massagem."
+        }
       ]
     }
   },
   {
-    id: 'arquitetura-interiores',
-    category: 'servicos',
-    title: 'Escritório de Arquitetura & Design de Interiores',
-    desc: 'Design contemporâneo e minimalista com portfólio visual de projetos residenciais, reformas comerciais e renderizações 3D.',
-    tag: 'Design Moderno',
-    liveUrl: 'modelos/arquitetura-interiores/index.html',
-    highlights: [
-      'Galeria de projetos residenciais e comerciais entregues',
-      'Passo a passo do processo (Briefing, 3D, Projeto Executivo, Obra)',
-      'Depoimentos de clientes satisfeitos',
-      'Orçamento direto com a equipe de arquitetos'
+    "id": "advocacia-corporativa",
+    "category": "servicos",
+    "title": "Escritório de Advocacia Corporativa & Cível",
+    "desc": "Design sóbrio e imponente de alto padrão com foco em consultoria empresarial, contratos, compliance e causas estratégicas.",
+    "tag": "Mais Pedido",
+    "previewImg": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/advocacia-corporativa/index.html",
+    "highlights": [
+      "Conformidade com Provimento OAB",
+      "Atendimento Rápido e Sigiloso",
+      "Especialistas por Área de Atuação",
+      "Consultoria Preventiva"
     ],
-    demoContent: {
-      headline: 'Projetos arquitetônicos únicos que refletem a sua história',
-      sub: 'Arquitetura inteligente, funcional e estética para transformar a forma como você vive.',
-      ctaText: 'Conversar Sobre Meu Projeto no WhatsApp',
-      services: [
-        { title: 'Projetos Residenciais Completos', desc: 'Da planta baixa ao detalhamento de marcenaria e iluminação.' },
-        { title: 'Design de Interiores & Reformas', desc: 'Otimização de espaços existentes com economia e sofisticação.' },
-        { title: 'Acompanhamento e Gestão de Obras', desc: 'Sua obra entregue no prazo sem dores de cabeça com fornecedores.' }
+    "demoContent": {
+      "headline": "Soluções jurídicas estratégicas para proteger sua empresa e patrimônio",
+      "sub": "Assessoria jurídica com rigor técnico, ética e foco em resultados concretos.",
+      "ctaText": "Agendar Consulta com Advogado no WhatsApp",
+      "services": [
+        {
+          "title": "Direito Empresarial & Contratos Comerciais",
+          "desc": "Blindagem de sócios, elaboração e revisão segura de contratos complexos."
+        },
+        {
+          "title": "Contencioso Cível Estratégico",
+          "desc": "Defesa vigorosa de interesses em litígios e cobranças empresariais."
+        },
+        {
+          "title": "Planejamento Sucessório e Patrimonial",
+          "desc": "Proteção de bens e transmissão de patrimônio com economia tributária."
+        }
       ]
     }
   },
   {
-    id: 'marcenaria-fina',
-    category: 'servicos',
-    title: 'Marcenaria & Móveis Planejados Sob Medida',
-    desc: 'Destaque visual para cozinhas planejadas, dormitórios, closets e home offices com 100% MDF e ferragens com amortecimento.',
-    tag: 'Mais Vendido',
-    liveUrl: 'modelos/marcenaria-fina/index.html',
-    highlights: [
-      'Galeria de ambientes planejados entregues',
-      'Diferenciais de materiais e garantia de 5 anos',
-      'Envio rápido de planta baixa no WhatsApp para orçamento',
-      'Projetos 3D realistas antes da produção'
+    "id": "advocacia-trabalhista",
+    "category": "servicos",
+    "title": "Advocacia Trabalhista & Previdenciária",
+    "desc": "Página voltada para orientação sobre direitos do trabalhador, horas extras, rescisão indireta, acidentes de trabalho e INSS.",
+    "tag": "Alta Conversão",
+    "previewImg": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Tira-Dúvidas Rápido no WhatsApp",
+      "Atendimento Online para todo o Brasil",
+      "Cálculo de Rescisão Trabalhista",
+      "Planejamento de Aposentadoria"
     ],
-    demoContent: {
-      headline: 'Móveis planejados sob medida com acabamento de alto padrão',
-      sub: 'Aproveitamento inteligente de cada centímetro da sua casa com design contemporâneo.',
-      ctaText: 'Enviar Planta e Pedir Orçamento no WhatsApp',
-      services: [
-        { title: 'Cozinhas Planejadas & Ilhas Gourmet', desc: 'Funcionalidade e sofisticação para o coração da sua casa.' },
-        { title: 'Dormitórios & Closets Inteligentes', desc: 'Organização impecável pensada para sua rotina diária.' },
-        { title: 'Home Office & Ambientes Corporativos', desc: 'Móveis ergonômicos e elegantes para trabalhar com produtividade.' }
+    "demoContent": {
+      "headline": "Defenda seus direitos trabalhistas e previdenciários com quem entende",
+      "sub": "Análise detalhada do seu caso com agilidade e transparência total.",
+      "ctaText": "Analisar Meu Caso no WhatsApp",
+      "services": [
+        {
+          "title": "Ações Trabalhistas & Rescisão de Contrato",
+          "desc": "Cálculo exato de horas extras, adicionais de insalubridade e verbas rescisórias."
+        },
+        {
+          "title": "Aposentadorias e Benefícios do INSS",
+          "desc": "Concessão, revisão de benefício negado e planejamento previdenciário seguro."
+        },
+        {
+          "title": "Indenização por Acidente de Trabalho",
+          "desc": "Suporte completo para estabilidade profissional e reparações financeiras."
+        }
       ]
     }
   },
   {
-    id: 'contabilidade-consultiva',
-    category: 'servicos',
-    title: 'Escritório de Contabilidade & BPO Financeiro',
-    desc: 'Página corporativa moderna para atração de novas empresas, abertura grátis de CNPJ, transição de contador e redução de impostos.',
-    tag: 'B2B',
-    liveUrl: 'modelos/contabilidade-consultiva/index.html',
-    highlights: [
-      'Abertura de empresa com taxa zero de honorários',
-      'Simulador de economia tributária (Simples Nacional vs Lucro Presumido)',
-      'Terceirização do setor financeiro (BPO)',
-      'Atendimento humanizado sem robôs impessoais'
+    "id": "imobiliaria-vitrine",
+    "category": "servicos",
+    "title": "Imobiliária Prime & Corretores de Luxo",
+    "desc": "Catálogo de imóveis residenciais e comerciais de alto padrão com galeria fotográfica, tour em vídeo e botão de visita.",
+    "tag": "Alto Padrão",
+    "previewImg": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/imobiliaria-prime/index.html",
+    "highlights": [
+      "Filtro por Faixa de Preço e Bairro",
+      "Fotos em Altíssima Definição",
+      "Tour Virtual e Vídeos do Imóvel",
+      "Agendamento Direto de Visita"
     ],
-    demoContent: {
-      headline: 'Contabilidade consultiva para sua empresa lucrar mais e pagar menos impostos',
-      sub: 'Cuidamos de toda a burocracia contábil e fiscal para você focar em fazer seu negócio crescer.',
-      ctaText: 'Falar com um Contador no WhatsApp',
-      services: [
-        { title: 'Abertura Rápida de CNPJ Gratuita', desc: 'Estruturação do seu negócio em poucos dias sem complicação.' },
-        { title: 'Planejamento Tributário Legal', desc: 'Enquadramento correto para pagar o mínimo possível de tributos.' },
-        { title: 'BPO Financeiro Terceirizado', desc: 'Emissão de notas fiscais, contas a pagar e fluxo de caixa pontual.' }
+    "demoContent": {
+      "headline": "Os melhores imóveis de alto padrão na região mais nobre da cidade",
+      "sub": "Casas em condomínio fechado, coberturas exclusivas e apartamentos de luxo.",
+      "ctaText": "Falar com Corretor Especialista no WhatsApp",
+      "services": [
+        {
+          "title": "Casas em Condomínio Fechado",
+          "desc": "Segurança armada 24h, lazer completo e projetos arquitetônicos assinados."
+        },
+        {
+          "title": "Apartamentos & Coberturas Duplex",
+          "desc": "Varanda gourmet, vista panorâmica e acabamento de alto padrão construtivo."
+        },
+        {
+          "title": "Avaliação Mercadológica de Imóveis",
+          "desc": "Precificação precisa para venda rápida e segura com assessoria jurídica."
+        }
       ]
     }
   },
   {
-    id: 'energia-solar',
-    category: 'servicos',
-    title: 'Energia Solar Fotovoltaica & Instalações',
-    desc: 'Layout focado em conversão de orçamentos para residências, comércios e indústrias que desejam reduzir até 95% na conta de luz.',
-    tag: 'Alto Ticket',
-    liveUrl: 'modelos/energia-solar/index.html',
-    highlights: [
-      'Simulador rápido de economia mensal na conta de energia',
-      'Projetos homologados com a concessionária local',
-      'Equipamentos com 25 anos de garantia de eficiência',
-      'Opções de financiamento onde a economia paga a parcela'
+    "id": "arquitetura-interiores",
+    "category": "servicos",
+    "title": "Studio de Arquitetura & Interiores",
+    "desc": "Projetos residenciais e comerciais com maquetes 3D foto-realistas, gerenciamento de obras e design de interiores refinado.",
+    "tag": "Criativo & Luxo",
+    "previewImg": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/arquitetura-interiores/index.html",
+    "highlights": [
+      "Imagens 3D Foto-Realistas",
+      "Acompanhamento do Início ao Fim da Obra",
+      "Otimização de Espaço e Iluminação",
+      "Orçamento Detalhado Sem Surpresas"
     ],
-    demoContent: {
-      headline: 'Reduza em até 95% a sua conta de luz com energia solar fotovoltaica',
-      sub: 'Gere sua própria energia limpa e valorize o seu imóvel imediatamente.',
-      ctaText: 'Simular Economia no WhatsApp',
-      services: [
-        { title: 'Sistemas Residenciais On-Grid', desc: 'Placas solares com tecnologia moderna para zerar seu consumo residencial.' },
-        { title: 'Instalações Comerciais e Industriais', desc: 'Redução drástica nos custos fixos operacionais da sua empresa.' },
-        { title: 'Manutenção e Limpeza de Painéis', desc: 'Garantia de geração máxima e conservação dos módulos solares.' }
+    "demoContent": {
+      "headline": "Projetos arquitetônicos inteligentes que transformam sonhos em realidade",
+      "sub": "Design de interiores moderno, funcionalidade e harmonia para seu lar ou empresa.",
+      "ctaText": "Solicitar Projeto Arquitetônico no WhatsApp",
+      "services": [
+        {
+          "title": "Projeto Arquitetônico Completo 3D",
+          "desc": "Plantas executivas, aprovação na prefeitura e imagens realistas do espaço."
+        },
+        {
+          "title": "Design de Interiores Residencial",
+          "desc": "Escolha de paleta de cores, mobiliário, iluminação cênica e marcenaria sob medida."
+        },
+        {
+          "title": "Gerenciamento e Reforma sem Estresse",
+          "desc": "Fiscalização de mão de obra, cumprimento de prazos e controle de custos."
+        }
       ]
     }
   },
   {
-    id: 'limpeza-higienizacao',
-    category: 'servicos',
-    title: 'Higienização de Estofados & Limpeza Pós-Obra',
-    desc: 'Página ágil com foco em fotos de sofás limpos antes x depois, remoção de ácaros, lavagem de colchões e pós-obra pesada.',
-    tag: 'Serviço Rápido',
-    highlights: [
-      'Vídeos curtos de extração de sujeira profunda',
-      'Produtos biodegradáveis e bactericidas certificados',
-      'Secagem rápida em até 2 horas',
-      'Orçamento instantâneo com envio de foto do estofado'
+    "id": "marcenaria-fina",
+    "category": "servicos",
+    "title": "Marcenaria Fina & Móveis Sob Medida",
+    "desc": "Móveis planejados 100% MDF para cozinhas gourmet, dormitórios, closets e escritórios com ferragens importadas.",
+    "tag": "Artesanal",
+    "previewImg": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/marcenaria-fina/index.html",
+    "highlights": [
+      "MDF 100% Tratado Contra Umidade",
+      "Ferragens com Amortecedores Soft-Close",
+      "Garantia de 5 Anos de Fábrica",
+      "Projeto 3D Antes de Fabricar"
     ],
-    demoContent: {
-      headline: 'Seu sofá e estofados renovados, cheirosos e livres de bactérias',
-      sub: 'Higienização profissional a seco com maquinário extrator de alta potência no seu domicílio.',
-      ctaText: 'Enviar Foto e Pedir Orçamento no WhatsApp',
-      services: [
-        { title: 'Higienização & Lavagem de Sofás', desc: 'Remoção de manchas, odores de pets e ácaros com proteção das fibras.' },
-        { title: 'Impermeabilização de Tecidos', desc: 'Blindagem contra derramamento acidental de líquidos e sujeiras.' },
-        { title: 'Limpeza Pós-Obra Detalhada', desc: 'Remoção de tintas, rejuntes e poeira fina para entrega da sua obra.' }
-      ]
-    }
-  },
-
-  // ========================================================================
-  // 5. COMÉRCIO LOCAL, AUTOMOTIVO & PETS
-  // ========================================================================
-  {
-    id: 'oficina-mecanica',
-    category: 'comercio',
-    title: 'AutoCenter Mecânica & Diagnóstico Computadorizado',
-    desc: 'Foco em transmitir honestidade, equipamentos modernos de diagnóstico por scanner, socorro rápido e agilidade na revisão.',
-    tag: 'Mais Vendido',
-    liveUrl: 'modelos/oficina-autocenter/index.html',
-    highlights: [
-      'Lista dos principais serviços mecânicos com garantia',
-      'Alerta para revisão preventiva antes de viagens',
-      'Botão de socorro rápido e guincho no WhatsApp',
-      'Orçamento transparente aprovado antes do conserto'
-    ],
-    demoContent: {
-      headline: 'Manutenção mecânica de confiança para o seu veículo',
-      sub: 'Diagnóstico computadorizado, peças originais e garantia em todos os serviços executados.',
-      ctaText: 'Agendar Revisão no WhatsApp',
-      services: [
-        { title: 'Revisão Preventiva Geral', desc: 'Freios, suspensão, correias e troca de óleo rápida.' },
-        { title: 'Diagnóstico Eletrônico por Scanner', desc: 'Identificação precisa de falhas na injeção eletrônica.' },
-        { title: 'Alinhamento 3D e Balanceamento', desc: 'Direção segura e economia de combustível para seus pneus.' }
+    "demoContent": {
+      "headline": "Móveis planejados de alto padrão sob medida para cada centímetro",
+      "sub": "Acabamentos nobres, precisão milimétrica e pontualidade rigorosa na entrega.",
+      "ctaText": "Solicitar Orçamento de Móveis no WhatsApp",
+      "services": [
+        {
+          "title": "Cozinhas Planejadas e Ilhas Gourmet",
+          "desc": "Aproveitamento inteligente de cada canto com torres de eletros integradas."
+        },
+        {
+          "title": "Closets e Dormitórios com LED Embutido",
+          "desc": "Divisões perfeitas para roupas, sapatos e acessórios com portas de vidro."
+        },
+        {
+          "title": "Painéis Ripada e Home Theater",
+          "desc": "Elegância para sala de estar com passagem oculta de fiações e fitas de LED."
+        }
       ]
     }
   },
   {
-    id: 'clinica-veterinaria',
-    category: 'comercio',
-    title: 'Hospital Veterinário 24h & Pet Care',
-    desc: 'Design afetuoso e acolhedor para hospitais veterinários 24h, consultas de rotina, vacinação, cirurgias, exames e banho e tosa.',
-    tag: '24 Horas',
-    liveUrl: 'modelos/pet-veterinaria/index.html',
-    highlights: [
-      'Plantão veterinário de emergência 24 horas',
-      'Laboratório próprio de exames e raio-x digital',
-      'Banho e tosa com toalhas esterilizadas individuais',
-      'Táxi pet para busca e entrega com segurança'
+    "id": "contabilidade-consultiva",
+    "category": "servicos",
+    "title": "Contabilidade Consultiva & Abertura de Empresas",
+    "desc": "Abertura grátis de CNPJ, transição de MEI para ME, economia de impostos legal e suporte financeiro humanizado.",
+    "tag": "Alta Conversão",
+    "previewImg": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/contabilidade-consultiva/index.html",
+    "highlights": [
+      "Abertura de Empresa Rápida e Grátis",
+      "Planejamento Tributário para Pagar Menos",
+      "Atendimento Direto no WhatsApp Sem Chatbot",
+      "Emissor de Notas Fiscais Incluso"
     ],
-    demoContent: {
-      headline: 'Todo o carinho e medicina de ponta que seu pet merece',
-      sub: 'Equipe veterinária qualificada para cuidar da saúde e do bem-estar do seu melhor amigo.',
-      ctaText: 'Agendar Consulta Veterinária no WhatsApp',
-      services: [
-        { title: 'Consultas & Vacinas Importadas', desc: 'Protocolo vacinal completo com acompanhamento rigoroso.' },
-        { title: 'Centro Cirúrgico & Anestesia Inalatória', desc: 'Máxima segurança e monitorização contínua para cirurgias.' },
-        { title: 'Estética Animal & Banhos Terapêuticos', desc: 'Produtos hipoalergênicos em ambiente climatizado sem estresse.' }
+    "demoContent": {
+      "headline": "A contabilidade descomplicada que faz sua empresa lucrar e crescer",
+      "sub": "Reduza impostos dentro da lei e livre-se da burocracia contábil com especialistas.",
+      "ctaText": "Abrir CNPJ ou Migrar de Contador no WhatsApp",
+      "services": [
+        {
+          "title": "Abertura de CNPJ em até 48 Horas",
+          "desc": "Processo 100% digital, sem dor de cabeça e com assessoria completa."
+        },
+        {
+          "title": "Redução Legal de Impostos (Simples & Lucro Presumido)",
+          "desc": "Enquadramento tributário cirúrgico para você reter mais lucro na empresa."
+        },
+        {
+          "title": "Gestão de Folha e Rotinas Fiscais",
+          "desc": "Cumprimento rigoroso de obrigações com tranquilidade perante a Receita Federal."
+        }
       ]
     }
   },
   {
-    id: 'estetica-automotiva',
-    category: 'comercio',
-    title: 'Estética Automotiva & Car Detailing',
-    desc: 'Visual moderno escuro focado em vitrificação cerâmica de pintura, polimento técnico, lavagem detalhada e higienização interna.',
-    tag: 'Visual Premium',
-    liveUrl: 'modelos/estetica-automotiva/index.html',
-    highlights: [
-      'Fotos impressionantes de reflexo espelhado na lataria',
-      'Certificados de vitrificação de até 3 anos',
-      'Proteção contra chuva ácida e raios UV',
-      'Agendamento rápido de vaga'
+    "id": "energia-solar",
+    "category": "servicos",
+    "title": "Energia Solar Fotovoltaica & Engenharia",
+    "desc": "Simulador interativo de economia na conta de luz (até 95% de redução), financiamento facilitado e instalação homologada.",
+    "tag": "Sustentabilidade",
+    "previewImg": "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/energia-solar/index.html",
+    "highlights": [
+      "Redução de até 95% na Conta de Luz",
+      "Financiamento que se Paga com a Economia",
+      "Instalação e Homologação na Concessionária",
+      "Painéis com 25 Anos de Garantia"
     ],
-    demoContent: {
-      headline: 'Devolva o brilho de zero km com polimento técnico e vitrificação',
-      sub: 'Cuidado artesanal com cada detalhe do seu carro utilizando produtos importados.',
-      ctaText: 'Solicitar Orçamento de Estética no WhatsApp',
-      services: [
-        { title: 'Polimento Técnico & Espelhamento', desc: 'Eliminação de riscos superficiais e marcas de lavagem.' },
-        { title: 'Vitrificação de Pintura Cerâmica', desc: 'Camada de proteção hidrorrepelente que facilita a limpeza por anos.' },
-        { title: 'Higienização Interna & Oxi-Sanitização', desc: 'Limpeza profunda de bancos, carpetes e eliminação de odores.' }
+    "demoContent": {
+      "headline": "Gere sua própria energia elétrica e economize até 95% todos os meses",
+      "sub": "Projetos de energia solar residencial, comercial e rural com engenharia de ponta.",
+      "ctaText": "Simular Minha Economia no WhatsApp",
+      "services": [
+        {
+          "title": "Sistemas Solares Residenciais",
+          "desc": "Instalação rápida no telhado com monitoramento da geração em tempo real pelo celular."
+        },
+        {
+          "title": "Usinas Fotovoltaicas para Empresas e Indústrias",
+          "desc": "Redução drástica de custos operacionais com rápido retorno do investimento (ROI)."
+        },
+        {
+          "title": "Manutenção e Limpeza de Painéis",
+          "desc": "Aumento da eficiência de geração com inspeção preventiva especializada."
+        }
       ]
     }
   },
   {
-    id: 'loja-roupas-boutique',
-    category: 'comercio',
-    title: 'Boutique de Moda Feminina & Lookbook',
-    desc: 'Catálogo visual dinâmico com fotos de looks da semana, tamanhos disponíveis e link direto para fechar a compra no WhatsApp.',
-    tag: 'Moda & Tendência',
-    highlights: [
-      'Lookbook semanal com fotos reais em modelos',
-      'Envio para todo o Brasil ou retirada na loja física',
-      'Tabela de medidas simplificada',
-      'Atendimento consultivo com vendedora no WhatsApp'
+    "id": "limpeza-higienizacao",
+    "category": "servicos",
+    "title": "Higienização de Estofados & Impermeabilização",
+    "desc": "Lavagem a seco de sofás, colchões, tapetes e bancos automotivos, eliminando 99,9% de ácaros, fungos e odores de pets.",
+    "tag": "Alta Procura",
+    "previewImg": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Atendimento a Domicílio com Hora Marcada",
+      "Secagem Rápida em até 4 Horas",
+      "Impermeabilização com Laudo de Não Inflamável",
+      "Produtos Biodegradáveis Seguros para Crianças e Pets"
     ],
-    demoContent: {
-      headline: 'Tendências e peças exclusivas para realçar seu estilo',
-      sub: 'Coleções pensadas para mulheres elegantes que valorizam qualidade e caimento impecável.',
-      ctaText: 'Ver Coleção e Comprar no WhatsApp',
-      services: [
-        { title: 'Looks Casuais & Alfaiataria', desc: 'Peças versáteis para o trabalho e momentos de lazer.' },
-        { title: 'Vestidos de Festa & Ocasiões Especiais', desc: 'Modelagens exclusivas para casamentos, formaturas e jantares.' },
-        { title: 'Acessórios & Bolsas Selecionadas', desc: 'O complemento ideal para deixar qualquer visual marcante.' }
+    "demoContent": {
+      "headline": "Seu sofá limpo, cheiroso e livre de ácaros como novo outra vez",
+      "sub": "Higienização profunda com extração profissional e produtos certificados pela Anvisa.",
+      "ctaText": "Pedir Orçamento com Foto no WhatsApp",
+      "services": [
+        {
+          "title": "Higienização & Lavagem de Sofás",
+          "desc": "Remoção de manchas, odores de pets e ácaros com proteção das fibras."
+        },
+        {
+          "title": "Impermeabilização Anti-Líquidos",
+          "desc": "Barreira protetora que impede a penetração de sucos, café e refrigerantes."
+        },
+        {
+          "title": "Higienização de Colchões e Cabeceiras",
+          "desc": "Desinfecção profunda para garantir noites de sono saudáveis e livres de alergias."
+        }
       ]
     }
   },
   {
-    id: 'otica-visao',
-    category: 'comercio',
-    title: 'Ótica Especializada & Armações Premium',
-    desc: 'Foco na escolha de armações de marcas famosas, lentes multifocais digitais, antirreflexo e teste visual no local.',
-    tag: 'Alta Conversão',
-    liveUrl: 'modelos/otica-prime/index.html',
-    highlights: [
-      'Catálogo de armações femininas, masculinas e infantis',
-      'Lentes com filtro de luz azul para telas',
-      'Entrega expressa de óculos prontos',
-      'Condições especiais para aposentados e estudantes'
+    "id": "oficina-mecanica",
+    "category": "comercio",
+    "title": "Oficina Mecânica & AutoCenter com Scanner",
+    "desc": "Diagnóstico eletrônico computadorizado, revisão preventiva, freios, suspensão, troca de óleo e SOS emergência mecânica.",
+    "tag": "Mais Pedido",
+    "previewImg": "https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/oficina-autocenter/index.html",
+    "highlights": [
+      "Scanner Eletrônico de Última Geração",
+      "Orçamento Aprovado por Vídeo/WhatsApp",
+      "Peças com Nota Fiscal e Garantia",
+      "Mecânicos Certificados"
     ],
-    demoContent: {
-      headline: 'Enxergue o mundo com clareza, conforto e estilo',
-      sub: 'As melhores marcas de armações e tecnologia em lentes com garantia de adaptação.',
-      ctaText: 'Consultar Armações e Valores no WhatsApp',
-      services: [
-        { title: 'Lentes Multifocais Digitais Personalizadas', desc: 'Visão nítida para perto, meia distância e longe sem distorções.' },
-        { title: 'Armações de Marcas Reconhecidas', desc: 'Ray-Ban, Oakley, Vogue e opções exclusivas com design leve.' },
-        { title: 'Lentes BlueProtect para Computador e Celular', desc: 'Alívio da fadiga ocular e dores de cabeça causadas por telas.' }
+    "demoContent": {
+      "headline": "Mecânica automotiva de confiança com diagnóstico eletrônico preciso",
+      "sub": "Revisão preventiva, motor, câmbio e suspensão para você rodar com segurança.",
+      "ctaText": "Falar com Mecânico no WhatsApp",
+      "services": [
+        {
+          "title": "Revisão Preventiva & Check-up de Viagem",
+          "desc": "Checagem completa de mais de 40 itens essenciais para segurança na estrada."
+        },
+        {
+          "title": "Troca de Óleo, Filtros e Fluidos",
+          "desc": "Lubrificantes originais recomendados pelo fabricante para longevidade do motor."
+        },
+        {
+          "title": "Diagnóstico de Injeção Eletrônica",
+          "desc": "Localização exata de falhas no painel sem adivinhações ou troca inútil de peças."
+        }
       ]
     }
   },
   {
-    id: 'escola-cursos',
-    category: 'comercio',
-    title: 'Escola de Cursos Profissionalizantes & Idiomas',
-    desc: 'Página persuasiva para captação de matrículas em cursos de inglês, informática, beleza ou formação técnica.',
-    tag: 'Matrículas Abertas',
-    highlights: [
-      'Apresentação da grade curricular e certificado reconhecido',
-      'Metodologia prática com foco no mercado de trabalho',
-      'Isenção de taxa de matrícula para contatos rápidos',
-      'Aulas presenciais e híbridas'
+    "id": "clinica-veterinaria",
+    "category": "comercio",
+    "title": "Hospital Veterinário 24h & Pet Care",
+    "desc": "Consultas de rotina, vacinação importada, cirurgias, exames laboratoriais, internação monitorada e banho e tosa carinhoso.",
+    "tag": "Alta Conversão",
+    "previewImg": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/pet-veterinaria/index.html",
+    "highlights": [
+      "Plantão Veterinário de Emergência 24h",
+      "Equipe de Médicos Veterinários Especialistas",
+      "Centro Cirúrgico e Exames no Local",
+      "Táxi Pet com Segurança"
     ],
-    demoContent: {
-      headline: 'Aprenda uma nova profissão e conquiste melhores oportunidades',
-      sub: 'Cursos práticos com professores atuantes no mercado e certificado reconhecido.',
-      ctaText: 'Garantir Bolsa Promocional no WhatsApp',
-      services: [
-        { title: 'Cursos de Idiomas com Foco em Conversação', desc: 'Inglês e espanhol do básico ao fluente sem enrolação.' },
-        { title: 'Formação em Tecnologia & Informática', desc: 'Excel avançado, design gráfico e programação prática.' },
-        { title: 'Cursos Rápidos com Empregabilidade', desc: 'Capacitação ágil para ingressar no mercado de trabalho com segurança.' }
+    "demoContent": {
+      "headline": "Todo o carinho e medicina de ponta que seu pet merece",
+      "sub": "Equipe veterinária qualificada para cuidar da saúde e do bem-estar do seu melhor amigo.",
+      "ctaText": "Agendar Consulta Veterinária no WhatsApp",
+      "services": [
+        {
+          "title": "Consultas Clínicas e Vacinação Ética",
+          "desc": "Protocolos vacinais individualizados e prevenção ativa de doenças caninas e felinas."
+        },
+        {
+          "title": "Cirurgias com Anestesia Inalatória",
+          "desc": "Castração segura, cirurgias ortopédicas e monitoramento multiparamétrico contínuo."
+        },
+        {
+          "title": "Banho & Tosa com Produtos Hipoalergênicos",
+          "desc": "Cuidado afetuoso com toalhas esterilizadas individuais e corte de unhas incluso."
+        }
       ]
     }
   },
   {
-    id: 'distribuidora-bebidas',
-    category: 'comercio',
-    title: 'Distribuidora de Bebidas, Chopp & Gelo Express',
-    desc: 'Catálogo de bebidas geladas, barris de chopp para eventos, carvão, gelo e combos para festas com entrega rápida.',
-    tag: 'Entrega Rápida',
-    highlights: [
-      'Cervejas, destilados e refrigerantes sempre na temperatura certa',
-      'Locação de chopeiras elétricas completas para fins de semana',
-      'Tabela de preços por engradado no atacado e varejo',
-      'Entrega em até 30 minutos na sua casa'
+    "id": "estetica-automotiva",
+    "category": "comercio",
+    "title": "Detailing Automotivo & Vitrificação 9H",
+    "desc": "Polimento técnico espelhado, vitrificação de pintura cerâmica, lavagem detalhada de chassi e proteção de interiores.",
+    "tag": "Alto Padrão",
+    "previewImg": "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/estetica-automotiva/index.html",
+    "highlights": [
+      "Vitrificação com até 3 Anos de Garantia",
+      "Estúdio Climatizado com Iluminação LED Grid",
+      "Remoção de Riscos e Hologramas",
+      "Proteção Hidrorrepelente de Vidros"
     ],
-    demoContent: {
-      headline: 'Sua bebida estalando de gelada entregue na porta da sua festa',
-      sub: 'Cervejas especiais, chopp artesanal, destilados e tudo para o seu churrasco em minutos.',
-      ctaText: 'Pedir Bebidas Geladas no WhatsApp',
-      services: [
-        { title: 'Barris de Chopp de 30L e 50L com Chopeira', desc: 'Instalação completa e chopp artesanal fresquinho para sua festa.' },
-        { title: 'Combos de Destilados & Energéticos', desc: 'Vodka, gin, whisky e gelo de sabor para o seu final de semana.' },
-        { title: 'Cervejas no Engradado com Preço de Atacado', desc: 'Economia real para abastecer o freezer ou evento.' }
+    "demoContent": {
+      "headline": "O brilho espelhado e a proteção que seu carro merece",
+      "sub": "Estética automotiva de precisão para quem é apaixonado por carros impecáveis.",
+      "ctaText": "Pedir Orçamento Detalhado no WhatsApp",
+      "services": [
+        {
+          "title": "Polimento Técnico com Brilho Profundo",
+          "desc": "Eliminação de marcas de lavagem, micro riscos e oxidações na pintura."
+        },
+        {
+          "title": "Vitrificação Cerâmica 9H",
+          "desc": "Camada de quartzo com proteção contra raios UV, fezes de aves e repelência extrema."
+        },
+        {
+          "title": "Higienização Interna & Oxi-Sanitização",
+          "desc": "Limpeza profunda de bancos, carpetes e eliminação de odores desagradáveis."
+        }
+      ]
+    }
+  },
+  {
+    "id": "otica-visao",
+    "category": "comercio",
+    "title": "Ótica Conceito, Armações de Grife & Lentes",
+    "desc": "Exames de vista com optometrista, armações internacionais e nacionais, lentes digitais multifocais e garantia de adaptação.",
+    "tag": "Estilo & Saúde",
+    "previewImg": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/otica-prime/index.html",
+    "highlights": [
+      "Armações de Grifes Famosas",
+      "Lentes Digitais com Antirreflexo",
+      "Exame de Vista no Local",
+      "Garantia de Adaptação Total"
+    ],
+    "demoContent": {
+      "headline": "Enxergue o mundo com clareza, estilo e conforto visual",
+      "sub": "As marcas mais desejadas de armações e a mais alta tecnologia em lentes corretivas.",
+      "ctaText": "Consultar Modelos e Preços no WhatsApp",
+      "services": [
+        {
+          "title": "Armações de Grau Modernas",
+          "desc": "Modelos leves em acetato nobre, titânio e metal com design sofisticado."
+        },
+        {
+          "title": "Lentes Multifocais Digitais Personalizadas",
+          "desc": "Transição suave entre perto e longe com campos visuais ampliados."
+        },
+        {
+          "title": "Óculos de Sol com Proteção UV400",
+          "desc": "Modelos clássicos e tendências com lentes polarizadas antirreflexo."
+        }
+      ]
+    }
+  },
+  {
+    "id": "loja-roupas-boutique",
+    "category": "comercio",
+    "title": "Boutique de Moda Feminina & Lookbook",
+    "desc": "Catálogo de roupas e tendências, lookbook em carrossel, tabela de medidas e atendimento estilo personal shopper pelo WhatsApp.",
+    "tag": "Tendência",
+    "previewImg": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Coleções Exclusivas por Estação",
+      "Atendimento Personalizado de Consultoria",
+      "Envio Rápido para Todo o Brasil",
+      "Troca Fácil e Descomplicada"
+    ],
+    "demoContent": {
+      "headline": "Looks modernos e elegantes selecionados para destacar sua beleza",
+      "sub": "Peças com caimento perfeito, tecidos confortáveis e estilo contemporâneo.",
+      "ctaText": "Ver Novidades da Semana no WhatsApp",
+      "services": [
+        {
+          "title": "Conjuntos e Vestidos de Alfaiataria",
+          "desc": "Elegância para o trabalho e eventos especiais com tecidos nobres."
+        },
+        {
+          "title": "Moda Casual e Jeans Premium",
+          "desc": "Calças com modelagem empina bumbum, t-shirts em algodão egípcio e blazers."
+        },
+        {
+          "title": "Consultoria de Estilo Online",
+          "desc": "Nossas vendedoras te ajudam a montar composições perfeitas pelo WhatsApp."
+        }
+      ]
+    }
+  },
+  {
+    "id": "academia-personal",
+    "category": "comercio",
+    "title": "Academia & Treinamento Personalizado",
+    "desc": "Planos sem taxa de matrícula, musculação climatizada, treinos funcionais, aulas coletivas e acompanhamento por aplicativo.",
+    "tag": "Fitness",
+    "previewImg": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Zero Taxa de Adesão e Matrícula",
+      "Aparelhos Biomecânicos Importados",
+      "Horário Estendido de Segunda a Domingo",
+      "Avaliação Física com Bioimpedância"
+    ],
+    "demoContent": {
+      "headline": "Transforme seu corpo e sua energia com o melhor suporte fitness",
+      "sub": "Estrutura completa com professores presentes no salão para orientar cada movimento.",
+      "ctaText": "Ganhar Free Pass de 3 Dias no WhatsApp",
+      "services": [
+        {
+          "title": "Musculação & Hipertrofia",
+          "desc": "Máquinas de última geração que isolam a musculatura e previnem lesões."
+        },
+        {
+          "title": "Treinamento Funcional e HIIT",
+          "desc": "Aulas dinâmicas que queimam até 800 calorias em 45 minutos."
+        },
+        {
+          "title": "Aulas de Dança, Luta e Spinning",
+          "desc": "Música empolgante, turmas motivadas e professores com energia contagiante."
+        }
+      ]
+    }
+  },
+  {
+    "id": "escola-cursos",
+    "category": "comercio",
+    "title": "Escola de Idiomas & Cursos Profissionalizantes",
+    "desc": "Matrículas abertas com bolsa de estudos, método focado em conversação rápida, professores nativos e turmas reduzidas.",
+    "tag": "Educação",
+    "previewImg": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Conversação desde a Primeira Aula",
+      "Turmas Reduzidas de até 8 Alunos",
+      "Certificado Válido Nacionalmente",
+      "Condições Especiais de Matrícula"
+    ],
+    "demoContent": {
+      "headline": "Fale um novo idioma com confiança e conquiste novas oportunidades",
+      "sub": "Metodologia prática focada em situações reais do cotidiano e do mercado profissional.",
+      "ctaText": "Fazer Teste de Nível Gratuito no WhatsApp",
+      "services": [
+        {
+          "title": "Inglês Rápido para Adultos",
+          "desc": "Foco em destravar a conversação para viagens, reuniões e entrevistas de emprego."
+        },
+        {
+          "title": "Cursos de Tecnologia e Gestão",
+          "desc": "Capacitação prática em áreas com alta demanda e vagas abertas no mercado."
+        },
+        {
+          "title": "Aulas Particulares VIP (1 para 1)",
+          "desc": "Cronograma 100% moldado às necessidades e horários individuais do aluno."
+        }
+      ]
+    }
+  },
+  {
+    "id": "distribuidora-bebidas",
+    "category": "comercio",
+    "title": "Adega, Distribuidora & Bebidas Geladas",
+    "desc": "Cervejas, destilados, vinhos, gelo e carvão entregues gelados em minutos para festas, churrascos e fins de semana.",
+    "tag": "Entrega Rápida",
+    "previewImg": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": null,
+    "highlights": [
+      "Bebidas Trincando de Geladas",
+      "Entrega Rápida em até 35 Minutos",
+      "Preços Competitivos de Distribuidora",
+      "Barril de Chopp para Eventos"
+    ],
+    "demoContent": {
+      "headline": "A bebida trincando de gelada na porta da sua casa em minutos",
+      "sub": "Cervejas especiais, destilados importados, gelo e carvão para o seu churrasco.",
+      "ctaText": "Pedir Bebidas no WhatsApp",
+      "services": [
+        {
+          "title": "Cervejas Long Neck e Latas Geladas",
+          "desc": "Grandes marcas e cervejas artesanais prontas para consumo imediato."
+        },
+        {
+          "title": "Combos de Gin, Whisky e Vodka",
+          "desc": "Bebidas originais acompanhadas de energéticos e copos descartáveis."
+        },
+        {
+          "title": "Kits para Churrasco de Emergência",
+          "desc": "Carvão selecionado, acendedor, sacos de gelo filtrado e descartáveis."
+        }
       ]
     }
   }
 ];
 
-// INICIALIZAÇÃO
-document.addEventListener('DOMContentLoaded', () => {
-  const params = getUrlParams();
-  applyContextualPersonalization(params);
-  renderCatalog(params);
-  attachEventListeners(params);
-});
-
-// 1. LER PARÂMETROS DA URL
+// 1. EXTRAÇÃO DE PARÂMETROS DA URL
 function getUrlParams() {
   const urlParams = new URLSearchParams(window.location.search);
   return {
@@ -917,7 +1311,13 @@ function getUrlParams() {
   };
 }
 
-// 2. APLICAR PERSONALIZAÇÃO CONTEXTUAL NO SITE
+// 2. FUNÇÃO NORMALIZADORA DE TEXTO PARA BUSCAS INTELIGENTES
+function normalizeText(str) {
+  if (!str) return '';
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+}
+
+// 3. APLICAR PERSONALIZAÇÃO CONTEXTUAL NO SITE
 function applyContextualPersonalization(params) {
   const { nicho, cidade, empresa, porte } = params;
 
@@ -929,9 +1329,9 @@ function applyContextualPersonalization(params) {
   // Hero Badge
   const badgeEl = document.getElementById('hero-badge');
   if (cidade) {
-    badgeEl.innerText = `Modelos Verificados para Empresas em ${cidade}`;
+    badgeEl.innerText = `Modelos Selecionados para Empresas em ${cidade}`;
   } else {
-    badgeEl.innerText = `Modelos Verificados para Alta Conversão`;
+    badgeEl.innerText = `Modelos Verificados de Alta Conversão`;
   }
 
   // Hero H1
@@ -944,200 +1344,293 @@ function applyContextualPersonalization(params) {
     titleEl.innerText = `Sites e Landing Pages de Alta Conversão para Pequenas e Médias Empresas`;
   }
 
-  // Hero Subtitle
+  // Hero Subtítulo
   const subEl = document.getElementById('hero-subtitle');
   if (empresa) {
-    subEl.innerText = `Projetados sob medida para empresas como a ${empresa} conquistarem mais clientes e agendamentos diretos pelo WhatsApp.`;
+    subEl.innerText = `Apresente a ${empresa} com autoridade máxima na internet. Páginas que carregam em menos de 1 segundo no celular e convertem visitantes diretamente em clientes no seu WhatsApp.`;
   }
 
-  // Ajusta Seção de Preços de acordo com o porte
+  // Catálogo Título
+  const catTitleEl = document.getElementById('catalog-section-title');
+  const catDescEl = document.getElementById('catalog-section-desc');
+  if (nicho) {
+    catTitleEl.innerText = `Modelos Sugeridos para ${capitalize(nicho)}`;
+    catDescEl.innerText = `Selecione uma demonstração abaixo para interagir em tempo real no simulador mobile.`;
+  }
+
+  // Precificação Dinâmica
   applyDynamicPricing(porte, params);
-}
-
-// 3. TABELA DE PREÇOS DINÂMICA POR PORTE
-function applyDynamicPricing(porte, params) {
-  let setupVal = '50';
-  let monthlyVal = '20';
-  let tierName = 'Plano Ativação Rápida (Micro e Pequeno Comércio)';
-
-  if (porte === 'ALTO') {
-    setupVal = '350';
-    monthlyVal = '49';
-    tierName = 'Plano Profissional Completo (Clínicas e Escritórios)';
-  } else if (porte === 'MEDIO') {
-    setupVal = '150';
-    monthlyVal = '35';
-    tierName = 'Plano Comercial (Restaurantes, Delivery e Estética)';
-  } else {
-    setupVal = '50';
-    monthlyVal = '20';
-    tierName = 'Plano Ativação Popular (Micro-empresas e Autônomos)';
-  }
-
-  document.getElementById('pricing-tier-name').innerText = tierName;
-  document.getElementById('pricing-setup-val').innerText = setupVal;
-  document.getElementById('pricing-monthly-text').innerText = `+ apenas R$ ${monthlyVal}/mês de hospedagem rápida e manutenção técnica`;
-
-  // Botão de CTA de Preço
-  const ctaBtn = document.getElementById('btn-pricing-cta');
-  const msg = `Olá! Estava navegando na vitrine e quero ativar a minha página no ${tierName} por R$ ${setupVal} + R$ ${monthlyVal}/mês para ${params.empresa || 'minha empresa'} em ${params.cidade || 'minha cidade'}.`;
-  ctaBtn.href = buildWhatsAppUrl(msg);
 
   // Botão no Header
   const headerWa = document.getElementById('btn-header-wa');
-  headerWa.href = buildWhatsAppUrl(`Olá! Gostaria de tirar dúvidas sobre os modelos de sites para ${params.nicho || 'meu nicho'}.`);
+  if (headerWa) {
+    headerWa.href = buildWhatsAppUrl(`Olá! Gostaria de tirar dúvidas sobre os modelos de sites para ${params.nicho || 'meu negócio'}.`);
+  }
 }
 
-// 4. RENDERIZAÇÃO DO CATÁLOGO DE MODELOS COM FILTRO E BUSCA
-let currentActiveCategory = null;
+// 4. TABELA DE PRECIFICAÇÃO CONTEXTUAL
+function applyDynamicPricing(porte, params) {
+  let tierName = 'Plano Ativação Popular (Micro-Empresas e Autônomos)';
+  let setupVal = '50';
+  let monthlyVal = '20';
+
+  if (porte === 'ALTO') {
+    tierName = 'Plano Estratégico Corporativo';
+    setupVal = '150';
+    monthlyVal = '35';
+  } else if (porte === 'MEDIO') {
+    tierName = 'Plano Crescimento Comercial';
+    setupVal = '80';
+    monthlyVal = '25';
+  }
+
+  const tierEl = document.getElementById('pricing-tier-name');
+  const setupEl = document.getElementById('pricing-setup-val');
+  const monthlyEl = document.getElementById('pricing-monthly-text');
+  const ctaEl = document.getElementById('btn-pricing-cta');
+
+  if (tierEl) tierEl.innerText = tierName;
+  if (setupEl) setupEl.innerText = setupVal;
+  if (monthlyEl) {
+    monthlyEl.innerText = `+ apenas R$ ${monthlyVal}/mês de hospedagem rápida e manutenção técnica`;
+  }
+
+  const msg = `Olá! Quero ativar a minha página no ${tierName} por R$ ${setupVal} de setup + R$ ${monthlyVal}/mês para ${params.empresa || 'minha empresa'} em ${params.cidade || 'minha cidade'}.`;
+  if (ctaEl) {
+    ctaEl.href = buildWhatsAppUrl(msg);
+  }
+}
+
+// 5. RENDERIZAÇÃO DO CATÁLOGO DE MODELOS
+let currentActiveCategory = 'todos';
 let currentSearchTerm = '';
 
 function renderCatalog(params, activeCategory = null, searchTerm = '') {
   const grid = document.getElementById('models-grid');
   const counter = document.getElementById('models-counter');
 
-  // Identifica categoria padrão se um nicho veio na URL
+  // Identifica categoria padrão caso nada seja passado
   let targetCategory = activeCategory;
-  if (targetCategory === null && params.nicho) {
-    const n = params.nicho.toLowerCase();
-    if (n.includes('odonto') || n.includes('dentista') || n.includes('saude') || n.includes('clinica') || n.includes('fisio') || n.includes('psico')) {
-      targetCategory = 'odontologia';
-    } else if (n.includes('restaurante') || n.includes('hamburg') || n.includes('pizza') || n.includes('delivery') || n.includes('sushi') || n.includes('churrasco') || n.includes('doce') || n.includes('fit') || n.includes('cafe') || n.includes('acai')) {
-      targetCategory = 'gastronomia';
-    } else if (n.includes('barbearia') || n.includes('salao') || n.includes('estetica') || n.includes('cabelo') || n.includes('lash') || n.includes('unha') || n.includes('spa')) {
-      targetCategory = 'beleza';
-    } else if (n.includes('advocacia') || n.includes('advogado') || n.includes('imob') || n.includes('arquit') || n.includes('marcenaria') || n.includes('contab') || n.includes('solar') || n.includes('limpeza')) {
-      targetCategory = 'servicos';
-    } else if (n.includes('mecanica') || n.includes('auto') || n.includes('pet') || n.includes('veterin') || n.includes('otica') || n.includes('curso') || n.includes('loja') || n.includes('bebida')) {
-      targetCategory = 'comercio';
+  if (targetCategory === null) {
+    if (params.nicho) {
+      const n = normalizeText(params.nicho);
+      if (n.includes('odonto') || n.includes('dentista') || n.includes('saude') || n.includes('clinica') || n.includes('fisio') || n.includes('psico')) {
+        targetCategory = 'odontologia';
+      } else if (n.includes('restaurante') || n.includes('hamburg') || n.includes('pizza') || n.includes('delivery') || n.includes('sushi') || n.includes('churrasco') || n.includes('doce') || n.includes('fit') || n.includes('cafe') || n.includes('acai')) {
+        targetCategory = 'gastronomia';
+      } else if (n.includes('barbearia') || n.includes('salao') || n.includes('estetica') || n.includes('cabelo') || n.includes('lash') || n.includes('unha') || n.includes('spa')) {
+        targetCategory = 'beleza';
+      } else if (n.includes('advocacia') || n.includes('advogado') || n.includes('imob') || n.includes('arquit') || n.includes('marcenaria') || n.includes('contab') || n.includes('solar') || n.includes('limpeza')) {
+        targetCategory = 'servicos';
+      } else if (n.includes('mecanica') || n.includes('auto') || n.includes('pet') || n.includes('veterin') || n.includes('otica') || n.includes('curso') || n.includes('loja') || n.includes('bebida') || n.includes('roupa')) {
+        targetCategory = 'comercio';
+      } else {
+        targetCategory = 'todos';
+      }
+    } else {
+      targetCategory = 'todos';
     }
   }
 
-  currentActiveCategory = targetCategory;
-  currentSearchTerm = searchTerm.toLowerCase().trim();
+  currentSearchTerm = searchTerm ? searchTerm.trim() : '';
 
-  // Atualiza aba ativa visualmente
+  let filtered = MODELS_CATALOG;
+
+  // Dicionário de Sinônimos & Palavras-Chave Estruturadas para Cada Modelo
+  const MODEL_KEYWORDS = {
+    'odonto-estetica': 'dentista odontologia odonto dente dentes clareamento lentes facetas implante implantes sorriso saude bucal clinica dentaria implantes guiados porcelana estetica dental',
+    'odonto-clinica-geral': 'dentista odontologia odonto dente dentes carie limpeza profilaxia canal protese clinica geral tratamento dentario',
+    'odonto-alinhadores': 'dentista aparelho alinhador invisivel invisalign ortodontia dentes tortos mordida',
+    'odonto-pediatria': 'dentista infantil odontopediatria dente de leite crianca espaco kids dentinho',
+    'clinica-medica-integrada': 'medico clinica medica policlinica consultas exames cardiologista pediatra dermatologista ultrassom',
+    'fisioterapia-pilates': 'fisioterapia fisioterapeuta pilates rpg reabilitacao dor nas costas coluna postura',
+    'psicologia-terapia': 'psicologia psicologo psicologa psicoterapia terapia saude mental ansiedade depressao consulta psicologica',
+    'burger-delivery': 'hamburguer hamburgueria burger smash lanche lanchonete batata frita delivery fast food artesanal combo burger',
+    'pizzaria-tradicional': 'pizza pizzaria forno a lenha delivery calzone massa queijo margherita napolitana combo pizza',
+    'sushi-bar': 'sushi sashimi comida japonesa restaurante japones temaki rodizio japones oriental peixe cru salmao salmão niguiri',
+    'churrascaria-espetaria': 'churrasco churrascaria espetinho espetaria carnes picanha costela churrasqueiro fogo de chao',
+    'marmitaria-fit': 'comida fit marmita fit marmitaria alimentacao saudavel congelados fit marmitas dieta proteina refeicao saudavel',
+    'confeitaria-doces': 'confeitaria doceria bolo de aniversario doces gourmet tortas brigadeiro naked cake festa',
+    'cafeteria-brunch': 'cafe cafeteria cafe especial brunch graos graos especiais cappuccino barista espresso pao de queijo',
+    'acai-sorveteria': 'acai açaí sorvete sorveteria acaiteria picolé sobremesa taca recheada',
+    'barbearia-premium': 'barbearia barbeiro corte masculino barba cabelo masculino fade navalha degradê barboterapia toalha quente',
+    'estetica-facial': 'estetica estética clinica de estetica harmonizacao botox preenchimento labios pele rejuvenescimento beleza fios de pdo colageno',
+    'studio-beleza': 'cabeleireiro cabeleireira salao de beleza salão cabelo mechas loiro loiras corte feminino escova mega hair',
+    'lash-sobrancelhas': 'sobrancelha sobrancelhas cilios cílios lash designer micropigmentacao extensao de cilios fio a fio volumao',
+    'esmalteria-unhas': 'unhas manicure pedicure esmalteria alongamento de unhas fibra de vidro gel blindagem spa dos pes',
+    'depilacao-laser': 'depilacao depilação depilacao a laser laser diodo led pele lisinha foliculite',
+    'spa-massoterapia': 'spa massagem massoterapia drenagem linfatica relaxamento massagem relaxante pedras quentes alivio estresse',
+    'advocacia-corporativa': 'advogado advogada advocacia escritorio de advocacia direito processo juridico oab causas empresarial tributario societario civel',
+    'advocacia-trabalhista': 'advogado trabalhista advocacia direitos do trabalhador previdenciario inss aposentadoria rescisao fgts',
+    'imobiliaria-vitrine': 'imobiliaria corretor de imoveis imovel imoveis casa apartamento aluguel compra terreno lote condominio cobertura alto padrao morar',
+    'arquitetura-interiores': 'arquiteto arquiteta arquitetura design de interiores decoracao reforma planta projeto 3d luminotecnica',
+    'marcenaria-fina': 'marcenaria marceneiro moveis planejados móveis planejados sob medida cozinha planejada armarios mdf closet',
+    'contabilidade-consultiva': 'contador contadora contabilidade escritorio contabil abertura de empresa cnpj imposto de renda fiscal emissao de nota bpo financeiro',
+    'energia-solar': 'solar energia solar placa solar painel solar fotovoltaica conta de luz reducao economia de energia inversor engenharia eletrica',
+    'limpeza-higienizacao': 'lavagem de sofa higienizacao de estofados impermeabilizacao limpeza de tapete estofado colchao impermeabilizar',
+    'oficina-mecanica': 'oficina mecanico oficina mecanica auto center mecanica carro automovel conserto de carro freio motor suspensao guincho revisao troca de oleo scanner',
+    'clinica-veterinaria': 'pet pet shop veterinario veterinaria veterinário veterinária cachorro gato hospital veterinario vacina pet banho e tosa emergencia pet animais cao',
+    'estetica-automotiva': 'estetica automotiva detailing polimento vitrificacao vitrificação cristalizacao lavagem detalhada higienizacao interna protecao de pintura',
+    'otica-visao': 'otica ótica oculos óculos oculos de grau oculos de sol armacao lentes de contato visao exame de vista oftamologia',
+    'loja-roupas-boutique': 'roupas moda boutique loja de roupas vestidos moda feminina look looks provador provador virtual colecao',
+    'academia-personal': 'academia personal trainer musculacao musculação treino fitness crossfit exercicios hipertrofia esteira emagrecimento',
+    'escola-cursos': 'escola curso cursos profissionalizantes ingles idiomas aulas matricula certificado conversacao',
+    'distribuidora-bebidas': 'bebidas distribuidora adega cerveja cervejas chopp barril de chopp gelo carvao whisky destilados refrigerante'
+  };
+
+  // SE HOUVER BUSCA POR TEXTO: A BUSCA É GLOBAL, INTELIGENTE E RANQUEADA POR RELEVÂNCIA
+  if (currentSearchTerm) {
+    const normQ = normalizeText(currentSearchTerm);
+    const tokens = normQ.split(/\s+/).filter(Boolean);
+    targetCategory = 'todos'; // Ativa aba Todos
+
+    if (tokens.length > 0) {
+      const scored = MODELS_CATALOG.map(m => {
+        const titleNorm = normalizeText(m.title);
+        const kwNorm = normalizeText(MODEL_KEYWORDS[m.id] || '');
+        const descNorm = normalizeText(m.desc);
+        const catNorm = normalizeText(m.category);
+
+        let score = 0;
+        let matchedAll = true;
+
+        for (const tok of tokens) {
+          const wordRegex = new RegExp('\\b' + tok, 'i');
+          const hasExactTitle = wordRegex.test(titleNorm);
+          const hasExactKw = wordRegex.test(kwNorm);
+          const hasExactCat = wordRegex.test(catNorm);
+          const hasExactDesc = wordRegex.test(descNorm);
+
+          if (hasExactTitle || hasExactKw || hasExactCat) {
+            if (hasExactTitle) score += 30;
+            if (hasExactKw) score += 20;
+            if (hasExactCat) score += 10;
+          } else if (hasExactDesc) {
+            score += 8;
+          } else if (tok.length >= 4 && (titleNorm.includes(tok) || kwNorm.includes(tok) || descNorm.includes(tok))) {
+            score += 2;
+          } else {
+            matchedAll = false;
+            break;
+          }
+        }
+
+        return { model: m, score, matched: matchedAll && score > 0 };
+      });
+
+      filtered = scored
+        .filter(s => s.matched)
+        .sort((a, b) => b.score - a.score)
+        .map(s => s.model);
+    }
+  } else if (targetCategory && targetCategory !== 'todos') {
+    filtered = filtered.filter(m => m.category === targetCategory);
+  }
+
+  currentActiveCategory = targetCategory;
+
+  // Atualiza botões de categoria visualmente
   document.querySelectorAll('.cat-btn').forEach(btn => {
     const btnCat = btn.getAttribute('data-niche');
-    if (targetCategory && btnCat === targetCategory) {
-      btn.classList.add('active');
-    } else if ((!targetCategory || targetCategory === 'todos') && btnCat === 'todos') {
+    if (btnCat === targetCategory) {
       btn.classList.add('active');
     } else {
       btn.classList.remove('active');
     }
   });
 
-  // Filtra modelos por categoria
-  let filtered = MODELS_CATALOG;
-  if (targetCategory && targetCategory !== 'todos') {
-    filtered = filtered.filter(m => m.category === targetCategory);
+  if (counter) {
+    counter.innerText = `${filtered.length} Modelo${filtered.length === 1 ? '' : 's'} Disponíve${filtered.length === 1 ? 'l' : 'is'}`;
   }
 
-  // Filtra modelos por termo de busca
-  if (currentSearchTerm) {
-    filtered = filtered.filter(m => {
-      const matchTitle = m.title.toLowerCase().includes(currentSearchTerm);
-      const matchDesc = m.desc.toLowerCase().includes(currentSearchTerm);
-      const matchTag = m.tag.toLowerCase().includes(currentSearchTerm);
-      const matchServices = m.demoContent && m.demoContent.services.some(s => 
-        s.title.toLowerCase().includes(currentSearchTerm) || s.desc.toLowerCase().includes(currentSearchTerm)
-      );
-      return matchTitle || matchDesc || matchTag || matchServices;
-    });
-  }
-
-  counter.innerText = `${filtered.length} Modelos Disponíveis`;
-
+  // Estado Vazio Amigável
   if (filtered.length === 0) {
     grid.innerHTML = `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: rgba(255,255,255,0.02); border-radius: 16px; border: 1px dashed rgba(255,255,255,0.1);">
-        <p style="font-size: 1.1rem; color: #94a3b8; margin-bottom: 12px;">Nenhum modelo encontrado para o termo pesquisado.</p>
-        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 20px;">Tente pesquisar por outros termos como "Dentista", "Hambúrguer", "Advogado", "Pet", "Estética" ou navegue pelas abas acima.</p>
+      <div class="empty-state-box">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <p class="empty-state-title">Nenhum modelo encontrado para "${currentSearchTerm}".</p>
+        <p class="empty-state-desc">Tente pesquisar por termos como "Dentista", "Hambúrguer", "Advogado", "Pet", "Estética", "Oficina" ou explore as categorias acima.</p>
         <button class="btn btn-secondary" onclick="clearSearchFilter()">Ver Todos os Modelos</button>
       </div>
     `;
     return;
   }
 
+  const categoryNames = {
+    odontologia: 'Odontologia & Saúde',
+    gastronomia: 'Gastronomia & Delivery',
+    beleza: 'Beleza & Estética',
+    servicos: 'Serviços & Advocacia',
+    comercio: 'Comércio Local & Pets'
+  };
+
   grid.innerHTML = filtered.map(m => {
     const badgeClass = m.tag === 'Mais Pedido' ? 'model-badge-popular' : '';
-    const chooseMsg = `Olá! Gostei muito do modelo "${m.title}" na vitrine e quero colocar uma versão dele no ar para ${params.empresa || 'minha empresa'} em ${params.cidade || 'minha cidade'}.`;
+    const chooseMsg = `Olá! Gostei muito do modelo "${m.title}" da Pixel Studio e quero colocá-lo no ar para ${params.empresa || 'minha empresa'} em ${params.cidade || 'minha cidade'}.`;
     const waUrl = buildWhatsAppUrl(chooseMsg);
 
-    const liveIndicator = m.liveUrl 
-      ? `<span class="model-live-indicator"><span class="model-live-dot"></span> Modelo 100% Interativo</span>`
+    const liveBadge = m.liveUrl
+      ? `<span class="browser-live-badge"><span class="dot-live-sm"></span> Ao Vivo</span>`
       : '';
 
-    const categorySvgMap = {
-      odontologia: '<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 10.5V6a2 2 0 0 0-2-2h-3V2h-4v2H7a2 2 0 0 0-2 2v4.5C5 15.5 8 19 12 22c4-3 7-6.5 7-11.5z"/></svg>',
-      gastronomia: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2v20M2 2v20M6 2v7a3 3 0 0 0 6 0V2"/></svg>',
-      beleza: '<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
-      servicos: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
-      comercio: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>'
-    };
-    const categoryIcon = categorySvgMap[m.category] || '<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>';
-
-    const cleanTitle = m.title.split('(')[0].trim();
-    const miniHeadline = m.demoContent ? m.demoContent.headline : m.title;
-    const miniSub = m.demoContent ? m.demoContent.sub : m.desc;
-    const miniCta = m.demoContent ? m.demoContent.ctaText : 'Pedir no WhatsApp';
-    const miniChips = m.demoContent && m.demoContent.services
-      ? m.demoContent.services.slice(0, 2).map(s => `<span class="mini-chip">${s.title.split('&')[0].trim()}</span>`).join('')
-      : '';
+    const catLabel = categoryNames[m.category] || 'Solução Digital';
 
     return `
       <div class="model-card">
-        <div class="model-preview-box" onclick="openDemoModal('${m.id}')" style="cursor: pointer;">
-          <span class="model-badge-top ${badgeClass}">${m.tag}</span>
-
-          <div class="mini-browser-window mini-theme-${m.category}">
-            <div class="mini-browser-bar">
-              <div class="mini-browser-dots">
-                <span class="mini-dot mini-dot-red"></span>
-                <span class="mini-dot mini-dot-yellow"></span>
-                <span class="mini-dot mini-dot-green"></span>
-              </div>
-              <div class="mini-browser-url">
-                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:4px;vertical-align:-1px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>https://${m.id}.com.br
-              </div>
+        <div class="model-preview-box" onclick="openDemoModal('${m.id}')" title="Clique para testar este modelo no celular">
+          
+          <!-- BARRA SUPERIOR DO NAVEGADOR -->
+          <div class="browser-mockup-header">
+            <div class="browser-dots">
+              <span class="browser-dot dot-red"></span>
+              <span class="browser-dot dot-yellow"></span>
+              <span class="browser-dot dot-green"></span>
             </div>
-
-            <div class="mini-browser-content">
-              <div class="mini-page-header">
-                <span class="mini-logo-icon">${categoryIcon}</span>
-                <span class="mini-brand-name">${cleanTitle}</span>
-              </div>
-              <div class="mini-hero-headline">${miniHeadline}</div>
-              <div class="mini-hero-sub">${miniSub}</div>
-              <div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto;">
-                <div class="mini-wa-badge">${miniCta.slice(0, 24)}</div>
-                <div class="mini-chips-row">${miniChips}</div>
-              </div>
+            <div class="browser-url-pill">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span>${m.id}.pixelstudio.com.br</span>
             </div>
+            ${liveBadge}
+          </div>
 
-            <div class="mini-hover-hint">
-              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:5px;vertical-align:-2px;"><rect x="5" y="2" width="14" height="20" rx="3"></rect><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"></line></svg>Ver Demonstração Interativa</span>
+          <!-- IMAGEM DE CAPA COM PREVIEW REAL -->
+          <div class="browser-image-container">
+            <img src="${m.previewImg}" alt="${m.title}" class="model-cover-image" loading="lazy" />
+            <div class="browser-image-overlay">
+              <span class="btn-hover-demo">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="3"></rect><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"></line></svg>
+                Testar no Celular
+              </span>
             </div>
           </div>
         </div>
 
+        <!-- CORPO DO CARD COM DESIGN BALANCEADO -->
         <div class="model-body">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-            <h3 class="model-title">${m.title}</h3>
+          <div class="model-meta-line">
+            <span class="model-category-label">${catLabel}</span>
+            <span class="model-tag-pill ${badgeClass}">${m.tag}</span>
           </div>
-          ${liveIndicator}
-          <p class="model-desc" style="margin-top: 10px;">${m.desc}</p>
 
-          <ul class="model-highlights">
-            ${m.highlights.map(h => `<li>${h}</li>`).join('')}
-          </ul>
+          <h3 class="model-title">${m.title}</h3>
+          <p class="model-desc">${m.desc}</p>
+
+          <div class="model-feature-chips">
+            ${m.highlights.slice(0, 3).map(h => `
+              <span class="feature-chip">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                ${h}
+              </span>
+            `).join('')}
+          </div>
 
           <div class="model-actions-row">
-            <button class="btn btn-secondary btn-sm" onclick="openDemoModal('${m.id}')" style="flex:1;">
+            <button class="btn btn-secondary btn-sm" onclick="openDemoModal('${m.id}')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
               Ver Demonstração
             </button>
-            <a href="${waUrl}" target="_blank" class="btn btn-primary btn-sm" style="flex:1;">
+            <a href="${waUrl}" target="_blank" class="btn btn-primary btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/></svg>
               Quero Este Modelo
             </a>
           </div>
@@ -1156,7 +1649,7 @@ function clearSearchFilter() {
   renderCatalog(params, 'todos', '');
 }
 
-// 5. MODAL DE SIMULADOR DE CELULAR AO VIVO COM SUPORTE A IFRAME & TELA CHEIA
+// 6. MODAL DE SIMULADOR DE CELULAR AO VIVO COM SUPORTE A IFRAME & TELA CHEIA
 function openDemoModal(modelId) {
   const model = MODELS_CATALOG.find(m => m.id === modelId);
   if (!model) return;
@@ -1166,30 +1659,28 @@ function openDemoModal(modelId) {
   const activateBtn = document.getElementById('btn-phone-activate');
   const fullscreenBtn = document.getElementById('btn-phone-fullscreen');
 
-  const companyName = params.empresa || 'Sua Empresa Aqui';
+  const companyName = params.empresa || 'Sua Empresa';
   const city = params.cidade ? `${params.cidade}` : '';
   const citySuffix = city ? `em ${city}` : '';
 
-  // Configura botão de ativação no rodapé do modal
-  const activateMsg = `Olá! Acabei de testar a demonstração do modelo "${model.title}" no simulador e decidi ativar para ${companyName} ${citySuffix}. Como procedemos?`;
-  activateBtn.href = buildWhatsAppUrl(activateMsg);
+  const activateMsg = `Olá! Acabei de testar o modelo "${model.title}" no simulador da Pixel Studio e decidi ativar para a ${companyName} ${citySuffix}. Como procedemos?`;
+  if (activateBtn) {
+    activateBtn.href = buildWhatsAppUrl(activateMsg);
+  }
 
   // SE O MODELO TEM UM TEMPLATE HTML REAL EM modelos/
   if (model.liveUrl) {
     const liveTargetUrl = `${model.liveUrl}?empresa=${encodeURIComponent(companyName)}&cidade=${encodeURIComponent(city || 'Sua Cidade')}&whatsapp=${encodeURIComponent(PERSONAL_WHATSAPP_PHONE)}`;
     
-    // Mostra botão de tela cheia
     if (fullscreenBtn) {
       fullscreenBtn.style.display = 'inline-flex';
       fullscreenBtn.href = liveTargetUrl;
     }
 
-    // Renderiza iframe interativo no celular
     screen.innerHTML = `
       <iframe src="${liveTargetUrl}" class="phone-iframe" title="${model.title}"></iframe>
     `;
   } else {
-    // RENDERIZA A EXPERIÊNCIA SIMULADA RICA COM DADOS DO CLIENTE
     if (fullscreenBtn) {
       fullscreenBtn.style.display = 'none';
     }
@@ -1200,7 +1691,7 @@ function openDemoModal(modelId) {
         <span class="sim-page-badge">Atendimento Rápido ${citySuffix}</span>
         <h3 class="sim-page-title">${d.headline}</h3>
         <p class="sim-page-sub">${d.sub}</p>
-        <a href="#" class="sim-btn-wa-call" onclick="alert('Na sua página definitiva, este botão abre o WhatsApp direto da sua empresa!'); return false;">
+        <a href="#" class="sim-btn-wa-call" onclick="alert('Na sua página definitiva, este botão abrirá o seu WhatsApp com a mensagem pronta!'); return false;">
           ${d.ctaText}
         </a>
       </div>
@@ -1218,7 +1709,7 @@ function openDemoModal(modelId) {
       <div class="sim-page-section" style="text-align: center;">
         <h4 class="sim-section-heading">Por que escolher a ${companyName}?</h4>
         <p style="font-size: 0.78rem; color:#94a3b8; line-height: 1.5; margin-bottom: 16px;">
-          Estrutura de ponta, pontualidade nos atendimentos e compromisso em oferecer a melhor experiência para você ${citySuffix}.
+          Estrutura de ponta, agilidade no atendimento e compromisso com o melhor resultado para você ${citySuffix}.
         </p>
         <a href="#" class="sim-btn-wa-call" style="background:#4f46e5;" onclick="alert('Na página real, este botão leva o cliente direto pro seu WhatsApp!'); return false;">
           Tirar Dúvidas com Nossa Equipe
@@ -1226,43 +1717,47 @@ function openDemoModal(modelId) {
       </div>
 
       <div style="padding: 20px; text-align: center; font-size: 0.7rem; color:#64748b;">
-        ${companyName} &copy; 2026. Todos os direitos reservados.
+        ${companyName} &copy; 2026. Soluções Digitais.
       </div>
     `;
   }
 
-  document.getElementById('modal-demo').style.display = 'flex';
+  const modal = document.getElementById('modal-demo');
+  if (modal) modal.style.display = 'flex';
 }
 
 function closeDemoModal() {
   const modal = document.getElementById('modal-demo');
   const screen = document.getElementById('phone-screen-content');
   if (modal) modal.style.display = 'none';
-  if (screen) screen.innerHTML = ''; // Limpa iframe para economizar memória
+  if (screen) screen.innerHTML = '';
 }
 
-// 6. EVENTOS
+// 7. EVENTOS & LISTENERS
 function attachEventListeners(params) {
   // Abas de categorias
   document.querySelectorAll('.cat-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const cat = btn.getAttribute('data-niche');
       const searchInput = document.getElementById('catalog-search-input');
-      const currentSearch = searchInput ? searchInput.value : '';
-      renderCatalog(params, cat, currentSearch);
+      const clearBtn = document.getElementById('btn-clear-search');
+      if (searchInput) searchInput.value = '';
+      if (clearBtn) clearBtn.style.display = 'none';
+      renderCatalog(params, cat, '');
     });
   });
 
-  // Barra de Busca
+  // Barra de Busca Inteligente
   const searchInput = document.getElementById('catalog-search-input');
   const clearBtn = document.getElementById('btn-clear-search');
+
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       const val = e.target.value;
       if (clearBtn) {
-        clearBtn.style.display = val ? 'inline-block' : 'none';
+        clearBtn.style.display = val.trim() ? 'inline-block' : 'none';
       }
-      renderCatalog(params, currentActiveCategory, val);
+      renderCatalog(params, null, val);
     });
   }
 
@@ -1272,7 +1767,7 @@ function attachEventListeners(params) {
     });
   }
 
-  // Fechar modal ao clicar fora do phone frame
+  // Fechar modal ao clicar fora
   const modal = document.getElementById('modal-demo');
   if (modal) {
     modal.addEventListener('click', (e) => {
@@ -1285,13 +1780,13 @@ function attachEventListeners(params) {
   // Botões de SaaS Sob Medida
   document.querySelectorAll('.saas-cta').forEach(btn => {
     const saasName = btn.getAttribute('data-saas');
-    const msg = `Olá! Vi na vitrine os Sistemas Sob Medida e gostaria de solicitar um projeto personalizado de "${saasName}" para ${params.empresa || 'minha empresa'} em ${params.cidade || 'minha cidade'}.`;
+    const msg = `Olá! Vi na vitrine da Pixel Studio os Sistemas Sob Medida e gostaria de solicitar um projeto personalizado de "${saasName}" para a ${params.empresa || 'minha empresa'} em ${params.cidade || 'minha cidade'}.`;
     btn.href = buildWhatsAppUrl(msg);
     btn.target = '_blank';
   });
 }
 
-// 7. HELPERS
+// 8. HELPERS
 function buildWhatsAppUrl(text) {
   return `https://wa.me/${PERSONAL_WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
 }
@@ -1300,3 +1795,11 @@ function capitalize(str) {
   if (!str) return '';
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+// 9. INICIALIZAÇÃO
+document.addEventListener('DOMContentLoaded', () => {
+  const params = getUrlParams();
+  applyContextualPersonalization(params);
+  renderCatalog(params);
+  attachEventListeners(params);
+});

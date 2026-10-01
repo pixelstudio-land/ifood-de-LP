@@ -7,24 +7,20 @@
   <meta name="description" content="Projetos e instalação de energia solar para residências, empresas e agronegócio. Economia garantida com financiamento que se paga com a própria economia.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-dark: #0a1120;
-      --card-bg: #111c33;
-      --border-dark: #1e2f52;
+      --bg-dark: #080d1a;
+      --card-bg: #10192e;
+      --border-dark: #1e2c4a;
       --solar-gold: #f59e0b;
-      --solar-gold-glow: rgba(245, 158, 11, 0.4);
       --solar-amber: #d97706;
-      --cyan-accent: #38bdf8;
-      --whatsapp-green: #10b981;
-      --whatsapp-hover: #059669;
+      --wa-green: #10b981;
+      --wa-hover: #059669;
       --text-light: #f8fafc;
       --text-muted: #94a3b8;
+      --radius: 16px;
       --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 22px;
-      --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -34,19 +30,16 @@
       background-color: var(--bg-dark);
       color: var(--text-light);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
     /* TOP BAR */
     .top-bar {
-      background: #060b14;
+      background: #040810;
       border-bottom: 1px solid var(--border-dark);
-      padding: 8px 0;
+      padding: 9px 0;
       font-size: 0.8rem;
       color: #94a3b8;
     }
@@ -59,13 +52,14 @@
 
     /* NAVBAR */
     .navbar {
-      background: rgba(10, 17, 32, 0.96);
-      backdrop-filter: blur(12px);
+      background: rgba(8, 13, 26, 0.96);
+      backdrop-filter: blur(14px);
       position: sticky;
       top: 0;
       z-index: 100;
       border-bottom: 1px solid var(--border-dark);
       padding: 16px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
     .nav-inner {
       display: flex;
@@ -80,23 +74,22 @@
       color: #fff;
     }
     .logo-symbol {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       background: linear-gradient(135deg, var(--solar-gold), #ea580c);
-      color: #0f172a;
+      color: #080d1a;
       border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 900;
-      box-shadow: 0 0 20px var(--solar-gold-glow);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
     }
     .logo-text h3 {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 800;
-      letter-spacing: -0.01em;
       line-height: 1.1;
     }
     .logo-text p {
@@ -113,7 +106,7 @@
       justify-content: center;
       gap: 8px;
       padding: 12px 24px;
-      border-radius: 9999px;
+      border-radius: 999px;
       font-size: 0.92rem;
       font-weight: 700;
       text-decoration: none;
@@ -122,37 +115,37 @@
       border: none;
     }
     .btn-wa {
-      background: var(--whatsapp-green);
+      background: var(--wa-green);
       color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
     }
     .btn-wa:hover {
-      background: var(--whatsapp-hover);
+      background: var(--wa-hover);
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
     }
     .btn-solar {
       background: linear-gradient(135deg, #f59e0b, #d97706);
-      color: #0f172a;
+      color: #080d1a;
+      font-weight: 800;
       box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
     }
     .btn-solar:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 22px rgba(245, 158, 11, 0.6);
     }
-    .btn-lg {
-      padding: 16px 36px;
-      font-size: 1rem;
-    }
 
     /* HERO */
     .hero {
       position: relative;
-      padding: 80px 0 70px;
-      background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.15) 0%, transparent 60%);
+      padding: 70px 0 85px;
+      background: radial-gradient(circle at 100% 0%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
+                  var(--bg-dark);
       border-bottom: 1px solid var(--border-dark);
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 50px;
       align-items: center;
     }
@@ -162,25 +155,26 @@
       gap: 8px;
       background: rgba(245, 158, 11, 0.15);
       color: #fbbf24;
-      border: 1px solid rgba(245, 158, 11, 0.3);
+      border: 1px solid rgba(245, 158, 11, 0.35);
       padding: 6px 16px;
-      border-radius: 9999px;
+      border-radius: 999px;
       font-size: 0.82rem;
       font-weight: 800;
       margin-bottom: 20px;
     }
     .hero h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: 3.2rem;
+      font-size: 3.3rem;
       line-height: 1.12;
       font-weight: 900;
       margin-bottom: 20px;
+      letter-spacing: -0.02em;
     }
     .hero h1 span { color: var(--solar-gold); }
     .hero p {
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       color: var(--text-muted);
-      margin-bottom: 30px;
+      margin-bottom: 34px;
       line-height: 1.7;
     }
 
@@ -188,9 +182,9 @@
     .calc-card {
       background: var(--card-bg);
       border: 1px solid var(--border-dark);
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius);
       padding: 34px 28px;
-      box-shadow: var(--shadow-card);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
       position: relative;
     }
     .calc-card-badge {
@@ -198,29 +192,30 @@
       top: -14px;
       right: 28px;
       background: linear-gradient(135deg, var(--solar-gold), #ea580c);
-      color: #0f172a;
+      color: #080d1a;
       font-size: 0.75rem;
-      font-weight: 800;
+      font-weight: 900;
       padding: 5px 14px;
-      border-radius: 9999px;
+      border-radius: 999px;
     }
     .calc-card h3 {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.45rem;
+      font-size: 1.5rem;
+      font-weight: 800;
       margin-bottom: 8px;
       color: #fff;
     }
     .calc-card p {
       font-size: 0.88rem;
       color: var(--text-muted);
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
     .calc-input-group {
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
     .calc-input-group label {
       display: block;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
       color: #cbd5e1;
       margin-bottom: 8px;
@@ -234,103 +229,126 @@
       border-radius: 4px;
       outline: none;
       accent-color: var(--solar-gold);
+      cursor: pointer;
     }
     .calc-value-display {
-      font-size: 1.6rem;
-      font-weight: 800;
+      font-size: 1.8rem;
+      font-weight: 900;
       color: var(--solar-gold);
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
     .calc-results-box {
-      background: rgba(10, 17, 32, 0.8);
+      background: rgba(8, 13, 26, 0.85);
       border: 1px solid var(--border-dark);
-      border-radius: var(--radius-md);
-      padding: 18px;
-      margin-bottom: 22px;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
     }
     .calc-res-row {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 10px;
-      font-size: 0.88rem;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
     }
     .calc-res-row:last-child {
       margin-bottom: 0;
-      padding-top: 10px;
+      padding-top: 12px;
       border-top: 1px solid var(--border-dark);
     }
     .calc-res-highlight {
-      font-weight: 800;
+      font-weight: 900;
       color: #34d399;
+      font-size: 1.15rem;
     }
 
-    /* SEGMENTOS */
-    .section { padding: 80px 0; }
+    /* SEGMENTOS COM FOTOS */
+    .section { padding: 85px 0; }
     .section-header {
       text-align: center;
-      max-width: 650px;
-      margin: 0 auto 50px;
+      max-width: 680px;
+      margin: 0 auto 55px;
     }
     .section-badge {
       color: var(--solar-gold);
       font-size: 0.82rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 8px;
       display: block;
     }
     .section-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 2.5rem;
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #fff;
       margin-bottom: 14px;
-      line-height: 1.15;
     }
-    .section-desc { color: var(--text-muted); font-size: 0.95rem; }
+    .section-desc { color: var(--text-muted); font-size: 1rem; }
 
     .segments-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 30px;
     }
     .segment-card {
       background: var(--card-bg);
       border: 1px solid var(--border-dark);
-      border-radius: var(--radius-md);
-      padding: 32px 26px;
+      border-radius: var(--radius);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
     .segment-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(245, 158, 11, 0.4);
-      box-shadow: 0 15px 30px rgba(245, 158, 11, 0.1);
+      transform: translateY(-6px);
+      border-color: rgba(245, 158, 11, 0.5);
+      box-shadow: 0 20px 40px rgba(245, 158, 11, 0.15);
     }
-    .segment-icon {
-      font-size: 2.2rem;
-      margin-bottom: 16px;
+    .segment-img-box {
+      height: 200px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
     }
-    .segment-card h3 {
+    .segment-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .segment-card:hover .segment-img-box img {
+      transform: scale(1.06);
+    }
+    .segment-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .segment-body h3 {
       font-family: 'Outfit', sans-serif;
       font-size: 1.35rem;
-      margin-bottom: 10px;
+      font-weight: 800;
       color: #fff;
+      margin-bottom: 10px;
     }
-    .segment-card p {
+    .segment-body p {
       font-size: 0.88rem;
       color: var(--text-muted);
       line-height: 1.6;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     /* FOOTER */
     .footer {
-      background: #060b14;
+      background: #040810;
       color: #64748b;
-      padding: 30px 0;
+      padding: 35px 0;
       font-size: 0.82rem;
       border-top: 1px solid var(--border-dark);
     }
@@ -343,23 +361,29 @@
     /* FLOATING WA */
     .floating-wa {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: var(--whatsapp-green);
+      bottom: 28px;
+      right: 28px;
+      background: var(--wa-green);
       color: #fff;
       padding: 14px 22px;
-      border-radius: 9999px;
-      font-weight: 800;
-      font-size: 0.95rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
       display: flex;
       align-items: center;
       gap: 10px;
       text-decoration: none;
-      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.45);
       z-index: 999;
+      transition: all 0.25s ease;
+      border: 2px solid #ffffff;
+    }
+    .floating-wa:hover {
+      transform: scale(1.06);
+      background: var(--wa-hover);
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; }
       .segments-grid { grid-template-columns: 1fr; }
       .hero h1 { font-size: 2.3rem; }
@@ -372,8 +396,8 @@
   <!-- TOP BAR -->
   <div class="top-bar">
     <div class="container top-bar-inner">
-      <div>Projetos Homologados com a Concessionária de Energia em <span id="top-city" class="top-highlight">Campinas e Região</span></div>
-      <div>Garantia de 25 Anos nos Módulos Solares | Financiamento em até 84x</div>
+      <div>Engenharia Solar & Homologação Completa em <span id="top-city" class="top-highlight">Campinas e Região</span></div>
+      <div>Economia imediata de até 95% na tarifa de energia &bull; Inversores com 10 anos de garantia</div>
     </div>
   </div>
 
@@ -383,12 +407,12 @@
       <a href="#" class="logo">
         <div class="logo-symbol">☀️</div>
         <div class="logo-text">
-          <h3 id="brand-name-nav">Solarium Solar</h3>
-          <p>Engenharia Fotovoltaica</p>
+          <h3 id="brand-name-nav">Solarium Energia Solar</h3>
+          <p>Projetos & Instalação Fotovoltaica</p>
         </div>
       </a>
       <a href="#" id="btn-nav-wa" class="btn btn-wa" target="_blank">
-        Pedir Orçamento Grátis
+        Estudo Solar Gratuito
       </a>
     </div>
   </nav>
@@ -397,46 +421,52 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="hero-badge">Chega de Pagar Caro na Conta de Luz</div>
-        <h1>Gere sua própria energia e economize <span>até 95%</span> todo mês</h1>
+        <div class="hero-badge">Financiamento em até 84x com a Própria Economia</div>
+        <h1>Gere sua própria energia e <span>zere até 95%</span> da sua conta de luz</h1>
         <p>
-          Transforme o sol em economia real para sua casa, comércio ou indústria. Projeto completo com engenharia, homologação e instalação em tempo recorde.
+          Transforme o gasto mensal com a concessionária em um investimento que valoriza seu imóvel em até 15%. Projeto técnico aprovado e homologado sem dores de cabeça.
         </p>
-        <a href="#" id="btn-hero-wa" class="btn btn-solar btn-lg" target="_blank">
-          Simular Meu Projeto no WhatsApp
+
+        <!-- FOTO EM DESTAQUE NO HERO -->
+        <div style="border-radius: var(--radius); overflow: hidden; border: 2px solid rgba(245, 158, 11, 0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.4); margin-bottom: 24px;">
+          <img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80" alt="Instalação Solar Residencial" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+        </div>
+
+        <a href="#simulador" class="btn btn-solar btn-lg" style="width: 100%;">
+          Calcular Economia no Simulador
         </a>
       </div>
 
-      <div>
-        <!-- CALCULADORA INTERATIVA -->
+      <!-- SIMULADOR DINÂMICO -->
+      <div id="simulador">
         <div class="calc-card">
-          <span class="calc-card-badge">Simulador Rápido</span>
+          <span class="calc-card-badge">Simulador Interativo</span>
           <h3>Quanto você paga de luz hoje?</h3>
-          <p>Arraste o valor para descobrir sua economia estimada:</p>
-          
+          <p>Arraste para ver a estimativa de economia mensal e acumulada em 5 anos:</p>
+
           <div class="calc-input-group">
-            <label>Valor Médio da Conta Atual:</label>
-            <input type="range" min="200" max="3000" step="50" value="650" class="calc-range" id="calc-range-slider">
-            <div class="calc-value-display" id="calc-bill-val">R$ 650 / mês</div>
+            <label>Valor Médio Mensal da Conta:</label>
+            <input type="range" min="200" max="5000" step="50" value="650" class="calc-range" id="bill-range">
+            <div class="calc-value-display" id="bill-display">R$ 650 / mês</div>
           </div>
 
           <div class="calc-results-box">
             <div class="calc-res-row">
-              <span>Sua conta com energia solar:</span>
-              <strong style="color: #38bdf8;" id="calc-new-bill">~ R$ 75 / mês</strong>
+              <span style="color: #94a3b8;">Economia Média Mensal:</span>
+              <span class="calc-res-highlight" id="res-monthly">R$ 585 / mês</span>
             </div>
             <div class="calc-res-row">
-              <span>Economia estimada em 1 ano:</span>
-              <strong class="calc-res-highlight" id="calc-year-save">R$ 6.900</strong>
+              <span style="color: #94a3b8;">Economia em 5 Anos:</span>
+              <span class="calc-res-highlight" id="res-5years" style="color: var(--solar-gold);">R$ 35.100</span>
             </div>
             <div class="calc-res-row">
-              <span>Economia estimada em 25 anos:</span>
-              <strong class="calc-res-highlight" id="calc-total-save" style="font-size: 1.1rem;">R$ 172.500</strong>
+              <span style="color: #cbd5e1; font-weight: 700;">Nova Conta Estimada:</span>
+              <span style="font-weight: 800; color: #fff;" id="res-new-bill">Apenas R$ 65,00 (taxa mínima)</span>
             </div>
           </div>
 
-          <a href="#" id="btn-calc-wa" class="btn btn-wa btn-lg" style="width: 100%;" target="_blank">
-            Quero Economizar esse Valor
+          <a href="#" id="btn-calc-wa" class="btn btn-wa" style="width: 100%; padding: 16px;" target="_blank">
+            Receber Projeto Personalizado Grátis
           </a>
         </div>
       </div>
@@ -447,37 +477,52 @@
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge">Soluções Completas</span>
-        <h2 class="section-title">Onde Podemos Instalar</h2>
-        <p class="section-desc">Dimensionamento exato de acordo com seu consumo diário e tipo de telhado.</p>
+        <span class="section-badge">Soluções Sob Medida</span>
+        <h2 class="section-title">Energia Solar para Cada Necessidade</h2>
+        <p class="section-desc">Instalações em conformidade com as normas ABNT e garantia de geração de 25 anos.</p>
       </div>
 
       <div class="segments-grid">
+        <!-- 1 -->
         <div class="segment-card">
-          <div>
-            <div class="segment-icon">🏠</div>
-            <h3>Sistemas Residenciais</h3>
-            <p>Ligue o ar-condicionado, piscina aquecida e eletrodomésticos sem medo da conta no final do mês. Valoriza seu imóvel em até 10%.</p>
+          <div class="segment-img-box">
+            <img src="https://images.unsplash.com/photo-1508873696983-2df5293cb32f?auto=format&fit=crop&w=800&q=80" alt="Residencial Solar">
           </div>
-          <a href="#" class="btn btn-wa btn-segment-wa" data-segment="Residencial" target="_blank">Orçar para Casa</a>
+          <div class="segment-body">
+            <div>
+              <h3>Residencial & Condomínios</h3>
+              <p>Livre-se das bandeiras tarifárias e use o ar-condicionado e chuveiro elétrico com tranquilidade total.</p>
+            </div>
+            <a href="#" class="btn btn-solar btn-seg-wa" data-segment="Residencial">Solicitar Orçamento &rarr;</a>
+          </div>
         </div>
 
+        <!-- 2 -->
         <div class="segment-card">
-          <div>
-            <div class="segment-icon">🏢</div>
-            <h3>Comércios & Escritórios</h3>
-            <p>Reduza drasticamente o custo fixo do seu negócio (lojas, mercados, academias e clínicas) e aumente sua margem líquida de lucro.</p>
+          <div class="segment-img-box">
+            <img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=800&q=80" alt="Comercial Solar">
           </div>
-          <a href="#" class="btn btn-wa btn-segment-wa" data-segment="Comercial" target="_blank">Orçar para Empresa</a>
+          <div class="segment-body">
+            <div>
+              <h3>Comércios & Indústrias</h3>
+              <p>Reduza drasticamente o custo operacional da sua empresa e aumente a margem de lucro líquido todos os meses.</p>
+            </div>
+            <a href="#" class="btn btn-solar btn-seg-wa" data-segment="Comercial">Consultar Engenheiro &rarr;</a>
+          </div>
         </div>
 
+        <!-- 3 -->
         <div class="segment-card">
-          <div>
-            <div class="segment-icon">🚜</div>
-            <h3>Agronegócio & Galpões</h3>
-            <p>Soluções de alta potência para pivôs de irrigação, granjas, silos e propriedades rurais com linhas de crédito facilitadas.</p>
+          <div class="segment-img-box">
+            <img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80" alt="Rural e Agronegócio">
           </div>
-          <a href="#" class="btn btn-wa btn-segment-wa" data-segment="Rural e Agronegócio" target="_blank">Orçar para Agro</a>
+          <div class="segment-body">
+            <div>
+              <h3>Agronegócio & Usinas</h3>
+              <p>Projetos para pivôs de irrigação, granjas e bombeamento de água com linhas de crédito rural subsidiadas.</p>
+            </div>
+            <a href="#" class="btn btn-solar btn-seg-wa" data-segment="Agronegócio">Ver Condições Rurais &rarr;</a>
+          </div>
         </div>
       </div>
     </div>
@@ -487,8 +532,8 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div>
-        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">Solarium Engenharia Solar</h4>
-        <p id="brand-city-footer">CREA Responsável Técnico | Campinas - SP</p>
+        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">Solarium Energia Solar</h4>
+        <p id="brand-city-footer">Engenharia Elétrica Responsável | Campinas - SP</p>
       </div>
       <div>
         <p>&copy; 2026. Todos os direitos reservados.</p>
@@ -498,14 +543,14 @@
 
   <!-- FLOATING WA -->
   <a href="#" id="floating-wa" class="floating-wa" target="_blank">
-    <span>WhatsApp Solar</span>
+    <span>Simulação no WhatsApp</span>
   </a>
 
-  <!-- SCRIPT DINÂMICO & CALCULADORA -->
+  <!-- SCRIPT INTERATIVO E URL HYDRATION -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
-      const empresa = params.get('empresa') || 'Solarium Engenharia Solar';
+      const empresa = params.get('empresa') || 'Solarium Energia Solar';
       const cidade = params.get('cidade') || 'Campinas';
       const whatsapp = params.get('whatsapp') || '5511913393797';
 
@@ -513,45 +558,43 @@
       document.getElementById('brand-name-nav').innerText = empresa;
       document.getElementById('brand-name-footer').innerText = empresa;
       document.getElementById('top-city').innerText = `${cidade} e Região`;
-      document.getElementById('brand-city-footer').innerText = `CREA Responsável Técnico | ${cidade} - SP`;
+      document.getElementById('brand-city-footer').innerText = `Engenharia Elétrica Responsável | ${cidade} - SP`;
 
-      const defaultMsg = encodeURIComponent(`Olá! Vi o site da ${empresa} em ${cidade} e gostaria de solicitar um orçamento de energia solar.`);
+      const range = document.getElementById('bill-range');
+      const billDisplay = document.getElementById('bill-display');
+      const resMonthly = document.getElementById('res-monthly');
+      const res5Years = document.getElementById('res-5years');
+      const btnCalc = document.getElementById('btn-calc-wa');
+
+      function updateCalc() {
+        const val = parseInt(range.value);
+        billDisplay.innerText = `R$ ${val.toLocaleString('pt-BR')} / mês`;
+
+        const savingsMonthly = Math.round(val * 0.90);
+        const savings5Y = savingsMonthly * 60;
+
+        resMonthly.innerText = `R$ ${savingsMonthly.toLocaleString('pt-BR')} / mês`;
+        res5Years.innerText = `R$ ${savings5Y.toLocaleString('pt-BR')}`;
+
+        const msg = encodeURIComponent(`Olá! Fiz uma simulação no site da ${empresa} em ${cidade}. Minha conta de luz é de aproximadamente R$ ${val}/mês e gostaria de um estudo solar sem compromisso.`);
+        btnCalc.href = `https://wa.me/${whatsapp}?text=${msg}`;
+      }
+
+      range.addEventListener('input', updateCalc);
+      updateCalc();
+
+      const defaultMsg = encodeURIComponent(`Olá! Gostaria de mais informações sobre energia solar fotovoltaica com a ${empresa} em ${cidade}.`);
       const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
 
-      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #floating-wa').forEach(el => {
+      document.querySelectorAll('#btn-nav-wa, #floating-wa').forEach(el => {
         el.href = defaultWaUrl;
       });
 
-      // LÓGICA DA CALCULADORA INTERATIVA
-      const slider = document.getElementById('calc-range-slider');
-      const billDisplay = document.getElementById('calc-bill-val');
-      const yearDisplay = document.getElementById('calc-year-save');
-      const totalDisplay = document.getElementById('calc-total-save');
-      const calcWaBtn = document.getElementById('btn-calc-wa');
-
-      function updateCalculator() {
-        const val = parseInt(slider.value, 10);
-        billDisplay.innerText = `R$ ${val.toLocaleString('pt-BR')} / mês`;
-
-        // Economia aproximada: 90% da conta
-        const monthlySave = val * 0.90;
-        const yearSave = monthlySave * 12;
-        const totalSave = yearSave * 25;
-
-        yearDisplay.innerText = `R$ ${Math.round(yearSave).toLocaleString('pt-BR')}`;
-        totalDisplay.innerText = `R$ ${Math.round(totalSave).toLocaleString('pt-BR')}`;
-
-        const cMsg = encodeURIComponent(`Olá! Fiz a simulação no site da ${empresa} em ${cidade}: pago atualmente R$ ${val}/mês de luz e gostaria de um estudo para economizar cerca de R$ ${Math.round(yearSave).toLocaleString('pt-BR')} por ano.`);
-        calcWaBtn.href = `https://wa.me/${whatsapp}?text=${cMsg}`;
-      }
-
-      slider.addEventListener('input', updateCalculator);
-      updateCalculator();
-
-      document.querySelectorAll('.btn-segment-wa').forEach(btn => {
-        const seg = btn.getAttribute('data-segment');
+      document.querySelectorAll('.btn-seg-wa').forEach(btn => {
+        const seg = btn.getAttribute('data-segment') || 'Solar';
         const sMsg = encodeURIComponent(`Olá! Gostaria de um orçamento de energia solar para o segmento "${seg}" com a ${empresa} em ${cidade}.`);
         btn.href = `https://wa.me/${whatsapp}?text=${sMsg}`;
+        btn.target = '_blank';
       });
     });
   </script>
