@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Hamburgueria Artesanal | Cardápio & Delivery Oficial</title>
+  <meta name="description" content="Hambúrgueres artesanais grelhados no fogo, pães artesanais selados e batatas rústicas. Peça direto no WhatsApp sem taxas!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0c;
+      --surface-dark: #121217;
+      --card-dark: #18181f;
+      --border-dark: #272732;
+      --amber: #f59e0b;
+      --amber-hover: #d97706;
+      --red-flame: #ef4444;
+      --wa-green: #10b981;
+      --wa-hover: #059669;
+      --text-white: #f8fafc;
+      --text-gray: #94a3b8;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* TOP LIVE BAR */
+    .top-status-bar {
+      background: #18181f;
+      border-bottom: 1px solid var(--border-dark);
+      padding: 10px 0;
+      font-size: 0.8rem;
+    }
+    .top-status-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .live-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--wa-green);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--wa-green);
+      margin-right: 6px;
+    }
+
+    /* HEADER */
+    .header {
+      background: rgba(18, 18, 23, 0.95);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-dark);
+      padding: 16px 0;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-burger {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--amber), var(--red-flame));
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #000;
+    }
+    .logo-text h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.05em;
+      line-height: 1;
+    }
+    .logo-text span {
+      font-size: 0.7rem;
+      color: var(--amber);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-wa {
+      background: var(--wa-green);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
+    }
+    .btn-wa:hover {
+      background: var(--wa-hover);
+      transform: translateY(-2px);
+    }
+    .btn-primary {
+      background: var(--amber);
+      color: #000;
+      font-weight: 900;
+    }
+    .btn-primary:hover {
+      background: var(--amber-hover);
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 70px 0 80px;
+      background: radial-gradient(circle at 50% 20%, rgba(245, 158, 11, 0.12) 0%, transparent 60%);
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--amber);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      letter-spacing: 0.03em;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+    .hero-title span { color: var(--amber); }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-gray);
+      max-width: 680px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+    .hero-pills-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+    .hero-pill-item {
+      background: var(--card-dark);
+      border: 1px solid var(--border-dark);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* CARDÁPIO DIGITAL */
+    .menu-section {
+      padding: 50px 0 80px;
+    }
+    .menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 35px;
+      border-bottom: 1px solid var(--border-dark);
+      padding-bottom: 20px;
+    }
+    .menu-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.6rem;
+      letter-spacing: 0.04em;
+    }
+    .menu-header p {
+      color: var(--text-gray);
+      font-size: 0.9rem;
+    }
+
+    /* CATEGORIAS DO CARDÁPIO */
+    .menu-tabs {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      margin-bottom: 35px;
+      padding-bottom: 10px;
+    }
+    .menu-tab-btn {
+      background: var(--card-dark);
+      color: var(--text-gray);
+      border: 1px solid var(--border-dark);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .menu-tab-btn.active, .menu-tab-btn:hover {
+      background: var(--amber);
+      color: #000;
+      border-color: var(--amber);
+    }
+
+    /* GRID DE PRODUTOS */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .product-card {
+      background: var(--surface-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+    .product-card:hover {
+      border-color: rgba(245, 158, 11, 0.4);
+      transform: translateY(-4px);
+    }
+    .product-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .product-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .product-tag {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .product-desc {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .product-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 16px;
+    }
+    .product-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: var(--amber);
+      letter-spacing: 0.05em;
+    }
+    .btn-order-item {
+      background: var(--wa-green);
+      color: #fff;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .btn-order-item:hover {
+      background: var(--wa-hover);
+      transform: scale(1.03);
+    }
+
+    /* DIFERENCIAIS DA HAMBURGUERIA */
+    .perks-section {
+      background: var(--card-dark);
+      padding: 60px 0;
+      border-top: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .perks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .perk-box {
+      text-align: center;
+      padding: 20px;
+    }
+    .perk-box h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--amber);
+    }
+    .perk-box p {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+    }
+
+    /* HORÁRIOS & LOCALIZAÇÃO */
+    .info-section {
+      padding: 60px 0;
+    }
+    .info-box {
+      background: var(--surface-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    /* BOTÃO FLUTUANTE */
+    .floating-wa {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--wa-green);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #060608;
+      color: #64748b;
+      padding: 30px 0;
+      font-size: 0.8rem;
+      text-align: center;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.8rem; }
+      .products-grid, .perks-grid { grid-template-columns: 1fr; }
+      .top-status-inner { flex-direction: column; gap: 6px; text-align: center; }
+      .info-box { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STATUS AO VIVO -->
+  <div class="top-status-bar">
+    <div class="container top-status-inner">
+      <div>
+        <span class="live-dot"></span>
+        <strong>DELIVERY ABERTO:</strong> Tempo médio de entrega: 30 a 45 min
+      </div>
+      <div>
+        <span id="burger-city-header">Campinas - SP</span> | Pedidos sem taxas de marketplace
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo-burger">
+        <div class="logo-icon">B</div>
+        <div class="logo-text">
+          <h2 id="burger-name-nav">Burger Artesanal & Grill</h2>
+          <span>Fogo & Brasa</span>
+        </div>
+      </a>
+
+      <a href="#cardapio" class="btn btn-primary">
+        Ver Cardápio
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-badge">Carnes Nobres Grelhadas no Fogo</span>
+      <h1 class="hero-title" id="hero-title">
+        O Melhor Burger de <span id="hero-city">Campinas</span> na Sua Mesa
+      </h1>
+      <p class="hero-sub" id="hero-desc">
+        Pão brioche fofinho selado na manteiga de garrafa, blend artesanal ultrassuculento e queijo cheddar derretido de verdade. Peça direto no WhatsApp sem taxas extras!
+      </p>
+
+      <div class="hero-pills-row">
+        <div class="hero-pill-item">Blend 100% Angus</div>
+        <div class="hero-pill-item">Molhos Autorais da Casa</div>
+        <div class="hero-pill-item">Entrega Rápida e Quentinha</div>
+        <div class="hero-pill-item">Zero Taxas de App</div>
+      </div>
+
+      <a href="#cardapio" class="btn btn-wa btn-lg">
+        Fazer Pedido no WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- CARDÁPIO DIGITAL -->
+  <section class="menu-section" id="cardapio">
+    <div class="container">
+      <div class="menu-header">
+        <div>
+          <h2>Cardápio Oficial</h2>
+          <p>Escolha o seu lanche e clique para enviar o pedido direto no WhatsApp da cozinha.</p>
+        </div>
+      </div>
+
+      <div class="menu-tabs">
+        <button class="menu-tab-btn active">Todos os Lanches</button>
+        <button class="menu-tab-btn">Smash Burgers</button>
+        <button class="menu-tab-btn">Especiais da Casa</button>
+        <button class="menu-tab-btn">Acompanhamentos</button>
+        <button class="menu-tab-btn">Bebidas & Shakes</button>
+      </div>
+
+      <div class="products-grid">
+        <!-- ITEM 1 -->
+        <div class="product-card">
+          <div>
+            <div class="product-top">
+              <h3 class="product-title">Smash Duplo Cheddar</h3>
+              <span class="product-tag">Mais Pedido</span>
+            </div>
+            <p class="product-desc">Pão brioche selado, 2x smashs de 90g com crostinha crocante, queijo cheddar inglês duplo derretido e maionese defumada da casa.</p>
+          </div>
+          <div class="product-bottom">
+            <div class="product-price">R$ 32,90</div>
+            <a href="#" class="btn-order-item" data-item="Smash Duplo Cheddar" data-price="R$ 32,90">Pedir no WhatsApp &rarr;</a>
+          </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="product-card">
+          <div>
+            <div class="product-top">
+              <h3 class="product-title">Bacon King Picanha</h3>
+              <span class="product-tag">Especial</span>
+            </div>
+            <p class="product-desc">Blend de 180g de picanha na grelha, fatias generosas de bacon artesanal crocante, cebola caramelizada no mascavo e molho barbecue rústico.</p>
+          </div>
+          <div class="product-bottom">
+            <div class="product-price">R$ 39,90</div>
+            <a href="#" class="btn-order-item" data-item="Bacon King Picanha" data-price="R$ 39,90">Pedir no WhatsApp &rarr;</a>
+          </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="product-card">
+          <div>
+            <div class="product-top">
+              <h3 class="product-title">Costela BBQ Crocante</h3>
+            </div>
+            <p class="product-desc">Hambúrguer de costela desfiada e suculenta (180g), queijo prato derretido, anéis de cebola empanada crocantes e molho especial.</p>
+          </div>
+          <div class="product-bottom">
+            <div class="product-price">R$ 37,90</div>
+            <a href="#" class="btn-order-item" data-item="Costela BBQ Crocante" data-price="R$ 37,90">Pedir no WhatsApp &rarr;</a>
+          </div>
+        </div>
+
+        <!-- ITEM 4 -->
+        <div class="product-card">
+          <div>
+            <div class="product-top">
+              <h3 class="product-title">Batatas Rústicas com Cheddar e Bacon</h3>
+              <span class="product-tag">Combo</span>
+            </div>
+            <p class="product-desc">Porção generosa de batatas rústicas fritas na hora, cobertas com calda cremosa de cheddar autêntico e farofa crocante de bacon.</p>
+          </div>
+          <div class="product-bottom">
+            <div class="product-price">R$ 24,90</div>
+            <a href="#" class="btn-order-item" data-item="Batatas Rusticas Cheddar e Bacon" data-price="R$ 24,90">Pedir no WhatsApp &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="perks-section">
+    <div class="container">
+      <div class="perks-grid">
+        <div class="perk-box">
+          <h3>Fogo e Brasa Real</h3>
+          <p>Nossos hambúrgueres são defumados no ponto exato para garantir o sabor inconfundível do churrasco.</p>
+        </div>
+        <div class="perk-box">
+          <h3>Pão Brioche Artesanal</h3>
+          <p>Massa leve, aerada e macia, selada na chapa com manteiga para não amolecer na viagem até a sua casa.</p>
+        </div>
+        <div class="perk-box">
+          <h3>Embalagem Térmica</h3>
+          <p>Seu lanche chega na sua porta como se tivesse acabado de sair da chapa: quente e crocante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFORMAÇÕES DE ATENDIMENTO -->
+  <section class="info-section">
+    <div class="container">
+      <div class="info-box">
+        <div>
+          <h3 id="burger-name-info" style="font-size: 1.4rem; font-weight: 800; margin-bottom: 6px;">Burger Artesanal & Grill</h3>
+          <p style="color: var(--text-gray); font-size: 0.9rem;">Terça a Domingo: 18h30 às 23h30</p>
+          <p id="burger-address-info" style="color: var(--text-gray); font-size: 0.9rem;">Atendendo toda a região de Campinas - SP</p>
+        </div>
+        <div>
+          <a href="#" id="btn-info-wa" class="btn btn-wa" target="_blank">
+            Tirar Dúvidas com Atendente
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p id="burger-footer-copy">Burger Artesanal &copy; 2026. Todos os direitos reservados.</p>
+      <p style="margin-top: 6px; font-size: 0.75rem;">Cardápio Digital sem comissão por venda integrado ao WhatsApp.</p>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE -->
+  <a href="#" id="floating-burger-wa" class="floating-wa" target="_blank">
+    <span>Pedir no WhatsApp</span>
+  </a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const empresa = params.get('empresa') || 'Burger Artesanal & Grill';
+      const cidade = params.get('cidade') || 'Campinas';
+      const whatsapp = params.get('whatsapp') || '5511913393797';
+
+      document.getElementById('page-title').innerText = `${empresa} | Cardápio & Delivery em ${cidade}`;
+      document.getElementById('burger-name-nav').innerText = empresa;
+      document.getElementById('burger-name-info').innerText = empresa;
+      document.getElementById('hero-city').innerText = cidade;
+      document.getElementById('burger-city-header').innerText = `${cidade} - SP`;
+      document.getElementById('burger-address-info').innerText = `Atendendo toda a região de ${cidade} - SP`;
+      document.getElementById('burger-footer-copy').innerText = `${empresa} &copy; 2026. Todos os direitos reservados.`;
+
+      // Botões gerais de WhatsApp
+      const generalMsg = encodeURIComponent(`Olá! Gostaria de ver o cardápio e fazer um pedido na ${empresa} em ${cidade}.`);
+      const generalUrl = `https://wa.me/${whatsapp}?text=${generalMsg}`;
+      document.querySelectorAll('#btn-info-wa, #floating-burger-wa').forEach(el => {
+        el.href = generalUrl;
+      });
+
+      // Botões de itens específicos do cardápio
+      document.querySelectorAll('.btn-order-item').forEach(btn => {
+        const item = btn.getAttribute('data-item');
+        const price = btn.getAttribute('data-price');
+        const orderMsg = encodeURIComponent(`Olá! Gostaria de pedir: 1x ${item} (${price}) na ${empresa}. Como posso finalizar meu pedido?`);
+        btn.href = `https://wa.me/${whatsapp}?text=${orderMsg}`;
+        btn.target = '_blank';
+      });
+    });
+  </script>
+</body>
+</html>

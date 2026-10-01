@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Studio Hair & Beleza | Especialista em Loiros & Mega Hair</title>
+  <meta name="description" content="Salão de beleza e hair designer: mechas personalizadas, loiro saudável, mega hair invisível e produção para eventos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-rose: #e11d48;
+      --accent-gold: #eab308;
+      --bg-dark: #0f172a;
+      --card-dark: #1e293b;
+      --text-white: #f8fafc;
+      --text-gray: #94a3b8;
+      --whatsapp-green: #10b981;
+      --whatsapp-hover: #059669;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background: #020617;
+      color: #cbd5e1;
+      font-size: 0.78rem;
+      padding: 8px 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .top-bar strong { color: var(--accent-gold); }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #334155;
+      padding: 16px 0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .logo-symbol {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--primary-rose), #9f1239);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 14px rgba(225, 29, 72, 0.4);
+    }
+    .logo-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .logo-text p {
+      font-size: 0.72rem;
+      color: var(--accent-gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-wa {
+      background: var(--whatsapp-green);
+      color: #fff;
+    }
+    .btn-wa:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-2px);
+    }
+    .btn-rose {
+      background: linear-gradient(135deg, var(--primary-rose), #be123c);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(225, 29, 72, 0.35);
+    }
+    .btn-rose:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(225, 29, 72, 0.45);
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 80px 0 70px;
+      background: radial-gradient(circle at top left, rgba(225, 29, 72, 0.2) 0%, transparent 60%);
+      border-bottom: 1px solid #1e293b;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(225, 29, 72, 0.15);
+      color: #fda4af;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border: 1px solid rgba(225, 29, 72, 0.3);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      line-height: 1.15;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: #fda4af; font-style: italic; }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-gray);
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .hero-card {
+      background: var(--card-dark);
+      border: 1px solid #334155;
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .hero-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .hero-card p {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      margin-bottom: 22px;
+    }
+    .beauty-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+    .beauty-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: #f1f5f9;
+    }
+    .dot-check {
+      width: 20px;
+      height: 20px;
+      background: rgba(225, 29, 72, 0.2);
+      color: #fda4af;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    /* SERVIÇOS */
+    .section { padding: 80px 0; }
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 50px;
+    }
+    .section-badge {
+      color: var(--primary-rose);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+    .section-desc { color: var(--text-gray); font-size: 0.95rem; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .service-card {
+      background: var(--card-dark);
+      border: 1px solid #334155;
+      border-radius: var(--radius-md);
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(225, 29, 72, 0.4);
+      box-shadow: 0 15px 30px rgba(225, 29, 72, 0.15);
+    }
+    .service-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--text-gray);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #020617;
+      color: #64748b;
+      padding: 30px 0;
+      font-size: 0.82rem;
+      border-top: 1px solid #1e293b;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* FLOATING WA */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--whatsapp-green);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      z-index: 999;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.3rem; }
+      .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    Atendimento personalizado e horários exclusivos em <strong id="top-city">Campinas - SP</strong> | Agendamentos via WhatsApp
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-symbol">S</div>
+        <div class="logo-text">
+          <h3 id="brand-name-nav">Studio Hair & Elegance</h3>
+          <p>Hair Designer & Colorimetria</p>
+        </div>
+      </a>
+      <a href="#" id="btn-nav-wa" class="btn btn-wa" target="_blank">
+        Agendar Horário
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">Colorimetria & Mega Hair Avançado</div>
+        <h1>A transformação que o seu cabelo merece, com a <span>saúde</span> dos fios preservada</h1>
+        <p>
+          Técnicas exclusivas de mechas sem quebra, morena iluminada com transição perfeita e mega hair com fitas imperceptíveis para volume e comprimento dos sonhos.
+        </p>
+        <a href="#" id="btn-hero-wa" class="btn btn-rose btn-lg" target="_blank" style="padding: 16px 36px; font-size: 1rem;">
+          Consultar Horários Disponíveis
+        </a>
+      </div>
+
+      <div>
+        <div class="hero-card">
+          <h3>Avaliação Capilar Gratuita</h3>
+          <p>Antes de qualquer química, fazemos um teste de mecha rigoroso para garantir a integridade dos seus fios.</p>
+          <ul class="beauty-list">
+            <li><span class="dot-check">&#10003;</span> Diagnóstico da fibra capilar com cronograma</li>
+            <li><span class="dot-check">&#10003;</span> Produtos importados (Wella, L'Oréal, Truss, Braé)</li>
+            <li><span class="dot-check">&#10003;</span> Lavatório relaxante com massagem capilar</li>
+            <li><span class="dot-check">&#10003;</span> Ambiente aconchegante com café e espumante</li>
+          </ul>
+          <a href="#" id="btn-card-wa" class="btn btn-wa" style="width: 100%;" target="_blank">
+            Agendar Teste de Mecha no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Menu de Transformação</span>
+        <h2 class="section-title">Especialidades do Studio</h2>
+        <p class="section-desc">Cuidado impecável em cada mecha, corte e tratamento.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div>
+            <div class="service-icon">✨</div>
+            <h3>Loiras & Mechas de Alta Precisão</h3>
+            <p>Loiro baunilha, platinado ou pérola com clareamento saudável e proteção plex antiamarelamento.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Loiros e Mechas" target="_blank">Consultar Mechas</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon">☕</div>
+            <h3>Morena Iluminada</h3>
+            <p>Tons de avelã, caramelo, mel e chocolate para quem deseja iluminar sem perder a naturalidade da raiz.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Morena Iluminada" target="_blank">Ver Tons</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon">🎀</div>
+            <h3>Mega Hair Invisível</h3>
+            <p>Fita adesiva nanopele ou ponto americano com cabelo 100% humano brasileiro selecionado.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Mega Hair" target="_blank">Orçar Mega Hair</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon">💆‍♀️</div>
+            <h3>Terapia Capilar & Reconstrução</h3>
+            <p>Tratamento profundo para fios danificados por químicas anteriores, devolvendo brilho e massa proteica.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Terapia Capilar" target="_blank">Agendar Tratamento</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon">✂️</div>
+            <h3>Cortes & Visagismo Feminino</h3>
+            <p>Cortes modernos que valorizam o formato do seu rosto e proporcionam leveza, movimento e caimento natural.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Corte e Visagismo" target="_blank">Agendar Corte</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon">👰</div>
+            <h3>Dia da Noiva & Formandas</h3>
+            <p>Penteados clássicos ou despojados e maquiagem de alta fixação à prova d'água para o seu dia inesquecível.</p>
+          </div>
+          <a href="#" class="btn btn-wa btn-service-wa" data-serv="Produção Noiva e Festa" target="_blank">Pacotes Noiva</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">Studio Hair & Elegance</h4>
+        <p id="brand-city-footer">Hair Designer & Espaço de Beleza | Campinas - SP</p>
+      </div>
+      <div>
+        <p>&copy; 2026. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WA -->
+  <a href="#" id="floating-wa" class="floating-wa" target="_blank">
+    <span>WhatsApp Studio</span>
+  </a>
+
+  <!-- SCRIPT DINÂMICO VIA URL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const empresa = params.get('empresa') || 'Studio Hair & Elegance';
+      const cidade = params.get('cidade') || 'Campinas';
+      const whatsapp = params.get('whatsapp') || '5511913393797';
+
+      document.getElementById('page-title').innerText = `${empresa} | Salão de Beleza em ${cidade}`;
+      document.getElementById('brand-name-nav').innerText = empresa;
+      document.getElementById('brand-name-footer').innerText = empresa;
+      document.getElementById('top-city').innerText = `${cidade} - SP`;
+      document.getElementById('brand-city-footer').innerText = `Hair Designer & Espaço de Beleza | ${cidade} - SP`;
+
+      const defaultMsg = encodeURIComponent(`Olá! Estava no site da ${empresa} em ${cidade} e gostaria de agendar um horário.`);
+      const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
+
+      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-card-wa, #floating-wa').forEach(el => {
+        el.href = defaultWaUrl;
+      });
+
+      document.querySelectorAll('.btn-service-wa').forEach(btn => {
+        const serv = btn.getAttribute('data-serv');
+        const sMsg = encodeURIComponent(`Olá! Gostaria de consultar valores e disponibilidade para o procedimento de "${serv}" na ${empresa} em ${cidade}.`);
+        btn.href = `https://wa.me/${whatsapp}?text=${sMsg}`;
+      });
+    });
+  </script>
+</body>
+</html>

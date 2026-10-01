@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Horizon Prime Imóveis | Alto Padrão & Lançamentos</title>
+  <meta name="description" content="Casas em condomínio, coberturas e lançamentos imobiliários exclusivos nos melhores bairros com assessoria jurídica completa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f172a;
+      --primary-accent: #0284c7;
+      --gold: #d97706;
+      --gold-light: #fef3c7;
+      --whatsapp-green: #10b981;
+      --whatsapp-hover: #059669;
+      --bg-light: #f8fafc;
+      --surface: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+      --shadow-hover: 0 20px 35px -8px rgba(15, 23, 42, 0.16);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background: #090d16;
+      color: #94a3b8;
+      font-size: 0.78rem;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .creci-tag { color: var(--gold); font-weight: 700; }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+    .logo-symbol {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: var(--gold);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.25rem;
+      border: 1px solid rgba(217, 119, 6, 0.4);
+    }
+    .logo-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      color: #0f172a;
+    }
+    .logo-text p {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-wa {
+      background: var(--whatsapp-green);
+      color: #fff;
+    }
+    .btn-wa:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-2px);
+    }
+    .btn-primary {
+      background: #0f172a;
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #1e293b;
+      transform: translateY(-2px);
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #d97706, #b45309);
+      color: #fff;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 70px 0 80px;
+      background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+      color: #fff;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(217, 119, 6, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(217, 119, 6, 0.3);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      line-height: 1.15;
+      font-weight: 700;
+      max-width: 820px;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: #38bdf8; }
+    .hero p {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      max-width: 680px;
+      margin-bottom: 35px;
+    }
+
+    /* BUSCA RÁPIDA DE IMÓVEIS */
+    .search-filter-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr) auto;
+      gap: 16px;
+      align-items: end;
+      color: #0f172a;
+    }
+    .filter-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #64748b;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .filter-group select, .filter-group input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: #f8fafc;
+      color: #0f172a;
+    }
+
+    /* SEÇÃO DE IMÓVEIS EM DESTAQUE */
+    .section { padding: 80px 0; }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 40px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+    .section-desc { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
+
+    .properties-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .property-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .property-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+    .property-thumb-box {
+      height: 220px;
+      background: linear-gradient(135deg, #1e293b, #334155);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+    }
+    .prop-status-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: #0f172a;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .prop-price-tag {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 6px;
+      border-left: 3px solid var(--gold);
+    }
+    .property-body {
+      padding: 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .property-type {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .property-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 6px 0 8px;
+    }
+    .property-location {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 16px;
+    }
+    .property-features {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 18px;
+      font-size: 0.82rem;
+      color: #475569;
+    }
+    .feat-item { font-weight: 600; }
+
+    /* SEÇÃO PROPRIETÁRIO (VENDA SEU IMÓVEL) */
+    .owner-banner {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      border-radius: var(--radius-lg);
+      padding: 50px 40px;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+    .owner-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+    }
+    .owner-banner p {
+      font-size: 1rem;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #090d16;
+      color: #94a3b8;
+      padding: 30px 0;
+      font-size: 0.82rem;
+      border-top: 1px solid #1e293b;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* FLOATING WA */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--whatsapp-green);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      z-index: 999;
+    }
+
+    @media (max-width: 900px) {
+      .hero h1 { font-size: 2.3rem; }
+      .search-filter-card { grid-template-columns: 1fr; }
+      .properties-grid { grid-template-columns: 1fr; }
+      .owner-banner { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div>Atendimento Consultivo Imobiliário em <span id="top-city" style="color:#fff;">Campinas - SP</span></div>
+      <div><span class="creci-tag">CRECI Jurídico: J-99882</span> | Compra, Venda e Locação Segura</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-symbol">H</div>
+        <div class="logo-text">
+          <h3 id="brand-name-nav">Horizon Prime Imóveis</h3>
+          <p>Consultoria & Gestão Patrimonial</p>
+        </div>
+      </a>
+      <a href="#" id="btn-nav-wa" class="btn btn-wa" target="_blank">
+        Falar com o Corretor
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Imóveis Selecionados & Avaliação Rápida</div>
+      <h1>Encontre o imóvel ideal para viver ou investir com <span>segurança jurídica</span></h1>
+      <p>Assessoria completa da primeira visita até a entrega das chaves. Casas em condomínio fechado, coberturas exclusivas e lançamentos com condições facilitadas.</p>
+
+      <!-- FILTRO DE BUSCA -->
+      <div class="search-filter-card">
+        <div class="filter-group">
+          <label>Finalidade</label>
+          <select id="filter-type">
+            <option>Comprar</option>
+            <option>Alugar</option>
+            <option>Lançamento na Planta</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Tipo de Imóvel</label>
+          <select id="filter-category">
+            <option>Casa em Condomínio</option>
+            <option>Apartamento / Cobertura</option>
+            <option>Terreno / Lote</option>
+            <option>Sala Comercial</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Bairro Desejado</label>
+          <input type="text" placeholder="Ex: Alphaville, Centro, etc." id="filter-district">
+        </div>
+        <div class="filter-group">
+          <label>Faixa de Valor</label>
+          <select id="filter-price">
+            <option>Até R$ 500 mil</option>
+            <option>R$ 500 mil a R$ 1,2 mi</option>
+            <option>R$ 1,2 mi a R$ 3 mi</option>
+            <option>Acima de R$ 3 milhões</option>
+          </select>
+        </div>
+        <button class="btn btn-gold" id="btn-search-imovel" style="height: 44px;">
+          Buscar Imóveis
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPRIEDADES EM DESTAQUE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Oportunidades em Destaque</h2>
+          <p class="section-desc">Imóveis com documentação 100% checada e prontos para transferência imediata.</p>
+        </div>
+        <a href="#" id="btn-all-imoveis" class="btn btn-primary" target="_blank">Ver Todos no WhatsApp</a>
+      </div>
+
+      <div class="properties-grid">
+        <!-- IMÓVEL 1 -->
+        <div class="property-card">
+          <div class="property-thumb-box">
+            <span class="prop-status-tag">Lançamento Exclusivo</span>
+            <span class="prop-price-tag">R$ 1.850.000</span>
+          </div>
+          <div class="property-body">
+            <div>
+              <span class="property-type">Casa em Condomínio Fechado</span>
+              <h3 class="property-title">Mansão Térrea Contemporânea</h3>
+              <p class="property-location">📍 Bairro Nobre, <span class="card-city-name">Campinas</span></p>
+              <div class="property-features">
+                <span class="feat-item">320 m²</span>
+                <span class="feat-item">4 Suítes</span>
+                <span class="feat-item">Piscina Aquecida</span>
+                <span class="feat-item">4 Vagas</span>
+              </div>
+            </div>
+            <a href="#" class="btn btn-wa btn-prop-wa" data-imovel="Mansão Térrea Contemporânea (R$ 1.850.000)" target="_blank">
+              Agendar Visita no WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- IMÓVEL 2 -->
+        <div class="property-card">
+          <div class="property-thumb-box">
+            <span class="prop-status-tag">Pronto para Morar</span>
+            <span class="prop-price-tag">R$ 980.000</span>
+          </div>
+          <div class="property-body">
+            <div>
+              <span class="property-type">Apartamento Alto Padrão</span>
+              <h3 class="property-title">Residencial Grand Boulevard</h3>
+              <p class="property-location">📍 Vista Panorâmica, <span class="card-city-name">Campinas</span></p>
+              <div class="property-features">
+                <span class="feat-item">142 m²</span>
+                <span class="feat-item">3 Suítes</span>
+                <span class="feat-item">Varanda Gourmet</span>
+                <span class="feat-item">2 Vagas</span>
+              </div>
+            </div>
+            <a href="#" class="btn btn-wa btn-prop-wa" data-imovel="Residencial Grand Boulevard (R$ 980.000)" target="_blank">
+              Agendar Visita no WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- IMÓVEL 3 -->
+        <div class="property-card">
+          <div class="property-thumb-box">
+            <span class="prop-status-tag">Oportunidade de Investimento</span>
+            <span class="prop-price-tag">R$ 620.000</span>
+          </div>
+          <div class="property-body">
+            <div>
+              <span class="property-type">Studio Inteligente & Lazer Completo</span>
+              <h3 class="property-title">Skyline Prime Suites</h3>
+              <p class="property-location">📍 Região Central, <span class="card-city-name">Campinas</span></p>
+              <div class="property-features">
+                <span class="feat-item">48 m²</span>
+                <span class="feat-item">1 Suíte</span>
+                <span class="feat-item">Rooftop com Spa</span>
+                <span class="feat-item">1 Vaga</span>
+              </div>
+            </div>
+            <a href="#" class="btn btn-wa btn-prop-wa" data-imovel="Skyline Prime Suites (R$ 620.000)" target="_blank">
+              Agendar Visita no WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER QUER VENDER SEU IMÓVEL -->
+  <div class="container">
+    <div class="owner-banner">
+      <div>
+        <h2>Quer vender ou alugar seu imóvel com rapidez?</h2>
+        <p>Anuncie com a nossa consultoria. Fazemos produção fotográfica profissional, divulgação direcionada para compradores qualificados e análise cadastral rigorosa.</p>
+        <a href="#" id="btn-owner-wa" class="btn btn-gold btn-lg" target="_blank">
+          Avaliar Meu Imóvel Gratuitamente
+        </a>
+      </div>
+      <div>
+        <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px;">
+          <h4 style="color: #fff; margin-bottom: 12px;">Por que anunciar conosco?</h4>
+          <p style="font-size: 0.88rem; color:#cbd5e1; margin-bottom: 10px;">✔ Fotos e vídeos em alta resolução sem custo</p>
+          <p style="font-size: 0.88rem; color:#cbd5e1; margin-bottom: 10px;">✔ Divulgação nos maiores portais do Brasil</p>
+          <p style="font-size: 0.88rem; color:#cbd5e1; margin-bottom: 10px;">✔ Assessoria jurídica até a escritura definitiva</p>
+          <p style="font-size: 0.88rem; color:#cbd5e1;">✔ Venda em média 40% mais rápida</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px;">Horizon Prime Imóveis</h4>
+        <p id="brand-city-footer">CRECI J-99882 | Campinas - SP</p>
+      </div>
+      <div>
+        <p>&copy; 2026. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WA -->
+  <a href="#" id="floating-wa" class="floating-wa" target="_blank">
+    <span>WhatsApp Corretor</span>
+  </a>
+
+  <!-- SCRIPT DE PERSONALIZAÇÃO DINÂMICA VIA URL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const empresa = params.get('empresa') || 'Horizon Prime Imóveis';
+      const cidade = params.get('cidade') || 'Campinas';
+      const whatsapp = params.get('whatsapp') || '5511913393797';
+
+      // Atualiza textos
+      document.getElementById('page-title').innerText = `${empresa} | Imobiliária de Alto Padrão em ${cidade}`;
+      document.getElementById('brand-name-nav').innerText = empresa;
+      document.getElementById('brand-name-footer').innerText = empresa;
+      document.getElementById('top-city').innerText = `${cidade} e Região`;
+      document.getElementById('brand-city-footer').innerText = `CRECI Consultoria Imobiliária | ${cidade} - SP`;
+
+      document.querySelectorAll('.card-city-name').forEach(el => el.innerText = cidade);
+
+      // Links do WhatsApp
+      const defaultMsg = encodeURIComponent(`Olá! Estava no site da ${empresa} em ${cidade} e gostaria de consultar as opções de imóveis disponíveis.`);
+      const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
+
+      document.querySelectorAll('#btn-nav-wa, #btn-all-imoveis, #floating-wa').forEach(el => {
+        el.href = defaultWaUrl;
+      });
+
+      // Botão Proprietário
+      const ownerMsg = encodeURIComponent(`Olá! Gostaria de uma avaliação gratuita para anunciar o meu imóvel com a ${empresa} em ${cidade}.`);
+      document.getElementById('btn-owner-wa').href = `https://wa.me/${whatsapp}?text=${ownerMsg}`;
+
+      // Botões específicos de cada imóvel
+      document.querySelectorAll('.btn-prop-wa').forEach(btn => {
+        const imovel = btn.getAttribute('data-imovel');
+        const pMsg = encodeURIComponent(`Olá! Tenho interesse no imóvel "${imovel}" que vi no site da ${empresa} em ${cidade}. Poderia me passar mais fotos e detalhes?`);
+        btn.href = `https://wa.me/${whatsapp}?text=${pMsg}`;
+      });
+
+      // Botão de busca
+      document.getElementById('btn-search-imovel').addEventListener('click', () => {
+        const type = document.getElementById('filter-type').value;
+        const cat = document.getElementById('filter-category').value;
+        const dist = document.getElementById('filter-district').value || 'qualquer bairro';
+        const price = document.getElementById('filter-price').value;
+
+        const sMsg = encodeURIComponent(`Olá! Fiz uma busca no site da ${empresa} por: ${type} - ${cat}, no bairro ${dist}, na faixa de ${price}. Vocês têm opções com esse perfil em ${cidade}?`);
+        window.open(`https://wa.me/${whatsapp}?text=${sMsg}`, '_blank');
+      });
+    });
+  </script>
+</body>
+</html>

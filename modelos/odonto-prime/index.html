@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Clínica Odontológica Especializada | Estética & Implantes</title>
+  <meta name="description" content="Tratamentos odontológicos modernos de alta precisão: implantes guiados, lentes de contato e alinhadores invisíveis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --accent-gold: #d97706;
+      --gold-light: #fef3c7;
+      --whatsapp-green: #10b981;
+      --whatsapp-hover: #059669;
+      --bg-light: #f8fafc;
+      --surface: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-soft: 0 10px 30px -5px rgba(2, 132, 199, 0.08);
+      --shadow-hover: 0 20px 40px -10px rgba(2, 132, 199, 0.16);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background: #0f172a;
+      color: #94a3b8;
+      font-size: 0.78rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-bar-tag { color: #38bdf8; font-weight: 600; }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .logo-symbol {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--primary), #38bdf8);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.15rem;
+    }
+    .logo-text h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .logo-text span {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-wa {
+      background: var(--whatsapp-green);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    }
+    .btn-wa:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 60px 0 70px;
+      background: radial-gradient(circle at 100% 0%, rgba(2, 132, 199, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 0% 100%, rgba(217, 119, 6, 0.05) 0%, transparent 40%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #e0f2fe;
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .hero-title {
+      font-size: 2.7rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 18px;
+      color: #0f172a;
+    }
+    .hero-title span {
+      background: linear-gradient(135deg, var(--primary), #0284c7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+    .hero-trust-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .check-icon {
+      color: var(--whatsapp-green);
+      font-weight: 800;
+    }
+
+    /* CARD DE DESTAQUE DO HERO */
+    .hero-card-preview {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-hover);
+      position: relative;
+    }
+    .hero-badge-float {
+      position: absolute;
+      top: -14px;
+      right: 24px;
+      background: var(--accent-gold);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .clinic-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .stat-box {
+      background: var(--bg-light);
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .stat-box h4 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .stat-box p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* SEÇÃO DE TRATAMENTOS */
+    .section {
+      padding: 70px 0;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 50px;
+    }
+    .section-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .section-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: #bae6fd;
+    }
+    .service-icon-box {
+      width: 48px;
+      height: 48px;
+      background: #e0f2fe;
+      color: var(--primary);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .service-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .service-link {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .service-link:hover { color: var(--primary-dark); }
+
+    /* DIFERENCIAIS DA CLÍNICA */
+    .features-section {
+      background: #0f172a;
+      color: #fff;
+      padding: 70px 0;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .feature-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+    .feature-item h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #38bdf8;
+    }
+    .feature-item p {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    /* DEPOIMENTOS */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .review-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-soft);
+    }
+    .stars {
+      color: #f59e0b;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+    .review-text {
+      font-size: 0.85rem;
+      color: #334155;
+      font-style: italic;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .patient-info h5 {
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .patient-info span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* FAQ ACCORDION */
+    .faq-container {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 18px 22px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .faq-question:hover { color: var(--primary); }
+    .faq-answer {
+      padding: 0 22px 18px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      display: none;
+    }
+    .faq-item.active .faq-answer { display: block; }
+    .faq-item.active .faq-question span { transform: rotate(45deg); }
+
+    /* CTA FINAL */
+    .cta-banner {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 50px 30px;
+      text-align: center;
+      margin: 40px auto;
+      box-shadow: 0 20px 40px rgba(2, 132, 199, 0.25);
+    }
+    .cta-banner h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .cta-banner p {
+      font-size: 1rem;
+      color: #e0f2fe;
+      max-width: 600px;
+      margin: 0 auto 28px;
+    }
+
+    /* BOTÃO FLUTUANTE DE WHATSAPP */
+    .floating-wa-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--whatsapp-green);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      z-index: 9999;
+      transition: all 0.3s ease;
+      animation: pulse 2.5s infinite;
+    }
+    .floating-wa-btn:hover {
+      background: var(--whatsapp-hover);
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+      70% { box-shadow: 0 0 0 16px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #090d16;
+      color: #64748b;
+      padding: 40px 0 20px;
+      font-size: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .services-grid, .features-grid, .reviews-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: 2.1rem; }
+      .footer-inner { flex-direction: column; gap: 14px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div>
+        <span class="top-bar-tag">Atendimento com Hora Marcada:</span>
+        <span id="clinic-city-header">Campinas e Região</span>
+      </div>
+      <div>
+        <span>Segunda a Sexta: 08h às 19h | Sábado: 08h às 13h</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-symbol">O</div>
+        <div class="logo-text">
+          <h3 id="clinic-name-nav">Odonto Prime Especializada</h3>
+          <span>Clínica Odontológica</span>
+        </div>
+      </a>
+
+      <a href="#" id="btn-nav-wa" class="btn btn-wa" target="_blank">
+        Agendar Consulta
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-pill">
+          Tecnologia Odontológica Avançada & Atendimento Humanizado
+        </span>
+        <h1 class="hero-title" id="hero-title">
+          Transforme o seu sorriso com estética e precisão em <span id="hero-city">Campinas</span>
+        </h1>
+        <p class="hero-subtitle" id="hero-desc">
+          Recupere sua autoestima e a segurança ao sorrir. Na <strong id="clinic-name-inline">Odonto Prime</strong>, combinamos especialistas renomados, tecnologia 3D sem dor e tratamentos sob medida para a sua saúde bucal.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#" id="btn-hero-wa" class="btn btn-wa btn-lg" target="_blank">
+            Agendar Avaliação no WhatsApp
+          </a>
+          <a href="#procedimentos" class="btn btn-primary btn-lg">
+            Ver Tratamentos
+          </a>
+        </div>
+
+        <div class="hero-trust-row">
+          <div class="trust-item"><span class="check-icon">&#10003;</span> Implantes sem dor</div>
+          <div class="trust-item"><span class="check-icon">&#10003;</span> Lentes em resina e porcelana</div>
+          <div class="trust-item"><span class="check-icon">&#10003;</span> Alinhadores transparentes</div>
+        </div>
+      </div>
+
+      <!-- CARD LATERAL DE CREDIBILIDADE -->
+      <div class="hero-card-preview">
+        <span class="hero-badge-float">Avaliação Rápida</span>
+        <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 8px;">Estrutura Completa</h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted);">Consultórios modernos e climatizados com rigoroso protocolo de biossegurança.</p>
+
+        <div class="clinic-stats-grid">
+          <div class="stat-box">
+            <h4>+3.200</h4>
+            <p>Sorrisos Renovados</p>
+          </div>
+          <div class="stat-box">
+            <h4>100%</h4>
+            <p>Planejamento Digital 3D</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px; padding: 14px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; font-size: 0.8rem; color: #166534;">
+          <strong>Plantão de Dúvidas:</strong> Nossa recepção responde orçamentos e horários disponíveis diretamente pelo WhatsApp.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCEDIMENTOS -->
+  <section class="section" id="procedimentos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Nossos Procedimentos</span>
+        <h2 class="section-title">Tratamentos de Alta Complexidade e Estética Dental</h2>
+        <p class="section-desc">Procedimentos planejados com escaneamento intraoral para máxima previsibilidade e conforto.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div>
+            <div class="service-icon-box">01</div>
+            <h3>Lentes de Contato e Facetas</h3>
+            <p>Alinhamento perfeito de cor, formato e proporção do sorriso com resinas estéticas ou porcelana ultrarresistente.</p>
+          </div>
+          <a href="#" class="service-link btn-service-wa" target="_blank">Consultar Valor no WhatsApp &rarr;</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon-box">02</div>
+            <h3>Implantes Dentários Guiados</h3>
+            <p>Recuperação mastigatória completa com pinos de titânio de osseointegração rápida e cirurgia virtual sem cortes profundos.</p>
+          </div>
+          <a href="#" class="service-link btn-service-wa" target="_blank">Consultar Valor no WhatsApp &rarr;</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon-box">03</div>
+            <h3>Alinhadores Invisíveis</h3>
+            <p>Ortodontia moderna, discreta e removível. Dentes alinhados até 2x mais rápido sem fios de metal cortando a boca.</p>
+          </div>
+          <a href="#" class="service-link btn-service-wa" target="_blank">Consultar Valor no WhatsApp &rarr;</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon-box">04</div>
+            <h3>Clareamento Dental a Laser</h3>
+            <p>Dentes visivelmente mais brancos desde a primeira sessão, com barreira gengival de proteção contra sensibilidade.</p>
+          </div>
+          <a href="#" class="service-link btn-service-wa" target="_blank">Consultar Valor no WhatsApp &rarr;</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon-box">05</div>
+            <h3>Harmonização Orofacial</h3>
+            <p>Preenchimento labial, bioestimuladores de colágeno e aplicação de toxina botulínica para um rosto harmonioso e rejuvenescido.</p>
+          </div>
+          <a href="#" class="service-link btn-service-wa" target="_blank">Consultar Valor no WhatsApp &rarr;</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <div class="service-icon-box">06</div>
+            <h3>Reabilitação Oral Completa</h3>
+            <p>Próteses sobre implante protocolo e tratamentos multidisciplinares para restabelecer a fala, mastigação e confiança.</p>
+          </div>
+          <a href="#" class="service-link btn-service-wa" target="_blank">Consultar Valor no WhatsApp &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" style="color: #38bdf8;">Por que nos escolher</span>
+        <h2 class="section-title" style="color: #fff;">O Cuidado que Você Merece em Cada Detalhe</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <h4>Planejamento 3D</h4>
+          <p>Você visualiza o resultado final do seu novo sorriso na tela do computador antes mesmo de iniciar o procedimento.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Cirurgia Sem Dor</h4>
+          <p>Anestesia computadorizada e sedação consciente para que você realize seu tratamento com total calma e sem traumas.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Equipe Especialista</h4>
+          <p>Profissionais pós-graduados e mestres dedicados a cada área específica da odontologia moderna.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Facilidade de Pagamento</h4>
+          <p>Parcelamento facilitado no cartão de crédito ou boleto bancário sem burocracia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Depoimentos Reais</span>
+        <h2 class="section-title">O que Nossos Pacientes Dizem</h2>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Coloquei 6 lentes de contato e o resultado ficou super natural, ninguém percebe que não são meus dentes originais. Atendimento nota 10!"</p>
+          <div class="patient-info">
+            <h5>Mariana Silva</h5>
+            <span>Paciente de Estética Dental</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Tinha pavor de dentista por causa de traumas de infância. Fiz 2 implantes e não senti absolutamente nada durante ou depois da cirurgia."</p>
+          <div class="patient-info">
+            <h5>Carlos Eduardo</h5>
+            <span>Paciente de Implante Guiado</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Minha família inteira agora passa aqui. Desde o tratamento de canal até o aparelho do meu filho, pontualidade e transparência impecáveis."</p>
+          <div class="patient-info">
+            <h5>Fernanda Lima</h5>
+            <span>Paciente da Clínica</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: #f1f5f9;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Tire suas Dúvidas</span>
+        <h2 class="section-title">Perguntas Frequentes</h2>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item active">
+          <div class="faq-question">O procedimento de implante dói? <span>+</span></div>
+          <div class="faq-answer">Não. Utilizamos anestesia local de última geração e planejamento digital que reduz o tempo de cirurgia e dispensa cortes extensos. A maioria dos pacientes retorna às atividades leves no dia seguinte.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Quanto tempo dura o clareamento dental? <span>+</span></div>
+          <div class="faq-answer">Com os cuidados adequados de higiene e moderação com alimentos muito pigmentados, os resultados duram entre 1 e 3 anos, podendo receber manutenções rápidas periódicas.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Vocês atendem convênio ou apenas particular? <span>+</span></div>
+          <div class="faq-answer">Atendemos consultas particulares com valores acessíveis e fornecemos toda a documentação e recibos para reembolso do seu convênio médico ou odontológico.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Como funciona a primeira consulta de avaliação? <span>+</span></div>
+          <div class="faq-answer">Na primeira consulta é realizado o exame clínico completo, fotografias digitais e raio-x quando necessário. Você recebe um plano de tratamento personalizado e o orçamento transparente.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Pronto para Conquistar o Sorriso dos Seus Sonhos?</h2>
+      <p>Fale diretamente com nossa recepção pelo WhatsApp, tire suas dúvidas e reserve o melhor horário para você.</p>
+      <a href="#" id="btn-banner-wa" class="btn btn-wa btn-lg" target="_blank">
+        Falar com a Recepção no WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h4 id="clinic-name-footer" style="color: #fff; margin-bottom: 4px;">Odonto Prime Especializada</h4>
+          <p id="clinic-city-footer">Responsável Técnico: CRO Especialista | Campinas - SP</p>
+        </div>
+        <div>
+          <p>&copy; 2026. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DE WHATSAPP -->
+  <a href="#" id="floating-wa" class="floating-wa-btn" target="_blank">
+    <span>WhatsApp Direto</span>
+  </a>
+
+  <!-- SCRIPT DE PERSONALIZAÇÃO DINÂMICA VIA URL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const empresa = params.get('empresa') || 'Odonto Prime Especializada';
+      const cidade = params.get('cidade') || 'Campinas';
+      const whatsapp = params.get('whatsapp') || '5511913393797';
+
+      // Atualiza textos na página
+      document.getElementById('page-title').innerText = `${empresa} | Clínica Odontológica em ${cidade}`;
+      document.getElementById('clinic-name-nav').innerText = empresa;
+      document.getElementById('clinic-name-inline').innerText = empresa;
+      document.getElementById('clinic-name-footer').innerText = empresa;
+      document.getElementById('hero-city').innerText = cidade;
+      document.getElementById('clinic-city-header').innerText = `${cidade} e Região`;
+      document.getElementById('clinic-city-footer').innerText = `Responsável Técnico: CRO Especialista | ${cidade} - SP`;
+
+      // Monta link do WhatsApp com mensagem de agendamento
+      const msg = encodeURIComponent(`Olá! Estava navegando no site da ${empresa} em ${cidade} e gostaria de agendar uma consulta de avaliação.`);
+      const waUrl = `https://wa.me/${whatsapp}?text=${msg}`;
+
+      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-banner-wa, #floating-wa, .btn-service-wa').forEach(el => {
+        el.href = waUrl;
+      });
+
+      // FAQ Accordion
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+          const item = q.parentElement;
+          item.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
