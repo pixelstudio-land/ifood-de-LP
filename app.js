@@ -9,142 +9,96 @@ const MODELS_CATALOG = [
   {
     "id": "odonto-estetica",
     "category": "odontologia",
-    "title": "Odonto Prime (Estética & Implantes)",
-    "desc": "Estrutura premium focada em procedimentos de alto ticket: clareamento a laser, facetas em resina, lentes de porcelana e implantes guiados.",
-    "tag": "Mais Pedido",
+    "title": "Odonto Prime — Estética & Lentes",
+    "desc": "Estrutura de luxo focada em procedimentos de alto valor: lentes de contato em cerâmica pura, facetas em resina e clareamento a laser.",
+    "tag": "Mais Procurado",
     "previewImg": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=700&q=80",
-    "liveUrl": "modelos/odonto-prime/index.html",
+    "liveUrl": "modelos/odonto-prime/index.html?foco=estetica",
     "highlights": [
       "Agendamento no WhatsApp",
-      "Galeria de Casos Reais",
+      "Antes e Depois Interativo",
       "Carregamento em 0.8s",
-      "Depoimentos em Destaque"
-    ],
-    "demoContent": {
-      "headline": "Transforme o seu sorriso com estética dental avançada",
-      "sub": "Atendimento humanizado, tecnologia de ponta e especialistas prontos para cuidar do seu sorriso.",
-      "ctaText": "Agendar Consulta de Avaliação no WhatsApp",
-      "services": [
-        {
-          "title": "Lentes e Facetas de Contato",
-          "desc": "Harmonia perfeita e naturalidade para o seu sorriso."
-        },
-        {
-          "title": "Implantes Dentários Guiados",
-          "desc": "Recuperação estética e mastigatória sem dor."
-        },
-        {
-          "title": "Clareamento Dental a Laser",
-          "desc": "Resultados visíveis e seguros desde a primeira sessão."
-        }
-      ]
-    }
+      "Depoimentos de Pacientes"
+    ]
   },
   {
-    "id": "odonto-clinica-geral",
+    "id": "odonto-implantes",
     "category": "odontologia",
-    "title": "Clínica Odontológica & Família",
-    "desc": "Ideal para clínicas com equipe multidisciplinar: odontopediatria, ortodontia, próteses e prevenção bucal.",
-    "tag": "Alta Conversão",
+    "title": "Implantodontia Digital & Cirurgia Guiada",
+    "desc": "Página cirúrgica focada em segurança, anestesia computadorizada sem dor, carga imediata (dentes no mesmo dia) e tomografia 3D.",
+    "tag": "Alto Ticket",
     "previewImg": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=700&q=80",
-    "liveUrl": null,
+    "liveUrl": "modelos/odonto-prime/index.html?foco=implantes",
     "highlights": [
-      "Apresentação do Corpo Clínico",
-      "Convênios & Formas de Pagamento",
-      "Localização com Mapa",
-      "Atendimento Humanizado"
-    ],
-    "demoContent": {
-      "headline": "Cuidado odontológico completo para toda a sua família",
-      "sub": "Clínica multidisciplinar com horários flexíveis e atendimento emergencial.",
-      "ctaText": "Falar com a Recepção no WhatsApp",
-      "services": [
-        {
-          "title": "Ortodontia & Alinhadores",
-          "desc": "Correção rápida e discreta para adultos e jovens."
-        },
-        {
-          "title": "Odontopediatria Acolhedora",
-          "desc": "Cuidado lúdico e sem traumas para os pequenos."
-        },
-        {
-          "title": "Tratamento de Canal & Restaurações",
-          "desc": "Alívio imediato e máxima conservação dental."
-        }
-      ]
-    }
+      "Anestesia Sem Dor",
+      "Tomografia 3D Computadorizada",
+      "Próteses com Carga Imediata",
+      "Recuperação Acelerada"
+    ]
   },
   {
     "id": "odonto-alinhadores",
     "category": "odontologia",
     "title": "Ortodontia Digital & Alinhadores Invisíveis",
-    "desc": "Página moderna focada em tratamentos ortodônticos estéticos, escaneamento intraoral e comparação antes e depois.",
-    "tag": "Tecnologia",
+    "desc": "Apresentação moderna focada em correção ortodôntica com discrição total, escaneamento intraoral 3D e comparação antes e depois.",
+    "tag": "Tendência 2026",
     "previewImg": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=700&q=80",
-    "liveUrl": null,
+    "liveUrl": "modelos/odonto-prime/index.html?foco=alinhadores",
     "highlights": [
       "Simulador 3D do Sorriso",
-      "Foco em Discrição & Conforto",
-      "Depoimentos de Pacientes",
-      "Parcelamento Facilitado"
-    ],
-    "demoContent": {
-      "headline": "Alinhe seus dentes com total discrição e conforto",
-      "sub": "Sem peças metálicas, sem dor e com tecnologia de escaneamento 3D.",
-      "ctaText": "Solicitar Simulação 3D no WhatsApp",
-      "services": [
-        {
-          "title": "Alinhadores Invisíveis Removíveis",
-          "desc": "Liberdade para comer e higienizar sem incômodos."
-        },
-        {
-          "title": "Escaneamento Digital em 15 Minutos",
-          "desc": "Veja a previsão do seu novo sorriso na primeira consulta."
-        },
-        {
-          "title": "Aparelhos Autoligados Estéticos",
-          "desc": "Movimentação rápida e porcelana transparente."
-        }
-      ]
-    }
+      "Sem Peças Metálicas",
+      "Previsibilidade de Resultados",
+      "Parcelamento em 12x"
+    ]
   },
   {
     "id": "odonto-pediatria",
     "category": "odontologia",
-    "title": "Odontopediatria & Espaço Kids",
-    "desc": "Visual acolhedor e reconfortante para mães e pais agendarem a consulta dos filhos com tranquilidade e sem medo.",
+    "title": "Odontopediatria Acolhedora & Espaço Kids",
+    "desc": "Visual acolhedor e reconfortante para tranquilizar mães e pais. Consultório lúdico, check-up preventivo infantil e atendimento sem medo.",
     "tag": "Público Família",
     "previewImg": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=700&q=80",
-    "liveUrl": null,
+    "liveUrl": "modelos/odonto-prime/index.html?foco=pediatria",
     "highlights": [
-      "Ambiente Sem Estresse",
-      "Orientações para os Pais",
-      "Sala Temática Infantil",
-      "Agendamento Flexível"
-    ],
-    "demoContent": {
-      "headline": "O primeiro dentinho do seu filho cuidado com carinho e amor",
-      "sub": "Dentistas especializados em odontopediatria com atendimento acolhedor.",
-      "ctaText": "Agendar Consulta Infantil no WhatsApp",
-      "services": [
-        {
-          "title": "Check-up Preventivo Baby & Kids",
-          "desc": "Prevenção de cáries e orientação precoce para os pais."
-        },
-        {
-          "title": "Aplicação de Flúor & Selantes",
-          "desc": "Proteção reforçada para os dentes de leite e permanentes."
-        },
-        {
-          "title": "Tratamento de Traumas e Emergências",
-          "desc": "Atendimento calmo e rápido para quedas e acidentes."
-        }
-      ]
-    }
+      "Ambiente Lúdico Sem Traumas",
+      "Orientações Preventivas",
+      "Consultório Infantil",
+      "Dentistas Especialistas"
+    ]
+  },
+  {
+    "id": "odonto-clinica-geral",
+    "category": "odontologia",
+    "title": "Clínica Odontológica Multidisciplinar",
+    "desc": "Ideal para clínicas completas com múltiplos consultórios: tratamento de canal moderno, restaurações imperceptíveis, profilaxia e próteses.",
+    "tag": "Clínica Completa",
+    "previewImg": "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/odonto-prime/index.html?foco=geral",
+    "highlights": [
+      "Equipe Multidisciplinar",
+      "Atendimento Emergencial",
+      "Diagnóstico Digital",
+      "Atendimento Humanizado"
+    ]
+  },
+  {
+    "id": "odonto-hof",
+    "category": "odontologia",
+    "title": "Harmonização Orofacial (HOF)",
+    "desc": "Página com paleta editorial de alto padrão para dentistas que realizam toxina botulínica preventiva, bioestimuladores e preenchimento labial.",
+    "tag": "Alto Padrão",
+    "previewImg": "https://images.unsplash.com/photo-1512290903671-2432eed4a84b?auto=format&fit=crop&w=700&q=80",
+    "liveUrl": "modelos/odonto-prime/index.html?foco=hof",
+    "highlights": [
+      "Harmonia Orofacial Natural",
+      "Protocolos Exclusivos",
+      "Produtos Anvisa de Ponta",
+      "Avaliação Facial 3D"
+    ]
   },
   {
     "id": "clinica-medica-integrada",
-    "category": "odontologia",
+    "category": "saude",
     "title": "Policlínica Médica & Exames",
     "desc": "Apresentação de especialidades médicas (cardiologia, ginecologia, dermatologia, ultrassom e exames laboratoriais).",
     "tag": "Alta Demanda",
@@ -155,30 +109,11 @@ const MODELS_CATALOG = [
       "Agendamento Unificado",
       "Resultados de Exames",
       "Estrutura Completa"
-    ],
-    "demoContent": {
-      "headline": "Consultas médicas e exames em um só lugar com agilidade",
-      "sub": "Mais de 15 especialidades com preços acessíveis e agendamento sem filas.",
-      "ctaText": "Consultar Horários Disponíveis no WhatsApp",
-      "services": [
-        {
-          "title": "Consultas Médicas Especializadas",
-          "desc": "Cardiologia, ginecologia, ortopedia, clínico geral e mais."
-        },
-        {
-          "title": "Ultrassonografia & Eletrocardiograma",
-          "desc": "Equipamentos modernos com laudos rápidos e precisos."
-        },
-        {
-          "title": "Exames Laboratoriais Completos",
-          "desc": "Coletas de sangue, urina e hormonais com entrega online."
-        }
-      ]
-    }
+    ]
   },
   {
     "id": "fisioterapia-pilates",
-    "category": "odontologia",
+    "category": "saude",
     "title": "Studio de Pilates & Fisioterapia",
     "desc": "Alívio de dores nas costas, reabilitação postural, fisioterapia esportiva e pilates clínico com avaliação individual.",
     "tag": "Saúde & Bem-Estar",
@@ -189,30 +124,11 @@ const MODELS_CATALOG = [
       "Turmas de até 3 Alunos",
       "Reabilitação de Coluna",
       "Fisioterapeutas Dedicados"
-    ],
-    "demoContent": {
-      "headline": "Viva sem dores na coluna e recupere sua mobilidade e postura",
-      "sub": "Aulas personalizadas de Pilates com fisioterapeutas pós-graduados.",
-      "ctaText": "Agendar Aula Experimental no WhatsApp",
-      "services": [
-        {
-          "title": "Pilates Clínico em Aparelhos",
-          "desc": "Exercícios orientados para fortalecimento lombar e flexibilidade."
-        },
-        {
-          "title": "Fisioterapia Traumato-Ortopédica",
-          "desc": "Tratamento de hérnia de disco, tendinites e recuperação pós-cirúrgica."
-        },
-        {
-          "title": "Liberação Miofascial & Dry Needling",
-          "desc": "Alívio imediato de tensões musculares, nódulos e contraturas."
-        }
-      ]
-    }
+    ]
   },
   {
     "id": "psicologia-terapia",
-    "category": "odontologia",
+    "category": "saude",
     "title": "Clínica de Psicologia & Psicoterapia",
     "desc": "Ambiente seguro e acolhedor para terapia individual, de casal e online, com foco em ansiedade, burnout e autoconhecimento.",
     "tag": "Acolhimento",
@@ -223,26 +139,7 @@ const MODELS_CATALOG = [
       "Sigilo Ético Absoluto",
       "Terapia Cognitivo-Comportamental",
       "Primeira Sessão Acessível"
-    ],
-    "demoContent": {
-      "headline": "Um espaço seguro e sigiloso para cuidar da sua saúde mental",
-      "sub": "Psicólogos clínicos especialistas em ansiedade, depressão e relacionamentos.",
-      "ctaText": "Agendar Primeira Sessão no WhatsApp",
-      "services": [
-        {
-          "title": "Psicoterapia Individual para Adultos",
-          "desc": "Abordagens modernas para lidar com estresse, ansiedade e tomada de decisões."
-        },
-        {
-          "title": "Terapia de Casal e Conflitos",
-          "desc": "Mediação de comunicação, superação de crises e fortalecimento do vínculo."
-        },
-        {
-          "title": "Atendimento Psicológico Online",
-          "desc": "Sessões confortáveis por videochamada com a mesma eficácia presencial."
-        }
-      ]
-    }
+    ]
   },
   {
     "id": "burger-delivery",
@@ -1317,16 +1214,161 @@ function normalizeText(str) {
   return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 }
 
-// 3. APLICAR PERSONALIZAÇÃO CONTEXTUAL NO SITE
+// 3. MOTOR DE ISOLAMENTO DE NICHO (NICHE ISOLATION ENGINE)
+function getNicheConfig(nichoParam) {
+  if (!nichoParam) return null;
+  const n = normalizeText(nichoParam);
+
+  if (n.includes('odonto') || n.includes('dentista')) {
+    return {
+      key: 'odontologia',
+      name: 'Odontologia & Clínicas Odontológicas',
+      category: 'odontologia',
+      heroBadge: 'Showroom Exclusivo para Odontologia',
+      getHeroTitle: (empresa, cidade) => {
+        if (empresa) return `${empresa}: Estruturas Digitais de Alta Precisão para o Seu Consultório`;
+        return `Estruturas Digitais de Alta Precisão para Clínicas Odontológicas e Dentistas`;
+      },
+      getHeroSubtitle: (empresa, cidade) => {
+        const cityPart = cidade ? ` em ${cidade}` : '';
+        return `Páginas desenvolvidas com padrão clínico de luxo, velocidade ultra rápida no 4G e funil validado pelo CFO/CRO para atrair pacientes particulares de alto ticket diretamente no seu WhatsApp${cityPart}.`;
+      },
+      trustPills: [
+        '100% Adequado ao CFO/CRO',
+        'Carregamento em < 1s no 4G',
+        'Agendamento no WhatsApp',
+        'Galeria de Casos Reais',
+        'Design Médico Premium'
+      ],
+      searchPlaceholder: 'Buscar por especialidade (Ex: Clareamento, Alinhadores, Implantes, Lentes, Botox, Kids...)',
+      subCategories: [
+        { id: 'todos', label: 'Todos os Modelos Odonto' },
+        { id: 'odonto-estetica', label: 'Estética & Lentes' },
+        { id: 'odonto-implantes', label: 'Implantes & Cirurgia' },
+        { id: 'odonto-alinhadores', label: 'Ortodontia & Alinhadores' },
+        { id: 'odonto-pediatria', label: 'Odontopediatria' },
+        { id: 'odonto-clinica-geral', label: 'Clínica Geral & Família' },
+        { id: 'odonto-hof', label: 'Harmonização (HOF)' }
+      ],
+      pricing: {
+        badge: 'Condição Especial para Odontologia',
+        title: 'Investimento Transparente para o Seu Consultório',
+        subtitle: 'Presença digital com autoridade médica, hospedagem segura com SSL e suporte contínuo para atualizações.',
+        tierName: 'Plano Consultório Odontológico de Alta Conversão',
+        setupVal: '80',
+        monthlyVal: '25',
+        ctaText: 'Ativar Meu Modelo Odontológico'
+      },
+      customSaas: [
+        {
+          badge: 'Redução de Faltas',
+          title: 'Confirmação Automática de Consultas (WhatsApp)',
+          desc: 'Reduza em até 80% as faltas no seu consultório. O sistema envia lembrete no WhatsApp 24h e 2h antes com botão para o paciente confirmar ou remarcar.',
+          bullets: [
+            'Confirmação em 1 clique pelo paciente',
+            'Alerta em tempo real para a recepção da clínica',
+            'Preenchimento ágil de desistências'
+          ],
+          saasName: 'Confirmação Automática de Consultas Odonto'
+        },
+        {
+          badge: 'Segurança & Praticidade',
+          title: 'Prontuário Digital & Ficha Clínica Ágil',
+          desc: 'Acesse o histórico de procedimentos, anamnese, fotos de antes/depois e termos de consentimento em uma tela rápida pelo tablet ou computador.',
+          bullets: [
+            'Odontograma interativo simplificado',
+            'Armazenamento de fotos de casos clínicos',
+            'Assinatura digital do paciente na tela'
+          ],
+          saasName: 'Prontuário Digital Odonto'
+        },
+        {
+          badge: 'Fechamento de Alto Ticket',
+          title: 'Simulador Visual de Planos de Tratamento',
+          desc: 'Apresente orçamentos de lentes, implantes ou alinhadores de forma visual, elegante e com parcelamento transparente para o paciente decidir na hora.',
+          bullets: [
+            'Simulação de parcelamento em até 24x',
+            'Envio de proposta resumida em PDF no WhatsApp',
+            'Acompanhamento de orçamentos pendentes'
+          ],
+          saasName: 'Simulador de Orçamentos Odonto'
+        }
+      ]
+    };
+  }
+
+  return null;
+}
+
+// 4. APLICAR PERSONALIZAÇÃO CONTEXTUAL NO SITE
 function applyContextualPersonalization(params) {
   const { nicho, cidade, empresa, porte } = params;
+  const nicheConfig = getNicheConfig(nicho);
 
-  // Atualiza Título da Página
+  // Se o link possui nicho isolado (ex: Odontologia)
+  if (nicheConfig) {
+    // Título da Aba do Navegador
+    document.getElementById('page-title').innerText = `${empresa || 'Clínica Odontológica'} | Showroom Pixel Studio`;
+
+    // Hero Badge, H1 e Subtítulo
+    const badgeEl = document.getElementById('hero-badge');
+    const titleEl = document.getElementById('hero-title');
+    const subEl = document.getElementById('hero-subtitle');
+
+    if (badgeEl) badgeEl.innerText = nicheConfig.heroBadge;
+    if (titleEl) titleEl.innerText = nicheConfig.getHeroTitle(empresa, cidade);
+    if (subEl) subEl.innerText = nicheConfig.getHeroSubtitle(empresa, cidade);
+
+    // Trust Pills
+    const trustPillsContainer = document.querySelector('.trust-pills-row');
+    if (trustPillsContainer) {
+      trustPillsContainer.innerHTML = nicheConfig.trustPills.map(p => `
+        <span class="trust-pill">${p}</span>
+      `).join('');
+    }
+
+    // Placeholder da Barra de Busca
+    const searchInput = document.getElementById('catalog-search-input');
+    if (searchInput) {
+      searchInput.placeholder = nicheConfig.searchPlaceholder;
+    }
+
+    // Abas de Sub-Especialidades (Substitui as abas globais)
+    const tabsContainer = document.getElementById('niche-tabs');
+    if (tabsContainer) {
+      tabsContainer.innerHTML = nicheConfig.subCategories.map((sub, idx) => `
+        <button class="cat-btn ${idx === 0 ? 'active' : ''}" data-subniche="${sub.id}">
+          ${sub.label}
+        </button>
+      `).join('');
+    }
+
+    // Título da Seção do Catálogo
+    const catTitleEl = document.getElementById('catalog-section-title');
+    const catDescEl = document.getElementById('catalog-section-desc');
+    if (catTitleEl) catTitleEl.innerText = 'Modelos Estruturados para Odontologia';
+    if (catDescEl) catDescEl.innerText = 'Demonstrações interativas com design clínico de luxo, adaptadas para celular e WhatsApp.';
+
+    // Precificação Contextual para Odonto
+    applyNichePricing(nicheConfig, porte, params);
+
+    // Módulos SaaS Personalizados para Odonto
+    applyNicheSaas(nicheConfig, params);
+
+    // Botão de Contato no Header
+    const headerWa = document.getElementById('btn-header-wa');
+    if (headerWa) {
+      headerWa.href = buildWhatsAppUrl(`Olá! Gostaria de conversar sobre as estruturas de sites para clínicas odontológicas da Pixel Studio.`);
+    }
+
+    return;
+  }
+
+  // Comportamento Geral (sem isolamento de nicho)
   if (nicho) {
     document.getElementById('page-title').innerText = `Modelos de Sites para ${capitalize(nicho)} | Pixel Studio`;
   }
 
-  // Hero Badge
   const badgeEl = document.getElementById('hero-badge');
   if (cidade) {
     badgeEl.innerText = `Modelos Selecionados para Empresas em ${cidade}`;
@@ -1334,7 +1376,6 @@ function applyContextualPersonalization(params) {
     badgeEl.innerText = `Modelos Verificados de Alta Conversão`;
   }
 
-  // Hero H1
   const titleEl = document.getElementById('hero-title');
   if (nicho && cidade) {
     titleEl.innerText = `Sites e Landing Pages de Alta Conversão para ${capitalize(nicho)} em ${cidade}`;
@@ -1344,13 +1385,11 @@ function applyContextualPersonalization(params) {
     titleEl.innerText = `Sites e Landing Pages de Alta Conversão para Pequenas e Médias Empresas`;
   }
 
-  // Hero Subtítulo
   const subEl = document.getElementById('hero-subtitle');
   if (empresa) {
     subEl.innerText = `Apresente a ${empresa} com autoridade máxima na internet. Páginas que carregam em menos de 1 segundo no celular e convertem visitantes diretamente em clientes no seu WhatsApp.`;
   }
 
-  // Catálogo Título
   const catTitleEl = document.getElementById('catalog-section-title');
   const catDescEl = document.getElementById('catalog-section-desc');
   if (nicho) {
@@ -1358,17 +1397,89 @@ function applyContextualPersonalization(params) {
     catDescEl.innerText = `Selecione uma demonstração abaixo para interagir em tempo real no simulador mobile.`;
   }
 
-  // Precificação Dinâmica
   applyDynamicPricing(porte, params);
 
-  // Botão no Header
   const headerWa = document.getElementById('btn-header-wa');
   if (headerWa) {
     headerWa.href = buildWhatsAppUrl(`Olá! Gostaria de tirar dúvidas sobre os modelos de sites para ${params.nicho || 'meu negócio'}.`);
   }
 }
 
-// 4. TABELA DE PRECIFICAÇÃO CONTEXTUAL
+// 5. PRECIFICAÇÃO PERSONALIZADA PARA NICHO ISOLADO
+function applyNichePricing(nicheConfig, porte, params) {
+  const p = nicheConfig.pricing;
+  let tierName = p.tierName;
+  let setupVal = p.setupVal;
+  let monthlyVal = p.monthlyVal;
+
+  if (porte === 'ALTO') {
+    tierName = 'Plano Clínica Premium (Múltiplos Especialistas)';
+    setupVal = '150';
+    monthlyVal = '35';
+  } else if (porte === 'MEDIO') {
+    tierName = 'Plano Consultório Odontológico em Crescimento';
+    setupVal = '120';
+    monthlyVal = '25';
+  }
+
+  const pricingTitle = document.getElementById('pricing-title');
+  const pricingSub = document.getElementById('pricing-subtitle');
+  const tierEl = document.getElementById('pricing-tier-name');
+  const setupEl = document.getElementById('pricing-setup-val');
+  const monthlyEl = document.getElementById('pricing-monthly-text');
+  const ctaEl = document.getElementById('btn-pricing-cta');
+
+  if (pricingTitle) pricingTitle.innerText = p.title;
+  if (pricingSub) pricingSub.innerText = p.subtitle;
+  if (tierEl) tierEl.innerText = tierName;
+  if (setupEl) setupEl.innerText = setupVal;
+  if (monthlyEl) {
+    monthlyEl.innerText = `+ apenas R$ ${monthlyVal}/mês de hospedagem rápida e manutenção técnica`;
+  }
+
+  const msg = `Olá! Quero ativar minha página de Odontologia no ${tierName} por R$ ${setupVal} de setup + R$ ${monthlyVal}/mês para ${params.empresa || 'meu consultório'} em ${params.cidade || 'minha cidade'}.`;
+  if (ctaEl) {
+    ctaEl.href = buildWhatsAppUrl(msg);
+    ctaEl.innerHTML = `
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/></svg>
+      ${p.ctaText}
+    `;
+  }
+}
+
+// 6. SISTEMAS SAAS PERSONALIZADOS PARA NICHO ISOLADO
+function applyNicheSaas(nicheConfig, params) {
+  if (!nicheConfig.customSaas) return;
+
+  const saasGrid = document.querySelector('.saas-grid');
+  const saasSection = document.querySelector('.saas-section');
+
+  if (saasSection) {
+    const saasTitle = saasSection.querySelector('.section-title');
+    const saasDesc = saasSection.querySelector('.section-desc');
+    if (saasTitle) saasTitle.innerText = 'Sistemas e Painéis Sob Medida para o Seu Consultório';
+    if (saasDesc) saasDesc.innerText = 'Não te empurramos um software genérico. Criamos ferramentas focadas na rotina da sua clínica para economizar o tempo da sua equipe e aumentar a fidelização de pacientes.';
+  }
+
+  if (saasGrid) {
+    saasGrid.innerHTML = nicheConfig.customSaas.map(s => {
+      const msg = `Olá! Vi na vitrine da Pixel Studio o sistema "${s.title}" e gostaria de solicitar um projeto personalizado para ${params.empresa || 'meu consultório'} em ${params.cidade || 'minha cidade'}.`;
+      return `
+        <div class="saas-card">
+          <span class="saas-badge">${s.badge}</span>
+          <h3>${s.title}</h3>
+          <p>${s.desc}</p>
+          <ul class="saas-bullets">
+            ${s.bullets.map(b => `<li>${b}</li>`).join('')}
+          </ul>
+          <a href="${buildWhatsAppUrl(msg)}" target="_blank" class="btn btn-secondary btn-block">Solicitar Projeto Personalizado</a>
+        </div>
+      `;
+    }).join('');
+  }
+}
+
+// 7. PRECIFICAÇÃO CONTEXTUAL PADRÃO (GLOBAL)
 function applyDynamicPricing(porte, params) {
   let tierName = 'Plano Ativação Popular (Micro-Empresas e Autônomos)';
   let setupVal = '50';
@@ -1401,163 +1512,141 @@ function applyDynamicPricing(porte, params) {
   }
 }
 
-// 5. RENDERIZAÇÃO DO CATÁLOGO DE MODELOS
-let currentActiveCategory = 'todos';
+// 8. DICIONÁRIO DE PALAVRAS-CHAVE PARA BUSCA INTELIGENTE
+const MODEL_KEYWORDS = {
+  'odonto-estetica': 'dentista odontologia odonto dente dentes clareamento lentes facetas resina porcelana sorriso estética dental estetica dental reabilitacao',
+  'odonto-implantes': 'dentista odontologia implante implantes dentes fixos carga imediata cirurgia guiada sem dor anestesia computadorizada protocolo',
+  'odonto-alinhadores': 'dentista aparelho alinhador invisivel invisalign ortodontia dentes tortos mordida discreto placa transparente escaneamento 3d',
+  'odonto-pediatria': 'dentista infantil odontopediatria dente de leite crianca espaco kids dentinho prevencao baby sem dor acolhimento',
+  'odonto-clinica-geral': 'dentista odontologia canal tratamento de canal restauracao limpeza profilaxia protese clinica geral multidisciplinar checkup',
+  'odonto-hof': 'dentista harmonizacao orofacial hof botox toxina botulinica preenchimento labial bioestimulador colageno fios de pdo estetica facial',
+  'clinica-medica-integrada': 'medico clinica medica policlinica consultas exames cardiologista pediatra dermatologista ultrassom',
+  'fisioterapia-pilates': 'fisioterapia fisioterapeuta pilates rpg reabilitacao dor nas costas coluna postura',
+  'psicologia-terapia': 'psicologia psicologo psicologa psicoterapia terapia saude mental ansiedade depressao consulta psicologica',
+  'burger-delivery': 'hamburguer hamburgueria burger smash lanche lanchonete batata frita delivery fast food artesanal combo burger',
+  'pizzaria-tradicional': 'pizza pizzaria forno a lenha delivery calzone massa queijo margherita napolitana combo pizza',
+  'sushi-bar': 'sushi sashimi comida japonesa restaurante japones temaki rodizio japones oriental peixe cru salmao salmão niguiri',
+  'churrascaria-espetaria': 'churrasco churrascaria espetinho espetaria carnes picanha costela churrasqueiro fogo de chao',
+  'marmitaria-fit': 'comida fit marmita fit marmitaria alimentacao saudavel congelados fit marmitas dieta proteina refeicao saudavel',
+  'confeitaria-doces': 'confeitaria doceria bolo de aniversario doces gourmet tortas brigadeiro naked cake festa',
+  'cafeteria-brunch': 'cafe cafeteria cafe especial brunch graos graos especiais cappuccino barista espresso pao de queijo',
+  'acai-sorveteria': 'acai açaí sorvete sorveteria acaiteria picolé sobremesa taca recheada',
+  'barbearia-premium': 'barbearia barbeiro corte masculino barba cabelo masculino fade navalha degradê barboterapia toalha quente',
+  'estetica-facial': 'estetica estética clinica de estetica harmonizacao botox preenchimento labios pele rejuvenescimento beleza fios de pdo colageno',
+  'studio-beleza': 'cabeleireiro cabeleireira salao de beleza salão cabelo mechas loiro loiras corte feminino escova mega hair',
+  'lash-sobrancelhas': 'sobrancelha sobrancelhas cilios cílios lash designer micropigmentacao extensao de cilios fio a fio volumao',
+  'esmalteria-unhas': 'unhas manicure pedicure esmalteria alongamento de unhas fibra de vidro gel blindagem spa dos pes',
+  'depilacao-laser': 'depilacao depilação depilacao a laser laser diodo led pele lisinha foliculite',
+  'spa-massoterapia': 'spa massagem massoterapia drenagem linfatica relaxamento massagem relaxante pedras quentes alivio estresse',
+  'advocacia-corporativa': 'advogado advogada advocacia escritorio de advocacia direito processo juridico oab causas empresarial tributario societario civel',
+  'advocacia-trabalhista': 'advogado trabalhista advocacia direitos do trabalhador previdenciario inss aposentadoria rescisao fgts',
+  'imobiliaria-vitrine': 'imobiliaria corretor de imoveis imovel imoveis casa apartamento aluguel compra terreno lote condominio cobertura alto padrao morar',
+  'arquitetura-interiores': 'arquiteto arquiteta arquitetura design de interiores decoracao reforma planta projeto 3d luminotecnica',
+  'marcenaria-fina': 'marcenaria marceneiro moveis planejados móveis planejados sob medida cozinha planejada armarios mdf closet',
+  'contabilidade-consultiva': 'contador contadora contabilidade escritorio contabil abertura de empresa cnpj imposto de renda fiscal emissao de nota bpo financeiro',
+  'energia-solar': 'solar energia solar placa solar painel solar fotovoltaica conta de luz reducao economia de energia inversor engenharia eletrica',
+  'limpeza-higienizacao': 'lavagem de sofa higienizacao de estofados impermeabilizacao limpeza de tapete estofado colchao impermeabilizar',
+  'oficina-mecanica': 'oficina mecanico oficina mecanica auto center mecanica carro automovel conserto de carro freio motor suspensao guincho revisao troca de oleo scanner',
+  'clinica-veterinaria': 'pet pet shop veterinario veterinaria veterinário veterinária cachorro gato hospital veterinario vacina pet banho e tosa emergencia pet animais cao',
+  'estetica-automotiva': 'estetica automotiva detailing polimento vitrificacao vitrificação cristalizacao lavagem detalhada higienizacao interna protecao de pintura',
+  'otica-visao': 'otica ótica oculos óculos oculos de grau oculos de sol armacao lentes de contato visao exame de vista oftamologia',
+  'loja-roupas-boutique': 'roupas moda boutique loja de roupas vestidos moda feminina look looks provador provador virtual colecao',
+  'academia-personal': 'academia personal trainer musculacao musculação treino fitness crossfit exercicios hipertrofia esteira emagrecimento',
+  'escola-cursos': 'escola curso cursos profissionalizantes ingles idiomas aulas matricula certificado conversacao',
+  'distribuidora-bebidas': 'bebidas distribuidora adega cerveja cervejas chopp barril de chopp gelo carvao whisky destilados refrigerante'
+};
+
+// 9. RENDERIZAÇÃO DO CATÁLOGO DE MODELOS COM ISOLAMENTO
+let currentActiveFilter = 'todos';
 let currentSearchTerm = '';
 
-function renderCatalog(params, activeCategory = null, searchTerm = '') {
+function renderCatalog(params, activeFilter = null, searchTerm = '') {
   const grid = document.getElementById('models-grid');
   const counter = document.getElementById('models-counter');
+  const nicheConfig = getNicheConfig(params.nicho);
 
-  // Identifica categoria padrão caso nada seja passado
-  let targetCategory = activeCategory;
-  if (targetCategory === null) {
-    if (params.nicho) {
-      const n = normalizeText(params.nicho);
-      if (n.includes('odonto') || n.includes('dentista') || n.includes('saude') || n.includes('clinica') || n.includes('fisio') || n.includes('psico')) {
-        targetCategory = 'odontologia';
-      } else if (n.includes('restaurante') || n.includes('hamburg') || n.includes('pizza') || n.includes('delivery') || n.includes('sushi') || n.includes('churrasco') || n.includes('doce') || n.includes('fit') || n.includes('cafe') || n.includes('acai')) {
-        targetCategory = 'gastronomia';
-      } else if (n.includes('barbearia') || n.includes('salao') || n.includes('estetica') || n.includes('cabelo') || n.includes('lash') || n.includes('unha') || n.includes('spa')) {
-        targetCategory = 'beleza';
-      } else if (n.includes('advocacia') || n.includes('advogado') || n.includes('imob') || n.includes('arquit') || n.includes('marcenaria') || n.includes('contab') || n.includes('solar') || n.includes('limpeza')) {
-        targetCategory = 'servicos';
-      } else if (n.includes('mecanica') || n.includes('auto') || n.includes('pet') || n.includes('veterin') || n.includes('otica') || n.includes('curso') || n.includes('loja') || n.includes('bebida') || n.includes('roupa')) {
-        targetCategory = 'comercio';
-      } else {
-        targetCategory = 'todos';
-      }
-    } else {
-      targetCategory = 'todos';
+  // Pool inicial de modelos
+  let pool = MODELS_CATALOG;
+  if (nicheConfig) {
+    // ISOLAMENTO ESTRITO: Apenas modelos daquele nicho específico
+    pool = pool.filter(m => m.category === nicheConfig.category);
+  }
+
+  // Define o filtro ativo
+  if (activeFilter !== null) {
+    currentActiveFilter = activeFilter;
+  }
+
+  let filtered = pool;
+
+  // Filtragem por Sub-Aba (Nicho Isolado) ou Aba de Categoria (Global)
+  if (nicheConfig) {
+    if (currentActiveFilter && currentActiveFilter !== 'todos') {
+      filtered = filtered.filter(m => m.id === currentActiveFilter);
+    }
+  } else {
+    if (currentActiveFilter && currentActiveFilter !== 'todos') {
+      filtered = filtered.filter(m => m.category === currentActiveFilter);
     }
   }
 
+  // Filtragem por Busca de Texto
   currentSearchTerm = searchTerm ? searchTerm.trim() : '';
-
-  let filtered = MODELS_CATALOG;
-
-  // Dicionário de Sinônimos & Palavras-Chave Estruturadas para Cada Modelo
-  const MODEL_KEYWORDS = {
-    'odonto-estetica': 'dentista odontologia odonto dente dentes clareamento lentes facetas implante implantes sorriso saude bucal clinica dentaria implantes guiados porcelana estetica dental',
-    'odonto-clinica-geral': 'dentista odontologia odonto dente dentes carie limpeza profilaxia canal protese clinica geral tratamento dentario',
-    'odonto-alinhadores': 'dentista aparelho alinhador invisivel invisalign ortodontia dentes tortos mordida',
-    'odonto-pediatria': 'dentista infantil odontopediatria dente de leite crianca espaco kids dentinho',
-    'clinica-medica-integrada': 'medico clinica medica policlinica consultas exames cardiologista pediatra dermatologista ultrassom',
-    'fisioterapia-pilates': 'fisioterapia fisioterapeuta pilates rpg reabilitacao dor nas costas coluna postura',
-    'psicologia-terapia': 'psicologia psicologo psicologa psicoterapia terapia saude mental ansiedade depressao consulta psicologica',
-    'burger-delivery': 'hamburguer hamburgueria burger smash lanche lanchonete batata frita delivery fast food artesanal combo burger',
-    'pizzaria-tradicional': 'pizza pizzaria forno a lenha delivery calzone massa queijo margherita napolitana combo pizza',
-    'sushi-bar': 'sushi sashimi comida japonesa restaurante japones temaki rodizio japones oriental peixe cru salmao salmão niguiri',
-    'churrascaria-espetaria': 'churrasco churrascaria espetinho espetaria carnes picanha costela churrasqueiro fogo de chao',
-    'marmitaria-fit': 'comida fit marmita fit marmitaria alimentacao saudavel congelados fit marmitas dieta proteina refeicao saudavel',
-    'confeitaria-doces': 'confeitaria doceria bolo de aniversario doces gourmet tortas brigadeiro naked cake festa',
-    'cafeteria-brunch': 'cafe cafeteria cafe especial brunch graos graos especiais cappuccino barista espresso pao de queijo',
-    'acai-sorveteria': 'acai açaí sorvete sorveteria acaiteria picolé sobremesa taca recheada',
-    'barbearia-premium': 'barbearia barbeiro corte masculino barba cabelo masculino fade navalha degradê barboterapia toalha quente',
-    'estetica-facial': 'estetica estética clinica de estetica harmonizacao botox preenchimento labios pele rejuvenescimento beleza fios de pdo colageno',
-    'studio-beleza': 'cabeleireiro cabeleireira salao de beleza salão cabelo mechas loiro loiras corte feminino escova mega hair',
-    'lash-sobrancelhas': 'sobrancelha sobrancelhas cilios cílios lash designer micropigmentacao extensao de cilios fio a fio volumao',
-    'esmalteria-unhas': 'unhas manicure pedicure esmalteria alongamento de unhas fibra de vidro gel blindagem spa dos pes',
-    'depilacao-laser': 'depilacao depilação depilacao a laser laser diodo led pele lisinha foliculite',
-    'spa-massoterapia': 'spa massagem massoterapia drenagem linfatica relaxamento massagem relaxante pedras quentes alivio estresse',
-    'advocacia-corporativa': 'advogado advogada advocacia escritorio de advocacia direito processo juridico oab causas empresarial tributario societario civel',
-    'advocacia-trabalhista': 'advogado trabalhista advocacia direitos do trabalhador previdenciario inss aposentadoria rescisao fgts',
-    'imobiliaria-vitrine': 'imobiliaria corretor de imoveis imovel imoveis casa apartamento aluguel compra terreno lote condominio cobertura alto padrao morar',
-    'arquitetura-interiores': 'arquiteto arquiteta arquitetura design de interiores decoracao reforma planta projeto 3d luminotecnica',
-    'marcenaria-fina': 'marcenaria marceneiro moveis planejados móveis planejados sob medida cozinha planejada armarios mdf closet',
-    'contabilidade-consultiva': 'contador contadora contabilidade escritorio contabil abertura de empresa cnpj imposto de renda fiscal emissao de nota bpo financeiro',
-    'energia-solar': 'solar energia solar placa solar painel solar fotovoltaica conta de luz reducao economia de energia inversor engenharia eletrica',
-    'limpeza-higienizacao': 'lavagem de sofa higienizacao de estofados impermeabilizacao limpeza de tapete estofado colchao impermeabilizar',
-    'oficina-mecanica': 'oficina mecanico oficina mecanica auto center mecanica carro automovel conserto de carro freio motor suspensao guincho revisao troca de oleo scanner',
-    'clinica-veterinaria': 'pet pet shop veterinario veterinaria veterinário veterinária cachorro gato hospital veterinario vacina pet banho e tosa emergencia pet animais cao',
-    'estetica-automotiva': 'estetica automotiva detailing polimento vitrificacao vitrificação cristalizacao lavagem detalhada higienizacao interna protecao de pintura',
-    'otica-visao': 'otica ótica oculos óculos oculos de grau oculos de sol armacao lentes de contato visao exame de vista oftamologia',
-    'loja-roupas-boutique': 'roupas moda boutique loja de roupas vestidos moda feminina look looks provador provador virtual colecao',
-    'academia-personal': 'academia personal trainer musculacao musculação treino fitness crossfit exercicios hipertrofia esteira emagrecimento',
-    'escola-cursos': 'escola curso cursos profissionalizantes ingles idiomas aulas matricula certificado conversacao',
-    'distribuidora-bebidas': 'bebidas distribuidora adega cerveja cervejas chopp barril de chopp gelo carvao whisky destilados refrigerante'
-  };
-
-  // SE HOUVER BUSCA POR TEXTO: A BUSCA É GLOBAL, INTELIGENTE E RANQUEADA POR RELEVÂNCIA
   if (currentSearchTerm) {
     const normQ = normalizeText(currentSearchTerm);
     const tokens = normQ.split(/\s+/).filter(Boolean);
-    targetCategory = 'todos'; // Ativa aba Todos
 
     if (tokens.length > 0) {
-      const scored = MODELS_CATALOG.map(m => {
+      filtered = pool.filter(m => {
         const titleNorm = normalizeText(m.title);
         const kwNorm = normalizeText(MODEL_KEYWORDS[m.id] || '');
         const descNorm = normalizeText(m.desc);
-        const catNorm = normalizeText(m.category);
+        const tagNorm = normalizeText(m.tag || '');
+        const highNorm = normalizeText((m.highlights || []).join(' '));
 
-        let score = 0;
-        let matchedAll = true;
-
-        for (const tok of tokens) {
-          const wordRegex = new RegExp('\\b' + tok, 'i');
-          const hasExactTitle = wordRegex.test(titleNorm);
-          const hasExactKw = wordRegex.test(kwNorm);
-          const hasExactCat = wordRegex.test(catNorm);
-          const hasExactDesc = wordRegex.test(descNorm);
-
-          if (hasExactTitle || hasExactKw || hasExactCat) {
-            if (hasExactTitle) score += 30;
-            if (hasExactKw) score += 20;
-            if (hasExactCat) score += 10;
-          } else if (hasExactDesc) {
-            score += 8;
-          } else if (tok.length >= 4 && (titleNorm.includes(tok) || kwNorm.includes(tok) || descNorm.includes(tok))) {
-            score += 2;
-          } else {
-            matchedAll = false;
-            break;
-          }
-        }
-
-        return { model: m, score, matched: matchedAll && score > 0 };
+        return tokens.every(tok =>
+          titleNorm.includes(tok) ||
+          kwNorm.includes(tok) ||
+          descNorm.includes(tok) ||
+          tagNorm.includes(tok) ||
+          highNorm.includes(tok)
+        );
       });
-
-      filtered = scored
-        .filter(s => s.matched)
-        .sort((a, b) => b.score - a.score)
-        .map(s => s.model);
     }
-  } else if (targetCategory && targetCategory !== 'todos') {
-    filtered = filtered.filter(m => m.category === targetCategory);
   }
 
-  currentActiveCategory = targetCategory;
-
-  // Atualiza botões de categoria visualmente
+  // Atualização visual dos botões de abas
   document.querySelectorAll('.cat-btn').forEach(btn => {
-    const btnCat = btn.getAttribute('data-niche');
-    if (btnCat === targetCategory) {
+    const btnVal = btn.getAttribute('data-subniche') || btn.getAttribute('data-niche');
+    if (btnVal === currentActiveFilter) {
       btn.classList.add('active');
     } else {
       btn.classList.remove('active');
     }
   });
 
+  // Atualiza contador
   if (counter) {
     counter.innerText = `${filtered.length} Modelo${filtered.length === 1 ? '' : 's'} Disponíve${filtered.length === 1 ? 'l' : 'is'}`;
   }
 
-  // Estado Vazio Amigável
+  // Estado Vazio
   if (filtered.length === 0) {
+    const resetText = nicheConfig ? 'Ver Todos os Modelos Odonto' : 'Ver Todos os Modelos';
     grid.innerHTML = `
       <div class="empty-state-box">
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         <p class="empty-state-title">Nenhum modelo encontrado para "${currentSearchTerm}".</p>
-        <p class="empty-state-desc">Tente pesquisar por termos como "Dentista", "Hambúrguer", "Advogado", "Pet", "Estética", "Oficina" ou explore as categorias acima.</p>
-        <button class="btn btn-secondary" onclick="clearSearchFilter()">Ver Todos os Modelos</button>
+        <p class="empty-state-desc">Tente pesquisar por outros termos ou veja os modelos disponíveis nas abas acima.</p>
+        <button class="btn btn-secondary" onclick="clearSearchFilter()">${resetText}</button>
       </div>
     `;
     return;
   }
 
   const categoryNames = {
-    odontologia: 'Odontologia & Saúde',
+    odontologia: 'Odontologia Especializada',
+    saude: 'Saúde & Bem-Estar',
     gastronomia: 'Gastronomia & Delivery',
     beleza: 'Beleza & Estética',
     servicos: 'Serviços & Advocacia',
@@ -1565,7 +1654,7 @@ function renderCatalog(params, activeCategory = null, searchTerm = '') {
   };
 
   grid.innerHTML = filtered.map(m => {
-    const badgeClass = m.tag === 'Mais Pedido' ? 'model-badge-popular' : '';
+    const badgeClass = m.tag === 'Mais Procurado' || m.tag === 'Mais Pedido' ? 'model-badge-popular' : '';
     const chooseMsg = `Olá! Gostei muito do modelo "${m.title}" da Pixel Studio e quero colocá-lo no ar para ${params.empresa || 'minha empresa'} em ${params.cidade || 'minha cidade'}.`;
     const waUrl = buildWhatsAppUrl(chooseMsg);
 
@@ -1616,7 +1705,7 @@ function renderCatalog(params, activeCategory = null, searchTerm = '') {
           <p class="model-desc">${m.desc}</p>
 
           <div class="model-feature-chips">
-            ${m.highlights.slice(0, 3).map(h => `
+            ${m.highlights.slice(0, 4).map(h => `
               <span class="feature-chip">
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 ${h}
@@ -1649,7 +1738,7 @@ function clearSearchFilter() {
   renderCatalog(params, 'todos', '');
 }
 
-// 6. MODAL DE SIMULADOR DE CELULAR AO VIVO COM SUPORTE A IFRAME & TELA CHEIA
+// 10. MODAL DE SIMULADOR DE CELULAR AO VIVO COM SUPORTE A IFRAME & TELA CHEIA
 function openDemoModal(modelId) {
   const model = MODELS_CATALOG.find(m => m.id === modelId);
   if (!model) return;
@@ -1659,8 +1748,8 @@ function openDemoModal(modelId) {
   const activateBtn = document.getElementById('btn-phone-activate');
   const fullscreenBtn = document.getElementById('btn-phone-fullscreen');
 
-  const companyName = params.empresa || 'Sua Empresa';
-  const city = params.cidade ? `${params.cidade}` : '';
+  const companyName = params.empresa || 'Odonto Prime';
+  const city = params.cidade || 'Campinas';
   const citySuffix = city ? `em ${city}` : '';
 
   const activateMsg = `Olá! Acabei de testar o modelo "${model.title}" no simulador da Pixel Studio e decidi ativar para a ${companyName} ${citySuffix}. Como procedemos?`;
@@ -1670,8 +1759,9 @@ function openDemoModal(modelId) {
 
   // SE O MODELO TEM UM TEMPLATE HTML REAL EM modelos/
   if (model.liveUrl) {
-    const liveTargetUrl = `${model.liveUrl}?empresa=${encodeURIComponent(companyName)}&cidade=${encodeURIComponent(city || 'Sua Cidade')}&whatsapp=${encodeURIComponent(PERSONAL_WHATSAPP_PHONE)}`;
-    
+    const separator = model.liveUrl.includes('?') ? '&' : '?';
+    const liveTargetUrl = `${model.liveUrl}${separator}empresa=${encodeURIComponent(companyName)}&cidade=${encodeURIComponent(city)}&whatsapp=${encodeURIComponent(PERSONAL_WHATSAPP_PHONE)}`;
+
     if (fullscreenBtn) {
       fullscreenBtn.style.display = 'inline-flex';
       fullscreenBtn.href = liveTargetUrl;
@@ -1685,39 +1775,14 @@ function openDemoModal(modelId) {
       fullscreenBtn.style.display = 'none';
     }
 
-    const d = model.demoContent;
     screen.innerHTML = `
       <div class="sim-page-hero">
-        <span class="sim-page-badge">Atendimento Rápido ${citySuffix}</span>
-        <h3 class="sim-page-title">${d.headline}</h3>
-        <p class="sim-page-sub">${d.sub}</p>
-        <a href="#" class="sim-btn-wa-call" onclick="alert('Na sua página definitiva, este botão abrirá o seu WhatsApp com a mensagem pronta!'); return false;">
-          ${d.ctaText}
+        <span class="sim-page-badge">Demonstração Interativa</span>
+        <h3 class="sim-page-title">${model.title}</h3>
+        <p class="sim-page-sub">${model.desc}</p>
+        <a href="${buildWhatsAppUrl(activateMsg)}" target="_blank" class="sim-btn-wa-call">
+          Ativar Este Modelo no WhatsApp
         </a>
-      </div>
-
-      <div class="sim-page-section">
-        <h4 class="sim-section-heading">Nossos Principais Serviços:</h4>
-        ${d.services.map(s => `
-          <div class="sim-service-item">
-            <h5>${s.title}</h5>
-            <p>${s.desc}</p>
-          </div>
-        `).join('')}
-      </div>
-
-      <div class="sim-page-section" style="text-align: center;">
-        <h4 class="sim-section-heading">Por que escolher a ${companyName}?</h4>
-        <p style="font-size: 0.78rem; color:#94a3b8; line-height: 1.5; margin-bottom: 16px;">
-          Estrutura de ponta, agilidade no atendimento e compromisso com o melhor resultado para você ${citySuffix}.
-        </p>
-        <a href="#" class="sim-btn-wa-call" style="background:#4f46e5;" onclick="alert('Na página real, este botão leva o cliente direto pro seu WhatsApp!'); return false;">
-          Tirar Dúvidas com Nossa Equipe
-        </a>
-      </div>
-
-      <div style="padding: 20px; text-align: center; font-size: 0.7rem; color:#64748b;">
-        ${companyName} &copy; 2026. Soluções Digitais.
       </div>
     `;
   }
@@ -1733,19 +1798,24 @@ function closeDemoModal() {
   if (screen) screen.innerHTML = '';
 }
 
-// 7. EVENTOS & LISTENERS
+// 11. EVENTOS & LISTENERS COM DELEGAÇÃO DE EVENTOS
 function attachEventListeners(params) {
-  // Abas de categorias
-  document.querySelectorAll('.cat-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const cat = btn.getAttribute('data-niche');
+  // Delegação de eventos nas abas de filtro (suporta abas globais e sub-abas de nicho)
+  const tabsContainer = document.getElementById('niche-tabs');
+  if (tabsContainer) {
+    tabsContainer.addEventListener('click', (e) => {
+      const btn = e.target.closest('.cat-btn');
+      if (!btn) return;
+
+      const filterVal = btn.getAttribute('data-subniche') || btn.getAttribute('data-niche');
       const searchInput = document.getElementById('catalog-search-input');
       const clearBtn = document.getElementById('btn-clear-search');
       if (searchInput) searchInput.value = '';
       if (clearBtn) clearBtn.style.display = 'none';
-      renderCatalog(params, cat, '');
+
+      renderCatalog(params, filterVal, '');
     });
-  });
+  }
 
   // Barra de Busca Inteligente
   const searchInput = document.getElementById('catalog-search-input');
@@ -1767,7 +1837,7 @@ function attachEventListeners(params) {
     });
   }
 
-  // Fechar modal ao clicar fora
+  // Fechar modal ao clicar fora ou na tecla ESC
   const modal = document.getElementById('modal-demo');
   if (modal) {
     modal.addEventListener('click', (e) => {
@@ -1777,7 +1847,13 @@ function attachEventListeners(params) {
     });
   }
 
-  // Botões de SaaS Sob Medida
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeDemoModal();
+    }
+  });
+
+  // Botões de SaaS Sob Medida genéricos (se presentes)
   document.querySelectorAll('.saas-cta').forEach(btn => {
     const saasName = btn.getAttribute('data-saas');
     const msg = `Olá! Vi na vitrine da Pixel Studio os Sistemas Sob Medida e gostaria de solicitar um projeto personalizado de "${saasName}" para a ${params.empresa || 'minha empresa'} em ${params.cidade || 'minha cidade'}.`;
@@ -1786,7 +1862,7 @@ function attachEventListeners(params) {
   });
 }
 
-// 8. HELPERS
+// 12. HELPERS
 function buildWhatsAppUrl(text) {
   return `https://wa.me/${PERSONAL_WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
 }
@@ -1796,7 +1872,7 @@ function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-// 9. INICIALIZAÇÃO
+// 13. INICIALIZAÇÃO
 document.addEventListener('DOMContentLoaded', () => {
   const params = getUrlParams();
   applyContextualPersonalization(params);
