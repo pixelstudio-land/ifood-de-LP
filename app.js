@@ -12,7 +12,7 @@ const MODELS_CATALOG = [
     "title": "Atelier Lumina — Estética & Lentes de Porcelana",
     "desc": "Estrutura de luxo inspirada no Atelier Oral: lentes de contato em cerâmica pura suíça, facetas estratificadas e preservação biológica.",
     "tag": "Padrão Luxo",
-    "previewImg": "assets/mockups/odonto-prime.jpg",
+    "previewImg": "assets/mockups/odonto-prime.png",
     "liveUrl": "modelos/odonto-estetica/index.html",
     "highlights": [
       "Agendamento no WhatsApp",
@@ -27,7 +27,7 @@ const MODELS_CATALOG = [
     "title": "Instituto San Pietro — Implantodontia & Carga Imediata",
     "desc": "Estrutura de autoridade médica e confiança: anestesia computadorizada sem dor, dentes fixos com carga imediata e cirurgia guiada por computador.",
     "tag": "Alto Ticket",
-    "previewImg": "assets/mockups/odonto-implantes.jpg",
+    "previewImg": "assets/mockups/odonto-implantes.png",
     "liveUrl": "modelos/odonto-implantes/index.html",
     "highlights": [
       "Anestesia Sem Dor",
@@ -42,7 +42,7 @@ const MODELS_CATALOG = [
     "title": "InvisaPrime — Ortodontia Digital & Alinhadores",
     "desc": "Estrutura clean minimalista suíça: alinhadores invisíveis transparentes, escaneamento 3D sem moldes e comparativo com aparelho fixo.",
     "tag": "Tendência 2026",
-    "previewImg": "assets/mockups/odonto-alinhadores.jpg",
+    "previewImg": "assets/mockups/odonto-alinhadores.png",
     "liveUrl": "modelos/odonto-alinhadores/index.html",
     "highlights": [
       "Simulador 3D do Sorriso",
@@ -57,7 +57,7 @@ const MODELS_CATALOG = [
     "title": "LumiKids — Odontopediatria & Espaço Família",
     "desc": "Estrutura acolhedora e lúdica sem traumas: consultório com realidade virtual, sedação com óxido nitroso e atendimento carinhoso desde o primeiro dentinho.",
     "tag": "Público Família",
-    "previewImg": "assets/mockups/odonto-pediatria.jpg",
+    "previewImg": "assets/mockups/odonto-pediatria.png",
     "liveUrl": "modelos/odonto-pediatria/index.html",
     "highlights": [
       "Ambiente Lúdico Sem Traumas",
@@ -69,15 +69,15 @@ const MODELS_CATALOG = [
   {
     "id": "odonto-clinica-geral",
     "category": "odontologia",
-    "title": "Clínica Odontológica Multidisciplinar",
-    "desc": "Ideal para clínicas completas com múltiplos consultórios: tratamento de canal moderno, restaurações imperceptíveis, profilaxia e próteses.",
+    "title": "Centro Odontológico Integrado — Clínica Multidisciplinar",
+    "desc": "Estrutura completa e humanizada para toda a família: check-up preventivo digital, endodontia microscópica sem dor, profilaxia e restaurações estéticas.",
     "tag": "Clínica Completa",
-    "previewImg": "assets/mockups/odonto-clinica-geral.jpg",
-    "liveUrl": "modelos/odonto-prime/index.html?foco=geral",
+    "previewImg": "assets/mockups/odonto-clinica-geral.png",
+    "liveUrl": "modelos/odonto-clinica-geral/index.html",
     "highlights": [
       "Equipe Multidisciplinar",
-      "Atendimento Emergencial",
-      "Diagnóstico Digital",
+      "Anestesia Sem Dor",
+      "Check-up Intraoral HD",
       "Atendimento Humanizado"
     ]
   },
@@ -87,7 +87,7 @@ const MODELS_CATALOG = [
     "title": "Atelier HOF — Harmonização Orofacial & Estética Facial",
     "desc": "Estrutura editorial de luxo: rejuvenescimento natural, toxina botulínica preventiva, bioestimuladores de colágeno e mapeamento facial 3D.",
     "tag": "Alto Padrão",
-    "previewImg": "assets/mockups/odonto-hof.jpg",
+    "previewImg": "assets/mockups/odonto-hof.png",
     "liveUrl": "modelos/odonto-hof/index.html",
     "highlights": [
       "Harmonia Orofacial Natural",
@@ -1204,7 +1204,8 @@ function getUrlParams() {
     nicho: urlParams.get('nicho') || '',
     cidade: urlParams.get('cidade') || '',
     empresa: urlParams.get('empresa') || '',
-    porte: (urlParams.get('porte') || 'PEQUENO').toUpperCase()
+    porte: (urlParams.get('porte') || 'PEQUENO').toUpperCase(),
+    demo: urlParams.get('demo') || ''
   };
 }
 
@@ -2155,6 +2156,12 @@ function openDemoModal(modelId) {
   const screen = document.getElementById('phone-screen-content');
   const activateBtn = document.getElementById('btn-phone-activate');
   const fullscreenBtn = document.getElementById('btn-phone-fullscreen');
+  const modalTitle = document.getElementById('phone-modal-title');
+
+  if (modalTitle) {
+    modalTitle.textContent = model.title;
+    modalTitle.title = model.title;
+  }
 
   const nicheConfig = getNicheConfig(params.nicho);
   const companyName = params.empresa || (nicheConfig ? nicheConfig.name : (model.title || 'Sua Empresa'));
@@ -2287,4 +2294,7 @@ document.addEventListener('DOMContentLoaded', () => {
   applyContextualPersonalization(params);
   renderCatalog(params);
   attachEventListeners(params);
+  if (params.demo) {
+    openDemoModal(params.demo);
+  }
 });

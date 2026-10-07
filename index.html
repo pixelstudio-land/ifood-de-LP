@@ -78,26 +78,61 @@
       </div>
     </footer>
 
-    <!-- MODAL DE SIMULADOR DE CELULAR -->
+    <!-- MODAL DE SIMULADOR DE CELULAR (IPHONE REALISTA) -->
     <div id="modal-demo" class="modal-demo-overlay" style="display: none;">
-      <div class="phone-frame">
-        <div class="phone-header-bar">
-          <span class="phone-title-preview" id="phone-modal-title">Demonstração Interativa</span>
-          <div class="phone-actions-header">
-            <a href="#" id="btn-phone-fullscreen" class="btn-fullscreen-tab" target="_blank" style="display: none;">
-              Abrir em Nova Aba &nearr;
+      <div class="modal-demo-container">
+        <!-- BARRA SUPERIOR EXTERNA ELEGANTE -->
+        <div class="modal-demo-toolbar">
+          <div class="toolbar-info">
+            <span class="simulator-badge">
+              <span class="pulse-simulator-dot"></span>
+              Simulador Mobile
+            </span>
+            <h4 id="phone-modal-title" class="simulator-model-name">Demonstração Interativa</h4>
+          </div>
+          <div class="toolbar-actions">
+            <a href="#" id="btn-phone-fullscreen" class="btn-toolbar-open" target="_blank" title="Abrir página completa em nova guia">
+              <span>Abrir em Nova Aba</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
             </a>
-            <button class="phone-close-btn" onclick="closeDemoModal()">&times; Fechar</button>
+            <button class="modal-demo-close-btn" onclick="closeDemoModal()" aria-label="Fechar modal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
           </div>
         </div>
 
-        <div class="phone-screen" id="phone-screen-content">
-          <!-- Iframe da página do modelo -->
+        <!-- SMARTPHONE REALISTA IPHONE 16 PRO -->
+        <div class="phone-wrapper">
+          <div class="phone-frame">
+            <!-- Dynamic Island -->
+            <div class="phone-island">
+              <div class="island-camera"></div>
+            </div>
+
+            <!-- TELA DO SMARTPHONE (100% LIMPA, SCROLLBAR NATIVO INVISÍVEL) -->
+            <div class="phone-screen" id="phone-screen-content">
+              <!-- Iframe da página do modelo -->
+            </div>
+
+            <!-- Home Indicator Bar -->
+            <div class="phone-home-indicator"></div>
+          </div>
         </div>
 
-        <div class="phone-footer-action">
-          <a href="#" id="btn-phone-activate" class="btn btn-primary btn-block btn-lg" target="_blank">
-            Quero Este Modelo no WhatsApp
+        <!-- CTA FORA DO CELULAR -->
+        <div class="modal-demo-bottom-bar">
+          <a href="#" id="btn-phone-activate" class="btn btn-primary btn-simulator-cta" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/>
+            </svg>
+            <span>Quero Este Modelo no WhatsApp</span>
           </a>
         </div>
       </div>

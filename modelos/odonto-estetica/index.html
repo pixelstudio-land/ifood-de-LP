@@ -32,7 +32,8 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; }
+    ::-webkit-scrollbar { display: none; width: 0; height: 0; }
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       color: var(--text-main);
@@ -40,6 +41,8 @@
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
     .container {
@@ -789,6 +792,26 @@
       background: #ffffff;
       border-radius: 50%;
       border: 3px solid var(--whatsapp);
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .top-announcement { font-size: 0.7rem; padding: 6px 10px; }
+      .navbar { padding: 10px 0; }
+      .brand-symbol { width: 34px; height: 34px; }
+      .brand-title-wrap h3 { font-size: 1.05rem; }
+      .brand-title-wrap span { font-size: 0.58rem; }
+      #btn-nav-wa { padding: 8px 14px; font-size: 0.76rem; }
+      .hero-section { padding: 36px 0 55px; }
+      .hero-badge-pill { font-size: 0.65rem; padding: 4px 12px; margin-bottom: 16px; }
+      .hero-title { font-size: 1.85rem; line-height: 1.2; margin-bottom: 14px; }
+      .hero-desc { font-size: 0.9rem; margin-bottom: 24px; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+      .hero-metrics { gap: 10px; }
+      .metric-item h4 { font-size: 1.5rem; }
+      .metric-item p { font-size: 0.64rem; }
+      .hero-frame img { height: 300px; }
+      .wa-floating-btn { width: 48px; height: 48px; bottom: 16px; right: 16px; }
     }
   </style>
 </head>
