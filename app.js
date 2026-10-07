@@ -1737,7 +1737,8 @@ function getNicheConfig(nichoParam) {
 // 4. APLICAR PERSONALIZAÇÃO CONTEXTUAL NO SITE
 function applyContextualPersonalization(params) {
   const { nicho, cidade, empresa, porte } = params;
-  const nicheConfig = getNicheConfig(nicho);
+  const effectiveNicho = (nicho || 'odontologia').toLowerCase();
+  const nicheConfig = getNicheConfig(effectiveNicho);
 
   // Se o link possui nicho isolado (ex: Odontologia, Gastronomia, Advocacia, etc.)
   if (nicheConfig) {
@@ -2010,16 +2011,16 @@ let currentSearchTerm = '';
 function renderCatalog(params, activeFilter = null, searchTerm = '') {
   const grid = document.getElementById('models-grid');
   const counter = document.getElementById('models-counter');
-  const nicheConfig = getNicheConfig(params.nicho);
+  const effectiveNicho = (params.nicho || 'odontologia').toLowerCase();
+  const nicheConfig = getNicheConfig(effectiveNicho);
 
-  // Pool inicial de modelos
-  let pool = MODELS_CATALOG;
+  // Pool inicial de modelos estritamente do nicho
+  let pool = MODELS_CATALOG.filter(m => m.category === 'odontologia');
   if (nicheConfig) {
-    // ISOLAMENTO ESTRITO: Apenas modelos daquele nicho específico
     if (nicheConfig.allowedModelIds && nicheConfig.allowedModelIds.length > 0) {
-      pool = pool.filter(m => nicheConfig.allowedModelIds.includes(m.id));
+      pool = MODELS_CATALOG.filter(m => nicheConfig.allowedModelIds.includes(m.id));
     } else {
-      pool = pool.filter(m => m.category === nicheConfig.category);
+      pool = MODELS_CATALOG.filter(m => m.category === nicheConfig.category);
     }
   }
 
@@ -2118,34 +2119,12 @@ function renderCatalog(params, activeFilter = null, searchTerm = '') {
     return `
       <div class="model-card">
         <div class="model-preview-box" onclick="openDemoModal('${m.id}')" title="Clique para testar este modelo no celular">
-          
-          <!-- BARRA SUPERIOR DO NAVEGADOR -->
-          <div class="browser-mockup-header">
-            <div class="browser-dots">
-              <span class="browser-dot dot-red"></span>
-              <span class="browser-dot dot-yellow"></span>
-              <span class="browser-dot dot-green"></span>
-            </div>
-            <div class="browser-url-pill">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-              <span>${m.id}.pixelstudio.com.br</span>
-            </div>
-            ${liveBadge}
-          </div>
-
-          <!-- IMAGEM DE CAPA COM PREVIEW REAL -->
-          <div class="browser-image-container">
-            <img src="${m.previewImg}" alt="${m.title}" class="model-cover-image" loading="lazy" />
-            <div class="browser-image-overlay">
-              <span class="btn-hover-demo">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="3"></rect><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"></line></svg>
-                Testar no Celular
-              </span>
-            </div>
+          <img src="${m.previewImg}" alt="${m.title}" class="model-cover-image" loading="lazy" />
+          <div class="browser-image-overlay">
+            <span class="btn-hover-demo">Visualizar no Celular</span>
           </div>
         </div>
 
-        <!-- CORPO DO CARD COM DESIGN BALANCEADO -->
         <div class="model-body">
           <div class="model-meta-line">
             <span class="model-category-label">${catLabel}</span>
@@ -2155,22 +2134,11 @@ function renderCatalog(params, activeFilter = null, searchTerm = '') {
           <h3 class="model-title">${m.title}</h3>
           <p class="model-desc">${m.desc}</p>
 
-          <div class="model-feature-chips">
-            ${m.highlights.slice(0, 4).map(h => `
-              <span class="feature-chip">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                ${h}
-              </span>
-            `).join('')}
-          </div>
-
           <div class="model-actions-row">
             <button class="btn btn-secondary btn-sm" onclick="openDemoModal('${m.id}')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-              Ver Demonstração
+              Ver no Celular
             </button>
             <a href="${waUrl}" target="_blank" class="btn btn-primary btn-sm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/></svg>
               Quero Este Modelo
             </a>
           </div>
