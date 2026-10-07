@@ -3,716 +3,979 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Odonto Prime | Odontologia Estética & Implantes Guiados</title>
-  <meta name="description" content="Transforme o seu sorriso com estética dental avançada, lentes em porcelana, alinhadores invisíveis e implantes sem dor.">
+  <title id="page-title">Odonto Prime | Odontologia Estética & Reabilitação Oral de Alto Padrão</title>
+  <meta name="description" content="Odontologia de alta precisão: lentes de contato em cerâmica, implantes guiados 3D sem dor e alinhadores invisíveis com padrão de luxo e atendimento exclusivo.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0f172a; /* Azul escuro quase preto (Navy Luxury) */
-      --primary-dark: #020617;
-      --primary-deep: #000000;
-      --primary-glow: rgba(15, 23, 42, 0.15);
-      --accent-gold: #b4975a; /* Dourado Champagne elegante */
-      --gold-light: #fdfaf3;
+      --bg-dark: #070b18;
+      --bg-dark-card: #0d1424;
+      --navy-deep: #050814;
+      --navy-main: #0a1128;
+      --navy-soft: #121d3b;
+      
+      --gold-primary: #c5a869;
+      --gold-light: #dfc285;
+      --gold-dark: #9e8143;
+      --gold-glow: rgba(197, 168, 105, 0.2);
+      --gold-subtle: rgba(197, 168, 105, 0.1);
+      
+      --cream-bg: #faf8f5;
+      --cream-surface: #ffffff;
+      --cream-card: #f5f2eb;
+      --border-cream: #e8e3d8;
+      
       --whatsapp: #10b981;
       --whatsapp-hover: #059669;
-      --bg-body: #fafaf9; /* Off-white quente e sofisticado */
-      --surface: #ffffff;
-      --text-main: #1c1917;
-      --text-muted: #78716c;
-      --border: #e7e5e4;
-      --border-focus: #b4975a;
-      --radius-sm: 4px;
-      --radius-md: 8px;
-      --radius-lg: 16px;
-      --shadow-soft: 0 4px 40px rgba(0, 0, 0, 0.04);
-      --shadow-hover: 0 10px 50px rgba(180, 151, 90, 0.12);
+      --whatsapp-glow: rgba(16, 185, 129, 0.3);
+      
+      --text-dark: #0f172a;
+      --text-muted-dark: #64748b;
+      --text-light: #f8fafc;
+      --text-muted-light: #94a3b8;
+      
+      --radius-sm: 6px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      
+      --shadow-luxury: 0 20px 50px -10px rgba(5, 8, 20, 0.08);
+      --shadow-floating: 0 30px 70px -15px rgba(5, 8, 20, 0.2);
+      --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      color: var(--text-main);
-      background-color: var(--bg-body);
+      color: var(--text-dark);
+      background-color: var(--cream-bg);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
-      letter-spacing: -0.01em;
     }
 
     .container {
-      max-width: 1140px; /* Mais estreito para ar editorial elegante */
+      max-width: 1180px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* TOP LUXURY DEMO NOTIFICATION BAR */
-    .demo-top-bar {
-      background: linear-gradient(90deg, #072e54 0%, #0369a1 100%);
-      color: #e0f2fe;
-      font-size: 0.8rem;
+    /* TOP ANNOUNCEMENT BAR */
+    .top-luxury-bar {
+      background: var(--navy-deep);
+      color: var(--text-muted-light);
+      font-size: 0.78rem;
       padding: 10px 0;
-      text-align: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      position: relative;
-      z-index: 101;
+      border-bottom: 1px solid rgba(197, 168, 105, 0.2);
+      letter-spacing: 0.02em;
     }
-    .demo-top-inner {
+    .top-bar-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 16px;
     }
-    .demo-pill-badge {
+    .top-bar-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(255, 255, 255, 0.12);
-      padding: 3px 10px;
-      border-radius: 999px;
-      color: #38bdf8;
+      color: var(--gold-light);
       font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
     }
-    .demo-cta-link {
-      color: #fef08a;
+    .dot-gold {
+      width: 6px;
+      height: 6px;
+      background: var(--gold-primary);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--gold-primary);
+      display: inline-block;
+    }
+    .top-bar-cta {
+      color: var(--gold-light);
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 600;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      transition: color 0.2s;
+      gap: 5px;
+      transition: var(--transition-smooth);
     }
-    .demo-cta-link:hover { color: #fff; text-decoration: underline; }
+    .top-bar-cta:hover { color: #fff; }
 
     /* NAVBAR */
     .navbar {
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--border-cream);
       padding: 18px 0;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      transition: var(--transition-smooth);
     }
     .nav-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .logo {
+    .brand-logo {
       display: flex;
       align-items: center;
       gap: 14px;
       text-decoration: none;
-      color: var(--text-main);
+      color: var(--text-dark);
     }
-    .logo-icon {
-      width: 46px;
-      height: 46px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: var(--accent-gold);
-      border-radius: 12px;
+    .brand-monogram {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-main) 100%);
+      color: var(--gold-primary);
+      border: 1px solid rgba(197, 168, 105, 0.4);
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 800;
-      box-shadow: 0 6px 18px var(--primary-glow);
-    }
-    .logo-text h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      color: var(--text-main);
-    }
-    .logo-text span {
-      font-size: 0.72rem;
-      color: var(--primary);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(5, 8, 20, 0.15);
     }
-
-    .nav-menu {
+    .brand-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      color: var(--navy-deep);
+    }
+    .brand-info span {
+      font-size: 0.68rem;
+      color: var(--gold-dark);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: block;
+    }
+    .nav-links {
       display: flex;
       align-items: center;
       gap: 28px;
     }
     .nav-link {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
-      color: #334155;
+      color: var(--text-muted-dark);
       text-decoration: none;
-      transition: color 0.2s;
+      transition: var(--transition-smooth);
     }
-    .nav-link:hover { color: var(--primary); }
-
+    .nav-link:hover { color: var(--navy-deep); }
+    
+    /* BUTTONS */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 13px 26px;
-      font-size: 0.92rem;
+      padding: 13px 28px;
+      font-size: 0.88rem;
       font-weight: 700;
       border-radius: 999px;
       text-decoration: none;
-      transition: all 0.25s ease;
+      transition: var(--transition-smooth);
       cursor: pointer;
       border: none;
+      letter-spacing: 0.01em;
     }
-    .btn-wa {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: #fff;
-      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
+    .btn-wa-gold {
+      background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
+      color: #050814;
+      box-shadow: 0 4px 20px var(--gold-glow);
     }
-    .btn-wa:hover {
+    .btn-wa-gold:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
+      box-shadow: 0 8px 30px rgba(197, 168, 105, 0.35);
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
     }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: #fff;
-      box-shadow: 0 4px 15px var(--primary-glow);
+    .btn-wa-green {
+      background: linear-gradient(135deg, var(--whatsapp) 0%, #059669 100%);
+      color: #ffffff;
+      box-shadow: 0 6px 20px var(--whatsapp-glow);
     }
-    .btn-primary:hover {
+    .btn-wa-green:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.3);
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
     }
-    .btn-secondary {
-      background: #f1f5f9;
-      color: #334155;
-      border: 1px solid var(--border);
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--navy-deep);
+      border: 1px solid rgba(197, 168, 105, 0.6);
     }
-    .btn-secondary:hover {
-      background: #e2e8f0;
-      color: var(--text-main);
+    .btn-outline-gold:hover {
+      background: var(--gold-subtle);
+      border-color: var(--gold-primary);
     }
 
     /* HERO SECTION */
-    .hero {
+    .hero-section {
+      padding: 85px 0 105px;
+      background: radial-gradient(circle at 85% 20%, rgba(197, 168, 105, 0.08) 0%, transparent 60%),
+                  radial-gradient(circle at 10% 90%, rgba(10, 17, 40, 0.04) 0%, transparent 50%),
+                  var(--cream-bg);
+      border-bottom: 1px solid var(--border-cream);
       position: relative;
-      padding: 90px 0 110px;
-      background: radial-gradient(circle at 90% 10%, rgba(180, 151, 90, 0.05) 0%, transparent 60%),
-                  radial-gradient(circle at 10% 90%, rgba(15, 23, 42, 0.03) 0%, transparent 50%),
-                  #ffffff;
-      border-bottom: 1px solid var(--border);
       overflow: hidden;
     }
     .hero-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 50px;
+      gap: 55px;
       align-items: center;
     }
-    .hero-badge-row {
+    .hero-badge-pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--gold-light);
-      color: #8c733b;
-      font-size: 0.8rem;
-      font-weight: 800;
+      background: rgba(197, 168, 105, 0.12);
+      border: 1px solid rgba(197, 168, 105, 0.3);
       padding: 6px 16px;
       border-radius: 999px;
-      margin-bottom: 20px;
-      border: 1px solid rgba(180, 151, 90, 0.3);
+      color: var(--gold-dark);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
     }
     .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.4rem;
-      font-weight: 900;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
       line-height: 1.12;
-      letter-spacing: -0.02em;
+      color: var(--navy-deep);
       margin-bottom: 22px;
-      color: #0b132b;
+      letter-spacing: -0.01em;
     }
     .hero-title span {
-      background: linear-gradient(135deg, var(--accent-gold) 0%, #8c733b 100%);
+      background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      font-style: italic;
     }
-    .hero-subtitle {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      line-height: 1.7;
+    .hero-subhead {
+      font-size: 1.05rem;
+      color: var(--text-muted-dark);
+      line-height: 1.75;
       margin-bottom: 34px;
-      max-width: 600px;
+      max-width: 580px;
     }
-    .hero-actions {
+    .hero-actions-row {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
       margin-bottom: 36px;
     }
-
-    /* PROVA SOCIAL GOOGLE */
-    .google-rating-box {
+    .hero-social-proof {
       display: flex;
       align-items: center;
       gap: 14px;
       padding-top: 24px;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--border-cream);
     }
-    .google-badge-icon {
-      width: 36px;
-      height: 36px;
+    .google-badge-star {
+      width: 40px;
+      height: 40px;
       background: #ffffff;
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-cream);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
     }
-    .google-stars {
-      color: #f59e0b;
-      font-size: 1rem;
-      letter-spacing: 2px;
-    }
-    .google-rating-text h5 {
+    .proof-text h5 {
       font-size: 0.88rem;
       font-weight: 800;
-      color: #0b132b;
+      color: var(--navy-deep);
     }
-    .google-rating-text p {
-      font-size: 0.78rem;
-      color: var(--text-muted);
+    .proof-text p {
+      font-size: 0.76rem;
+      color: var(--text-muted-dark);
     }
 
-    /* HERO IMAGE WRAP */
-    .hero-image-wrap {
+    /* HERO IMAGE COMPOSITION */
+    .hero-media-wrap {
       position: relative;
     }
-    .hero-main-photo {
-      width: 100%;
-      height: 540px;
-      object-fit: cover;
+    .hero-media-box {
       border-radius: var(--radius-lg);
-      box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      box-shadow: var(--shadow-floating);
       border: 6px solid #ffffff;
+      height: 520px;
+      position: relative;
     }
-    .hero-float-card-1 {
+    .hero-media-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-floating-card-1 {
       position: absolute;
-      top: -15px;
-      left: -20px;
+      top: 24px;
+      left: -24px;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(12px);
-      padding: 14px 20px;
+      padding: 12px 18px;
       border-radius: var(--radius-md);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-      border: 1px solid var(--border);
+      box-shadow: 0 15px 35px rgba(5, 8, 20, 0.12);
+      border: 1px solid rgba(197, 168, 105, 0.3);
       display: flex;
       align-items: center;
       gap: 12px;
-      animation: float-slow 4s ease-in-out infinite alternate;
+      animation: float-soft 5s ease-in-out infinite alternate;
     }
-    .hero-float-card-2 {
+    .hero-floating-card-2 {
       position: absolute;
       bottom: -20px;
-      right: -15px;
-      background: #072e54;
+      right: -20px;
+      background: var(--navy-deep);
       color: #fff;
       padding: 16px 22px;
       border-radius: var(--radius-md);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 20px 45px rgba(5, 8, 20, 0.35);
+      border: 1px solid rgba(197, 168, 105, 0.4);
       display: flex;
       align-items: center;
       gap: 12px;
-      animation: float-slow 4s ease-in-out infinite alternate-reverse;
+      animation: float-soft 5s ease-in-out infinite alternate-reverse;
     }
-    @keyframes float-slow {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-8px); }
+    @keyframes float-soft {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
     }
 
-    /* BENTO GRID DE DIFERENCIAIS */
-    .bento-section {
-      padding: 85px 0;
-      background: var(--bg-body);
+    /* BENTO GRID DE DIFERENCIAIS DE ELITE */
+    .section-padding {
+      padding: 100px 0;
     }
     .section-header {
       text-align: center;
       max-width: 680px;
       margin: 0 auto 55px;
     }
-    .section-badge {
-      display: inline-block;
-      font-size: 0.8rem;
+    .section-eyebrow {
+      font-size: 0.72rem;
       font-weight: 800;
-      color: var(--primary);
+      color: var(--gold-dark);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       margin-bottom: 8px;
+      display: block;
     }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: var(--text-main);
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
+    .section-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      line-height: 1.15;
+      margin-bottom: 14px;
     }
-    .section-desc {
-      font-size: 1rem;
-      color: var(--text-muted);
+    .section-lead {
+      font-size: 0.98rem;
+      color: var(--text-muted-dark);
     }
 
-    .bento-grid {
+    .bento-grid-luxury {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 26px;
     }
-    .bento-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 32px 28px;
-      box-shadow: var(--shadow-soft);
-      transition: all 0.3s ease;
+    .bento-cell {
+      background: var(--cream-surface);
+      border: 1px solid var(--border-cream);
+      border-radius: var(--radius-lg);
+      padding: 34px 30px;
+      box-shadow: var(--shadow-luxury);
+      transition: var(--transition-smooth);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    .bento-card:hover {
+    .bento-cell:hover {
       transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-color: #bae6fd;
+      box-shadow: 0 25px 60px -15px rgba(5, 8, 20, 0.12);
+      border-color: rgba(197, 168, 105, 0.5);
     }
-    .bento-card-featured {
+    .bento-cell-wide {
       grid-column: span 2;
-      background: linear-gradient(135deg, #072e54 0%, #0369a1 100%);
-      color: #fff;
-      border: none;
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-main) 100%);
+      color: #ffffff;
+      border: 1px solid rgba(197, 168, 105, 0.3);
     }
-    .bento-card-featured .bento-desc { color: #e0f2fe; }
-    .bento-icon-box {
-      width: 50px;
-      height: 50px;
-      background: #e0f2fe;
-      color: var(--primary);
-      border-radius: 12px;
+    .bento-cell-wide .bento-cell-desc { color: var(--text-muted-light); }
+    .bento-cell-wide h4 { color: #ffffff; }
+    .bento-icon-gold {
+      width: 52px;
+      height: 52px;
+      background: rgba(197, 168, 105, 0.15);
+      color: var(--gold-light);
+      border: 1px solid rgba(197, 168, 105, 0.35);
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
-    .bento-card-featured .bento-icon-box {
-      background: rgba(255, 255, 255, 0.15);
-      color: #38bdf8;
-    }
-    .bento-tag {
-      font-size: 0.72rem;
+    .bento-tag-sm {
+      font-size: 0.68rem;
       font-weight: 800;
-      color: var(--accent-gold);
+      color: var(--gold-primary);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       margin-bottom: 6px;
       display: block;
     }
-    .bento-card h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 800;
-      margin-bottom: 10px;
+    .bento-cell h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 12px;
+      line-height: 1.25;
     }
-    .bento-desc {
+    .bento-cell-desc {
       font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.6;
+      color: var(--text-muted-dark);
+      line-height: 1.65;
     }
 
-    /* SEÇÃO DE TRATAMENTOS DE ELITE */
+    /* SEÇÃO DE TRATAMENTOS DE ALTO TICKET */
     .treatments-section {
-      padding: 90px 0;
       background: #ffffff;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      border-top: 1px solid var(--border-cream);
+      border-bottom: 1px solid var(--border-cream);
     }
     .treatments-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
     }
-    .treatment-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
+    .treatment-card-luxury {
+      background: var(--cream-bg);
+      border: 1px solid var(--border-cream);
       border-radius: var(--radius-md);
       overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
+      transition: var(--transition-smooth);
     }
-    .treatment-card:hover {
+    .treatment-card-luxury:hover {
       transform: translateY(-8px);
-      box-shadow: var(--shadow-hover);
-      border-color: #7dd3fc;
+      box-shadow: 0 20px 45px rgba(5, 8, 20, 0.1);
+      border-color: rgba(197, 168, 105, 0.5);
     }
-    .treatment-img-box {
+    .treatment-card-luxury.active-treatment {
+      border: 2px solid var(--gold-primary);
+      box-shadow: 0 0 25px rgba(197, 168, 105, 0.2);
+    }
+    .treatment-img-wrap {
       height: 220px;
-      position: relative;
       overflow: hidden;
+      position: relative;
     }
-    .treatment-img {
+    .treatment-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
+      transition: transform 0.5s ease;
     }
-    .treatment-card:hover .treatment-img {
-      transform: scale(1.07);
+    .treatment-card-luxury:hover .treatment-img-wrap img {
+      transform: scale(1.06);
     }
     .treatment-badge-tag {
       position: absolute;
       top: 14px;
-      right: 14px;
-      background: rgba(7, 46, 84, 0.85);
-      backdrop-filter: blur(4px);
-      color: #38bdf8;
-      font-size: 0.72rem;
+      left: 14px;
+      background: rgba(5, 8, 20, 0.85);
+      backdrop-filter: blur(8px);
+      color: var(--gold-light);
+      font-size: 0.68rem;
       font-weight: 800;
-      padding: 4px 12px;
-      border-radius: 999px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(197, 168, 105, 0.3);
     }
-    .treatment-body {
-      padding: 26px;
-      flex: 1;
+    .treatment-content {
+      padding: 24px 20px;
       display: flex;
       flex-direction: column;
+      flex: 1;
       justify-content: space-between;
     }
-    .treatment-body h4 {
-      font-family: 'Playfair Display', serif;
+    .treatment-content h4 {
+      font-family: 'Cormorant Garamond', serif;
       font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .treatment-content p {
+      font-size: 0.86rem;
+      color: var(--text-muted-dark);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+    .btn-treatment-action {
+      background: transparent;
+      color: var(--navy-deep);
+      border: 1px solid var(--border-cream);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn-treatment-action:hover {
+      background: var(--navy-deep);
+      color: #fff;
+      border-color: var(--navy-deep);
+    }
+
+    /* SEÇÃO DE AUTORIDADE MÉDICA (DR / CORPO CLÍNICO) */
+    .authority-section {
+      background: radial-gradient(circle at 10% 50%, rgba(197, 168, 105, 0.06) 0%, transparent 60%), var(--cream-bg);
+    }
+    .authority-card-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 55px;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid var(--border-cream);
+      border-radius: var(--radius-xl);
+      padding: 55px;
+      box-shadow: var(--shadow-luxury);
+    }
+    .doctor-portrait-box {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      height: 520px;
+      box-shadow: var(--shadow-floating);
+      position: relative;
+      border: 4px solid #ffffff;
+    }
+    .doctor-portrait-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .doctor-stamp {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(5, 8, 20, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      color: #fff;
+      border: 1px solid rgba(197, 168, 105, 0.4);
+    }
+    .doctor-stamp h5 {
+      font-size: 0.85rem;
       font-weight: 800;
-      color: var(--text-main);
+      color: var(--gold-light);
+    }
+    .doctor-stamp p {
+      font-size: 0.72rem;
+      color: var(--text-muted-light);
+    }
+    .authority-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      line-height: 1.15;
       margin-bottom: 8px;
     }
-    .treatment-body p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 22px;
-      flex: 1;
+    .authority-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
     }
-    .treatment-bottom {
+    .authority-bio {
+      font-size: 0.96rem;
+      color: var(--text-muted-dark);
+      line-height: 1.75;
+      margin-bottom: 30px;
+    }
+    .credentials-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 35px;
+    }
+    .cred-item {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      border-top: 1px solid var(--border);
-      padding-top: 16px;
-    }
-    .treatment-price {
-      font-size: 0.82rem;
+      gap: 10px;
+      font-size: 0.85rem;
       font-weight: 700;
-      color: var(--primary);
+      color: var(--navy-deep);
+    }
+    .cred-check {
+      width: 22px;
+      height: 22px;
+      background: rgba(197, 168, 105, 0.2);
+      color: var(--gold-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
     }
 
-    /* COMPARATIVO ANTES E DEPOIS INTERATIVO */
-    .before-after-section {
-      padding: 90px 0;
-      background: #072e54;
-      color: #fff;
+    /* SEÇÃO ESTRUTURA & AMBIENTAÇÃO */
+    .clinic-tour-section {
+      background: var(--navy-deep);
+      color: #ffffff;
+      padding: 100px 0;
     }
-    .before-after-section .section-title { color: #fff; }
-    .before-after-section .section-desc { color: #bae6fd; }
-    .before-after-section .section-badge { color: #38bdf8; }
-
-    .cases-grid {
+    .clinic-tour-section .section-headline { color: #ffffff; }
+    .clinic-tour-section .section-lead { color: var(--text-muted-light); }
+    .tour-showcase-box {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid rgba(197, 168, 105, 0.3);
+      position: relative;
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.6);
+      height: 540px;
+      margin-bottom: 35px;
+    }
+    .tour-showcase-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .tour-overlay-badge {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      background: rgba(5, 8, 20, 0.88);
+      backdrop-filter: blur(12px);
+      padding: 18px 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(197, 168, 105, 0.4);
+      max-width: 480px;
+    }
+    .tour-overlay-badge h5 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: var(--gold-light);
+      margin-bottom: 4px;
+    }
+    .tour-overlay-badge p {
+      font-size: 0.82rem;
+      color: var(--text-muted-light);
+      line-height: 1.5;
+    }
+    .tour-specs-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      gap: 24px;
     }
-    .case-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+    .tour-spec-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: var(--radius-md);
+      padding: 24px;
+    }
+    .tour-spec-item h5 {
+      color: var(--gold-light);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .tour-spec-item p {
+      font-size: 0.82rem;
+      color: var(--text-muted-light);
+    }
+
+    /* CASOS CLÍNICOS REAIS */
+    .cases-section {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-cream);
+    }
+    .cases-grid-luxury {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .case-card-luxury {
+      background: var(--cream-bg);
+      border: 1px solid var(--border-cream);
+      border-radius: var(--radius-lg);
       overflow: hidden;
-      transition: transform 0.3s;
+      box-shadow: var(--shadow-luxury);
+      transition: var(--transition-smooth);
     }
-    .case-card:hover {
+    .case-card-luxury:hover {
       transform: translateY(-6px);
-      border-color: #38bdf8;
+      box-shadow: 0 20px 50px rgba(5, 8, 20, 0.1);
+      border-color: rgba(197, 168, 105, 0.4);
     }
-    .case-img-box {
+    .case-media-box {
       height: 240px;
       overflow: hidden;
       position: relative;
     }
-    .case-img-box img {
+    .case-media-box img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    .case-stamp {
+    .case-procedure-tag {
       position: absolute;
-      bottom: 12px;
-      left: 12px;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(4px);
-      color: #34d399;
-      font-size: 0.72rem;
+      top: 14px;
+      left: 14px;
+      background: rgba(5, 8, 20, 0.85);
+      color: var(--gold-light);
+      font-size: 0.68rem;
       font-weight: 800;
       padding: 4px 10px;
       border-radius: 4px;
+      letter-spacing: 0.05em;
     }
-    .case-content {
-      padding: 22px;
+    .case-body {
+      padding: 24px;
     }
-    .case-content h5 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 6px;
+    .case-body h5 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 8px;
     }
-    .case-content p {
-      font-size: 0.85rem;
-      color: #94a3b8;
-      line-height: 1.5;
+    .case-body p {
+      font-size: 0.86rem;
+      color: var(--text-muted-dark);
+      line-height: 1.6;
     }
 
     /* DEPOIMENTOS */
     .reviews-section {
-      padding: 90px 0;
-      background: #ffffff;
+      background: var(--cream-bg);
     }
-    .reviews-grid {
+    .reviews-grid-luxury {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      gap: 28px;
     }
-    .review-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 30px;
-      box-shadow: var(--shadow-soft);
+    .review-card-luxury {
+      background: #ffffff;
+      border: 1px solid var(--border-cream);
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      box-shadow: var(--shadow-luxury);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
     .review-stars {
-      color: #f59e0b;
-      font-size: 1rem;
-      margin-bottom: 14px;
-    }
-    .review-text {
+      color: var(--gold-primary);
+      letter-spacing: 3px;
       font-size: 0.95rem;
-      color: #334155;
+      margin-bottom: 16px;
+    }
+    .review-quote {
+      font-size: 0.94rem;
+      color: var(--text-dark);
       font-style: italic;
       line-height: 1.7;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
-    .patient-profile {
+    .review-author {
       display: flex;
       align-items: center;
       gap: 12px;
+      border-top: 1px solid var(--border-cream);
+      padding-top: 16px;
     }
-    .patient-avatar {
-      width: 46px;
-      height: 46px;
+    .author-avatar-initial {
+      width: 44px;
+      height: 44px;
+      background: var(--navy-deep);
+      color: var(--gold-light);
       border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #38bdf8;
-    }
-    .patient-info h5 {
-      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: 800;
-      color: var(--text-main);
+      font-size: 0.95rem;
     }
-    .patient-info span {
-      font-size: 0.76rem;
-      color: var(--text-muted);
+    .author-info h6 {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--navy-deep);
+    }
+    .author-info span {
+      font-size: 0.75rem;
+      color: var(--text-muted-dark);
     }
 
-    /* FAQ */
+    /* FAQ ACCORDION */
     .faq-section {
-      padding: 85px 0;
-      background: var(--bg-body);
-      border-top: 1px solid var(--border);
+      background: #ffffff;
+      border-top: 1px solid var(--border-cream);
     }
-    .faq-accordion {
-      max-width: 800px;
+    .faq-wrap {
+      max-width: 820px;
       margin: 0 auto;
     }
-    .faq-item {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      margin-bottom: 12px;
+    .faq-row {
+      background: var(--cream-bg);
+      border: 1px solid var(--border-cream);
+      border-radius: var(--radius-md);
+      margin-bottom: 14px;
       overflow: hidden;
+      transition: var(--transition-smooth);
     }
-    .faq-question {
-      padding: 20px 24px;
+    .faq-btn {
+      padding: 22px 26px;
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.98rem;
       font-weight: 700;
-      font-size: 1rem;
-      color: var(--text-main);
+      color: var(--navy-deep);
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      user-select: none;
     }
-    .faq-answer {
-      padding: 0 24px 20px;
+    .faq-icon-cross {
+      font-size: 1.2rem;
+      color: var(--gold-dark);
+      transition: transform 0.3s ease;
+    }
+    .faq-body {
+      padding: 0 26px 22px;
       font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.6;
+      color: var(--text-muted-dark);
+      line-height: 1.7;
       display: none;
     }
-    .faq-item.active .faq-answer { display: block; }
-    .faq-item.active .faq-question { color: var(--primary); }
+    .faq-row.active .faq-body { display: block; }
+    .faq-row.active .faq-icon-cross { transform: rotate(45deg); }
 
-    /* CTA BANNER FINAL */
-    .cta-banner {
-      background: linear-gradient(135deg, #072e54 0%, #0284c7 100%);
-      color: #fff;
-      border-radius: var(--radius-lg);
-      padding: 65px 45px;
+    /* FINAL LUXURY CALL TO ACTION */
+    .final-cta-section {
+      padding: 90px 0;
+      background: var(--cream-bg);
+    }
+    .final-cta-box {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-main) 100%);
+      color: #ffffff;
+      border: 1px solid rgba(197, 168, 105, 0.4);
+      border-radius: var(--radius-xl);
+      padding: 70px 50px;
       text-align: center;
-      box-shadow: 0 25px 60px rgba(7, 46, 84, 0.35);
-      margin: 60px auto 0;
+      box-shadow: 0 30px 80px rgba(5, 8, 20, 0.4);
+      position: relative;
+      overflow: hidden;
     }
-    .cta-banner h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      font-weight: 900;
-      margin-bottom: 16px;
+    .final-cta-box h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 18px;
     }
-    .cta-banner p {
-      font-size: 1.15rem;
-      color: #e0f2fe;
-      max-width: 650px;
-      margin: 0 auto 34px;
+    .final-cta-box h2 span {
+      color: var(--gold-light);
+      font-style: italic;
+    }
+    .final-cta-box p {
+      font-size: 1.1rem;
+      color: var(--text-muted-light);
+      max-width: 620px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
     }
 
     /* FOOTER */
-    .footer {
-      background: #05162a;
-      color: #94a3b8;
-      padding: 45px 0;
-      font-size: 0.85rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    .luxury-footer {
+      background: var(--navy-deep);
+      color: var(--text-muted-light);
+      padding: 55px 0 35px;
+      border-top: 1px solid rgba(197, 168, 105, 0.2);
+      font-size: 0.82rem;
     }
-    .footer-inner {
+    .footer-top-grid {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding-bottom: 35px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 25px;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.76rem;
     }
 
-    /* FLOATING QUICK ACTIONS BAR (MOBILE READY) */
-    .mobile-floating-bar {
+    /* FLOATING WA DESKTOP */
+    .floating-wa-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: var(--whatsapp);
+      color: #ffffff;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.45);
+      z-index: 998;
+      transition: var(--transition-smooth);
+      border: 2px solid #ffffff;
+    }
+    .floating-wa-btn:hover {
+      transform: scale(1.05);
+      background: var(--whatsapp-hover);
+    }
+
+    /* BARRA FIXA MOBILE */
+    .mobile-bottom-bar {
       display: none;
       position: fixed;
       bottom: 0;
@@ -720,534 +983,585 @@
       width: 100%;
       background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(12px);
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--border-cream);
       padding: 12px 18px;
       z-index: 999;
       box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1);
     }
-    .mobile-bar-inner {
+    .mobile-bottom-inner {
       display: flex;
       gap: 12px;
     }
-    .mobile-bar-inner .btn {
+    .mobile-bottom-inner .btn {
       flex: 1;
-      font-size: 0.88rem;
       padding: 12px;
+      font-size: 0.85rem;
     }
 
-    /* FLOATING WA DESKTOP */
-    .floating-wa-desktop {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      background: var(--whatsapp);
-      color: #fff;
-      padding: 14px 24px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.92rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.45);
-      z-index: 998;
-      transition: all 0.25s ease;
-      border: 2px solid #ffffff;
-    }
-    .floating-wa-desktop:hover {
-      transform: scale(1.06);
-      background: var(--whatsapp-hover);
-    }
-
-    @media (max-width: 900px) {
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
       .hero-grid { grid-template-columns: 1fr; }
-      .bento-grid { grid-template-columns: 1fr; }
-      .bento-card-featured { grid-column: span 1; }
-      .treatments-grid { grid-template-columns: 1fr; }
-      .cases-grid { grid-template-columns: 1fr; }
-      .reviews-grid { grid-template-columns: 1fr; }
-      .hero-title { font-size: 2.5rem; }
-      .hero-main-photo { height: 350px; }
-      .hero-float-card-1 { position: static; margin-bottom: 12px; }
-      .hero-float-card-2 { position: static; }
-      .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
-      .nav-menu { display: none; }
-      .floating-wa-desktop { display: none; }
-      .mobile-floating-bar { display: block; }
+      .bento-grid-luxury { grid-template-columns: 1fr; }
+      .bento-cell-wide { grid-column: span 1; }
+      .treatments-grid { grid-template-columns: repeat(2, 1fr); }
+      .authority-card-grid { grid-template-columns: 1fr; padding: 35px; }
+      .tour-specs-grid { grid-template-columns: 1fr; }
+      .cases-grid-luxury { grid-template-columns: 1fr; }
+      .reviews-grid-luxury { grid-template-columns: 1fr; }
+      .hero-media-box { height: 380px; }
+      .tour-showcase-box { height: 380px; }
+      .doctor-portrait-box { height: 400px; }
+      .hero-floating-card-1 { position: static; margin-bottom: 12px; }
+      .hero-floating-card-2 { position: static; }
+      .hero-title { font-size: 2.7rem; }
+      .nav-links { display: none; }
+      .floating-wa-btn { display: none; }
+      .mobile-bottom-bar { display: block; }
       body { padding-bottom: 70px; }
+    }
+    @media (max-width: 600px) {
+      .treatments-grid { grid-template-columns: 1fr; }
+      .footer-top-grid { flex-direction: column; gap: 16px; text-align: center; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .credentials-list { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- BARRA DE DEMONSTRAÇÃO INTERATIVA DO ESTÚDIO -->
-  <div class="demo-top-bar">
-    <div class="container demo-top-inner">
+  <!-- TOP BAR -->
+  <div class="top-luxury-bar">
+    <div class="container top-bar-inner">
       <div>
-        <span class="demo-pill-badge">Demonstração Interativa</span>
-        Projeto exclusivo para <strong id="top-clinic-name">Clínica Odonto Prime</strong> em <span id="top-city-name">Campinas</span>
+        <span class="top-bar-badge">
+          <span class="dot-gold"></span> Consultório Credenciado
+        </span>
+        <span style="margin-left: 8px;">Atendimento exclusivo para pacientes particulares em <strong id="top-city-name" class="city-name-span">Campinas</strong></span>
       </div>
       <div>
-        <a href="#" id="btn-activate-top" class="demo-cta-link" target="_blank">
-          Ativar Este Site para Minha Clínica &rarr;
+        <a href="#" id="btn-top-wa" class="top-bar-cta" target="_blank">
+          Solicitar Agendamento VIP &rarr;
         </a>
       </div>
     </div>
   </div>
 
   <!-- NAVBAR -->
-  <nav class="navbar">
+  <header class="navbar">
     <div class="container nav-inner">
-      <a href="#" class="logo">
-        <div class="logo-icon">✦</div>
-        <div class="logo-text">
+      <a href="#" class="brand-logo">
+        <div class="brand-monogram">OP</div>
+        <div class="brand-info">
           <h3 id="brand-name-nav">Odonto Prime</h3>
-          <span>Odontologia & Estética Avançada</span>
+          <span>Instituto de Odontologia Avançada</span>
         </div>
       </a>
 
-      <div class="nav-menu">
+      <nav class="nav-links">
+        <a href="#procedimentos" class="nav-link">Procedimentos</a>
         <a href="#diferenciais" class="nav-link">Diferenciais</a>
-        <a href="#tratamentos" class="nav-link">Tratamentos</a>
-        <a href="#casos" class="nav-link">Antes & Depois</a>
-        <a href="#depoimentos" class="nav-link">Avaliações</a>
-        <a href="#faq" class="nav-link">Dúvidas</a>
-      </div>
+        <a href="#especialista" class="nav-link">Corpo Clínico</a>
+        <a href="#estrutura" class="nav-link">Estrutura</a>
+        <a href="#depoimentos" class="nav-link">Casos & Depoimentos</a>
+        <a href="#duvidas" class="nav-link">Dúvidas</a>
+      </nav>
 
-      <a href="#" id="btn-nav-wa" class="btn btn-wa" target="_blank">
-        Agendar Consulta
+      <a href="#" id="btn-nav-wa" class="btn btn-wa-gold" target="_blank">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/></svg>
+        <span>Agendar Avaliação</span>
       </a>
     </div>
-  </nav>
+  </header>
 
   <!-- HERO SECTION -->
-  <section class="hero">
+  <section class="hero-section">
     <div class="container hero-grid">
-      <div>
-        <div class="hero-badge-row">
-          <span id="hero-badge-text">TECNOLOGIA 3D &bull; CRO RESPONSÁVEL</span>
+      <div class="hero-content">
+        <div class="hero-badge-pill" id="hero-badge-text">
+          EXCELÊNCIA EM ODONTOLOGIA ESTÉTICA & REABILITAÇÃO ORAL
         </div>
+
         <h1 class="hero-title" id="hero-title-text">
-          A harmonia e a segurança de um sorriso <span>transformado</span>
+          O seu melhor sorriso com a <span>sofisticação e naturalidade</span> que a sua presença exige
         </h1>
-        <p class="hero-subtitle" id="hero-sub-text">
-          Atendimento humanizado com odontologia digital de alta precisão. Planejamento 3D facial, lentes em porcelana pura e implantes guiados sem dor em <span id="hero-city-text">Campinas</span>.
+
+        <p class="hero-subhead" id="hero-sub-text">
+          Tratamentos de alto padrão guiados por escaneamento intraoral 3D, anestesia indolor computadorizada e facetas em cerâmica pura confeccionadas sob medida em <span id="hero-city-text" class="city-name-span">Campinas</span>.
         </p>
 
-        <div class="hero-actions">
-          <a href="#" id="btn-hero-wa" class="btn btn-wa" target="_blank">
-            Agendar Avaliação no WhatsApp
+        <div class="hero-actions-row">
+          <a href="#" id="btn-hero-wa" class="btn btn-wa-green" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/></svg>
+            <span>Agendar Consulta no WhatsApp</span>
           </a>
-          <a href="#tratamentos" class="btn btn-secondary">
-            Conhecer Tratamentos
+
+          <a href="#procedimentos" class="btn btn-outline-gold">
+            <span>Conhecer Tratamentos</span>
           </a>
         </div>
 
-        <div class="google-rating-box">
-          <div class="google-badge-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+        <div class="hero-social-proof">
+          <div class="google-badge-star">
+            <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 5c1.57 0 2.98.54 4.09 1.6l3.07-3.07C17.3 1.76 14.83 1 12 1 7.48 1 3.65 3.58 1.78 7.35l3.71 2.88C6.39 7.42 8.97 5 12 5z"/><path fill="#4285F4" d="M23.49 12.28c0-.79-.07-1.54-.19-2.28H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58l3.71 2.88c2.16-2 3.71-4.94 3.71-8.69z"/><path fill="#FBBC05" d="M5.49 14.77c-.24-.73-.38-1.51-.38-2.31s.14-1.58.38-2.31L1.78 7.27C.65 9.53 0 12.06 0 14.77s.65 5.24 1.78 7.5l3.71-2.88z"/><path fill="#34A853" d="M12 23.54c3.24 0 5.95-1.07 7.93-2.91l-3.71-2.88c-1.07.72-2.45 1.15-4.22 1.15-3.03 0-5.61-2.42-6.51-5.23L1.78 16.55C3.65 20.32 7.48 23.54 12 23.54z"/></svg>
           </div>
+          <div class="proof-text">
+            <h5>Classificação 4.9 de 5.0 Estrelas</h5>
+            <p>Mais de 450 pacientes reabilitados e satisfeitos no Google</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-media-wrap">
+        <div class="hero-media-box">
+          <img src="assets/hero_bg.jpg" id="hero-main-photo" alt="Clínica Odonto Prime">
+        </div>
+
+        <div class="hero-floating-card-1">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c5a869" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <div>
-            <div class="google-stars">★★★★★</div>
-            <div class="google-rating-text">
-              <h5>4.9 de 5 Estrelas no Google</h5>
-              <p>Mais de 160 avaliações de pacientes verificados em <span class="city-name-span">Campinas</span></p>
+            <strong style="font-size: 0.85rem; color: #0a1128;">Lentes E.max Ceram</strong>
+            <p style="font-size: 0.72rem; color: #64748b;">Cerâmica Pura Estratificada</p>
+          </div>
+        </div>
+
+        <div class="hero-floating-card-2">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div>
+            <strong style="font-size: 0.85rem; color: #fff;">Anestesia Sem Dor</strong>
+            <p style="font-size: 0.72rem; color: #94a3b8;">Tecnologia Computadorizada</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENTO GRID DE DIFERENCIAIS EXCLUSIVOS -->
+  <section class="section-padding" id="diferenciais">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Por que Escolher o Nosso Instituto</span>
+        <h2 class="section-headline">Tecnologia Alemã & Cuidado Centrado no Paciente</h2>
+        <p class="section-lead">Investimos continuamente na infraestrutura mais avançada do mundo para garantir precisão cirúrgica e total tranquilidade durante o seu atendimento.</p>
+      </div>
+
+      <div class="bento-grid-luxury">
+        <!-- Destaque Amplo -->
+        <div class="bento-cell bento-cell-wide">
+          <div>
+            <div class="bento-icon-gold">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-image-wrap">
-        <img src="assets/hero_bg.jpg" alt="Consultório Odontológico Moderno" class="hero-main-photo">
-        
-        <div class="hero-float-card-1">
-          <div style="font-size: 1.5rem;">💎</div>
-          <div>
-            <h5 style="font-size: 0.88rem; font-weight: 800; color: #0b132b;">Check-up Digital 3D</h5>
-            <p style="font-size: 0.74rem; color: #64748b;">Diagnóstico por câmera intraoral</p>
+            <span class="bento-tag-sm">Odontologia Digital 3D</span>
+            <h4>Escaneamento Intraoral & Mockup Digital Antes de Iniciar</h4>
+            <p class="bento-cell-desc">Adeus àquelas moldagens desconfortáveis com massa. Com o nosso escaneador tridimensional, capturamos cada detalhe dos seus dentes em segundos. Você visualiza a simulação realista do seu sorriso no monitor antes de tocar em qualquer dente.</p>
           </div>
         </div>
 
-        <div class="hero-float-card-2">
-          <div style="font-size: 1.5rem;">🛡️</div>
+        <div class="bento-cell">
           <div>
-            <h5 style="font-size: 0.88rem; font-weight: 800;">Implantes Guiados</h5>
-            <p style="font-size: 0.74rem; color: #7dd3fc;">Sem dor e recuperação rápida</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BENTO GRID DE DIFERENCIAIS -->
-  <section id="diferenciais" class="bento-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Padrão Ouro de Atendimento</span>
-        <h2 class="section-title">Por que nossa odontologia é diferente?</h2>
-        <p class="section-desc">Combinamos tecnologia odontológica internacional com uma experiência de acolhimento pensada no seu conforto total.</p>
-      </div>
-
-      <div class="bento-grid">
-        <div class="bento-card bento-card-featured">
-          <div>
-            <div class="bento-icon-box">✦</div>
-            <span class="bento-tag" style="color: #38bdf8;">Tecnologia Exclusiva</span>
-            <h4>Scanner Intraoral 3D: Diga Adeus à Massa na Boca</h4>
-            <p class="bento-desc">
-              Adeus moldagens desconfortáveis que causam ânsia. Escaneamos toda a sua arcada dentária digitalmente em segundos com precisão micrométrica, projetando seu sorriso no computador antes mesmo de começar.
-            </p>
-          </div>
-          <div style="margin-top: 24px; font-size: 0.82rem; color: #7dd3fc; font-weight: 700;">
-            ✓ Visualização prévia do resultado em 3D
-          </div>
-        </div>
-
-        <div class="bento-card">
-          <div>
-            <div class="bento-icon-box">💉</div>
-            <span class="bento-tag">Sem Traumas</span>
+            <div class="bento-icon-gold">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <span class="bento-tag-sm">Conforto Absoluto</span>
             <h4>Anestesia Computadorizada Sem Dor</h4>
-            <p class="bento-desc">
-              Aplicação milimétrica controlada por sensor computadorizado. Você não sente a picada e a dormência é restrita apenas ao dente a ser tratado.
-            </p>
+            <p class="bento-cell-desc">Fluxo automatizado milimétrico que elimina a pressão dos tecidos. Mais de 95% dos pacientes relatam não sentir absolutamente nenhuma picada.</p>
           </div>
         </div>
 
-        <div class="bento-card">
+        <div class="bento-cell">
           <div>
-            <div class="bento-icon-box">🛋️</div>
-            <span class="bento-tag">Conforto VIP</span>
-            <h4>Consultórios Privativos & Lounge</h4>
-            <p class="bento-desc">
-              Ambientes esterilizados, TV com streaming e fones antirruído para você relaxar ouvindo suas músicas favoritas durante o procedimento.
-            </p>
+            <div class="bento-icon-gold">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <span class="bento-tag-sm">Agilidade Clínica</span>
+            <h4>Laboratório Próprio de Próteses</h4>
+            <p class="bento-cell-desc">Cerâmicas esculpidas por ceramistas dedicados. Ajustes imediatos no mesmo dia e tratamentos concluídos na metade do prazo convencional.</p>
           </div>
         </div>
 
-        <div class="bento-card">
+        <div class="bento-cell">
           <div>
-            <div class="bento-icon-box">⏱️</div>
-            <span class="bento-tag">Agilidade</span>
-            <h4>Atendimento Pontual Sem Espera</h4>
-            <p class="bento-desc">
-              Respeito absoluto à sua agenda. Consultas com intervalos estendidos para dedicação exclusiva do especialista ao seu caso.
-            </p>
+            <div class="bento-icon-gold">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <span class="bento-tag-sm">Atendimento Privativo</span>
+            <h4>Suíte Individual com Isolamento Acústico</h4>
+            <p class="bento-cell-desc">Privacidade completa, fones com cancelamento de ruído e streaming para transformar a sua consulta em um momento de pausa e autocuidado.</p>
           </div>
         </div>
 
-        <div class="bento-card">
+        <div class="bento-cell">
           <div>
-            <div class="bento-icon-box">💳</div>
-            <span class="bento-tag">Facilitado</span>
-            <h4>Condições em até 24x sem Juros</h4>
-            <p class="bento-desc">
-              Planos de parcelamento no cartão ou boleto bancário para viabilizar o tratamento dos seus sonhos com tranquilidade financeira.
-            </p>
+            <div class="bento-icon-gold">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <span class="bento-tag-sm">Garantia & Rigor</span>
+            <h4>Materiais com Certificação Internacional</h4>
+            <p class="bento-cell-desc">Utilizamos exclusivamente cerâmicas Ivoclar Vivadent e implantes Straumann com rastreabilidade total e certificado de garantia vitalícia.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TRATAMENTOS -->
-  <section id="tratamentos" class="treatments-section">
+  <!-- PROCEDIMENTOS ESPECIALIZADOS -->
+  <section class="section-padding treatments-section" id="procedimentos">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge">Especialidades Clínicas</span>
-        <h2 class="section-title">Tratamentos de Alta Complexidade</h2>
-        <p class="section-desc">Procedimentos executados por cirurgiões-dentistas com especializações e mestrados reconhecidos.</p>
+        <span class="section-eyebrow">Soluções Odontológicas de Alta Performance</span>
+        <h2 class="section-headline">Procedimentos de Alta Complexidade</h2>
+        <p class="section-lead">Cada tratamento é planejado respeitando o visagismo facial, proporção áurea e a mastigação equilibrada do paciente.</p>
       </div>
 
       <div class="treatments-grid">
-        <!-- 1 -->
-        <div class="treatment-card">
-          <div class="treatment-img-box">
-            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Lentes em Porcelana" class="treatment-img">
-            <span class="treatment-badge-tag">Estética de Luxo</span>
+        <!-- Card 1: Lentes -->
+        <div class="treatment-card-luxury active-treatment" id="card-trat-estetica">
+          <div class="treatment-img-wrap">
+            <img src="assets/smile_macro.jpg" alt="Lentes de Contato em Porcelana">
+            <span class="treatment-badge-tag">Mais Desejado</span>
           </div>
-          <div class="treatment-body">
+          <div class="treatment-content">
             <div>
-              <h4>Lentes de Contato & Facetas em Porcelana</h4>
-              <p>Lâminas ultrafinas de cerâmica pura que corrigem formato, tamanho, cor e espaçamento dos dentes com durabilidade de mais de 15 anos.</p>
+              <h4>Lentes de Contato em Cerâmica</h4>
+              <p>Lâminas ultrafinas de 0.2mm que corrigem cor, textura, alinhamento e formato dos dentes com naturalidade fotográfica.</p>
             </div>
-            <div class="treatment-bottom">
-              <span class="treatment-price">Avaliação Digital 3D</span>
-              <a href="#" class="btn btn-primary btn-sm btn-treatment-wa" data-tratamento="Lentes em Porcelana">Agendar &rarr;</a>
-            </div>
+            <a href="#" class="btn-treatment-action btn-wa-trigger" data-procedimento="Lentes de Contato em Cerâmica">
+              <span>Consultar Especialista &rarr;</span>
+            </a>
           </div>
         </div>
 
-        <!-- 2 -->
-        <div class="treatment-card">
-          <div class="treatment-img-box">
-            <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=80" alt="Implantes Guiados" class="treatment-img">
-            <span class="treatment-badge-tag">Sem Cortes</span>
+        <!-- Card 2: Implantes -->
+        <div class="treatment-card-luxury" id="card-trat-implantes">
+          <div class="treatment-img-wrap">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Implantes Guiados 3D">
+            <span class="treatment-badge-tag">Cirurgia Guiada</span>
           </div>
-          <div class="treatment-body">
+          <div class="treatment-content">
             <div>
-              <h4>Implantes Dentários Guiados por Computador</h4>
-              <p>Recuperação imediata da segurança para mastigar e sorrir. Cirurgia guiada por tomografia 3D sem cortes extensos de bisturi e pós-operatório tranquilo.</p>
+              <h4>Implantes Dentários & Carga Imediata</h4>
+              <p>Dentes fixos e firmes no mesmo dia. Planejamento tomográfico computadorizado que dispensa cortes amplos com bisturi.</p>
             </div>
-            <div class="treatment-bottom">
-              <span class="treatment-price">Pinos em Titânio/Zircônia</span>
-              <a href="#" class="btn btn-primary btn-sm btn-treatment-wa" data-tratamento="Implantes Dentários">Agendar &rarr;</a>
-            </div>
+            <a href="#" class="btn-treatment-action btn-wa-trigger" data-procedimento="Implantes Dentários e Carga Imediata">
+              <span>Consultar Especialista &rarr;</span>
+            </a>
           </div>
         </div>
 
-        <!-- 3 -->
-        <div class="treatment-card">
-          <div class="treatment-img-box">
-            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80" alt="Alinhadores Invisíveis" class="treatment-img">
+        <!-- Card 3: Alinhadores -->
+        <div class="treatment-card-luxury" id="card-trat-alinhadores">
+          <div class="treatment-img-wrap">
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80" alt="Alinhadores Invisíveis">
             <span class="treatment-badge-tag">Ortodontia Digital</span>
           </div>
-          <div class="treatment-body">
+          <div class="treatment-content">
             <div>
-              <h4>Alinhadores Invisíveis (Invisalign)</h4>
-              <p>Alinhe seus dentes com placas transparentes imperceptíveis e removíveis. Você come o que quiser e higieniza com facilidade total.</p>
+              <h4>Alinhadores Invisíveis 3D</h4>
+              <p>Correção ortodôntica sem peças metálicas ou fios pontiagudos. Placas transparentes removíveis que se adaptam à sua rotina.</p>
             </div>
-            <div class="treatment-bottom">
-              <span class="treatment-price">Até 2x mais rápido</span>
-              <a href="#" class="btn btn-primary btn-sm btn-treatment-wa" data-tratamento="Alinhadores Invisíveis">Agendar &rarr;</a>
-            </div>
+            <a href="#" class="btn-treatment-action btn-wa-trigger" data-procedimento="Alinhadores Invisíveis 3D">
+              <span>Consultar Especialista &rarr;</span>
+            </a>
           </div>
         </div>
 
-        <!-- 4 -->
-        <div class="treatment-card">
-          <div class="treatment-img-box">
-            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Clareamento a Laser" class="treatment-img">
-            <span class="treatment-badge-tag">Brilho Natural</span>
+        <!-- Card 4: Harmonização Facial -->
+        <div class="treatment-card-luxury" id="card-trat-hof">
+          <div class="treatment-img-wrap">
+            <img src="https://images.unsplash.com/photo-1512290903671-2432eed4a84b?auto=format&fit=crop&w=800&q=80" alt="Harmonização Orofacial">
+            <span class="treatment-badge-tag">Rejuvenescimento</span>
           </div>
-          <div class="treatment-body">
+          <div class="treatment-content">
             <div>
-              <h4>Clareamento Dental a Laser & LED</h4>
-              <p>Dentes até 5 tons mais claros com tecnologia de proteção de esmalte que previne sensibilidade dentária pós-aplicação.</p>
+              <h4>Harmonização Orofacial (HOF)</h4>
+              <p>Toxina botulínica preventiva, bioestimuladores de colágeno e contorno labial proporcional conduzido com precisão anatômica.</p>
             </div>
-            <div class="treatment-bottom">
-              <span class="treatment-price">Resultados em 1 sessão</span>
-              <a href="#" class="btn btn-primary btn-sm btn-treatment-wa" data-tratamento="Clareamento a Laser">Agendar &rarr;</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5 -->
-        <div class="treatment-card">
-          <div class="treatment-img-box">
-            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Harmonização Orofacial" class="treatment-img">
-            <span class="treatment-badge-tag">Face & Sorriso</span>
-          </div>
-          <div class="treatment-body">
-            <div>
-              <h4>Harmonização Orofacial & Botox Clínico</h4>
-              <p>Tratamento de bruxismo, cefaleia tensional e melhora do contorno labial e mentoniano para valorizar a simetria do seu rosto.</p>
-            </div>
-            <div class="treatment-bottom">
-              <span class="treatment-price">Procedimento sutil</span>
-              <a href="#" class="btn btn-primary btn-sm btn-treatment-wa" data-tratamento="Harmonização Orofacial">Agendar &rarr;</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6 -->
-        <div class="treatment-card">
-          <div class="treatment-img-box">
-            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" alt="Clínica Geral & Check-up" class="treatment-img">
-            <span class="treatment-badge-tag">Saúde Integral</span>
-          </div>
-          <div class="treatment-body">
-            <div>
-              <h4>Reabilitação Oral & Check-up Preventivo</h4>
-              <p>Limpeza ultrassônica com jato de bicarbonato, restaurações estéticas em resina e eliminação definitiva de dores e desconfortos.</p>
-            </div>
-            <div class="treatment-bottom">
-              <span class="treatment-price">Prevenção ativa</span>
-              <a href="#" class="btn btn-primary btn-sm btn-treatment-wa" data-tratamento="Check-up Preventivo">Agendar &rarr;</a>
-            </div>
+            <a href="#" class="btn-treatment-action btn-wa-trigger" data-procedimento="Harmonização Orofacial">
+              <span>Consultar Especialista &rarr;</span>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ANTES E DEPOIS -->
-  <section id="casos" class="before-after-section">
+  <!-- AUTORIDADE MÉDICA (O ESPECIALISTA) -->
+  <section class="section-padding authority-section" id="especialista">
     <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Casos Clínicos Documentados</span>
-        <h2 class="section-title">A Transformação do Sorriso em Fatos Reais</h2>
-        <p class="section-desc">Resultados naturais planejados de acordo com as características faciais de cada paciente.</p>
-      </div>
-
-      <div class="cases-grid">
-        <div class="case-card">
-          <div class="case-img-box">
-            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="Caso Lentes de Contato">
-            <span class="case-stamp">✓ 10 Lentes em Porcelana</span>
-          </div>
-          <div class="case-content">
-            <h5>Fechamento de Diastemas & Cor</h5>
-            <p>Paciente procurou a clínica com dentes espaçados e escurecidos. Correção com porcelana pura sem desgaste invasivo.</p>
+      <div class="authority-card-grid">
+        <div class="doctor-portrait-box">
+          <img src="assets/doctor_profile.jpg" alt="Dr. Bruno Mendes - Diretor Clínico">
+          <div class="doctor-stamp">
+            <h5>Dr. Bruno Mendes</h5>
+            <p>Especialista em Prótese Dentária & Implantes • CRO-SP 94.218</p>
           </div>
         </div>
 
-        <div class="case-card">
-          <div class="case-img-box">
+        <div class="authority-content">
+          <span class="authority-badge">Direção Clínica & Liderança Científica</span>
+          <h3>Tratamentos Conduzidos por Especialistas de Referência</h3>
+          <p class="authority-bio">
+            Com mais de 15 anos dedicados à reabilitação estética e oral, o Dr. Bruno Mendes une a precisão cirúrgica à sensibilidade artística. Pós-graduado em Reabilitação Oral de Alta Complexidade pela USP e com certificação internacional em Odontologia Digital na Alemanha, lidera uma equipe multidisciplinar comprometida em devolver a segurança de sorrir sem receios.
+          </p>
+
+          <div class="credentials-list">
+            <div class="cred-item">
+              <span class="cred-check">&#10003;</span>
+              <span>Membro da SBOE (Sociedade Brasileira de Odontologia Estética)</span>
+            </div>
+            <div class="cred-item">
+              <span class="cred-check">&#10003;</span>
+              <span>Especialista pela USP com +15 Anos de Prática</span>
+            </div>
+            <div class="cred-item">
+              <span class="cred-check">&#10003;</span>
+              <span>Mais de 3.500 Casos Reabilitados com Sucesso</span>
+            </div>
+            <div class="cred-item">
+              <span class="cred-check">&#10003;</span>
+              <span>Credenciamento Internacional em Alinhadores 3D</span>
+            </div>
+          </div>
+
+          <a href="#" id="btn-doctor-wa" class="btn btn-wa-green" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/></svg>
+            <span>Falar Diretamente com a Equipe do Doutor</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTRUTURA E ARQUITETURA DA CLÍNICA -->
+  <section class="clinic-tour-section" id="estrutura">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--gold-light);">Ambiente Projetado para o Seu Bem-Estar</span>
+        <h2 class="section-headline">Infraestrutura Boutique em <span class="city-name-span">Campinas</span></h2>
+        <p class="section-lead">Arquitetura acolhedora, materiais nobres e tecnologia cirúrgica de última geração para que cada minuto da sua visita seja relaxante.</p>
+      </div>
+
+      <div class="tour-showcase-box">
+        <img src="assets/clinic_interior.jpg" alt="Consultório Odontológico de Alto Padrão">
+        <div class="tour-overlay-badge">
+          <h5>Suíte de Atendimento Privativo</h5>
+          <p>Consultórios amplos com iluminação natural, filtragem de ar hospitalar com pressão positiva e acabamento em mármore travertino italiano.</p>
+        </div>
+      </div>
+
+      <div class="tour-specs-grid">
+        <div class="tour-spec-item">
+          <h5>Biossegurança de Nível Hospitalar</h5>
+          <p>Central de esterilização automatizada com autoclaves classe B e testes biológicos rigorosos semanais.</p>
+        </div>
+        <div class="tour-spec-item">
+          <h5>Estacionamento Exclusivo com Manobrista</h5>
+          <p>Acesso discreto e confortável sem preocupações com vagas para você e seus acompanhantes.</p>
+        </div>
+        <div class="tour-spec-item">
+          <h5>Pontualidade Rigorosa na Agenda</h5>
+          <p>Respeito absoluto ao seu tempo. Intervalos estendidos entre consultas para evitar qualquer fila ou espera.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASOS CLÍNICOS E TRANSFORMAÇÕES -->
+  <section class="section-padding cases-section" id="casos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Resultados Comprovados</span>
+        <h2 class="section-headline">Transformações Reais Conduzidas no Instituto</h2>
+        <p class="section-lead">Cada sorriso carrega uma história única de recuperação da autoestima e da alegria de sorrir espontaneamente.</p>
+      </div>
+
+      <div class="cases-grid-luxury">
+        <div class="case-card-luxury">
+          <div class="case-media-box">
+            <img src="assets/smile_macro.jpg" alt="Caso Lentes de Contato">
+            <span class="case-procedure-tag">Lentes em Porcelana</span>
+          </div>
+          <div class="case-body">
+            <h5>Reabilitação Estética Superior (10 Dentes)</h5>
+            <p>Correção de diastemas, tonalidade amarelada refratária e assimetria de margem gengival. Resultado translúcido e harmônico.</p>
+          </div>
+        </div>
+
+        <div class="case-card-luxury">
+          <div class="case-media-box">
             <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" alt="Caso Alinhadores">
-            <span class="case-stamp">✓ 9 Meses de Tratamento</span>
+            <span class="case-procedure-tag">Alinhadores 3D</span>
           </div>
-          <div class="case-content">
-            <h5>Ortodontia com Alinhador Invisível</h5>
-            <p>Alinhamento de dentes anteriores apinhados sem o uso de aparelhos metálicos ou ferros aparentes.</p>
+          <div class="case-body">
+            <h5>Correção de Apinhamento sem Extrações</h5>
+            <p>Tratamento ortodôntico digital com duração de apenas 9 meses. Alinhamento perfeito dos dentes anteriores com discrição total.</p>
           </div>
         </div>
 
-        <div class="case-card">
-          <div class="case-img-box">
+        <div class="case-card-luxury">
+          <div class="case-media-box">
             <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80" alt="Caso Implantes">
-            <span class="case-stamp">✓ Carga Imediata</span>
+            <span class="case-procedure-tag">Implante Guiado</span>
           </div>
-          <div class="case-content">
-            <h5>Implante Guiado sem Cortes</h5>
-            <p>Substituição de prótese móvel por dente fixo em zircônia com fixação no mesmo dia e função mastigatória restabelecida.</p>
+          <div class="case-body">
+            <h5>Carga Imediata em Área Nobre Anterior</h5>
+            <p>Instalação de implante guiado com coroa provisória fixa instalada no mesmo dia. Preservação milimétrica da gengiva natural.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DEPOIMENTOS GOOGLE REVIEWS -->
-  <section id="depoimentos" class="reviews-section">
+  <!-- DEPOIMENTOS DE PACIENTES -->
+  <section class="section-padding reviews-section" id="depoimentos">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge">Opinião de Quem Confia</span>
-        <h2 class="section-title">O que dizem os nossos pacientes</h2>
-        <p class="section-desc">Avaliações públicas verificadas diretamente do Google Meu Negócio.</p>
+        <span class="section-eyebrow">A Voz de Quem Confia em Nós</span>
+        <h2 class="section-headline">Depoimentos de Pacientes Particulares</h2>
+        <p class="section-lead">A satisfação de quem confiou o seu sorriso aos nossos cuidados e vivenciou uma experiência verdadeiramente transformadora.</p>
       </div>
 
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div>
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">
-              "Sempre tive pânico de dentista desde a infância, mas a experiência na clínica mudou tudo. Não senti absolutamente nada na anestesia e minhas lentes em porcelana ficaram extremamente naturais. Todo mundo elogia meu sorriso!"
-            </p>
-          </div>
-          <div class="patient-profile">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Juliana Mendes" class="patient-avatar">
-            <div class="patient-info">
-              <h5>Juliana Mendes</h5>
-              <span>Paciente de Lentes de Contato • <span class="city-name-span">Campinas</span></span>
+      <div class="reviews-grid-luxury">
+        <div class="review-card-luxury">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-quote">"Eu tinha pavor de dentista por traumas antigos. A anestesia computadorizada e a delicadeza de toda a equipe me surpreenderam. Fiz 8 lentes e hoje recebo elogios diários em reuniões e fotos."</p>
+          <div class="review-author">
+            <div class="author-avatar-initial">JM</div>
+            <div class="author-info">
+              <h6>Juliana Mendes</h6>
+              <span>Advogada Tributarista • Campinas</span>
             </div>
           </div>
         </div>
 
-        <div class="review-card">
-          <div>
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">
-              "Coloquei dois implantes guiados após perder dentes num acidente. A cirurgia demorou menos de 40 minutos, sem dor e no outro dia eu já estava trabalhando normalmente. Estrutura impecável e pontualidade exemplar."
-            </p>
-          </div>
-          <div class="patient-profile">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Rodrigo Siqueira" class="patient-avatar">
-            <div class="patient-info">
-              <h5>Rodrigo Siqueira</h5>
-              <span>Paciente de Implantes Guiados • <span class="city-name-span">Campinas</span></span>
+        <div class="review-card-luxury">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-quote">"Coloquei dois implantes guiados após perder dentes em um acidente. Não senti dor nenhuma durante ou depois da cirurgia. O escaneamento 3D deu uma precisão inacreditável."</p>
+          <div class="review-author">
+            <div class="author-avatar-initial">RS</div>
+            <div class="author-info">
+              <h6>Rodrigo Siqueira</h6>
+              <span>Empresário • Valinhos</span>
             </div>
           </div>
         </div>
 
-        <div class="review-card">
-          <div>
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">
-              "Fiz o tratamento com os alinhadores invisíveis e terminei em 8 meses. Ninguém no trabalho percebia que eu estava usando aparelho. Equipe super atenciosa que acompanha tudo com carinho. Valeu cada centavo!"
-            </p>
-          </div>
-          <div class="patient-profile">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Camila Albuquerque" class="patient-avatar">
-            <div class="patient-info">
-              <h5>Camila Albuquerque</h5>
-              <span>Paciente Invisalign • <span class="city-name-span">Campinas</span></span>
+        <div class="review-card-luxury">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-quote">"O respeito pelo horário e a privacidade do consultório são diferenciais raros. Você se sente em um hotel 5 estrelas. Recomendo de olhos fechados para quem valoriza perfeição."</p>
+          <div class="review-author">
+            <div class="author-avatar-initial">CA</div>
+            <div class="author-info">
+              <h6>Camila Albuquerque</h6>
+              <span>Arquiteta de Interiores • Campinas</span>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- BANNER CTA -->
-      <div class="cta-banner">
-        <h2>Pronto para sorrir sem receios?</h2>
-        <p>Converse agora com a nossa equipe de atendimento no WhatsApp, tire suas dúvidas sobre valores e reserve o seu horário com um especialista.</p>
-        <a href="#" id="btn-banner-wa" class="btn btn-wa" style="padding: 16px 36px; font-size: 1rem;" target="_blank">
-          Falar com a Recepção no WhatsApp
+  <!-- PERGUNTAS FREQUENTES (FAQ) -->
+  <section class="section-padding faq-section" id="duvidas">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Tire as Suas Dúvidas</span>
+        <h2 class="section-headline">Perguntas Frequentes</h2>
+        <p class="section-lead">Respostas claras e transparentes sobre os nossos tratamentos, segurança e formas de investimento.</p>
+      </div>
+
+      <div class="faq-wrap">
+        <div class="faq-row active">
+          <button class="faq-btn">
+            <span>O implante dentário dói? Como é o período pós-operatório?</span>
+            <span class="faq-icon-cross">+</span>
+          </button>
+          <div class="faq-body">
+            Com a cirurgia guiada por tomografia 3D e a anestesia computadorizada sem dor, não realizamos cortes amplos de bisturi nem pontos extensos. O procedimento é ultra rápido e a maioria dos nossos pacientes retorna às atividades rotineiras leves no dia seguinte apenas com analgésicos comuns.
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-btn">
+            <span>As lentes em porcelana ficam com aspecto artificial ou branco demais?</span>
+            <span class="faq-icon-cross">+</span>
+          </button>
+          <div class="faq-body">
+            De forma alguma. Trabalhamos exclusivamente com cerâmica pura feldspática e E.max com estratificação artesanal. Isso significa que reproduzimos a translucidez, os micro-sulcos e o brilho dos dentes naturais, respeitando a sua idade e anatomia facial para um resultado imperceptível aos olhos de terceiros.
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-btn">
+            <span>Como funciona a primeira consulta de avaliação e diagnóstico?</span>
+            <span class="faq-icon-cross">+</span>
+          </button>
+          <div class="faq-body">
+            Na primeira consulta, realizamos um escaneamento intraoral tridimensional completo e fotos em alta definição. O especialista conversa com você sem pressa, avalia suas queixas funcionais e estéticas, e apresenta um plano de tratamento personalizado com simulação digital.
+          </div>
+        </div>
+
+        <div class="faq-row">
+          <button class="faq-btn">
+            <span>Quais são as opções e condições de pagamento disponíveis?</span>
+            <span class="faq-icon-cross">+</span>
+          </button>
+          <div class="faq-body">
+            Oferecemos planos de investimento facilitados em até 12x ou 24x nos cartões de crédito e condições diferenciadas para tratamentos integrais à vista, tudo com total transparência e sem surpresas no meio do tratamento.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL DE FECHAMENTO -->
+  <section class="final-cta-section">
+    <div class="container">
+      <div class="final-cta-box">
+        <h2>Pronto para Conquistar o Sorriso que <span>Você Merece?</span></h2>
+        <p>Agende a sua consulta de avaliação personalizada com escaneamento digital 3D. Nossa equipe entrará em contato prontamente para reservar o melhor horário para você.</p>
+        <a href="#" id="btn-final-wa" class="btn btn-wa-gold" target="_blank" style="padding: 16px 36px; font-size: 1rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/></svg>
+          <span>Reservar Horário VIP no WhatsApp</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FAQ ACCORDION -->
-  <section id="faq" class="faq-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Dúvidas Comuns</span>
-        <h2 class="section-title">Perguntas Frequentes</h2>
-      </div>
-
-      <div class="faq-accordion">
-        <div class="faq-item active">
-          <div class="faq-question">O implante dentário dói? Como é o pós-operatório? <span>+</span></div>
-          <div class="faq-answer">Utilizamos anestesia computadorizada sem dor e cirurgia guiada por tomografia 3D computadorizada sem cortes amplos de bisturi. O procedimento é rápido e o pós-operatório é muito brando, apenas com analgésicos convencionais.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">As lentes em porcelana ficam com aspecto artificial? <span>+</span></div>
-          <div class="faq-answer">De forma alguma. Trabalhamos com cerâmica pura de estratificação artesanal que mimetiza a translucidez, os sulcos e o brilho dos dentes naturais, respeitando a anatomia facial de cada pessoa.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">Como funciona a primeira consulta de avaliação? <span>+</span></div>
-          <div class="faq-answer">Realizamos um escaneamento intraoral digital 3D e fotografias profissionais. O especialista conversa com você, entende seus desejos e apresenta um plano de tratamento personalizado sem qualquer compromisso.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">Quais são as opções de pagamento disponíveis? <span>+</span></div>
-          <div class="faq-answer">Oferecemos parcelamento facilitado em até 12x ou 24x nos cartões de crédito e condições especiais para tratamentos completos à vista.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <h4 id="brand-name-footer" style="color: #fff; margin-bottom: 4px; font-family: 'Playfair Display', serif; font-size: 1.25rem;">Odonto Prime</h4>
-        <p id="clinic-location-footer">Clínica Odontológica Especializada • Campinas - SP</p>
+  <footer class="luxury-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div>
+          <h4 id="brand-name-footer" style="color: #fff; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 4px;">Odonto Prime</h4>
+          <p id="clinic-location-footer" style="color: #94a3b8;">Instituto de Odontologia Avançada • Campinas - SP</p>
+        </div>
+        <div>
+          <span style="color: var(--gold-light); font-weight: 700;">Responsável Técnico:</span> Dr. Bruno Mendes • CRO-SP 94.218
+        </div>
       </div>
-      <div>
-        <p>&copy; 2026. Todos os direitos reservados. Em estrita conformidade com as normas do Conselho Federal de Odontologia (CFO/CRO).</p>
+      <div class="footer-bottom">
+        <p>&copy; 2026. Todos os direitos reservados. Em rigorosa conformidade com o Código de Ética Odontológica (CFO/CRO).</p>
+        <p>Desenvolvido com padrões de luxo e ultra-velocidade.</p>
       </div>
     </div>
   </footer>
 
-  <!-- FLOATING WA DESKTOP -->
-  <a href="#" id="floating-wa-desktop" class="floating-wa-desktop" target="_blank">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/></svg>
+  <!-- FLOATING WA BUTTON DESKTOP -->
+  <a href="#" id="floating-wa-desktop" class="floating-wa-btn" target="_blank">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/></svg>
     <span>Agendar no WhatsApp</span>
   </a>
 
-  <!-- BARRA DE AÇÃO RÁPIDA NO MOBILE -->
-  <div class="mobile-floating-bar">
-    <div class="mobile-bar-inner">
-      <a href="#" id="btn-mobile-wa" class="btn btn-wa" target="_blank">
+  <!-- FLOATING BAR MOBILE -->
+  <div class="mobile-bottom-bar">
+    <div class="mobile-bottom-inner">
+      <a href="#" id="btn-mobile-wa" class="btn btn-wa-green" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/></svg>
-        WhatsApp
+        <span>Agendar no WhatsApp</span>
       </a>
-      <a href="#tratamentos" class="btn btn-secondary">
-        Tratamentos
+      <a href="#procedimentos" class="btn btn-outline-gold">
+        <span>Procedimentos</span>
       </a>
     </div>
   </div>
@@ -1260,65 +1574,57 @@
       const whatsapp = params.get('whatsapp') || '5511913393797';
       const foco = (params.get('foco') || 'estetica').toLowerCase();
 
-      // Adaptação de foco clínico especializado
+      // Customização dinâmica por Foco Clínico
       if (foco === 'alinhadores' || foco === 'ortodontia') {
         document.getElementById('hero-badge-text').innerText = 'ORTODONTIA DIGITAL 3D • ALINHADORES INVISÍVEIS';
         document.getElementById('hero-title-text').innerHTML = `Alinhe o seu sorriso com <span>discrição total</span> e previsibilidade 3D`;
-        document.getElementById('hero-sub-text').innerHTML = `Livre-se de fios metálicos e incômodos. Placas transparentes removíveis planejadas sob medida para adultos e jovens em <span id="hero-city-text">${cidade}</span>.`;
+        document.getElementById('hero-sub-text').innerHTML = `Livre-se de fios metálicos e desconfortos. Placas transparentes removíveis planejadas sob medida para adultos e jovens em <span class="city-name-span">${cidade}</span>.`;
       } else if (foco === 'pediatria' || foco === 'kids') {
         document.getElementById('hero-badge-text').innerText = 'ODONTOPEDIATRIA ACOLHEDORA • ESPAÇO KIDS';
         document.getElementById('hero-title-text').innerHTML = `A saúde do sorriso do seu filho com <span>carinho, cuidado</span> e sem traumas`;
-        document.getElementById('hero-sub-text').innerHTML = `Consultórios lúdicos, dentistas especialistas em acolhimento infantil e prevenção ativa para crescer com dentes fortes e saudáveis em <span id="hero-city-text">${cidade}</span>.`;
+        document.getElementById('hero-sub-text').innerHTML = `Consultórios lúdicos, dentistas especialistas em acolhimento infantil e prevenção ativa para crescer com dentes fortes e saudáveis em <span class="city-name-span">${cidade}</span>.`;
       } else if (foco === 'geral' || foco === 'familia') {
         document.getElementById('hero-badge-text').innerText = 'ODONTOLOGIA INTEGRAL & FAMÍLIA • PREVENÇÃO ATIVA';
         document.getElementById('hero-title-text').innerHTML = `Cuidado odontológico completo e <span>humanizado</span> para toda a família`;
-        document.getElementById('hero-sub-text').innerHTML = `Diagnóstico preventivo, restaurações estéticas, limpeza ultrassônica e reabilitação oral com tecnologia de ponta em <span id="hero-city-text">${cidade}</span>.`;
+        document.getElementById('hero-sub-text').innerHTML = `Diagnóstico preventivo, restaurações estéticas, profilaxia ultrassônica e reabilitação oral com tecnologia de ponta em <span class="city-name-span">${cidade}</span>.`;
       } else if (foco === 'implantes' || foco === 'cirurgia') {
-        document.getElementById('hero-badge-text').innerText = 'IMPLANTODONTIA GUIADA 3D • SEM DOR E SEM CORTES AMPLOS';
-        document.getElementById('hero-title-text').innerHTML = `Recupere a <span>mastigação e confiança</span> com implantes guiados de última geração`;
-        document.getElementById('hero-sub-text').innerHTML = `Cirurgia guiada por computador, anestesia computadorizada indolor e próteses fixas com carga imediata planejadas para você em <span id="hero-city-text">${cidade}</span>.`;
+        document.getElementById('hero-badge-text').innerText = 'IMPLANTODONTIA GUIADA 3D • SEM DOR E COM CARGA IMEDIATA';
+        document.getElementById('hero-title-text').innerHTML = `Recupere a <span>mastigação e confiança</span> com dentes fixos no mesmo dia`;
+        document.getElementById('hero-sub-text').innerHTML = `Cirurgia guiada por computador, anestesia computadorizada sem dor e próteses fixas com carga imediata planejadas para você em <span class="city-name-span">${cidade}</span>.`;
       } else if (foco === 'hof' || foco === 'harmonizacao') {
         document.getElementById('hero-badge-text').innerText = 'HARMONIZAÇÃO OROFACIAL • REJUVENESCIMENTO NATURAL';
-        document.getElementById('hero-title-text').innerHTML = `Realce a sua beleza natural com <span>harmonia orofacial</span> e precisão médica`;
-        document.getElementById('hero-sub-text').innerHTML = `Toxina botulínica preventiva, bioestimuladores de colágeno e preenchimento labial refinado realizado por especialistas em <span id="hero-city-text">${cidade}</span>.`;
+        document.getElementById('hero-title-text').innerHTML = `Realce a sua beleza com <span>harmonia orofacial</span> e precisão médica`;
+        document.getElementById('hero-sub-text').innerHTML = `Toxina botulínica preventiva, bioestimuladores de colágeno e preenchimento labial refinado realizado por especialistas em <span class="city-name-span">${cidade}</span>.`;
       }
 
-      // Atualiza textos dinâmicos
+      // Atualiza textos institucionais
       document.getElementById('page-title').innerText = `${empresa} | Odontologia de Alta Precisão em ${cidade}`;
       document.getElementById('brand-name-nav').innerText = empresa;
       document.getElementById('brand-name-footer').innerText = empresa;
-      document.getElementById('top-clinic-name').innerText = empresa;
-      document.getElementById('top-city-name').innerText = cidade;
-      document.getElementById('hero-city-text').innerText = cidade;
-      document.getElementById('clinic-location-footer').innerText = `Clínica Odontológica Especializada • ${cidade} - SP`;
-
+      document.getElementById('clinic-location-footer').innerText = `Instituto de Odontologia Avançada • ${cidade} - SP`;
       document.querySelectorAll('.city-name-span').forEach(el => el.innerText = cidade);
 
       // Links WhatsApp Contextualizados
-      const defaultMsg = encodeURIComponent(`Olá! Estava no site da ${empresa} em ${cidade} e gostaria de agendar uma avaliação odontológica.`);
+      const defaultMsg = encodeURIComponent(`Olá! Estava no site da ${empresa} em ${cidade} e gostaria de agendar uma consulta de avaliação odontológica.`);
       const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
 
-      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-banner-wa, #floating-wa-desktop, #btn-mobile-wa').forEach(el => {
+      document.querySelectorAll('#btn-top-wa, #btn-nav-wa, #btn-hero-wa, #btn-doctor-wa, #btn-final-wa, #floating-wa-desktop, #btn-mobile-wa').forEach(el => {
         el.href = defaultWaUrl;
       });
 
-      // Botão topo da agência
-      const activateMsg = encodeURIComponent(`Olá! Gostei muito do modelo Odonto Prime da Pixel Studio e quero ativar para a ${empresa} em ${cidade}!`);
-      document.getElementById('btn-activate-top').href = `https://wa.me/5511913393797?text=${activateMsg}`;
-
       // Botões específicos de tratamentos
-      document.querySelectorAll('.btn-treatment-wa').forEach(btn => {
-        const trat = btn.getAttribute('data-tratamento') || 'Tratamento';
-        const tMsg = encodeURIComponent(`Olá! Gostaria de mais informações e agendamento para "${trat}" na ${empresa} em ${cidade}.`);
-        btn.href = `https://wa.me/${whatsapp}?text=${tMsg}`;
+      document.querySelectorAll('.btn-wa-trigger').forEach(btn => {
+        const proc = btn.getAttribute('data-procedimento') || 'Tratamento';
+        const pMsg = encodeURIComponent(`Olá! Gostaria de mais informações e agendamento para "${proc}" na ${empresa} em ${cidade}.`);
+        btn.href = `https://wa.me/${whatsapp}?text=${pMsg}`;
         btn.target = '_blank';
       });
 
       // FAQ Accordion
-      document.querySelectorAll('.faq-question').forEach(q => {
-        q.addEventListener('click', () => {
-          const item = q.parentElement;
-          item.classList.toggle('active');
+      document.querySelectorAll('.faq-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const row = btn.parentElement;
+          row.classList.toggle('active');
         });
       });
     });

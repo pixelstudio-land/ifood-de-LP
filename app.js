@@ -27,7 +27,7 @@ const MODELS_CATALOG = [
     "title": "Implantodontia Digital & Cirurgia Guiada",
     "desc": "Página cirúrgica focada em segurança, anestesia computadorizada sem dor, carga imediata (dentes no mesmo dia) e tomografia 3D.",
     "tag": "Alto Ticket",
-    "previewImg": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=700&q=80",
+    "previewImg": "assets/mockups/odonto-implantes.jpg",
     "liveUrl": "modelos/odonto-prime/index.html?foco=implantes",
     "highlights": [
       "Anestesia Sem Dor",
@@ -42,7 +42,7 @@ const MODELS_CATALOG = [
     "title": "Ortodontia Digital & Alinhadores Invisíveis",
     "desc": "Apresentação moderna focada em correção ortodôntica com discrição total, escaneamento intraoral 3D e comparação antes e depois.",
     "tag": "Tendência 2026",
-    "previewImg": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=700&q=80",
+    "previewImg": "assets/mockups/odonto-alinhadores.jpg",
     "liveUrl": "modelos/odonto-prime/index.html?foco=alinhadores",
     "highlights": [
       "Simulador 3D do Sorriso",
@@ -57,7 +57,7 @@ const MODELS_CATALOG = [
     "title": "Odontopediatria Acolhedora & Espaço Kids",
     "desc": "Visual acolhedor e reconfortante para tranquilizar mães e pais. Consultório lúdico, check-up preventivo infantil e atendimento sem medo.",
     "tag": "Público Família",
-    "previewImg": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=700&q=80",
+    "previewImg": "assets/mockups/odonto-pediatria.jpg",
     "liveUrl": "modelos/odonto-prime/index.html?foco=pediatria",
     "highlights": [
       "Ambiente Lúdico Sem Traumas",
@@ -72,7 +72,7 @@ const MODELS_CATALOG = [
     "title": "Clínica Odontológica Multidisciplinar",
     "desc": "Ideal para clínicas completas com múltiplos consultórios: tratamento de canal moderno, restaurações imperceptíveis, profilaxia e próteses.",
     "tag": "Clínica Completa",
-    "previewImg": "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=700&q=80",
+    "previewImg": "assets/mockups/odonto-clinica-geral.jpg",
     "liveUrl": "modelos/odonto-prime/index.html?foco=geral",
     "highlights": [
       "Equipe Multidisciplinar",
@@ -87,7 +87,7 @@ const MODELS_CATALOG = [
     "title": "Harmonização Orofacial (HOF)",
     "desc": "Página com paleta editorial de alto padrão para dentistas que realizam toxina botulínica preventiva, bioestimuladores e preenchimento labial.",
     "tag": "Alto Padrão",
-    "previewImg": "https://images.unsplash.com/photo-1512290903671-2432eed4a84b?auto=format&fit=crop&w=700&q=80",
+    "previewImg": "assets/mockups/odonto-hof.jpg",
     "liveUrl": "modelos/odonto-prime/index.html?foco=hof",
     "highlights": [
       "Harmonia Orofacial Natural",
@@ -1789,8 +1789,8 @@ function applyContextualPersonalization(params) {
     // Módulos SaaS Personalizados para o Nicho
     applyNicheSaas(nicheConfig, params);
 
-    // MODO ISOLAMENTO: Oculta barra de busca e outros filtros para parecer uma agência 100% nichada
-    document.querySelector('.categories-bar').style.display = 'none';
+    // MODO ISOLAMENTO: Mantém as abas de sub-especialidades do nicho visíveis e elegantes
+    document.querySelector('.categories-bar').style.display = 'block';
     document.querySelector('.search-box-wrapper').style.display = 'none';
 
     // Botão de Contato no Header
@@ -1851,17 +1851,20 @@ function applyContextualPersonalization(params) {
 function applyNichePricing(nicheConfig, porte, params) {
   const p = nicheConfig.pricing;
   let tierName = p.tierName;
-  let setupVal = p.setupVal;
-  let monthlyVal = p.monthlyVal;
+  let setupVal = p.setupVal || '690';
+  let monthlyVal = p.monthlyVal || '49';
 
   if (porte === 'ALTO') {
-    tierName = `Plano ${nicheConfig.name} Premium`;
-    setupVal = '150';
-    monthlyVal = '35';
+    tierName = `Plano ${nicheConfig.name} Alta Performance & Tráfego`;
+    setupVal = '1.290';
+    monthlyVal = '79';
   } else if (porte === 'MEDIO') {
-    tierName = `Plano ${nicheConfig.name} em Crescimento`;
-    setupVal = '120';
-    monthlyVal = '25';
+    tierName = `Plano ${nicheConfig.name} Crescimento Pro`;
+    setupVal = '890';
+    monthlyVal = '59';
+  } else {
+    setupVal = '690';
+    monthlyVal = '49';
   }
 
   const pricingTitle = document.getElementById('pricing-title');
@@ -1876,16 +1879,16 @@ function applyNichePricing(nicheConfig, porte, params) {
   if (tierEl) tierEl.innerText = tierName;
   if (setupEl) setupEl.innerText = setupVal;
   if (monthlyEl) {
-    monthlyEl.innerText = `+ apenas R$ ${monthlyVal}/mês de hospedagem rápida e manutenção técnica`;
+    monthlyEl.innerText = `+ R$ ${monthlyVal}/mês (hospedagem ultra rápida Cloudflare, SSL blindado e suporte dedicado)`;
   }
 
   const targetName = params.empresa || (nicheConfig ? nicheConfig.name : 'minha empresa');
-  const msg = `Olá! Quero ativar minha página de ${nicheConfig.name} no ${tierName} por R$ ${setupVal} de setup + R$ ${monthlyVal}/mês para ${targetName} em ${params.cidade || 'minha cidade'}.`;
+  const msg = `Olá! Gostei muito das estruturas para ${nicheConfig.name} da Pixel Studio e quero ativar o ${tierName} para a ${targetName} em ${params.cidade || 'minha cidade'}.`;
   if (ctaEl) {
     ctaEl.href = buildWhatsAppUrl(msg);
     ctaEl.innerHTML = `
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/></svg>
-      ${p.ctaText}
+      ${p.ctaText || 'Ativar Este Projeto no WhatsApp'}
     `;
   }
 }
@@ -1901,7 +1904,7 @@ function applyNicheSaas(nicheConfig, params) {
     const saasTitle = saasSection.querySelector('.section-title');
     const saasDesc = saasSection.querySelector('.section-desc');
     if (saasTitle) saasTitle.innerText = `Sistemas e Ferramentas Sob Medida para ${nicheConfig.name}`;
-    if (saasDesc) saasDesc.innerText = `Não te empurramos softwares genéricos. Desenvolvemos soluções focadas na rotina do seu negócio para economizar tempo da sua equipe e aumentar o fechamento de vendas.`;
+    if (saasDesc) saasDesc.innerText = `Soluções inteligentes focadas na rotina do seu negócio para economizar tempo da sua equipe e aumentar o fechamento de vendas.`;
   }
 
   if (saasGrid) {
@@ -1916,7 +1919,7 @@ function applyNicheSaas(nicheConfig, params) {
           <ul class="saas-bullets">
             ${s.bullets.map(b => `<li>${b}</li>`).join('')}
           </ul>
-          <a href="${buildWhatsAppUrl(msg)}" target="_blank" class="btn btn-secondary btn-block">Solicitar Projeto Personalizado</a>
+          <a href="${buildWhatsAppUrl(msg)}" target="_blank" class="btn btn-secondary btn-block">Solicitar Demonstração</a>
         </div>
       `;
     }).join('');
@@ -1925,18 +1928,18 @@ function applyNicheSaas(nicheConfig, params) {
 
 // 7. PRECIFICAÇÃO CONTEXTUAL PADRÃO (GLOBAL)
 function applyDynamicPricing(porte, params) {
-  let tierName = 'Plano Ativação Popular (Micro-Empresas e Autônomos)';
-  let setupVal = '50';
-  let monthlyVal = '20';
+  let tierName = 'Plano Ativação Essencial (Alta Conversão)';
+  let setupVal = '490';
+  let monthlyVal = '49';
 
   if (porte === 'ALTO') {
-    tierName = 'Plano Estratégico Corporativo';
-    setupVal = '150';
-    monthlyVal = '35';
+    tierName = 'Plano Corporativo de Alta Performance';
+    setupVal = '1.290';
+    monthlyVal = '79';
   } else if (porte === 'MEDIO') {
-    tierName = 'Plano Crescimento Comercial';
-    setupVal = '80';
-    monthlyVal = '25';
+    tierName = 'Plano Crescimento Comercial Pro';
+    setupVal = '790';
+    monthlyVal = '59';
   }
 
   const tierEl = document.getElementById('pricing-tier-name');
@@ -1947,7 +1950,7 @@ function applyDynamicPricing(porte, params) {
   if (tierEl) tierEl.innerText = tierName;
   if (setupEl) setupEl.innerText = setupVal;
   if (monthlyEl) {
-    monthlyEl.innerText = `+ apenas R$ ${monthlyVal}/mês de hospedagem rápida e manutenção técnica`;
+    monthlyEl.innerText = `+ R$ ${monthlyVal}/mês (hospedagem Cloudflare com SSL e suporte contínuo)`;
   }
 
   const msg = `Olá! Quero ativar a minha página no ${tierName} por R$ ${setupVal} de setup + R$ ${monthlyVal}/mês para ${params.empresa || 'minha empresa'} em ${params.cidade || 'minha cidade'}.`;
