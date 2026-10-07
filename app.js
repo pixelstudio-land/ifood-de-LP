@@ -39,11 +39,11 @@ const MODELS_CATALOG = [
   {
     "id": "odonto-alinhadores",
     "category": "odontologia",
-    "title": "Ortodontia Digital & Alinhadores Invisíveis",
-    "desc": "Apresentação moderna focada em correção ortodôntica com discrição total, escaneamento intraoral 3D e comparação antes e depois.",
+    "title": "InvisaPrime — Ortodontia Digital & Alinhadores",
+    "desc": "Estrutura clean minimalista suíça: alinhadores invisíveis transparentes, escaneamento 3D sem moldes e comparativo com aparelho fixo.",
     "tag": "Tendência 2026",
     "previewImg": "assets/mockups/odonto-alinhadores.jpg",
-    "liveUrl": "modelos/odonto-prime/index.html?foco=alinhadores",
+    "liveUrl": "modelos/odonto-alinhadores/index.html",
     "highlights": [
       "Simulador 3D do Sorriso",
       "Sem Peças Metálicas",
