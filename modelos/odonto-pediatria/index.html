@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">LumiKids | Odontopediatria Acolhedora & Espaço Família</title>
+  <meta name="description" content="Odontopediatria especializada de alto padrão. Atendimento humanizado sem medo e sem traumas para bebês, crianças e adolescentes em consultório lúdico.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal-primary: #0d9488;
+      --teal-dark: #0f766e;
+      --teal-light: #ccfbf1;
+      --teal-soft: #f0fdfa;
+      --coral-warm: #f97316;
+      --coral-light: #ffedd5;
+      --amber-warm: #f59e0b;
+      --amber-light: #fef3c7;
+      --bg-main: #f8fafc;
+      --bg-white: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #94a3b8;
+      --border-subtle: #e2e8f0;
+      --border-teal: #99f6e4;
+      --whatsapp: #10b981;
+      --whatsapp-hover: #059669;
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 26px;
+      --shadow-sm: 0 2px 10px rgba(13, 148, 136, 0.04);
+      --shadow-md: 0 12px 30px -10px rgba(13, 148, 136, 0.1);
+      --shadow-lg: 0 24px 50px -12px rgba(15, 23, 42, 0.08);
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* TOP ANNOUNCEMENT */
+    .top-bar-kids {
+      background: var(--teal-soft);
+      border-bottom: 1px solid var(--border-teal);
+      color: var(--teal-dark);
+      font-size: 0.78rem;
+      padding: 9px 0;
+      text-align: center;
+      font-weight: 600;
+    }
+    .top-bar-kids span.heart {
+      color: #ef4444;
+      margin: 0 4px;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 16px 0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .brand-icon-kids {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--teal-primary), #14b8a6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.25);
+    }
+    .brand-text-kids h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      color: var(--teal-dark);
+    }
+    .brand-text-kids span {
+      font-size: 0.65rem;
+      color: var(--coral-warm);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      display: block;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 28px;
+    }
+    @media (min-width: 992px) {
+      .nav-links { display: flex; }
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    .nav-link:hover { color: var(--teal-primary); }
+
+    /* BOTÕES */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      white-space: nowrap;
+    }
+    .btn-teal {
+      background: linear-gradient(135deg, var(--teal-primary) 0%, #14b8a6 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 18px rgba(13, 148, 136, 0.28);
+    }
+    .btn-teal:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(13, 148, 136, 0.4);
+      filter: brightness(1.05);
+    }
+    .btn-outline-teal {
+      background: #ffffff;
+      color: var(--teal-dark);
+      border: 1px solid var(--border-teal);
+    }
+    .btn-outline-teal:hover {
+      background: var(--teal-soft);
+      border-color: var(--teal-primary);
+    }
+    .btn-wa {
+      background: var(--whatsapp);
+      color: #ffffff;
+      box-shadow: 0 4px 18px rgba(16, 185, 129, 0.28);
+    }
+    .btn-wa:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-2px);
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      padding: 75px 0 95px;
+      background: 
+        radial-gradient(circle at 90% 10%, rgba(20, 184, 166, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 10% 80%, rgba(249, 115, 22, 0.05) 0%, transparent 40%),
+        #ffffff;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    @media (min-width: 992px) {
+      .hero-grid { grid-template-columns: 1.15fr 0.85fr; }
+    }
+
+    .hero-pill-kids {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: var(--amber-light);
+      border-radius: 999px;
+      color: #92400e;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .hero-pill-kids span.star {
+      color: var(--amber-warm);
+    }
+
+    .hero-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.3rem, 4.1vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text-main);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero-title span.highlight {
+      color: var(--teal-primary);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 34px;
+      max-width: 570px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 42px;
+    }
+
+    .hero-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .stat-box h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--teal-dark);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-box p {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* HERO IMAGE */
+    .hero-visual-wrap {
+      position: relative;
+    }
+    .hero-img-box {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      height: 480px;
+      border: 6px solid #ffffff;
+      box-shadow: var(--shadow-lg);
+      background: var(--teal-soft);
+    }
+    .hero-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-floating-card {
+      position: absolute;
+      bottom: -15px;
+      left: 20px;
+      right: 20px;
+      background: #ffffff;
+      border: 1px solid var(--border-teal);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: var(--shadow-md);
+    }
+    .card-icon-heart {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--coral-light);
+      color: var(--coral-warm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .card-text-kids p {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+    .card-text-kids span {
+      font-size: 0.72rem;
+      color: var(--teal-primary);
+      font-weight: 600;
+    }
+
+    /* SEÇÕES COMUNS */
+    .section-wrap {
+      padding: 95px 0;
+    }
+    .section-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 55px;
+    }
+    .section-tag {
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal-dark);
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.2rem, 3.4vw, 3rem);
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+    .section-desc {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* O QUE TORNA O LUMIKIDS DIFERENTE */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 26px;
+    }
+    .feature-card {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 34px 26px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+    }
+    .feature-card:hover {
+      border-color: var(--border-teal);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .feature-icon-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: var(--teal-soft);
+      color: var(--teal-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .feature-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .feature-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* FASES DO CUIDADO INFANTIL */
+    .stages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    .stage-card {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .stage-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+    .stage-img-wrap {
+      height: 220px;
+      position: relative;
+      background: var(--teal-soft);
+    }
+    .stage-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .stage-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--teal-dark);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      padding: 4px 12px;
+      border-radius: 999px;
+      box-shadow: var(--shadow-sm);
+    }
+    .stage-content {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .stage-content h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+    .stage-content p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .stage-bullets {
+      list-style: none;
+      margin-bottom: 26px;
+    }
+    .stage-bullets li {
+      font-size: 0.84rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .stage-bullets li span.check {
+      color: var(--teal-primary);
+      font-weight: 800;
+    }
+
+    /* O ESPECIALISTA */
+    .doctor-card-kids {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      box-shadow: var(--shadow-md);
+    }
+    @media (min-width: 992px) {
+      .doctor-card-kids { grid-template-columns: 0.8fr 1.2fr; }
+    }
+    .doc-photo-wrap {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 420px;
+      background: var(--teal-soft);
+    }
+    .doc-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .doc-content-kids span.tag {
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal-primary);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .doc-content-kids h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+    .doc-content-kids p.quote {
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--teal-dark);
+      border-left: 3px solid var(--teal-primary);
+      padding-left: 18px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .doc-content-kids p.bio {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .doc-points-kids {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+    .doc-points-kids li {
+      font-size: 0.86rem;
+      color: var(--text-main);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .doc-points-kids li span.dot-teal {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal-primary);
+    }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .faq-box {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-box.active { border-color: var(--teal-primary); }
+    .faq-btn {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 22px 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+    .faq-btn span.cross {
+      color: var(--teal-primary);
+      font-size: 1.4rem;
+      transition: transform 0.3s ease;
+    }
+    .faq-box.active .faq-btn span.cross {
+      transform: rotate(45deg);
+    }
+    .faq-body {
+      display: none;
+      padding: 0 26px 24px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .faq-box.active .faq-body { display: block; }
+
+    /* CTA FINAL */
+    .cta-final-box {
+      background: linear-gradient(135deg, var(--teal-dark) 0%, #115e59 100%);
+      border-radius: var(--radius-lg);
+      padding: 60px 30px;
+      color: #ffffff;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-lg);
+    }
+    .cta-final-box h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.3rem, 3.8vw, 3.2rem);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .cta-final-box p {
+      font-size: 1rem;
+      color: var(--teal-light);
+      max-width: 580px;
+      margin: 0 auto 34px;
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 0 30px;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+    }
+    @media (min-width: 768px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    /* WHATSAPP FLUTUANTE */
+    .wa-floating-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 58px;
+      height: 58px;
+      background: var(--whatsapp);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 30px rgba(16, 185, 129, 0.45);
+      z-index: 999;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .wa-floating-btn:hover {
+      background: var(--whatsapp-hover);
+      transform: scale(1.08) translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar-kids">
+    Odontopediatria Acolhedora <span class="heart">&hearts;</span> Consultório Lúdico com Realidade Virtual • Atendimento desde o 1º Dentinho
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="brand-logo">
+        <div class="brand-icon-kids">
+          &#128522;
+        </div>
+        <div class="brand-text-kids">
+          <h3 id="brand-name-header">LumiKids</h3>
+          <span>Odontopediatria & Espaço Família</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#diferenciais" class="nav-link">Zero Medo</a>
+        <a href="#etapas" class="nav-link">Bebês & Crianças</a>
+        <a href="#especialista" class="nav-link">A Especialista</a>
+        <a href="#duvidas" class="nav-link">Dúvidas dos Pais</a>
+      </nav>
+
+      <a href="#" id="btn-nav-wa" class="btn btn-teal" target="_blank">
+        <span>Agendar Consulta</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-pill-kids">
+          <span class="star">&#9733;</span>
+          <span>Ambiente Lúdico • Zero Medo de Dentista</span>
+        </div>
+
+        <h1 class="hero-title" id="hero-title-text">
+          O Cuidado Odontológico que o Seu Filho Merece: <span class="highlight">Sem Medo, Sem Traumas</span> e com Muito Carinho
+        </h1>
+
+        <p class="hero-desc">
+          Transformamos a visita ao dentista em uma experiência mágica e positiva. Consultório lúdico com óculos de realidade virtual, equipe especializada em psicologia infantil e atendimento humanizado desde o primeiro dentinho.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#" id="btn-hero-wa" class="btn btn-teal" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/></svg>
+            <span>Agendar Consulta no WhatsApp</span>
+          </a>
+          <a href="#diferenciais" class="btn btn-outline-teal">
+            <span>Conhecer o Espaço &darr;</span>
+          </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="stat-box">
+            <h4>+2.800</h4>
+            <p>Pequenos Atendidos</p>
+          </div>
+          <div class="stat-box">
+            <h4>100%</h4>
+            <p>Humanizado & Sem Dor</p>
+          </div>
+          <div class="stat-box">
+            <h4>5.0 ★</h4>
+            <p>Google Avaliações</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual-wrap">
+        <div class="hero-img-box">
+          <img src="assets/clinic_interior.jpg" alt="Espaço Kids Acolhedor LumiKids">
+        </div>
+        <div class="hero-floating-card">
+          <div class="card-icon-heart">&hearts;</div>
+          <div class="card-text-kids">
+            <p>O Passaporte do Sorriso Feliz</p>
+            <span>Certificado de coragem e experiência positiva</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE O LUMIKIDS É DIFERENTE -->
+  <section class="section-wrap" style="background: #ffffff;" id="diferenciais">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Acolhimento Real</span>
+        <h2 class="section-title">Por Que as Crianças Amam Nos Visitar?</h2>
+        <p class="section-desc">Nosso foco é construir uma relação de confiança que a criança levará para a vida toda.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">&#127918;</div>
+          <h3>Método Lúdico "Falar, Mostrar e Fazer"</h3>
+          <p>Apresentamos os instrumentos em formato de historinha e brincadeiras antes do procedimento. A criança entende o que acontece e fica calma.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">&#129321;</div>
+          <h3>Óculos de Cinema & Realidade Virtual</h3>
+          <p>Durante o atendimento, a criança assiste ao desenho favorito com fones de ouvido. Ela nem percebe o tempo passar e não vê os instrumentos.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">&#128168;</div>
+          <h3>Sedação Suave (Óxido Nitroso)</h3>
+          <p>Para crianças com trauma prévio ou muita ansiedade, dispomos da sedação com "gás do risinho", segura e indicada pelas academias pediátricas.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">&#127873;</div>
+          <h3>Certificado de Super Coragem</h3>
+          <p>Ao fim da consulta, a criança comemora a conquista com seu certificado personalizado e um mimo educativo para levar para casa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ETAPAS DO CUIDADO -->
+  <section class="section-wrap" id="etapas">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Fases de Atendimento</span>
+        <h2 class="section-title">Cuidado em Cada Fase do Crescimento</h2>
+        <p class="section-desc">Desde o nascimento e primeiros dentinhos até a adolescência.</p>
+      </div>
+
+      <div class="stages-grid">
+        <!-- Fase 1 -->
+        <div class="stage-card">
+          <div class="stage-img-wrap">
+            <img src="assets/smile_macro.jpg" alt="Odontologia para Bebês">
+            <span class="stage-badge">0 a 3 Anos</span>
+          </div>
+          <div class="stage-content">
+            <div>
+              <h3>Odontologia para Bebês</h3>
+              <p>Avaliação da amamentação, teste da linguinha (freio lingual), prevenção da cárie de mamadeira e nascimento dos primeiros dentes.</p>
+              <ul class="stage-bullets">
+                <li><span class="check">&#10003;</span> Exame suave e acolhedor no colo dos pais</li>
+                <li><span class="check">&#10003;</span> Orientações de escovação e pasta ideal</li>
+                <li><span class="check">&#10003;</span> Dicas para alívio do nascimento dos dentes</li>
+              </ul>
+            </div>
+            <a href="#" class="btn btn-teal btn-stage-wa" data-stage="Bebês (0 a 3 anos)" target="_blank">
+              Agendar Avaliação de Bebê &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Fase 2 -->
+        <div class="stage-card">
+          <div class="stage-img-wrap">
+            <img src="assets/hero_bg.jpg" alt="Crianças 4 a 10 Anos">
+            <span class="stage-badge">4 a 10 Anos</span>
+          </div>
+          <div class="stage-content">
+            <div>
+              <h3>Infância & Troca de Dentes</h3>
+              <p>Check-up preventivo infantil, aplicação de flúor protetor, selantes contra cárie e tratamento restaurador 100% indolor.</p>
+              <ul class="stage-bullets">
+                <li><span class="check">&#10003;</span> Prevenção ativa e limpeza lúdica</li>
+                <li><span class="check">&#10003;</span> Tratamento de cáries sem medo nem dor</li>
+                <li><span class="check">&#10003;</span> Acompanhamento da troca dos dentes</li>
+              </ul>
+            </div>
+            <a href="#" class="btn btn-teal btn-stage-wa" data-stage="Crianças (4 a 10 anos)" target="_blank">
+              Agendar Check-up Infantil &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Fase 3 -->
+        <div class="stage-card">
+          <div class="stage-img-wrap">
+            <img src="assets/clinic_interior.jpg" alt="Ortodontia Preventiva">
+            <span class="stage-badge">Ortodontia Infantil</span>
+          </div>
+          <div class="stage-content">
+            <div>
+              <h3>Ortodontia Preventiva & Alinhadores</h3>
+              <p>Correção precoce de mordida cruzada e dentes tortos enquanto os ossos da face ainda estão em desenvolvimento, evitando cirurgias no futuro.</p>
+              <ul class="stage-bullets">
+                <li><span class="check">&#10003;</span> Aparelhos ortopédicos e alinhadores kids</li>
+                <li><span class="check">&#10003;</span> Respiração e deglutição corretas</li>
+                <li><span class="check">&#10003;</span> Previsibilidade para o sorriso adulto</li>
+              </ul>
+            </div>
+            <a href="#" class="btn btn-teal btn-stage-wa" data-stage="Ortodontia Preventiva" target="_blank">
+              Agendar Avaliação Ortodôntica &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A ESPECIALISTA -->
+  <section class="section-wrap" style="background: #ffffff;" id="especialista">
+    <div class="container">
+      <div class="doctor-card-kids">
+        <div class="doc-photo-wrap">
+          <img src="assets/doctor_profile.jpg" alt="Dra. Beatriz Albuquerque">
+        </div>
+        <div class="doc-content-kids">
+          <span class="tag">Responsável Técnica & Odontopediatra</span>
+          <h3 id="doctor-name-text">Dra. Beatriz Albuquerque</h3>
+          <p class="quote">
+            "Não cuidamos apenas de dentinhos de leite. Construímos memórias felizes para que a criança cresça com prazer e orgulho de cuidar do próprio sorriso."
+          </p>
+          <p class="bio">
+            Mestre e Especialista em Odontopediatria pela USP com mais de 14 anos de prática clínica dedicada exclusivamente a bebês e crianças. Habilitada em Sedação Consciente com Óxido Nitroso e Odontologia Comportamental Infantil.
+          </p>
+          <ul class="doc-points-kids">
+            <li><span class="dot-teal"></span> Especialista e Mestre em Odontopediatria (USP)</li>
+            <li><span class="dot-teal"></span> Habilitação em Sedação Consciente com Óxido Nitroso (CFO)</li>
+            <li><span class="dot-teal"></span> Membro da Associação Brasileira de Odontopediatria (ABOPED)</li>
+          </ul>
+          <a href="#" id="btn-doctor-wa" class="btn btn-teal" target="_blank">
+            Conversar com a Dra. Beatriz no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DÚVIDAS DOS PAIS -->
+  <section class="section-wrap" id="duvidas">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Dúvidas Frequentes</span>
+        <h2 class="section-title">Perguntas Comuns de Mães e Pais</h2>
+        <p class="section-desc">Tire suas principais dúvidas sobre o atendimento pediátrico.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-box active">
+          <button class="faq-btn">
+            <span>Com que idade devo levar meu bebê pela primeira vez?</span>
+            <span class="cross">+</span>
+          </button>
+          <div class="faq-body">
+            A recomendação da Associação de Odontopediatria é levar a partir do nascimento do primeiro dentinho (por volta dos 6 meses de vida). Essa consulta serve para orientar os pais sobre higiene, alimentação e garantir que a criança se familiarize naturalmente com o ambiente.
+          </div>
+        </div>
+
+        <div class="faq-box">
+          <button class="faq-btn">
+            <span>Meu filho tem muito medo de dentista. Como vocês lidam?</span>
+            <span class="cross">+</span>
+          </button>
+          <div class="faq-body">
+            Nossa abordagem é 100% livre de pressa. Não obrigamos a criança a sentar na cadeira de imediato. A primeira sessão é de adaptação, brincadeiras e conquista de confiança. Usamos óculos de realidade virtual com desenhos e, se necessário, a sedação consciente suave.
+          </div>
+        </div>
+
+        <div class="faq-box">
+          <button class="faq-btn">
+            <span>O que é a sedação com óxido nitroso (gás do risinho)?</span>
+            <span class="cross">+</span>
+          </button>
+          <div class="faq-body">
+            É uma técnica internacionalmente reconhecida onde a criança inala uma mistura suave de oxigênio com óxido nitroso através de uma máscara com aroma agradável. A criança permanece acordada, mas totalmente relaxada e sorridente. O efeito passa imediatamente ao término da consulta.
+          </div>
+        </div>
+
+        <div class="faq-box">
+          <button class="faq-btn">
+            <span>Dente de leite precisa ser tratado se vai cair?</span>
+            <span class="cross">+</span>
+          </button>
+          <div class="faq-body">
+            Sim! Os dentes de leite são os guardiões do espaço para os dentes permanentes. Cáries não tratadas podem causar dor aguda, infecção óssea que atinge o dente definitivo e problemas de mastigação e fala.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section-wrap" style="padding-top: 0;">
+    <div class="container">
+      <div class="cta-final-box">
+        <span class="hero-pill-kids" style="background: rgba(255, 255, 255, 0.15); color: #ffffff; margin-bottom: 18px;">
+          <span class="star" style="color: #fef08a;">&#9733;</span>
+          <span>Atendimento com Hora Marcada</span>
+        </span>
+        <h2>Proporcione Uma Experiência Positiva ao Seu Filho</h2>
+        <p>Envie uma mensagem no nosso WhatsApp para tirar dúvidas e agendar a primeira consulta acolhedora com nossa equipe.</p>
+        <a href="#" id="btn-final-wa" class="btn btn-wa" style="padding: 16px 36px; font-size: 0.96rem;" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/></svg>
+          <span>Agendar Consulta no WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p>&copy; 2026 <strong id="brand-name-footer">LumiKids</strong>. Todos os direitos reservados.</p>
+        <p style="margin-top: 4px;">Em conformidade com as diretrizes do Conselho Federal de Odontologia (CFO/CRO).</p>
+      </div>
+      <div>
+        <p><span id="city-footer-text">Campinas</span> • SP</p>
+        <p style="margin-top: 4px;">Dra. Beatriz Albuquerque — CRO-SP 119.452</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a href="#" id="wa-floating-btn" class="wa-floating-btn" target="_blank" title="Falar no WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/></svg>
+  </a>
+
+  <!-- SCRIPT CONTEXTUAL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      let empresa = params.get('empresa') || 'LumiKids';
+      if (empresa.includes('—')) empresa = empresa.split('—')[0].trim();
+      const cidade = params.get('cidade') || 'Campinas';
+      const whatsapp = params.get('whatsapp') || '5511913393797';
+
+      document.getElementById('brand-name-header').innerText = empresa;
+      document.getElementById('brand-name-footer').innerText = empresa;
+      document.getElementById('city-footer-text').innerText = cidade;
+      document.title = `${empresa} | Odontopediatria Acolhedora & Espaço Família`;
+
+      const defaultMsg = encodeURIComponent(`Olá! Estava no site do ${empresa} em ${cidade} e gostaria de agendar uma consulta para meu filho(a).`);
+      const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
+
+      document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-doctor-wa, #btn-final-wa, #wa-floating-btn').forEach(el => {
+        el.href = defaultWaUrl;
+      });
+
+      document.querySelectorAll('.btn-stage-wa').forEach(el => {
+        const stage = el.getAttribute('data-stage') || 'Odontopediatria';
+        const msg = encodeURIComponent(`Olá! Gostaria de agendar uma avaliação de "${stage}" no ${empresa} em ${cidade}.`);
+        el.href = `https://wa.me/${whatsapp}?text=${msg}`;
+      });
+
+      // FAQ Accordion
+      document.querySelectorAll('.faq-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          btn.parentElement.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

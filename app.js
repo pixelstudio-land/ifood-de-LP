@@ -54,11 +54,11 @@ const MODELS_CATALOG = [
   {
     "id": "odonto-pediatria",
     "category": "odontologia",
-    "title": "Odontopediatria Acolhedora & Espaço Kids",
-    "desc": "Visual acolhedor e reconfortante para tranquilizar mães e pais. Consultório lúdico, check-up preventivo infantil e atendimento sem medo.",
+    "title": "LumiKids — Odontopediatria & Espaço Família",
+    "desc": "Estrutura acolhedora e lúdica sem traumas: consultório com realidade virtual, sedação com óxido nitroso e atendimento carinhoso desde o primeiro dentinho.",
     "tag": "Público Família",
     "previewImg": "assets/mockups/odonto-pediatria.jpg",
-    "liveUrl": "modelos/odonto-prime/index.html?foco=pediatria",
+    "liveUrl": "modelos/odonto-pediatria/index.html",
     "highlights": [
       "Ambiente Lúdico Sem Traumas",
       "Orientações Preventivas",
