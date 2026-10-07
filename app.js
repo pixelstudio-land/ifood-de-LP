@@ -9,11 +9,11 @@ const MODELS_CATALOG = [
   {
     "id": "odonto-estetica",
     "category": "odontologia",
-    "title": "Odonto Prime — Estética & Lentes",
-    "desc": "Estrutura de luxo focada em procedimentos de alto valor: lentes de contato em cerâmica pura, facetas em resina e clareamento a laser.",
-    "tag": "Mais Procurado",
+    "title": "Atelier Lumina — Estética & Lentes de Porcelana",
+    "desc": "Estrutura de luxo inspirada no Atelier Oral: lentes de contato em cerâmica pura suíça, facetas estratificadas e preservação biológica.",
+    "tag": "Padrão Luxo",
     "previewImg": "assets/mockups/odonto-prime.jpg",
-    "liveUrl": "modelos/odonto-prime/index.html?foco=estetica",
+    "liveUrl": "modelos/odonto-estetica/index.html",
     "highlights": [
       "Agendamento no WhatsApp",
       "Antes e Depois Interativo",
