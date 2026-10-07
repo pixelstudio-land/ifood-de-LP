@@ -24,11 +24,11 @@ const MODELS_CATALOG = [
   {
     "id": "odonto-implantes",
     "category": "odontologia",
-    "title": "Implantodontia Digital & Cirurgia Guiada",
-    "desc": "Página cirúrgica focada em segurança, anestesia computadorizada sem dor, carga imediata (dentes no mesmo dia) e tomografia 3D.",
+    "title": "Instituto San Pietro — Implantodontia & Carga Imediata",
+    "desc": "Estrutura de autoridade médica e confiança: anestesia computadorizada sem dor, dentes fixos com carga imediata e cirurgia guiada por computador.",
     "tag": "Alto Ticket",
     "previewImg": "assets/mockups/odonto-implantes.jpg",
-    "liveUrl": "modelos/odonto-prime/index.html?foco=implantes",
+    "liveUrl": "modelos/odonto-implantes/index.html",
     "highlights": [
       "Anestesia Sem Dor",
       "Tomografia 3D Computadorizada",
