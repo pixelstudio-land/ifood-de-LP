@@ -1743,7 +1743,8 @@ function applyContextualPersonalization(params) {
   // Se o link possui nicho isolado (ex: Odontologia, Gastronomia, Advocacia, etc.)
   if (nicheConfig) {
     // Título da Aba do Navegador
-    document.getElementById('page-title').innerText = `${empresa || nicheConfig.name} | Showroom Pixel Studio`;
+    const pageTitleEl = document.getElementById('page-title');
+    if (pageTitleEl) pageTitleEl.innerText = `${empresa || nicheConfig.name} | Showroom Pixel Studio`;
 
     // Hero Badge, H1 e Subtítulo
     const badgeEl = document.getElementById('hero-badge');
@@ -1784,16 +1785,6 @@ function applyContextualPersonalization(params) {
     if (catTitleEl) catTitleEl.innerText = `Modelos Estruturados para ${nicheConfig.name}`;
     if (catDescEl) catDescEl.innerText = 'Demonstrações interativas com design de alto padrão, adaptadas para celular e WhatsApp.';
 
-    // Precificação Contextual para o Nicho
-    applyNichePricing(nicheConfig, porte, params);
-
-    // Módulos SaaS Personalizados para o Nicho
-    applyNicheSaas(nicheConfig, params);
-
-    // MODO ISOLAMENTO: Mantém as abas de sub-especialidades do nicho visíveis e elegantes
-    document.querySelector('.categories-bar').style.display = 'block';
-    document.querySelector('.search-box-wrapper').style.display = 'none';
-
     // Botão de Contato no Header
     const headerWa = document.getElementById('btn-header-wa');
     if (headerWa) {
@@ -1805,48 +1796,45 @@ function applyContextualPersonalization(params) {
 
   // Comportamento Geral (sem isolamento de nicho)
   if (nicho) {
-    document.getElementById('page-title').innerText = `Modelos de Sites para ${capitalize(nicho)} | Pixel Studio`;
+    const pageTitleEl = document.getElementById('page-title');
+    if (pageTitleEl) pageTitleEl.innerText = `Modelos de Sites para ${capitalize(nicho)} | Pixel Studio`;
   }
 
   const badgeEl = document.getElementById('hero-badge');
-  if (cidade) {
-    badgeEl.innerText = `Modelos Selecionados para Empresas em ${cidade}`;
-  } else {
-    badgeEl.innerText = `Modelos Verificados de Alta Conversão`;
+  if (badgeEl) {
+    if (cidade) {
+      badgeEl.innerText = `Modelos Selecionados para Empresas em ${cidade}`;
+    } else {
+      badgeEl.innerText = `Modelos Verificados de Alta Conversão`;
+    }
   }
 
   const titleEl = document.getElementById('hero-title');
-  if (nicho && cidade) {
-    titleEl.innerText = `Sites e Landing Pages de Alta Conversão para ${capitalize(nicho)} em ${cidade}`;
-  } else if (nicho) {
-    titleEl.innerText = `Sites e Landing Pages de Alta Conversão para ${capitalize(nicho)}`;
-  } else {
-    titleEl.innerText = `Sites e Landing Pages de Alta Conversão para Pequenas e Médias Empresas`;
+  if (titleEl) {
+    if (nicho && cidade) {
+      titleEl.innerText = `Sites e Landing Pages de Alta Conversão para ${capitalize(nicho)} em ${cidade}`;
+    } else if (nicho) {
+      titleEl.innerText = `Sites e Landing Pages de Alta Conversão para ${capitalize(nicho)}`;
+    } else {
+      titleEl.innerText = `Sites e Landing Pages de Alta Conversão para Pequenas e Médias Empresas`;
+    }
   }
 
   const subEl = document.getElementById('hero-subtitle');
-  if (empresa) {
+  if (subEl && empresa) {
     subEl.innerText = `Apresente a ${empresa} com autoridade máxima na internet. Páginas que carregam em menos de 1 segundo no celular e convertem visitantes diretamente em clientes no seu WhatsApp.`;
   }
 
-  const catTitleEl = document.getElementById('catalog-section-title');
-  const catDescEl = document.getElementById('catalog-section-desc');
-  if (nicho) {
-    catTitleEl.innerText = `Modelos Premium para ${capitalize(nicho)}`;
-    catDescEl.innerText = `Selecione uma demonstração abaixo para interagir em tempo real no simulador mobile.`;
+    const catTitleEl = document.getElementById('catalog-section-title');
+    const catDescEl = document.getElementById('catalog-section-desc');
+    if (catTitleEl) catTitleEl.innerText = `Modelos em Destaque`;
+    if (catDescEl) catDescEl.innerText = `Selecione uma demonstração abaixo para interagir em tempo real no simulador mobile.`;
 
-    // MODO ISOLAMENTO: Oculta filtros e buscas se um nicho solto foi passado
-    document.querySelector('.categories-bar').style.display = 'none';
-    document.querySelector('.search-box-wrapper').style.display = 'none';
+    const headerWa = document.getElementById('btn-header-wa');
+    if (headerWa) {
+      headerWa.href = buildWhatsAppUrl(`Olá! Gostaria de tirar dúvidas sobre os modelos de sites da Pixel Studio.`);
+    }
   }
-
-  applyDynamicPricing(porte, params);
-
-  const headerWa = document.getElementById('btn-header-wa');
-  if (headerWa) {
-    headerWa.href = buildWhatsAppUrl(`Olá! Gostaria de tirar dúvidas sobre os modelos de sites para ${params.nicho || 'meu negócio'}.`);
-  }
-}
 
 // 5. PRECIFICAÇÃO PERSONALIZADA PARA NICHO ISOLADO
 function applyNichePricing(nicheConfig, porte, params) {
@@ -2010,6 +1998,7 @@ let currentSearchTerm = '';
 
 function renderCatalog(params, activeFilter = null, searchTerm = '') {
   const grid = document.getElementById('models-grid');
+  if (!grid) return;
   const counter = document.getElementById('models-counter');
   const effectiveNicho = (params.nicho || 'odontologia').toLowerCase();
   const nicheConfig = getNicheConfig(effectiveNicho);
