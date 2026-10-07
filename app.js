@@ -84,11 +84,11 @@ const MODELS_CATALOG = [
   {
     "id": "odonto-hof",
     "category": "odontologia",
-    "title": "Harmonização Orofacial (HOF)",
-    "desc": "Página com paleta editorial de alto padrão para dentistas que realizam toxina botulínica preventiva, bioestimuladores e preenchimento labial.",
+    "title": "Atelier HOF — Harmonização Orofacial & Estética Facial",
+    "desc": "Estrutura editorial de luxo: rejuvenescimento natural, toxina botulínica preventiva, bioestimuladores de colágeno e mapeamento facial 3D.",
     "tag": "Alto Padrão",
     "previewImg": "assets/mockups/odonto-hof.jpg",
-    "liveUrl": "modelos/odonto-prime/index.html?foco=hof",
+    "liveUrl": "modelos/odonto-hof/index.html",
     "highlights": [
       "Harmonia Orofacial Natural",
       "Protocolos Exclusivos",
