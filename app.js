@@ -12,7 +12,7 @@ const MODELS_CATALOG = [
     "title": "Odonto Prime — Estética & Lentes",
     "desc": "Estrutura de luxo focada em procedimentos de alto valor: lentes de contato em cerâmica pura, facetas em resina e clareamento a laser.",
     "tag": "Mais Procurado",
-    "previewImg": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=700&q=80",
+    "previewImg": "assets/mockups/odonto-prime.jpg",
     "liveUrl": "modelos/odonto-prime/index.html?foco=estetica",
     "highlights": [
       "Agendamento no WhatsApp",
@@ -250,7 +250,7 @@ const MODELS_CATALOG = [
     "desc": "Fotos de picanha na brasa, cortes nobres, marmitex executivas de churrasco e acompanhamentos caprichados.",
     "tag": "Sucesso Local",
     "previewImg": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=80",
-    "liveUrl": null,
+    "liveUrl": "modelos/burger-artesanal/index.html?estilo=churrasco",
     "highlights": [
       "Cortes de Carnes Selecionados",
       "Espetos Assados na Hora",
@@ -318,7 +318,7 @@ const MODELS_CATALOG = [
     "desc": "Vitrine visual para bolos decorados de aniversário, fatias gourmet, brigadeiros artesanais e encomendas de eventos.",
     "tag": "Visual Encantador",
     "previewImg": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80",
-    "liveUrl": null,
+    "liveUrl": "modelos/marmitaria-fit/index.html?estilo=doces",
     "highlights": [
       "Encomenda de Bolos Personalizados",
       "Docinhos Finos para Festas",
@@ -352,7 +352,7 @@ const MODELS_CATALOG = [
     "desc": "Cardápio de cafés especiais, métodos de extração, croissants folhados e ambiente agradável para encontros e trabalho.",
     "tag": "Experiência",
     "previewImg": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=80",
-    "liveUrl": null,
+    "liveUrl": "modelos/burger-artesanal/index.html?estilo=cafe",
     "highlights": [
       "Grãos 100% Arábica Premiados",
       "Croissants e Toast Artesanais",
@@ -386,7 +386,7 @@ const MODELS_CATALOG = [
     "desc": "Montador interativo de copo de açaí (tamanho, acompanhamentos e caldas) com pedido calculado direto no WhatsApp.",
     "tag": "Jovem & Refrescante",
     "previewImg": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=700&q=80",
-    "liveUrl": null,
+    "liveUrl": "modelos/marmitaria-fit/index.html?estilo=acai",
     "highlights": [
       "Açaí Puro Sem Xarope",
       "Mais de 30 Acompanhamentos",
@@ -556,7 +556,7 @@ const MODELS_CATALOG = [
     "desc": "Unhas em gel, fibra de vidro, blindagem de diamante, nail art e spa dos pés com esfoliação e hidratação profunda.",
     "tag": "Sucesso Local",
     "previewImg": "https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=700&q=80",
-    "liveUrl": null,
+    "liveUrl": "modelos/lash-sobrancelhas/index.html?servico=unhas",
     "highlights": [
       "Alongamento em Fibra de Vidro",
       "Materiais Esterilizados em Autoclave",
@@ -590,7 +590,7 @@ const MODELS_CATALOG = [
     "desc": "Livre-se dos pelos e da foliculite com ponteira resfriada sem dor para mulheres e homens.",
     "tag": "Tecnologia",
     "previewImg": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=700&q=80",
-    "liveUrl": null,
+    "liveUrl": "modelos/clinica-estetica/index.html?servico=laser",
     "highlights": [
       "Ponteira Ultrarresfriada Sem Dor",
       "Pacotes para Axilas, Pernas e Barba",
@@ -624,7 +624,7 @@ const MODELS_CATALOG = [
     "desc": "Experiência de relaxamento profundo, drenagem linfática pós-operatória, massagem relaxante com pedras quentes e reflexologia.",
     "tag": "Relaxamento",
     "previewImg": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
-    "liveUrl": null,
+    "liveUrl": "modelos/clinica-estetica/index.html?servico=spa",
     "highlights": [
       "Ambiente com Cromoterapia e Aromas",
       "Drenagem Linfática Certificada",
@@ -692,7 +692,7 @@ const MODELS_CATALOG = [
     "desc": "Página voltada para orientação sobre direitos do trabalhador, horas extras, rescisão indireta, acidentes de trabalho e INSS.",
     "tag": "Alta Conversão",
     "previewImg": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=700&q=80",
-    "liveUrl": null,
+    "liveUrl": "modelos/advocacia-corporativa/index.html?area=trabalhista",
     "highlights": [
       "Tira-Dúvidas Rápido no WhatsApp",
       "Atendimento Online para todo o Brasil",
@@ -1219,11 +1219,13 @@ function getNicheConfig(nichoParam) {
   if (!nichoParam) return null;
   const n = normalizeText(nichoParam);
 
+  // 1. ODONTOLOGIA
   if (n.includes('odonto') || n.includes('dentista')) {
     return {
       key: 'odontologia',
-      name: 'Odontologia & Clínicas Odontológicas',
+      name: 'Odontologia',
       category: 'odontologia',
+      allowedModelIds: ['odonto-estetica', 'odonto-implantes', 'odonto-alinhadores', 'odonto-pediatria', 'odonto-clinica-geral', 'odonto-hof'],
       heroBadge: 'Showroom Exclusivo para Odontologia',
       getHeroTitle: (empresa, cidade) => {
         if (empresa) return `${empresa}: Estruturas Digitais de Alta Precisão para o Seu Consultório`;
@@ -1297,6 +1299,438 @@ function getNicheConfig(nichoParam) {
     };
   }
 
+  // 2. GASTRONOMIA & DELIVERY
+  if (n.includes('gastronom') || n.includes('restaurante') || n.includes('hamburg') || n.includes('burger') || n.includes('pizza') || n.includes('delivery') || n.includes('sushi') || n.includes('churrasc') || n.includes('doce') || n.includes('fit') || n.includes('cafe') || n.includes('acai') || n.includes('lanchonete')) {
+    return {
+      key: 'gastronomia',
+      name: 'Gastronomia & Delivery',
+      category: 'gastronomia',
+      allowedModelIds: ['burger-delivery', 'pizzaria-tradicional', 'sushi-bar', 'churrascaria-espetaria', 'marmitaria-fit', 'confeitaria-doces', 'cafeteria-brunch', 'acai-sorveteria'],
+      heroBadge: 'Showroom Exclusivo para Gastronomia & Delivery',
+      getHeroTitle: (empresa, cidade) => {
+        if (empresa) return `${empresa}: Cardápios Digitais & Sites Próprios Sem Taxas de Apps`;
+        return `Cardápios Digitais e Sites de Alta Conversão para Restaurantes e Delivery`;
+      },
+      getHeroSubtitle: (empresa, cidade) => {
+        const cityPart = cidade ? ` em ${cidade}` : '';
+        return `Páginas ultra rápidas com fotos apetitosas e fechamento direto no WhatsApp. Livre-se das taxas de 27% dos marketplaces e receba o lucro integral dos seus pedidos${cityPart}.`;
+      },
+      trustPills: [
+        'Zero Taxa de Aplicativos (100% Seu Lucro)',
+        'Carregamento em < 1s no 4G',
+        'Pedido Direto no WhatsApp',
+        'Cálculo de Entrega por Bairro',
+        'Cardápio Visual com Fotos HD'
+      ],
+      searchPlaceholder: 'Buscar por culinária (Ex: Burger, Pizza, Sushi, Churrasco, Marmita Fit, Doces, Açaí...)',
+      subCategories: [
+        { id: 'todos', label: 'Todos os Modelos Gastronomia' },
+        { id: 'burger-delivery', label: 'Hamburguerias & Smash' },
+        { id: 'pizzaria-tradicional', label: 'Pizzarias & Forno a Lenha' },
+        { id: 'sushi-bar', label: 'Sushi & Japonês' },
+        { id: 'churrascaria-espetaria', label: 'Churrascarias & Carnes' },
+        { id: 'marmitaria-fit', label: 'Marmitaria Fit & Saudável' },
+        { id: 'confeitaria-doces', label: 'Docerias & Bolos' },
+        { id: 'cafeteria-brunch', label: 'Cafeterias & Brunch' },
+        { id: 'acai-sorveteria', label: 'Açaiterias & Sobremesas' }
+      ],
+      pricing: {
+        badge: 'Condição Especial para Restaurantes & Delivery',
+        title: 'Seu Canal de Vendas Próprio com Lucro 100% Seu',
+        subtitle: 'Pare de deixar até 27% do seu faturamento em comissões de marketplaces. Tenha seu próprio cardápio digital com pedidos organizados no WhatsApp.',
+        tierName: 'Plano Delivery Próprio Sem Comissões',
+        setupVal: '50',
+        monthlyVal: '20',
+        ctaText: 'Ativar Cardápio para Meu Restaurante'
+      },
+      customSaas: [
+        {
+          badge: 'Zero Comissão',
+          title: 'Painel de Pedidos & Comanda de Cozinha',
+          desc: 'Receba os pedidos do WhatsApp organizados em uma tela de despacho, com impressão térmica automática para a cozinha e status de entrega.',
+          bullets: [
+            'Organização automática de adicionais e observações',
+            'Cálculo de taxa de entrega automática por bairro',
+            'Zero porcentagem sobre o valor dos seus pratos'
+          ],
+          saasName: 'Painel de Pedidos & Cozinha'
+        },
+        {
+          badge: 'Recompra Ativa',
+          title: 'Fidelidade & Cupons Automáticos (WhatsApp)',
+          desc: 'Estimule seus clientes a pedirem todo final de semana com cartela de selos digital e disparo de cupons de reativação para quem não pede há 15 dias.',
+          bullets: [
+            'Cartela de selos 100% digital no WhatsApp',
+            'Mensagem automática de reativação com cupom',
+            'Aumento comprovado na frequência de pedidos'
+          ],
+          saasName: 'Fidelidade & Cupons WhatsApp'
+        },
+        {
+          badge: 'Experiência Visual',
+          title: 'Montador Interativo Meio a Meio & Combos',
+          desc: 'O cliente monta sozinho a pizza meio a meio, o smash burger com opcionais ou o açaí em camadas, com o valor calculado na hora sem erros.',
+          bullets: [
+            'Seleção de adicionais com limite mínimo e máximo',
+            'Fotos apetitosas com zoom em alta resolução',
+            'Botão "Repetir Último Pedido" em 1 clique'
+          ],
+          saasName: 'Montador Interativo de Pedidos'
+        }
+      ]
+    };
+  }
+
+  // 3. ADVOCACIA & JURÍDICO
+  if (n.includes('advoc') || n.includes('advog') || n.includes('jurid')) {
+    return {
+      key: 'advocacia',
+      name: 'Advocacia',
+      category: 'servicos',
+      allowedModelIds: ['advocacia-corporativa', 'advocacia-trabalhista'],
+      heroBadge: 'Showroom Exclusivo para Advocacia & Jurídico',
+      getHeroTitle: (empresa, cidade) => {
+        if (empresa) return `${empresa}: Estruturas de Alta Autoridade para o Seu Escritório de Advocacia`;
+        return `Estruturas de Alta Autoridade para Escritórios de Advocacia e Advogados`;
+      },
+      getHeroSubtitle: (empresa, cidade) => {
+        const cityPart = cidade ? ` em ${cidade}` : '';
+        return `Páginas sóbrias, elegantes e em estrita conformidade com o Código de Ética da OAB. Desenvolvidas para transmitir máxima credibilidade e filtrar clientes qualificados diretamente no seu WhatsApp${cityPart}.`;
+      },
+      trustPills: [
+        '100% Adequado ao Provimento da OAB',
+        'Carregamento em < 1s no 4G',
+        'Triagem de Clientes no WhatsApp',
+        'Design Corporativo Sóbrio',
+        'Segurança SSL & LGPD'
+      ],
+      searchPlaceholder: 'Buscar por área de atuação (Ex: Trabalhista, Previdenciário, Empresarial, Cível...)',
+      subCategories: [
+        { id: 'todos', label: 'Todos os Modelos Advocacia' },
+        { id: 'advocacia-corporativa', label: 'Advocacia Corporativa & Cível' },
+        { id: 'advocacia-trabalhista', label: 'Trabalhista & Previdenciário' }
+      ],
+      pricing: {
+        badge: 'Condição Especial para Advocacia',
+        title: 'Presença Digital de Alta Autoridade para o Seu Escritório',
+        subtitle: 'Estrutura institucional jurídica com triagem rápida e conformidade total com o Código de Ética da OAB.',
+        tierName: 'Plano Escritório de Advocacia de Alta Autoridade',
+        setupVal: '80',
+        monthlyVal: '25',
+        ctaText: 'Ativar Página Jurídica para Meu Escritório'
+      },
+      customSaas: [
+        {
+          badge: 'Triagem Rápida',
+          title: 'Formulário Inteligente de Triagem de Casos',
+          desc: 'Filtre e qualifique clientes antes de iniciar o atendimento humano. O cliente responde perguntas-chave e envia os dados organizados no WhatsApp.',
+          bullets: [
+            'Classificação automática por área do Direito',
+            'Economia de tempo com curiosos sem causa',
+            'Histórico de triagem organizado por lead'
+          ],
+          saasName: 'Triagem Inteligente de Clientes'
+        },
+        {
+          badge: 'Controle de Prazos',
+          title: 'Mini-CRM Jurídico & Acompanhamento de Processos',
+          desc: 'Quadro Kanban simples para acompanhar etapas de negociação com clientes, contratos pendentes e prazos de atendimento.',
+          bullets: [
+            'Etapas visuais (Primeiro Contato, Proposta, Contrato)',
+            'Lembretes de retorno para não perder clientes',
+            'Painel leve acessível no celular e tablet'
+          ],
+          saasName: 'Mini-CRM Jurídico'
+        }
+      ]
+    };
+  }
+
+  // 4. BELEZA, BARBEARIAS & ESTÉTICA
+  if (n.includes('beleza') || n.includes('barbear') || n.includes('salao') || n.includes('estetic') || n.includes('cabel') || n.includes('lash') || n.includes('unha') || n.includes('spa')) {
+    return {
+      key: 'beleza',
+      name: 'Beleza & Estética',
+      category: 'beleza',
+      allowedModelIds: ['barbearia-premium', 'estetica-facial', 'studio-beleza', 'lash-sobrancelhas', 'esmalteria-unhas', 'depilacao-laser', 'spa-massoterapia'],
+      heroBadge: 'Showroom Exclusivo para Beleza, Barbearias & Estética',
+      getHeroTitle: (empresa, cidade) => {
+        if (empresa) return `${empresa}: Páginas de Alta Conversão para o Seu Espaço de Beleza`;
+        return `Páginas e Sites de Alta Conversão para Salões, Barbearias e Clínicas de Estética`;
+      },
+      getHeroSubtitle: (empresa, cidade) => {
+        const cityPart = cidade ? ` em ${cidade}` : '';
+        return `Visual deslumbrante com fotos de procedimentos, tabela de serviços e agendamento instantâneo no seu WhatsApp${cityPart}.`;
+      },
+      trustPills: [
+        'Agendamento em 2 Cliques no WhatsApp',
+        'Carregamento em < 1s no 4G',
+        'Galeria de Resultados & Antes/Depois',
+        'Tabela de Serviços & Pacotes',
+        'Design Visual de Alto Impacto'
+      ],
+      searchPlaceholder: 'Buscar por serviço (Ex: Corte, Fade, Barba, Botox, Mechas, Lash, Unhas, Spa...)',
+      subCategories: [
+        { id: 'todos', label: 'Todos os Modelos Beleza' },
+        { id: 'barbearia-premium', label: 'Barbearias & Espaço Masculino' },
+        { id: 'estetica-facial', label: 'Clínica de Estética & Harmonização' },
+        { id: 'studio-beleza', label: 'Salão de Beleza & Mega Hair' },
+        { id: 'lash-sobrancelhas', label: 'Lash Designer & Sobrancelhas' },
+        { id: 'esmalteria-unhas', label: 'Esmalteria & Spa dos Pés' },
+        { id: 'depilacao-laser', label: 'Depilação a Laser' },
+        { id: 'spa-massoterapia', label: 'Spa Urbano & Massagens' }
+      ],
+      pricing: {
+        badge: 'Condição Especial para Beleza & Estética',
+        title: 'Sua Agenda Lotada com um Site Profissional',
+        subtitle: 'Estrutura completa com link para bio do Instagram, botão WhatsApp e vitrine de trabalhos.',
+        tierName: 'Plano Espaço de Beleza & Barbearia',
+        setupVal: '50',
+        monthlyVal: '20',
+        ctaText: 'Ativar Minha Página de Beleza'
+      },
+      customSaas: [
+        {
+          badge: 'Agenda Cheia',
+          title: 'Agendamento Automático de Horários com Confirmação',
+          desc: 'O cliente escolhe o profissional e o serviço desejado, e a reserva cai confirmada na sua agenda do WhatsApp sem trocas de mensagens.',
+          bullets: [
+            'Grade flexível por profissional do salão/barbearia',
+            'Lembrete automático 2 horas antes do horário marcado',
+            'Redução drástica de clientes faltosos'
+          ],
+          saasName: 'Agendamento Automático Beleza'
+        },
+        {
+          badge: 'Fidelização',
+          title: 'Cartela Fidelidade Digital (Corte & Unha)',
+          desc: 'Incentive a cliente a fazer as unhas toda semana ou o cliente a cortar o cabelo a cada 15 dias com selos digitais no WhatsApp.',
+          bullets: [
+            'Cartela 100% digital acumulada no número do WhatsApp',
+            'Notificação de premiação ao completar os selos',
+            'Aumento direto na recorrência do espaço'
+          ],
+          saasName: 'Fidelidade Digital Beleza'
+        }
+      ]
+    };
+  }
+
+  // 5. VETERINÁRIA & PET
+  if (n.includes('pet') || n.includes('veterin')) {
+    return {
+      key: 'pet',
+      name: 'Veterinárias & Pet',
+      category: 'comercio',
+      allowedModelIds: ['clinica-veterinaria'],
+      heroBadge: 'Showroom Exclusivo para Veterinárias & Pet Shops',
+      getHeroTitle: (empresa, cidade) => {
+        if (empresa) return `${empresa}: Páginas de Alta Conversão para Sua Clínica Veterinária`;
+        return `Páginas e Sites de Alta Conversão para Clínicas Veterinárias e Pet Shops`;
+      },
+      getHeroSubtitle: (empresa, cidade) => {
+        const cityPart = cidade ? ` em ${cidade}` : '';
+        return `Páginas acolhedoras com agendamento rápido de consultas, vacinas e banho & tosa diretamente no WhatsApp${cityPart}.`;
+      },
+      trustPills: [
+        'Agendamento de Consultas & Vacinas',
+        'Carregamento em < 1s no 4G',
+        'Botão WhatsApp de Emergência 24h',
+        'Tabela de Pacotes de Banho & Tosa',
+        'Design Acolhedor'
+      ],
+      searchPlaceholder: 'Buscar por serviço (Ex: Vacinas, Cirurgia, Banho e Tosa, Emergência...)',
+      subCategories: [
+        { id: 'todos', label: 'Todos os Modelos Pet' },
+        { id: 'clinica-veterinaria', label: 'Hospital & Clínica Veterinária 24h' }
+      ],
+      pricing: {
+        badge: 'Condição Especial para Veterinárias & Pet Shops',
+        title: 'Presença Digital Completa para o Seu Negócio Pet',
+        subtitle: 'Estrutura leve com agendamento no WhatsApp, mapa e destaques de serviços veterinários.',
+        tierName: 'Plano Clínica Veterinária & Pet',
+        setupVal: '50',
+        monthlyVal: '20',
+        ctaText: 'Ativar Página Pet para Meu Negócio'
+      },
+      customSaas: [
+        {
+          badge: 'Fidelização Pet',
+          title: 'Lembrete Automático de Vacinas & Vermífugos (WhatsApp)',
+          desc: 'Disparo automático de aviso no WhatsApp quando a vacina ou vermífugo do pet estiver prestes a vencer, garantindo a volta do tutor.',
+          bullets: [
+            'Controle por data de vacinação de cada pet',
+            'Mensagem carinhosa personalizada com o nome do animal',
+            'Aumento imediato na receita recorrente da clínica'
+          ],
+          saasName: 'Lembrete Automático de Vacinas'
+        }
+      ]
+    };
+  }
+
+  // 6. MECÂNICA, AUTOCENTER & DETAILING
+  if (n.includes('mecanic') || n.includes('oficin') || n.includes('auto') || n.includes('detail') || n.includes('carro')) {
+    return {
+      key: 'oficina',
+      name: 'Oficinas & Automotivo',
+      category: 'comercio',
+      allowedModelIds: ['oficina-mecanica', 'estetica-automotiva'],
+      heroBadge: 'Showroom Exclusivo para Oficinas & Estética Automotiva',
+      getHeroTitle: (empresa, cidade) => {
+        if (empresa) return `${empresa}: Estruturas de Alta Conversão para Sua Oficina Mecânica`;
+        return `Páginas e Sites de Alta Conversão para Oficinas Mecânicas e AutoCenters`;
+      },
+      getHeroSubtitle: (empresa, cidade) => {
+        const cityPart = cidade ? ` em ${cidade}` : '';
+        return `Páginas robustas com foco em confiança mecânica, agendamento de revisão preventiva e orçamentos transparentes no WhatsApp${cityPart}.`;
+      },
+      trustPills: [
+        'Diagnóstico por Scanner Eletrônico',
+        'Carregamento em < 1s no 4G',
+        'Aprovação de Orçamento por WhatsApp',
+        'Peças com Nota Fiscal e Garantia',
+        'Design Automotivo Moderno'
+      ],
+      searchPlaceholder: 'Buscar por serviço (Ex: Freios, Suspensão, Troca de Óleo, Vitrificação, Polimento...)',
+      subCategories: [
+        { id: 'todos', label: 'Todos os Modelos Automotivos' },
+        { id: 'oficina-mecanica', label: 'Oficina Mecânica & AutoCenter' },
+        { id: 'estetica-automotiva', label: 'Detailing & Vitrificação 9H' }
+      ],
+      pricing: {
+        badge: 'Condição Especial para Oficinas & AutoCenters',
+        title: 'Mais Carros na Sua Oficina com um Site de Confiança',
+        subtitle: 'Estrutura completa com localização no mapa, lista de serviços e botão SOS para emergências mecânicas.',
+        tierName: 'Plano Oficina & AutoCenter de Confiança',
+        setupVal: '50',
+        monthlyVal: '20',
+        ctaText: 'Ativar Minha Página de Oficina'
+      },
+      customSaas: [
+        {
+          badge: 'Transparência Total',
+          title: 'Orçamento com Fotos e Vídeos no WhatsApp',
+          desc: 'Envie o checklist da revisão do carro com fotos das peças gastas diretamente no WhatsApp do cliente para aprovação em 1 clique.',
+          bullets: [
+            'Checklist digital com fotos do defeito',
+            'Aprovação de orçamento com 1 toque pelo cliente',
+            'Zero desconfiança e aumento no ticket médio'
+          ],
+          saasName: 'Orçamento Visual Automotivo'
+        }
+      ]
+    };
+  }
+
+  // 7. IMOBILIÁRIA, ARQUITETURA & MÓVEIS
+  if (n.includes('imob') || n.includes('corretor') || n.includes('imovel') || n.includes('arquit') || n.includes('marcen')) {
+    return {
+      key: 'imobiliaria',
+      name: 'Imobiliárias & Arquitetura',
+      category: 'servicos',
+      allowedModelIds: ['imobiliaria-vitrine', 'arquitetura-interiores', 'marcenaria-fina'],
+      heroBadge: 'Showroom Exclusivo para Imobiliárias & Arquitetura',
+      getHeroTitle: (empresa, cidade) => {
+        if (empresa) return `${empresa}: Vitrines Imobiliárias de Alto Padrão para Seus Imóveis`;
+        return `Vitrines Digitais de Alto Padrão para Imobiliárias, Corretores e Arquitetura`;
+      },
+      getHeroSubtitle: (empresa, cidade) => {
+        const cityPart = cidade ? ` em ${cidade}` : '';
+        return `Páginas elegantes com fotos panorâmicas em alta resolução, tour de imóveis e agendamento direto de visitas no WhatsApp${cityPart}.`;
+      },
+      trustPills: [
+        'Galeria de Fotos em Alta Resolução',
+        'Carregamento em < 1s no 4G',
+        'Filtro por Faixa de Valor e Bairro',
+        'Agendamento Direto de Visita no WhatsApp',
+        'Design Sofisticado'
+      ],
+      searchPlaceholder: 'Buscar por imóvel ou projeto (Ex: Casa em Condomínio, Cobertura, Reforma, Planejados...)',
+      subCategories: [
+        { id: 'todos', label: 'Todos os Modelos Imobiliários' },
+        { id: 'imobiliaria-vitrine', label: 'Imobiliária Prime & Corretores' },
+        { id: 'arquitetura-interiores', label: 'Arquitetura & Interiores 3D' },
+        { id: 'marcenaria-fina', label: 'Marcenaria & Móveis Sob Medida' }
+      ],
+      pricing: {
+        badge: 'Condição Especial para Imobiliárias & Corretores',
+        title: 'Presença Digital de Prestígio para Seus Lançamentos',
+        subtitle: 'Estrutura institucional refinada para destacar imóveis e atrair compradores qualificados.',
+        tierName: 'Plano Imobiliária & Corretores Prime',
+        setupVal: '80',
+        monthlyVal: '25',
+        ctaText: 'Ativar Minha Vitrine Imobiliária'
+      },
+      customSaas: [
+        {
+          badge: 'Captação & Agendamento',
+          title: 'Agendador de Visitas com Triagem de Renda',
+          desc: 'O interessado escolhe o dia e horário para visitar o imóvel e informa a faixa de renda, economizando o tempo dos corretores.',
+          bullets: [
+            'Agendamento sincronizado com o WhatsApp do corretor',
+            'Triagem prévia de perfil do comprador',
+            'Alerta automático 2h antes da visita'
+          ],
+          saasName: 'Agendador de Visitas Imobiliárias'
+        }
+      ]
+    };
+  }
+
+  // 8. ENERGIA SOLAR & ENGENHARIA
+  if (n.includes('solar') || n.includes('fotovolt') || n.includes('energia')) {
+    return {
+      key: 'solar',
+      name: 'Energia Solar',
+      category: 'servicos',
+      allowedModelIds: ['energia-solar'],
+      heroBadge: 'Showroom Exclusivo para Energia Solar Fotovoltaica',
+      getHeroTitle: (empresa, cidade) => {
+        if (empresa) return `${empresa}: Landing Pages com Simulador de Economia Solar`;
+        return `Landing Pages de Alta Conversão com Simulador para Empresas de Energia Solar`;
+      },
+      getHeroSubtitle: (empresa, cidade) => {
+        const cityPart = cidade ? ` em ${cidade}` : '';
+        return `Páginas focadas em conversão com calculadora de economia na conta de luz e solicitação rápida de projeto homologado no WhatsApp${cityPart}.`;
+      },
+      trustPills: [
+        'Simulador Interativo de Economia (até 95%)',
+        'Carregamento em < 1s no 4G',
+        'Pedido de Estudo de Viabilidade Grátis',
+        'Destaque para 25 Anos de Garantia',
+        'Design Tecnológico Moderno'
+      ],
+      searchPlaceholder: 'Buscar por termo solar (Ex: Residencial, Comercial, Financiamento, Economia...)',
+      subCategories: [
+        { id: 'todos', label: 'Modelos Energia Solar' },
+        { id: 'energia-solar', label: 'Energia Solar Fotovoltaica' }
+      ],
+      pricing: {
+        badge: 'Condição Especial para Integradores Solares',
+        title: 'Mais Contratos Fechados com um Simulador Solar',
+        subtitle: 'Estrutura focada em geração de orçamentos quentes para sua equipe de vendas.',
+        tierName: 'Plano Energia Solar de Alta Conversão',
+        setupVal: '80',
+        monthlyVal: '25',
+        ctaText: 'Ativar Minha Página Solar'
+      },
+      customSaas: [
+        {
+          badge: 'Calculadora de Economia',
+          title: 'Simulador Solar com Envio de Proposta em PDF',
+          desc: 'O cliente digita quanto paga de luz por mês e o sistema calcula a quantidade de placas necessárias e a economia em 25 anos.',
+          bullets: [
+            'Cálculo instantâneo baseado na tarifa da concessionária local',
+            'Envio de resumo da economia diretamente no WhatsApp',
+            'Lead pré-qualificado com valor da conta em mãos'
+          ],
+          saasName: 'Simulador Solar Interativo'
+        }
+      ]
+    };
+  }
+
   return null;
 }
 
@@ -1305,10 +1739,10 @@ function applyContextualPersonalization(params) {
   const { nicho, cidade, empresa, porte } = params;
   const nicheConfig = getNicheConfig(nicho);
 
-  // Se o link possui nicho isolado (ex: Odontologia)
+  // Se o link possui nicho isolado (ex: Odontologia, Gastronomia, Advocacia, etc.)
   if (nicheConfig) {
     // Título da Aba do Navegador
-    document.getElementById('page-title').innerText = `${empresa || 'Clínica Odontológica'} | Showroom Pixel Studio`;
+    document.getElementById('page-title').innerText = `${empresa || nicheConfig.name} | Showroom Pixel Studio`;
 
     // Hero Badge, H1 e Subtítulo
     const badgeEl = document.getElementById('hero-badge');
@@ -1346,19 +1780,23 @@ function applyContextualPersonalization(params) {
     // Título da Seção do Catálogo
     const catTitleEl = document.getElementById('catalog-section-title');
     const catDescEl = document.getElementById('catalog-section-desc');
-    if (catTitleEl) catTitleEl.innerText = 'Modelos Estruturados para Odontologia';
-    if (catDescEl) catDescEl.innerText = 'Demonstrações interativas com design clínico de luxo, adaptadas para celular e WhatsApp.';
+    if (catTitleEl) catTitleEl.innerText = `Modelos Estruturados para ${nicheConfig.name}`;
+    if (catDescEl) catDescEl.innerText = 'Demonstrações interativas com design de alto padrão, adaptadas para celular e WhatsApp.';
 
-    // Precificação Contextual para Odonto
+    // Precificação Contextual para o Nicho
     applyNichePricing(nicheConfig, porte, params);
 
-    // Módulos SaaS Personalizados para Odonto
+    // Módulos SaaS Personalizados para o Nicho
     applyNicheSaas(nicheConfig, params);
+
+    // MODO ISOLAMENTO: Oculta barra de busca e outros filtros para parecer uma agência 100% nichada
+    document.querySelector('.categories-bar').style.display = 'none';
+    document.querySelector('.search-box-wrapper').style.display = 'none';
 
     // Botão de Contato no Header
     const headerWa = document.getElementById('btn-header-wa');
     if (headerWa) {
-      headerWa.href = buildWhatsAppUrl(`Olá! Gostaria de conversar sobre as estruturas de sites para clínicas odontológicas da Pixel Studio.`);
+      headerWa.href = buildWhatsAppUrl(`Olá! Gostaria de conversar sobre as estruturas de sites para ${nicheConfig.name.toLowerCase()} da Pixel Studio.`);
     }
 
     return;
@@ -1393,8 +1831,12 @@ function applyContextualPersonalization(params) {
   const catTitleEl = document.getElementById('catalog-section-title');
   const catDescEl = document.getElementById('catalog-section-desc');
   if (nicho) {
-    catTitleEl.innerText = `Modelos Sugeridos para ${capitalize(nicho)}`;
+    catTitleEl.innerText = `Modelos Premium para ${capitalize(nicho)}`;
     catDescEl.innerText = `Selecione uma demonstração abaixo para interagir em tempo real no simulador mobile.`;
+
+    // MODO ISOLAMENTO: Oculta filtros e buscas se um nicho solto foi passado
+    document.querySelector('.categories-bar').style.display = 'none';
+    document.querySelector('.search-box-wrapper').style.display = 'none';
   }
 
   applyDynamicPricing(porte, params);
@@ -1413,11 +1855,11 @@ function applyNichePricing(nicheConfig, porte, params) {
   let monthlyVal = p.monthlyVal;
 
   if (porte === 'ALTO') {
-    tierName = 'Plano Clínica Premium (Múltiplos Especialistas)';
+    tierName = `Plano ${nicheConfig.name} Premium`;
     setupVal = '150';
     monthlyVal = '35';
   } else if (porte === 'MEDIO') {
-    tierName = 'Plano Consultório Odontológico em Crescimento';
+    tierName = `Plano ${nicheConfig.name} em Crescimento`;
     setupVal = '120';
     monthlyVal = '25';
   }
@@ -1437,7 +1879,8 @@ function applyNichePricing(nicheConfig, porte, params) {
     monthlyEl.innerText = `+ apenas R$ ${monthlyVal}/mês de hospedagem rápida e manutenção técnica`;
   }
 
-  const msg = `Olá! Quero ativar minha página de Odontologia no ${tierName} por R$ ${setupVal} de setup + R$ ${monthlyVal}/mês para ${params.empresa || 'meu consultório'} em ${params.cidade || 'minha cidade'}.`;
+  const targetName = params.empresa || (nicheConfig ? nicheConfig.name : 'minha empresa');
+  const msg = `Olá! Quero ativar minha página de ${nicheConfig.name} no ${tierName} por R$ ${setupVal} de setup + R$ ${monthlyVal}/mês para ${targetName} em ${params.cidade || 'minha cidade'}.`;
   if (ctaEl) {
     ctaEl.href = buildWhatsAppUrl(msg);
     ctaEl.innerHTML = `
@@ -1457,13 +1900,14 @@ function applyNicheSaas(nicheConfig, params) {
   if (saasSection) {
     const saasTitle = saasSection.querySelector('.section-title');
     const saasDesc = saasSection.querySelector('.section-desc');
-    if (saasTitle) saasTitle.innerText = 'Sistemas e Painéis Sob Medida para o Seu Consultório';
-    if (saasDesc) saasDesc.innerText = 'Não te empurramos um software genérico. Criamos ferramentas focadas na rotina da sua clínica para economizar o tempo da sua equipe e aumentar a fidelização de pacientes.';
+    if (saasTitle) saasTitle.innerText = `Sistemas e Ferramentas Sob Medida para ${nicheConfig.name}`;
+    if (saasDesc) saasDesc.innerText = `Não te empurramos softwares genéricos. Desenvolvemos soluções focadas na rotina do seu negócio para economizar tempo da sua equipe e aumentar o fechamento de vendas.`;
   }
 
   if (saasGrid) {
     saasGrid.innerHTML = nicheConfig.customSaas.map(s => {
-      const msg = `Olá! Vi na vitrine da Pixel Studio o sistema "${s.title}" e gostaria de solicitar um projeto personalizado para ${params.empresa || 'meu consultório'} em ${params.cidade || 'minha cidade'}.`;
+      const targetName = params.empresa || (nicheConfig ? nicheConfig.name : 'minha empresa');
+      const msg = `Olá! Vi na vitrine da Pixel Studio o sistema "${s.title}" e gostaria de solicitar um projeto personalizado para ${targetName} em ${params.cidade || 'minha cidade'}.`;
       return `
         <div class="saas-card">
           <span class="saas-badge">${s.badge}</span>
@@ -1569,7 +2013,11 @@ function renderCatalog(params, activeFilter = null, searchTerm = '') {
   let pool = MODELS_CATALOG;
   if (nicheConfig) {
     // ISOLAMENTO ESTRITO: Apenas modelos daquele nicho específico
-    pool = pool.filter(m => m.category === nicheConfig.category);
+    if (nicheConfig.allowedModelIds && nicheConfig.allowedModelIds.length > 0) {
+      pool = pool.filter(m => nicheConfig.allowedModelIds.includes(m.id));
+    } else {
+      pool = pool.filter(m => m.category === nicheConfig.category);
+    }
   }
 
   // Define o filtro ativo
@@ -1632,7 +2080,7 @@ function renderCatalog(params, activeFilter = null, searchTerm = '') {
 
   // Estado Vazio
   if (filtered.length === 0) {
-    const resetText = nicheConfig ? 'Ver Todos os Modelos Odonto' : 'Ver Todos os Modelos';
+    const resetText = nicheConfig ? `Ver Todos os Modelos de ${nicheConfig.name}` : 'Ver Todos os Modelos';
     grid.innerHTML = `
       <div class="empty-state-box">
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -1748,8 +2196,9 @@ function openDemoModal(modelId) {
   const activateBtn = document.getElementById('btn-phone-activate');
   const fullscreenBtn = document.getElementById('btn-phone-fullscreen');
 
-  const companyName = params.empresa || 'Odonto Prime';
-  const city = params.cidade || 'Campinas';
+  const nicheConfig = getNicheConfig(params.nicho);
+  const companyName = params.empresa || (nicheConfig ? nicheConfig.name : (model.title || 'Sua Empresa'));
+  const city = params.cidade || '';
   const citySuffix = city ? `em ${city}` : '';
 
   const activateMsg = `Olá! Acabei de testar o modelo "${model.title}" no simulador da Pixel Studio e decidi ativar para a ${companyName} ${citySuffix}. Como procedemos?`;

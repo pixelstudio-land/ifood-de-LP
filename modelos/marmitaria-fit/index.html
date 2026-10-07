@@ -463,14 +463,34 @@
       const empresa = params.get('empresa') || 'Vida Leve Marmitaria Fit';
       const cidade = params.get('cidade') || 'Campinas';
       const whatsapp = params.get('whatsapp') || '5511913393797';
+      const estilo = (params.get('estilo') || 'fit').toLowerCase();
 
-      document.getElementById('page-title').innerText = `${empresa} | Marmitas Saudáveis em ${cidade}`;
+      if (estilo === 'doces') {
+        document.getElementById('page-title').innerText = `${empresa} | Doceria Gourmet & Bolos em ${cidade}`;
+        const badge = document.querySelector('.hero-badge');
+        if (badge) badge.innerText = 'DOCERIA ARTESANAL • BOLOS DE ANIVERSÁRIO';
+        const title = document.querySelector('.hero-title');
+        if (title) title.innerHTML = `Bolos e Doces Artesanais que <span>Transformam Momentos</span> em Festa`;
+        const sub = document.querySelector('.hero-sub');
+        if (sub) sub.innerText = `Fatias fartas, cento de brigadeiros gourmet e bolos decorados sob encomenda com entrega rápida em ${cidade}.`;
+      } else if (estilo === 'acai') {
+        document.getElementById('page-title').innerText = `${empresa} | Açaíterias & Sobremesas em ${cidade}`;
+        const badge = document.querySelector('.hero-badge');
+        if (badge) badge.innerText = 'AÇAÍ PURO E CREMOSO • MAIS DE 30 ACOMPANHAMENTOS';
+        const title = document.querySelector('.hero-title');
+        if (title) title.innerHTML = `O Açaí Mais Cremoso e <span>Recheado</span> da Sua Região`;
+        const sub = document.querySelector('.hero-sub');
+        if (sub) sub.innerText = `Monte seu copo ou taça com frutas frescas, cremes artesanais e coberturas crocantes no WhatsApp em ${cidade}.`;
+      } else {
+        document.getElementById('page-title').innerText = `${empresa} | Marmitas Saudáveis em ${cidade}`;
+      }
+
       document.getElementById('brand-name-nav').innerText = empresa;
       document.getElementById('brand-name-footer').innerText = empresa;
       document.getElementById('top-city').innerText = cidade;
       document.getElementById('brand-city-footer').innerText = `Alimentação Saudável Congelada | ${cidade} - SP`;
 
-      const defaultMsg = encodeURIComponent(`Olá! Vi o site da ${empresa} em ${cidade} e gostaria de ver o cardápio de marmitas congeladas.`);
+      const defaultMsg = encodeURIComponent(`Olá! Vi o site da ${empresa} em ${cidade} e gostaria de ver o cardápio e fazer um pedido.`);
       const defaultWaUrl = `https://wa.me/${whatsapp}?text=${defaultMsg}`;
 
       document.querySelectorAll('#btn-nav-wa, #btn-hero-wa, #btn-card-wa, #floating-wa').forEach(el => {

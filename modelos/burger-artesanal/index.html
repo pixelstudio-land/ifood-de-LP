@@ -648,17 +648,23 @@
   <section class="perks-section">
     <div class="container perks-grid">
       <div class="perk-box">
-        <div class="perk-icon">&#128293;</div>
+        <div class="perk-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+        </div>
         <h3>Carne Fresca Angus</h3>
         <p>Blend preparado diariamente sem aditivos ou conservantes químicos.</p>
       </div>
       <div class="perk-box">
-        <div class="perk-icon">&#128757;</div>
+        <div class="perk-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+        </div>
         <h3>Embalagem Térmica Especial</h3>
-        <p>Seu smash chega sequinho, crocante e quente como se você estivesse comendo no balcão.</p>
+        <p>Seu pedido chega sequinho, crocante e quente como se você estivesse comendo no balcão.</p>
       </div>
       <div class="perk-box">
-        <div class="perk-icon">&#129309;</div>
+        <div class="perk-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+        </div>
         <h3>Zero Taxa de Aplicativo</h3>
         <p>Comprando direto você valoriza o negócio local e paga muito mais barato.</p>
       </div>
@@ -683,10 +689,30 @@
     (function() {
       const urlParams = new URLSearchParams(window.location.search);
       const empresa = urlParams.get('empresa') || 'Burger Artesanal';
-      const cidade = urlParams.get('cidade') || 'sua cidade';
+      const cidade = urlParams.get('cidade') || 'Campinas';
       const whatsapp = urlParams.get('whatsapp') || '5511913393797';
+      const estilo = (urlParams.get('estilo') || 'burger').toLowerCase();
 
-      document.title = `${empresa} | Smash Burgers & Delivery em ${cidade}`;
+      if (estilo === 'churrasco') {
+        document.title = `${empresa} | Churrascaria & Espetos na Brasa em ${cidade}`;
+        const badge = document.querySelector('.hero-badge');
+        if (badge) badge.innerText = 'CHURRASCO NA BRASA • CARNES NOBRES';
+        const title = document.querySelector('.hero-title');
+        if (title) title.innerHTML = `O MELHOR <span>CHURRASCO NO PONTO</span> NA SUA CASA`;
+        const sub = document.querySelector('.hero-sub');
+        if (sub) sub.innerText = `Picanha selecionada, espetos assados na hora, marmitex executiva e acompanhamentos tradicionais em ${cidade}.`;
+      } else if (estilo === 'cafe') {
+        document.title = `${empresa} | Cafeteria Especial & Brunch em ${cidade}`;
+        const badge = document.querySelector('.hero-badge');
+        if (badge) badge.innerText = 'GRÃOS ESPECIAIS • CONFEITARIA & BRUNCH';
+        const title = document.querySelector('.hero-title');
+        if (title) title.innerHTML = `O CAFÉ PERFEITO PARA <span>DESACELERAR O DIA</span> COM SABOR`;
+        const sub = document.querySelector('.hero-sub');
+        if (sub) sub.innerText = `Grãos 100% arábica premiados, métodos filtrados, croissants folhados e toasts artesanais em ${cidade}.`;
+      } else {
+        document.title = `${empresa} | Smash Burgers & Delivery em ${cidade}`;
+      }
+
       document.getElementById('burger-name-nav').innerText = empresa;
       document.getElementById('burger-name-footer').innerText = empresa;
       document.getElementById('hero-city').innerText = cidade.toUpperCase();
