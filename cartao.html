@@ -3,476 +3,788 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title id="doc-title">Cartão Digital Interativo | Demonstração</title>
-  <meta name="description" content="Modelo de Cartão Digital Interativo para WhatsApp com PIX e agendamento direto.">
+  <title id="doc-title">Cartão Executivo VIP | Demonstração</title>
+  <meta name="description" content="Cartão de Visita Digital Executivo de Alto Padrão para WhatsApp, PIX e Agendamento.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-main: #07090e;
+      --card-bg: rgba(15, 20, 31, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --gold-primary: #f59e0b;
+      --gold-gradient: linear-gradient(135deg, #fbbf24 0%, #d97706 50%, #b45309 100%);
+      --emerald-glow: rgba(16, 185, 129, 0.35);
+      --emerald-btn: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
       -webkit-tap-highlight-color: transparent;
     }
 
     body {
-      background: #0f172a;
-      color: #f8fafc;
+      background-color: var(--bg-main);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 10% 40%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+      color: var(--text-main);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding: 24px 16px;
+      padding: 24px 16px 48px 16px;
+      overflow-x: hidden;
     }
 
-    /* Container com proporção de tela de celular */
-    .card-container {
+    /* Container Central com Formato de Celular / Cartão Executivo */
+    .vip-card-wrapper {
       width: 100%;
-      max-width: 410px;
-      background: #1e293b;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 28px;
-      padding: 32px 20px 24px 20px;
+      max-width: 416px;
+      background: var(--card-bg);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid var(--card-border);
+      border-radius: 36px;
+      padding: 34px 22px 28px 22px;
+      box-shadow: 
+        0 30px 70px -15px rgba(0, 0, 0, 0.8),
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
       display: flex;
       flex-direction: column;
       align-items: center;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
       position: relative;
       overflow: hidden;
     }
 
-    /* Brilho decorativo no topo */
-    .card-container::before {
+    /* Linha de brilho metálico no topo do cartão */
+    .vip-card-wrapper::after {
       content: '';
       position: absolute;
-      top: -90px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 280px;
-      height: 180px;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
-      pointer-events: none;
+      top: 0;
+      left: 15%;
+      right: 15%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #fbbf24, transparent);
+      opacity: 0.8;
     }
 
-    /* Badge Demonstrativo */
-    .demo-badge {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      background: rgba(56, 189, 248, 0.12);
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      padding: 5px 12px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .demo-badge::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: #38bdf8;
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.8); }
-    }
-
-    /* Avatar e Identidade */
-    .avatar-wrapper {
-      position: relative;
-      margin-bottom: 16px;
-    }
-    .avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #334155, #1e293b);
-      border: 3px solid #38bdf8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
-      overflow: hidden;
-    }
-    .avatar svg {
-      width: 48px;
-      height: 48px;
-      fill: #38bdf8;
-    }
-
-    .status-online {
-      position: absolute;
-      bottom: 4px;
-      right: 4px;
-      background: #22c55e;
-      color: #ffffff;
-      font-size: 10px;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 12px;
-      border: 2px solid #1e293b;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .status-online::before {
-      content: '';
-      width: 5px;
-      height: 5px;
-      background: #ffffff;
-      border-radius: 50%;
-    }
-
-    h1.name {
-      font-size: 22px;
-      font-weight: 800;
-      color: #ffffff;
-      text-align: center;
-      margin-bottom: 4px;
-      letter-spacing: -0.02em;
-    }
-    p.specialty {
-      font-size: 13px;
-      font-weight: 500;
-      color: #94a3b8;
-      text-align: center;
-      margin-bottom: 6px;
-    }
-    p.location {
-      font-size: 12px;
-      font-weight: 600;
-      color: #38bdf8;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      margin-bottom: 24px;
-    }
-    p.location svg {
-      width: 14px;
-      height: 14px;
-      fill: currentColor;
-    }
-
-    /* Botões de Ação Principal */
-    .actions-list {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .btn-action {
+    /* Topo: Badge de Autenticidade & Status */
+    .card-topbar {
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 18px;
-      border-radius: 16px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 14px;
-      transition: all 0.2s ease;
-      cursor: pointer;
-      border: none;
-      outline: none;
-    }
-
-    .btn-action:active {
-      transform: scale(0.98);
-    }
-
-    /* Botão WhatsApp */
-    .btn-whatsapp {
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      color: #ffffff;
-      box-shadow: 0 8px 20px -4px rgba(34, 197, 94, 0.4);
-    }
-    .btn-whatsapp:hover {
-      box-shadow: 0 10px 25px -4px rgba(34, 197, 94, 0.6);
-    }
-
-    /* Botão PIX */
-    .btn-pix {
-      background: #0f172a;
-      color: #f1f5f9;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-    }
-    .btn-pix:hover {
-      background: #172554;
-      border-color: #38bdf8;
-    }
-
-    /* Botão Localização */
-    .btn-map {
-      background: #0f172a;
-      color: #f1f5f9;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .btn-map:hover {
-      background: #334155;
-    }
-
-    .btn-inner-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .btn-inner-left svg {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-    }
-    .btn-chevron {
-      width: 16px;
-      height: 16px;
-      opacity: 0.6;
-    }
-
-    /* Bloco de Serviços */
-    .services-box {
-      width: 100%;
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 16px;
-      padding: 16px;
       margin-bottom: 24px;
     }
-    .services-title {
+
+    .badge-verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fcd34d;
+    }
+    .badge-verified svg {
+      width: 14px;
+      height: 14px;
+      fill: #f59e0b;
+    }
+
+    .live-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.75); }
+    }
+
+    /* Foto de Perfil / Monograma VIP */
+    .profile-hero {
+      position: relative;
+      margin-bottom: 18px;
+    }
+
+    .avatar-frame {
+      width: 106px;
+      height: 106px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      padding: 3px;
+      position: relative;
+      box-shadow: 
+        0 15px 35px -5px rgba(0, 0, 0, 0.8),
+        0 0 25px -5px rgba(245, 158, 11, 0.3);
+    }
+
+    .avatar-frame::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 50%;
+      background: var(--gold-gradient);
+      z-index: 0;
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #0d131f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .avatar-inner svg {
+      width: 52px;
+      height: 52px;
+      fill: #fbbf24;
+    }
+
+    .vip-seal {
+      position: absolute;
+      bottom: -2px;
+      right: -2px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--gold-gradient);
+      border: 3px solid #0f141f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      z-index: 2;
+    }
+    .vip-seal svg {
+      width: 16px;
+      height: 16px;
+      fill: #07090e;
+    }
+
+    /* Tipografia de Cabeçalho */
+    h1.company-name {
+      font-size: 23px;
+      font-weight: 800;
+      color: #ffffff;
+      text-align: center;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+
+    p.company-niche {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fbbf24;
+      text-align: center;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    p.company-bio {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.5;
+      max-width: 330px;
+      margin-bottom: 22px;
+    }
+
+    /* Bloco de Ações Principais (Botões de Alta Conversão) */
+    .actions-stack {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    /* Estilo Base dos Botões */
+    .action-btn {
+      width: 100%;
+      padding: 15px 18px;
+      border-radius: 18px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      border: 1px solid transparent;
+      outline: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .action-btn:active {
+      transform: scale(0.975);
+    }
+
+    /* 1. Botão WhatsApp Primário */
+    .btn-wa-master {
+      background: var(--emerald-btn);
+      color: #ffffff;
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      box-shadow: 
+        0 10px 24px -6px rgba(16, 185, 129, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+    .btn-wa-master:hover {
+      box-shadow: 0 14px 28px -4px rgba(16, 185, 129, 0.65);
+      border-color: #6ee7b7;
+    }
+
+    /* 2. Botão PIX Dark Gold */
+    .btn-pix-dark {
+      background: rgba(22, 27, 40, 0.9);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: #ffffff;
+      box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.5);
+    }
+    .btn-pix-dark:hover {
+      background: rgba(30, 38, 56, 0.95);
+      border-color: #fbbf24;
+      box-shadow: 0 10px 25px -4px rgba(245, 158, 11, 0.25);
+    }
+
+    /* 3. Botão GPS / Localização */
+    .btn-gps-dark {
+      background: rgba(18, 23, 35, 0.7);
+      border: 1px solid var(--card-border);
+      color: #e2e8f0;
+    }
+    .btn-gps-dark:hover {
+      background: rgba(28, 36, 54, 0.85);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .btn-left-content {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-icon-wrapper {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .wa-icon-bg {
+      background: rgba(255, 255, 255, 0.16);
+    }
+    .pix-icon-bg {
+      background: rgba(245, 158, 11, 0.14);
+    }
+    .gps-icon-bg {
+      background: rgba(56, 189, 248, 0.12);
+    }
+
+    .btn-text-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .btn-title {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .btn-subtitle {
+      font-size: 11px;
+      font-weight: 500;
+      opacity: 0.75;
+      margin-top: 2px;
+    }
+
+    .btn-right-pill {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 8px;
+      border-radius: 8px;
+    }
+    .pill-wa {
+      background: rgba(0, 0, 0, 0.25);
+      color: #d1fae5;
+    }
+    .pill-pix {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fcd34d;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    .pill-gps {
+      background: rgba(255, 255, 255, 0.06);
+      color: #94a3b8;
+    }
+
+    /* Grade de Diferenciais / Especialidades */
+    .services-grid-wrapper {
+      width: 100%;
+      background: rgba(11, 15, 25, 0.6);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 16px;
+      margin-bottom: 22px;
+    }
+    .grid-header {
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #64748b;
-      margin-bottom: 10px;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 6px;
     }
-    .services-title svg {
-      width: 14px;
-      height: 14px;
-      fill: currentColor;
+    .grid-header svg {
+      width: 13px;
+      height: 13px;
+      fill: var(--gold-primary);
     }
-    .services-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
+    .tags-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
     }
-    .tag-item {
+    .service-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 10px 12px;
+      border-radius: 12px;
       font-size: 11px;
       font-weight: 600;
-      background: rgba(56, 189, 248, 0.08);
-      color: #93c5fd;
-      padding: 5px 10px;
-      border-radius: 8px;
-      border: 1px solid rgba(56, 189, 248, 0.15);
-    }
-
-    /* Feedback de PIX Copiado */
-    #pix-toast {
-      position: fixed;
-      bottom: 24px;
-      background: #22c55e;
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 13px;
-      padding: 12px 20px;
-      border-radius: 50px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      display: none;
+      color: #cbd5e1;
+      display: flex;
       align-items: center;
       gap: 8px;
-      z-index: 999;
-      animation: popUp 0.3s ease;
     }
-    @keyframes popUp {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    .service-pill svg {
+      width: 14px;
+      height: 14px;
+      fill: #38bdf8;
+      flex-shrink: 0;
     }
 
-    /* Rodapé da Proposta */
-    .card-footer {
+    /* Botão de Salvar Contato (vCard) */
+    .btn-vcard {
       width: 100%;
-      padding-top: 16px;
-      border-top: 1px dashed rgba(255, 255, 255, 0.1);
-      text-align: center;
-    }
-    .promo-banner {
-      background: linear-gradient(135deg, rgba(234, 179, 8, 0.12), rgba(249, 115, 22, 0.12));
-      border: 1px solid rgba(234, 179, 8, 0.3);
+      background: transparent;
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+      color: var(--text-muted);
       padding: 12px;
-      border-radius: 12px;
-      margin-bottom: 12px;
-    }
-    .promo-banner p {
+      border-radius: 14px;
       font-size: 12px;
       font-weight: 600;
-      color: #fde047;
-      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 22px;
     }
-    .promo-banner strong {
+    .btn-vcard:hover {
+      background: rgba(255, 255, 255, 0.04);
       color: #ffffff;
-      font-size: 13px;
+      border-color: rgba(255, 255, 255, 0.3);
     }
-    .btn-order {
+    .btn-vcard svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+    }
+
+    /* Rodapé Executivo / Promoção R$ 35 */
+    .card-footer-vip {
       width: 100%;
-      background: #38bdf8;
-      color: #0f172a;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .promo-card {
+      width: 100%;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(15, 20, 31, 0.8) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    .promo-tag {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fbbf24;
+      margin-bottom: 4px;
+    }
+
+    .promo-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+
+    .promo-price {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #fbbf24;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .promo-price span {
+      font-size: 13px;
+      font-weight: 500;
+      color: #94a3b8;
+    }
+
+    .btn-acquire {
+      width: 100%;
+      background: var(--gold-gradient);
+      color: #07090e;
       font-weight: 800;
       font-size: 13px;
-      padding: 12px;
+      padding: 13px;
       border-radius: 12px;
       text-decoration: none;
       display: inline-block;
+      box-shadow: 0 8px 20px rgba(217, 119, 6, 0.4);
       transition: all 0.2s;
     }
-    .btn-order:hover {
-      background: #7dd3fc;
+    .btn-acquire:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    .studio-credit {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin-top: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .studio-credit span {
+      color: #38bdf8;
+    }
+
+    /* Notificação Toast Flutuante */
+    #toast-notification {
+      position: fixed;
+      bottom: 24px;
+      background: #0f172a;
+      border: 1px solid rgba(16, 185, 129, 0.5);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 12px 20px;
+      border-radius: 50px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      gap: 10px;
+      z-index: 1000;
+      animation: floatUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes floatUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
 <body>
 
-  <div class="card-container">
-    <div class="demo-badge">Modelo Demonstrativo</div>
+  <div class="vip-card-wrapper">
 
-    <!-- Foto / Logo -->
-    <div class="avatar-wrapper">
-      <div class="avatar" id="avatar-box">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-        </svg>
+    <!-- Topbar com Selo e Status -->
+    <div class="card-topbar">
+      <div class="badge-verified">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <span>Perfil Oficial</span>
       </div>
-      <div class="status-online">Atendimento Ativo</div>
+      <div class="live-status">
+        <div class="status-dot"></div>
+        <span>Atendimento Ativo</span>
+      </div>
     </div>
 
-    <!-- Identificação -->
-    <h1 class="name" id="card-name">Nome da Empresa / Profissional</h1>
-    <p class="specialty" id="card-specialty">Atendimento Personalizado & Serviços Especializados</p>
-    <p class="location" id="card-location">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-      <span id="city-text">Campinas e Região</span>
+    <!-- Foto / Logo com Aro Metálico VIP -->
+    <div class="profile-hero">
+      <div class="avatar-frame">
+        <div class="avatar-inner" id="avatar-element">
+          <!-- Monograma Dinâmico ou Ícone -->
+          <svg viewBox="0 0 24 24">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </div>
+        <div class="vip-seal" title="Autenticado Pixel Studio">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Identificação da Empresa / Profissional -->
+    <h1 class="company-name" id="label-empresa">Instituto Oral & Estética</h1>
+    <p class="company-niche" id="label-nicho">Odontologia Especializada & Estética</p>
+    <p class="company-bio" id="label-bio">
+      Atendimento personalizado com agendamento prioritário e suporte direto via WhatsApp.
     </p>
 
-    <!-- Botões de Ação Direta -->
-    <div class="actions-list">
-      
-      <!-- 1. WHATSAPP -->
-      <a href="https://wa.me/5511913393797?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento." target="_blank" class="btn-action btn-whatsapp">
-        <div class="btn-inner-left">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/>
-          </svg>
-          <span>Chamar no WhatsApp</span>
+    <!-- Pilha de Ações Principais -->
+    <div class="actions-stack">
+
+      <!-- 1. WHATSAPP (Ação Primária) -->
+      <a href="https://wa.me/5511913393797?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento." target="_blank" class="action-btn btn-wa-master" id="btn-wa">
+        <div class="btn-left-content">
+          <div class="btn-icon-wrapper wa-icon-bg">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffffff">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/>
+            </svg>
+          </div>
+          <div class="btn-text-block">
+            <span class="btn-title">Iniciar Atendimento</span>
+            <span class="btn-subtitle">Converse direto no WhatsApp</span>
+          </div>
         </div>
-        <svg class="btn-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        <span class="btn-right-pill pill-wa">Online</span>
       </a>
 
-      <!-- 2. COPIAR PIX -->
-      <button type="button" class="btn-action btn-pix" id="btn-copy-pix">
-        <div class="btn-inner-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-          </svg>
-          <span>Copiar Chave PIX</span>
+      <!-- 2. COPIAR CHAVE PIX (Instantânea com Feedback) -->
+      <button type="button" class="action-btn btn-pix-dark" id="btn-pix">
+        <div class="btn-left-content">
+          <div class="btn-icon-wrapper pix-icon-bg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </div>
+          <div class="btn-text-block">
+            <span class="btn-title" id="pix-title-text">Chave PIX Instantânea</span>
+            <span class="btn-subtitle" id="pix-sub-text">Clique para copiar a chave</span>
+          </div>
         </div>
-        <svg class="btn-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        <span class="btn-right-pill pill-pix" id="pix-pill">Copiar</span>
       </button>
 
-      <!-- 3. LOCALIZAÇÃO / ENDEREÇO -->
-      <a href="https://maps.google.com" target="_blank" class="btn-action btn-map">
-        <div class="btn-inner-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-          <span>Como Chegar (Google Maps)</span>
+      <!-- 3. LOCALIZAÇÃO / COMO CHEGAR -->
+      <a href="https://maps.google.com" target="_blank" class="action-btn btn-gps-dark" id="btn-gps">
+        <div class="btn-left-content">
+          <div class="btn-icon-wrapper gps-icon-bg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div class="btn-text-block">
+            <span class="btn-title">Localização & Rota</span>
+            <span class="btn-subtitle" id="label-cidade">Campinas e Região</span>
+          </div>
         </div>
-        <svg class="btn-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        <span class="btn-right-pill pill-gps">GPS</span>
       </a>
 
     </div>
 
-    <!-- Bloco de Serviços / Especialidades -->
-    <div class="services-box">
-      <div class="services-title">
-        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <span>Serviços & Atendimentos</span>
+    <!-- Grade de Serviços e Diferenciais -->
+    <div class="services-grid-wrapper">
+      <div class="grid-header">
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <span>Especialidades & Diferenciais</span>
       </div>
-      <div class="services-tags" id="services-tags">
-        <span class="tag-item">Orçamentos Rápidos</span>
-        <span class="tag-item">Agendamento Flexível</span>
-        <span class="tag-item">Atendimento Direto</span>
-        <span class="tag-item">Garantia de Qualidade</span>
+      <div class="tags-container" id="services-grid">
+        <div class="service-pill">
+          <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          <span>Agendamento VIP</span>
+        </div>
+        <div class="service-pill">
+          <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          <span>Orçamento Rápido</span>
+        </div>
+        <div class="service-pill">
+          <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          <span>Atendimento Direto</span>
+        </div>
+        <div class="service-pill">
+          <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          <span>Garantia Total</span>
+        </div>
       </div>
     </div>
 
-    <!-- Banner Promocional no Rodapé do Modelo -->
-    <div class="card-footer">
-      <div class="promo-banner">
-        <p>Gostou da praticidade? Tenha o seu cartão com seus dados e links por apenas <strong>R$ 35 no PIX</strong>.</p>
+    <!-- Botão de Salvar Contato no Celular (Gera vCard na hora) -->
+    <button type="button" class="btn-vcard" id="btn-save-contact">
+      <svg viewBox="0 0 24 24"><path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/></svg>
+      <span>Salvar Contato na Agenda do Celular</span>
+    </button>
+
+    <!-- Rodapé Promocional (Oferta Irresistível R$ 35) -->
+    <div class="card-footer-vip">
+      <div class="promo-card">
+        <div class="promo-tag">Oferta Especial de Lançamento</div>
+        <div class="promo-title">Gostou desse modelo? Tenha o seu cartão VIP com a sua marca e links:</div>
+        <div class="promo-price">
+          R$ 35 <span>à vista no PIX</span>
+        </div>
+        <a href="https://wa.me/5511913393797?text=Ol%C3%A1%2C%20adorei%20o%20Cart%C3%A3o%20Digital%20VIP%20e%20quero%20fazer%20o%20meu%20por%2035%20reais." target="_blank" class="btn-acquire">
+          Garantir Meu Cartão por R$ 35
+        </a>
       </div>
-      <a href="https://wa.me/5511913393797?text=Ol%C3%A1%2C%20gostei%20do%20modelo%20de%20Cart%C3%A3o%20Digital%20e%20quero%20o%20meu%20por%2035%20reais." target="_blank" class="btn-order">
-        Quero meu Cartão por R$ 35
-      </a>
+      <div class="studio-credit">
+        Desenvolvido com exclusividade por <span>Pixel Studio</span>
+      </div>
     </div>
 
   </div>
 
-  <!-- Toast Notificação PIX -->
-  <div id="pix-toast">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-      <path d="M20 6L9 17l-5-5"/>
+  <!-- Toast Notification Flutuante -->
+  <div id="toast-notification">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#10b981">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
     </svg>
-    <span>Chave PIX copiada com sucesso!</span>
+    <span id="toast-text">Chave PIX copiada com sucesso!</span>
   </div>
 
   <script>
-    // Personalização dinâmica com base nos parâmetros da URL (nicho, empresa, cidade)
+    // Recupera dados dinâmicos da URL
     const params = new URLSearchParams(window.location.search);
-    const empresa = params.get('empresa');
-    const nicho = params.get('nicho');
-    const cidade = params.get('cidade');
+    const empresaParam = params.get('empresa');
+    const nichoParam = params.get('nicho');
+    const cidadeParam = params.get('cidade');
 
-    if (empresa) {
-      document.getElementById('card-name').textContent = empresa;
-      document.getElementById('doc-title').textContent = empresa + ' | Cartão Digital';
+    const empresaNome = empresaParam ? decodeURIComponent(empresaParam) : 'Instituto Oral & Estética';
+    const nichoNome = nichoParam ? decodeURIComponent(nichoParam) : 'Odontologia Especializada';
+    const cidadeNome = cidadeParam ? decodeURIComponent(cidadeParam) : 'Campinas e Região';
+
+    // Aplica no DOM
+    document.getElementById('label-empresa').textContent = empresaNome;
+    document.getElementById('doc-title').textContent = empresaNome + ' | Cartão Executivo VIP';
+    document.getElementById('label-nicho').textContent = 'Especialista em ' + nichoNome;
+    document.getElementById('label-cidade').textContent = cidadeNome;
+
+    // Adaptação dos diferenciais se for gastronomia
+    if (nichoNome.toLowerCase().includes('hamburg') || nichoNome.toLowerCase().includes('restaurante') || nichoNome.toLowerCase().includes('pizz')) {
+      document.getElementById('services-grid').innerHTML = `
+        <div class="service-pill"><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span>Cardápio Digital</span></div>
+        <div class="service-pill"><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span>Delivery Direto</span></div>
+        <div class="service-pill"><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span>Sem Comissões</span></div>
+        <div class="service-pill"><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span>Entrega Rápida</span></div>
+      `;
     }
 
-    if (nicho) {
-      document.getElementById('card-specialty').textContent = 'Especialista em ' + nicho;
-    }
+    // Copiar Chave PIX com Feedback
+    const btnPix = document.getElementById('btn-pix');
+    const toast = document.getElementById('toast-notification');
+    const toastText = document.getElementById('toast-text');
+    const pixPill = document.getElementById('pix-pill');
 
-    if (cidade) {
-      document.getElementById('city-text').textContent = cidade;
-    }
+    const demoPixKey = 'contato@pixelstudio.com';
 
-    // Ação do Botão PIX: Copia chave de demonstração e exibe aviso
-    const pixBtn = document.getElementById('btn-copy-pix');
-    const toast = document.getElementById('pix-toast');
+    btnPix.addEventListener('click', () => {
+      navigator.clipboard.writeText(demoPixKey).then(() => {
+        pixPill.textContent = 'Copiado!';
+        pixPill.style.background = '#10b981';
+        pixPill.style.color = '#ffffff';
 
-    pixBtn.addEventListener('click', () => {
-      const demoPix = 'contato@pixelstudio.com';
-      navigator.clipboard.writeText(demoPix).then(() => {
+        toastText.textContent = 'Chave PIX copiada: ' + demoPixKey;
         toast.style.display = 'flex';
+
         setTimeout(() => {
           toast.style.display = 'none';
+          pixPill.textContent = 'Copiar';
+          pixPill.style.background = 'rgba(245, 158, 11, 0.15)';
+          pixPill.style.color = '#fcd34d';
         }, 3000);
       }).catch(() => {
-        alert('Chave PIX: contato@pixelstudio.com');
+        alert('Chave PIX: ' + demoPixKey);
       });
+    });
+
+    // Salvar Contato (.vcf / vCard download direto para a agenda do smartphone)
+    document.getElementById('btn-save-contact').addEventListener('click', () => {
+      const vcardData = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        'FN:' + empresaNome,
+        'ORG:' + empresaNome,
+        'TITLE:' + nichoNome,
+        'TEL;TYPE=WORK,VOICE:+5511913393797',
+        'ADR;TYPE=WORK:;;' + cidadeNome + ';;;;',
+        'URL:' + window.location.href,
+        'END:VCARD'
+      ].join('\r\n');
+
+      const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = empresaNome.replace(/[^a-zA-Z0-9]/g, '_') + '.vcf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      toastText.textContent = 'Contato pronto para salvar na sua agenda!';
+      toast.style.display = 'flex';
+      setTimeout(() => { toast.style.display = 'none'; }, 3000);
     });
   </script>
 
