@@ -3,551 +3,701 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title id="doc-title">Cartão Executivo VIP | Demonstração</title>
-  <meta name="description" content="Cartão de Visita Digital Executivo de Alto Padrão para WhatsApp, PIX e Agendamento.">
+  <title id="doc-title">Oralcamp | Cartão Digital Oficial</title>
+  <meta name="description" content="Cartão de visita digital interativo de alto padrão.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-main: #07090e;
-      --card-bg: rgba(15, 20, 31, 0.75);
+      --bg: #090d16;
+      --card-surface: #111726;
+      --card-surface-elevated: #161e31;
       --card-border: rgba(255, 255, 255, 0.08);
-      --gold-primary: #f59e0b;
-      --gold-gradient: linear-gradient(135deg, #fbbf24 0%, #d97706 50%, #b45309 100%);
-      --emerald-glow: rgba(16, 185, 129, 0.35);
-      --emerald-btn: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      --card-border-subtle: rgba(255, 255, 255, 0.04);
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --text-dim: #64748b;
+      --text-sub: #64748b;
+      --wa-color: #25d366;
+      --wa-bg: rgba(37, 211, 102, 0.12);
+      --pix-teal: #32bcad;
+      --pix-bg: rgba(50, 188, 173, 0.12);
+      --accent-blue: #38bdf8;
+      --gold-star: #fbbf24;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       -webkit-tap-highlight-color: transparent;
     }
 
     body {
-      background-color: var(--bg-main);
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.12) 0%, transparent 60%),
-        radial-gradient(circle at 10% 40%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-      background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+      background-color: var(--bg);
       color: var(--text-main);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding: 24px 16px 48px 16px;
+      padding: 0 0 40px 0;
       overflow-x: hidden;
     }
 
-    /* Container Central com Formato de Celular / Cartão Executivo */
-    .vip-card-wrapper {
+    /* CONTAINER ESTILO SMARTPHONE / BENTO */
+    .app-screen {
       width: 100%;
-      max-width: 416px;
-      background: var(--card-bg);
-      backdrop-filter: blur(28px);
-      -webkit-backdrop-filter: blur(28px);
-      border: 1px solid var(--card-border);
-      border-radius: 36px;
-      padding: 34px 22px 28px 22px;
-      box-shadow: 
-        0 30px 70px -15px rgba(0, 0, 0, 0.8),
-        0 0 0 1px rgba(255, 255, 255, 0.05),
-        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      max-width: 440px;
+      min-height: 100vh;
+      background: var(--bg);
       display: flex;
       flex-direction: column;
-      align-items: center;
       position: relative;
+    }
+
+    @media (min-width: 480px) {
+      body {
+        padding: 24px 16px 48px 16px;
+        background: radial-gradient(circle at 50% 10%, #172138 0%, #070a10 70%);
+      }
+      .app-screen {
+        border-radius: 36px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05);
+        overflow: hidden;
+        min-height: auto;
+      }
+    }
+
+    /* 1. HEADER COM CAPA DE FUNDO (COVER BANNER) */
+    .profile-cover {
+      width: 100%;
+      height: 140px;
+      position: relative;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #0b1329 100%);
       overflow: hidden;
     }
 
-    /* Linha de brilho metálico no topo do cartão */
-    .vip-card-wrapper::after {
+    /* Textura estética de capa */
+    .profile-cover::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 15%;
-      right: 15%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #fbbf24, transparent);
-      opacity: 0.8;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 20% 40%, rgba(56, 189, 248, 0.25) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(50, 188, 173, 0.25) 0%, transparent 50%);
+      opacity: 0.9;
     }
 
-    /* Topo: Badge de Autenticidade & Status */
-    .card-topbar {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 24px;
+    .profile-cover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 24px 24px;
+      opacity: 0.5;
     }
 
-    .badge-verified {
+    .cover-badge-top {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 2;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(245, 158, 11, 0.1);
-      border: 1px solid rgba(245, 158, 11, 0.3);
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       padding: 5px 12px;
       border-radius: 20px;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #fcd34d;
+      color: #ffffff;
     }
-    .badge-verified svg {
-      width: 14px;
-      height: 14px;
-      fill: #f59e0b;
-    }
-
-    .live-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      font-weight: 600;
-      color: #34d399;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.25);
-      padding: 4px 10px;
-      border-radius: 20px;
-    }
-    .status-dot {
-      width: 6px;
-      height: 6px;
+    .status-pulse-dot {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: #10b981;
       box-shadow: 0 0 8px #10b981;
-      animation: pulse 1.8s infinite ease-in-out;
+      animation: pulseDot 2s infinite ease-in-out;
     }
-    @keyframes pulse {
+    @keyframes pulseDot {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.3; transform: scale(0.75); }
+      50% { opacity: 0.35; transform: scale(0.8); }
     }
 
-    /* Foto de Perfil / Monograma VIP */
-    .profile-hero {
+    /* 2. AVATAR FLUTUANTE SOBRE A CAPA */
+    .profile-avatar-container {
+      padding: 0 20px;
+      margin-top: -50px;
       position: relative;
-      margin-bottom: 18px;
+      z-index: 3;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
     }
 
-    .avatar-frame {
-      width: 106px;
-      height: 106px;
-      border-radius: 50%;
+    .avatar-wrapper {
+      position: relative;
+    }
+
+    .avatar-img-box {
+      width: 94px;
+      height: 94px;
+      border-radius: 26px;
       background: linear-gradient(135deg, #1e293b, #0f172a);
-      padding: 3px;
-      position: relative;
-      box-shadow: 
-        0 15px 35px -5px rgba(0, 0, 0, 0.8),
-        0 0 25px -5px rgba(245, 158, 11, 0.3);
-    }
-
-    .avatar-frame::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: 50%;
-      background: var(--gold-gradient);
-      z-index: 0;
-    }
-
-    .avatar-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: #0d131f;
+      border: 4px solid var(--card-surface);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      z-index: 1;
       overflow: hidden;
+      position: relative;
     }
 
-    .avatar-inner svg {
-      width: 52px;
-      height: 52px;
-      fill: #fbbf24;
+    .avatar-img-box svg {
+      width: 48px;
+      height: 48px;
+      fill: #38bdf8;
     }
 
-    .vip-seal {
+    .badge-verified-avatar {
       position: absolute;
-      bottom: -2px;
-      right: -2px;
-      width: 32px;
-      height: 32px;
+      bottom: -4px;
+      right: -4px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
-      background: var(--gold-gradient);
-      border: 3px solid #0f141f;
+      background: #38bdf8;
+      border: 3px solid var(--card-surface);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-      z-index: 2;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     }
-    .vip-seal svg {
-      width: 16px;
-      height: 16px;
-      fill: #07090e;
+    .badge-verified-avatar svg {
+      width: 14px;
+      height: 14px;
+      fill: #090d16;
     }
 
-    /* Tipografia de Cabeçalho */
-    h1.company-name {
-      font-size: 23px;
-      font-weight: 800;
+    /* Botão flutuante rápido "Salvar na Agenda" */
+    .btn-save-vcard-quick {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       color: #ffffff;
-      text-align: center;
-      letter-spacing: -0.03em;
-      line-height: 1.25;
+      padding: 9px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 6px;
+    }
+    .btn-save-vcard-quick:active {
+      transform: scale(0.96);
+    }
+    .btn-save-vcard-quick svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+    }
+
+    /* 3. DADOS DE APRESENTAÇÃO */
+    .profile-info {
+      padding: 14px 20px 20px 20px;
+    }
+
+    .profile-header-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       margin-bottom: 4px;
     }
-
-    p.company-niche {
-      font-size: 13px;
-      font-weight: 600;
-      color: #fbbf24;
-      text-align: center;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
+    h1.company-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
     }
 
-    p.company-bio {
-      font-size: 12px;
+    p.company-category {
+      font-size: 13px;
+      font-weight: 600;
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    p.company-bio-text {
+      font-size: 13px;
       color: var(--text-muted);
-      text-align: center;
       line-height: 1.5;
-      max-width: 330px;
+      margin-bottom: 14px;
+    }
+
+    /* Prova Social / Avaliações Google */
+    .social-proof-bar {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+    .stars-group {
+      display: flex;
+      gap: 2px;
+    }
+    .stars-group svg {
+      width: 13px;
+      height: 13px;
+      fill: var(--gold-star);
+    }
+    .rating-text strong {
+      color: #ffffff;
+    }
+
+    /* 4. BARRA DE AÇÕES RÁPIDAS (CIRCULAR QUICK BAR - ESTILO POPL/TAPNI) */
+    .quick-actions-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 0 20px;
       margin-bottom: 22px;
     }
 
-    /* Bloco de Ações Principais (Botões de Alta Conversão) */
-    .actions-stack {
-      width: 100%;
+    .quick-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .quick-icon-circle {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: var(--card-surface);
+      border: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+    .quick-item:active .quick-icon-circle {
+      transform: scale(0.92);
+    }
+    .quick-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* Ícones das ações rápidas */
+    .icon-wa {
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.2), rgba(37, 211, 102, 0.08));
+      border-color: rgba(37, 211, 102, 0.35);
+    }
+    .icon-wa svg { fill: #25d366; }
+
+    .icon-call {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(56, 189, 248, 0.08));
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+    .icon-call svg { fill: #38bdf8; }
+
+    .icon-gps {
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.2), rgba(244, 63, 94, 0.08));
+      border-color: rgba(244, 63, 94, 0.35);
+    }
+    .icon-gps svg { fill: #f43f5e; }
+
+    .icon-insta {
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(168, 85, 247, 0.08));
+      border-color: rgba(236, 72, 153, 0.35);
+    }
+    .icon-insta svg { fill: #ec4899; }
+
+    /* 5. SEÇÃO BENTO GRID DE CARDS */
+    .bento-container {
+      padding: 0 20px;
       display: flex;
       flex-direction: column;
       gap: 12px;
       margin-bottom: 24px;
     }
 
-    /* Estilo Base dos Botões */
-    .action-btn {
+    /* CARD 1: BOTÃO MASTER WHATSAPP */
+    .bento-card-wa {
       width: 100%;
-      padding: 15px 18px;
-      border-radius: 18px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 700;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border-radius: 20px;
+      padding: 16px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-      cursor: pointer;
-      border: 1px solid transparent;
-      outline: none;
-      position: relative;
-      overflow: hidden;
+      text-decoration: none;
+      box-shadow: 0 12px 24px -6px rgba(16, 185, 129, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.2s;
     }
-    .action-btn:active {
-      transform: scale(0.975);
+    .bento-card-wa:active {
+      transform: scale(0.98);
     }
-
-    /* 1. Botão WhatsApp Primário */
-    .btn-wa-master {
-      background: var(--emerald-btn);
-      color: #ffffff;
-      border: 1px solid rgba(52, 211, 153, 0.4);
-      box-shadow: 
-        0 10px 24px -6px rgba(16, 185, 129, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    }
-    .btn-wa-master:hover {
-      box-shadow: 0 14px 28px -4px rgba(16, 185, 129, 0.65);
-      border-color: #6ee7b7;
-    }
-
-    /* 2. Botão PIX Dark Gold */
-    .btn-pix-dark {
-      background: rgba(22, 27, 40, 0.9);
-      border: 1px solid rgba(245, 158, 11, 0.35);
-      color: #ffffff;
-      box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.5);
-    }
-    .btn-pix-dark:hover {
-      background: rgba(30, 38, 56, 0.95);
-      border-color: #fbbf24;
-      box-shadow: 0 10px 25px -4px rgba(245, 158, 11, 0.25);
-    }
-
-    /* 3. Botão GPS / Localização */
-    .btn-gps-dark {
-      background: rgba(18, 23, 35, 0.7);
-      border: 1px solid var(--card-border);
-      color: #e2e8f0;
-    }
-    .btn-gps-dark:hover {
-      background: rgba(28, 36, 54, 0.85);
-      border-color: rgba(255, 255, 255, 0.18);
-    }
-
-    .btn-left-content {
+    .card-wa-left {
       display: flex;
       align-items: center;
       gap: 14px;
     }
-
-    .btn-icon-wrapper {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
+    .card-wa-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: rgba(0, 0, 0, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
     }
-    .wa-icon-bg {
-      background: rgba(255, 255, 255, 0.16);
+    .card-wa-icon svg {
+      width: 26px;
+      height: 26px;
+      fill: #ffffff;
     }
-    .pix-icon-bg {
-      background: rgba(245, 158, 11, 0.14);
-    }
-    .gps-icon-bg {
-      background: rgba(56, 189, 248, 0.12);
-    }
-
-    .btn-text-block {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-    }
-    .btn-title {
-      font-size: 14px;
-      font-weight: 700;
+    .card-wa-texts h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #ffffff;
       line-height: 1.2;
     }
-    .btn-subtitle {
-      font-size: 11px;
+    .card-wa-texts p {
+      font-size: 12px;
       font-weight: 500;
-      opacity: 0.75;
+      color: #d1fae5;
       margin-top: 2px;
     }
-
-    .btn-right-pill {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 4px 8px;
-      border-radius: 8px;
-    }
-    .pill-wa {
-      background: rgba(0, 0, 0, 0.25);
-      color: #d1fae5;
-    }
-    .pill-pix {
-      background: rgba(245, 158, 11, 0.15);
-      color: #fcd34d;
-      border: 1px solid rgba(245, 158, 11, 0.3);
-    }
-    .pill-gps {
-      background: rgba(255, 255, 255, 0.06);
-      color: #94a3b8;
+    .card-wa-chevron svg {
+      width: 20px;
+      height: 20px;
+      stroke: #ffffff;
+      fill: none;
+      stroke-width: 2.5;
     }
 
-    /* Grade de Diferenciais / Especialidades */
-    .services-grid-wrapper {
-      width: 100%;
-      background: rgba(11, 15, 25, 0.6);
+    /* CARD 2: CHAVE PIX (ESTILO CARTÃO FINTECH / NUBANK STYLE) */
+    .bento-card-pix {
+      background: var(--card-surface);
       border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 16px;
-      margin-bottom: 22px;
+      border-radius: 22px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      position: relative;
+      overflow: hidden;
     }
-    .grid-header {
+    .bento-card-pix::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 140px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(50, 188, 173, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .pix-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .pix-logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pix-svg-icon {
+      width: 22px;
+      height: 22px;
+      fill: var(--pix-teal);
+    }
+    .pix-label-text {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
+
+    .pix-key-display {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px dashed rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .pix-key-val {
+      font-family: 'Space Grotesk', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      color: #e2e8f0;
+      word-break: break-all;
+    }
+    .btn-copy-pix-action {
+      background: var(--pix-teal);
+      color: #090d16;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+    .btn-copy-pix-action:active {
+      transform: scale(0.94);
+    }
+
+    /* CARD 3: LOCALIZAÇÃO & MAPA */
+    .bento-card-location {
+      background: var(--card-surface);
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .bento-card-location:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+      background: var(--card-surface-elevated);
+    }
+    .loc-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .loc-icon-pin {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(244, 63, 94, 0.12);
+      border: 1px solid rgba(244, 63, 94, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .loc-icon-pin svg {
+      width: 20px;
+      height: 20px;
+      fill: #f43f5e;
+    }
+    .loc-info h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .loc-info p {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .loc-cta-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 6px 10px;
+      border-radius: 10px;
+    }
+
+    /* CARD 4: SERVIÇOS E ESPECIALIDADES */
+    .bento-card-services {
+      background: var(--card-surface);
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      padding: 18px;
+    }
+    .services-header {
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--text-dim);
+      letter-spacing: 0.1em;
+      color: var(--text-sub);
       margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 6px;
     }
-    .grid-header svg {
-      width: 13px;
-      height: 13px;
-      fill: var(--gold-primary);
+    .services-header svg {
+      width: 14px;
+      height: 14px;
+      fill: #38bdf8;
     }
-    .tags-container {
+    .services-list-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
     }
-    .service-pill {
+    .service-item-chip {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.06);
       padding: 10px 12px;
       border-radius: 12px;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 600;
-      color: #cbd5e1;
+      color: #e2e8f0;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
     }
-    .service-pill svg {
+    .service-item-chip svg {
       width: 14px;
       height: 14px;
-      fill: #38bdf8;
+      fill: #10b981;
       flex-shrink: 0;
     }
 
-    /* Botão de Salvar Contato (vCard) */
-    .btn-vcard {
-      width: 100%;
-      background: transparent;
-      border: 1px dashed rgba(255, 255, 255, 0.15);
-      color: var(--text-muted);
-      padding: 12px;
-      border-radius: 14px;
+    /* CARD 5: HORÁRIOS DE ATENDIMENTO */
+    .bento-card-hours {
+      background: var(--card-surface);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       font-size: 12px;
-      font-weight: 600;
+    }
+    .hours-left {
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 8px;
-      cursor: pointer;
-      transition: all 0.2s;
-      margin-bottom: 22px;
+      color: var(--text-muted);
     }
-    .btn-vcard:hover {
-      background: rgba(255, 255, 255, 0.04);
-      color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.3);
+    .hours-left svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--text-sub);
     }
-    .btn-vcard svg {
-      width: 15px;
-      height: 15px;
-      fill: currentColor;
+    .hours-status-badge {
+      color: #10b981;
+      font-weight: 700;
     }
 
-    /* Rodapé Executivo / Promoção R$ 35 */
-    .card-footer-vip {
-      width: 100%;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 18px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .promo-card {
-      width: 100%;
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(15, 20, 31, 0.8) 100%);
-      border: 1px solid rgba(245, 158, 11, 0.3);
-      border-radius: 18px;
-      padding: 16px;
+    /* 6. BANNER PROMOCIONAL / CONVERSÃO DE VENDA R$ 35 */
+    .bento-promo-offer {
+      margin: 8px 20px 0 20px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(17, 23, 38, 0.95) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 24px;
+      padding: 20px 18px;
       text-align: center;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
-
-    .promo-tag {
-      font-size: 10px;
+    .promo-tag-label {
+      font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #fbbf24;
-      margin-bottom: 4px;
+      color: #38bdf8;
+      margin-bottom: 6px;
     }
-
-    .promo-title {
-      font-size: 13px;
+    .promo-title-main {
+      font-size: 14px;
       font-weight: 700;
       color: #ffffff;
-      margin-bottom: 6px;
-      line-height: 1.35;
+      line-height: 1.4;
+      margin-bottom: 8px;
     }
-
-    .promo-price {
+    .promo-price-tag {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 700;
-      color: #fbbf24;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
+      color: #ffffff;
+      margin-bottom: 14px;
     }
-    .promo-price span {
+    .promo-price-tag span {
       font-size: 13px;
       font-weight: 500;
-      color: #94a3b8;
+      color: var(--text-muted);
     }
-
-    .btn-acquire {
+    .btn-buy-card {
       width: 100%;
-      background: var(--gold-gradient);
-      color: #07090e;
+      background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+      color: #ffffff;
+      font-size: 14px;
       font-weight: 800;
-      font-size: 13px;
-      padding: 13px;
-      border-radius: 12px;
+      padding: 14px;
+      border-radius: 14px;
       text-decoration: none;
       display: inline-block;
-      box-shadow: 0 8px 20px rgba(217, 119, 6, 0.4);
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.4);
       transition: all 0.2s;
     }
-    .btn-acquire:hover {
+    .btn-buy-card:hover {
       filter: brightness(1.1);
-      transform: translateY(-1px);
     }
 
-    .studio-credit {
-      font-size: 10px;
+    .footer-credit {
+      text-align: center;
+      padding: 20px 0 8px 0;
+      font-size: 11px;
       font-weight: 600;
-      color: var(--text-dim);
-      margin-top: 14px;
+      color: var(--text-sub);
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
-    .studio-credit span {
+    .footer-credit span {
       color: #38bdf8;
     }
 
-    /* Notificação Toast Flutuante */
-    #toast-notification {
+    /* TOAST DE FEEDBACK FLUTUANTE */
+    #copy-toast {
       position: fixed;
       bottom: 24px;
       background: #0f172a;
-      border: 1px solid rgba(16, 185, 129, 0.5);
+      border: 1px solid rgba(50, 188, 173, 0.6);
       color: #ffffff;
       font-size: 13px;
       font-weight: 700;
-      padding: 12px 20px;
+      padding: 12px 22px;
       border-radius: 50px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
       display: none;
       align-items: center;
       gap: 10px;
       z-index: 1000;
-      animation: floatUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    @keyframes floatUp {
+    @keyframes toastIn {
       from { transform: translateY(30px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
@@ -555,154 +705,220 @@
 </head>
 <body>
 
-  <div class="vip-card-wrapper">
+  <div class="app-screen">
 
-    <!-- Topbar com Selo e Status -->
-    <div class="card-topbar">
-      <div class="badge-verified">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-        <span>Perfil Oficial</span>
-      </div>
-      <div class="live-status">
-        <div class="status-dot"></div>
-        <span>Atendimento Ativo</span>
+    <!-- 1. CAPA ESTILIZADA DE TOPO (COVER BANNER) -->
+    <div class="profile-cover">
+      <div class="cover-badge-top">
+        <div class="status-pulse-dot"></div>
+        <span>Atendimento Aberto</span>
       </div>
     </div>
 
-    <!-- Foto / Logo com Aro Metálico VIP -->
-    <div class="profile-hero">
-      <div class="avatar-frame">
-        <div class="avatar-inner" id="avatar-element">
-          <!-- Monograma Dinâmico ou Ícone -->
+    <!-- 2. AVATAR FLUTUANTE & BOTÃO DE CONTATO -->
+    <div class="profile-avatar-container">
+      <div class="avatar-wrapper">
+        <div class="avatar-img-box">
+          <!-- Ícone / Monograma Clínico / Corporativo -->
           <svg viewBox="0 0 24 24">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
           </svg>
         </div>
-        <div class="vip-seal" title="Autenticado Pixel Studio">
+        <div class="badge-verified-avatar" title="Perfil Verificado">
           <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
         </div>
       </div>
+
+      <!-- Salvar Contato no Celular (Gera .vcf) -->
+      <button type="button" class="btn-save-vcard-quick" id="btn-save-vcard">
+        <svg viewBox="0 0 24 24"><path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/></svg>
+        <span>Salvar Contato</span>
+      </button>
     </div>
 
-    <!-- Identificação da Empresa / Profissional -->
-    <h1 class="company-name" id="label-empresa">Instituto Oral & Estética</h1>
-    <p class="company-niche" id="label-nicho">Odontologia Especializada & Estética</p>
-    <p class="company-bio" id="label-bio">
-      Atendimento personalizado com agendamento prioritário e suporte direto via WhatsApp.
-    </p>
+    <!-- 3. IDENTIFICAÇÃO E AVALIAÇÃO GOOGLE -->
+    <div class="profile-info">
+      <h1 class="company-title" id="val-empresa">Oralcamp Odontologia</h1>
+      <p class="company-category" id="val-nicho">Clínica Odontológica Especializada</p>
+      
+      <p class="company-bio-text" id="val-bio">
+        Excelência em estética dental, implantes e agendamento prioritário direto no WhatsApp.
+      </p>
 
-    <!-- Pilha de Ações Principais -->
-    <div class="actions-stack">
+      <!-- Prova Social Google 5 Estrelas -->
+      <div class="social-proof-bar">
+        <div class="stars-group">
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <span class="rating-text"><strong>4.9</strong> (148 avaliações no Google)</span>
+      </div>
+    </div>
 
-      <!-- 1. WHATSAPP (Ação Primária) -->
-      <a href="https://wa.me/5511913393797?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento." target="_blank" class="action-btn btn-wa-master" id="btn-wa">
-        <div class="btn-left-content">
-          <div class="btn-icon-wrapper wa-icon-bg">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffffff">
+    <!-- 4. BARRA DE ATALHOS RÁPIDOS CIRCULARES (ESTILO POPL / APPLE WIDGET) -->
+    <div class="quick-actions-bar">
+      
+      <a href="https://wa.me/5511913393797?text=Ol%C3%A1%2C%20gostaria%20de%20um%20atendimento." target="_blank" class="quick-item">
+        <div class="quick-icon-circle icon-wa">
+          <svg width="22" height="22" viewBox="0 0 24 24">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/>
+          </svg>
+        </div>
+        <span class="quick-label">WhatsApp</span>
+      </a>
+
+      <a href="tel:+5511913393797" class="quick-item">
+        <div class="quick-icon-circle icon-call">
+          <svg width="20" height="20" viewBox="0 0 24 24">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+        </div>
+        <span class="quick-label">Ligar</span>
+      </a>
+
+      <a href="https://maps.google.com" target="_blank" class="quick-item">
+        <div class="quick-icon-circle icon-gps">
+          <svg width="20" height="20" viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+        </div>
+        <span class="quick-label">Como Chegar</span>
+      </a>
+
+      <a href="https://instagram.com" target="_blank" class="quick-item">
+        <div class="quick-icon-circle icon-insta">
+          <svg width="20" height="20" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </div>
+        <span class="quick-label">Instagram</span>
+      </a>
+
+    </div>
+
+    <!-- 5. BENTO GRID DE CARDS E FUNCIONALIDADES -->
+    <div class="bento-container">
+
+      <!-- CARD 1: WHATSAPP MASTER CTA -->
+      <a href="https://wa.me/5511913393797?text=Ol%C3%A1%2C%20gostaria%20de%20um%20atendimento." target="_blank" class="bento-card-wa">
+        <div class="card-wa-left">
+          <div class="card-wa-icon">
+            <svg viewBox="0 0 24 24">
               <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/>
             </svg>
           </div>
-          <div class="btn-text-block">
-            <span class="btn-title">Iniciar Atendimento</span>
-            <span class="btn-subtitle">Converse direto no WhatsApp</span>
+          <div class="card-wa-texts">
+            <h3>Iniciar Conversa no WhatsApp</h3>
+            <p>Agendamentos e orçamentos em tempo real</p>
           </div>
         </div>
-        <span class="btn-right-pill pill-wa">Online</span>
+        <div class="card-wa-chevron">
+          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
       </a>
 
-      <!-- 2. COPIAR CHAVE PIX (Instantânea com Feedback) -->
-      <button type="button" class="action-btn btn-pix-dark" id="btn-pix">
-        <div class="btn-left-content">
-          <div class="btn-icon-wrapper pix-icon-bg">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- CARD 2: CHAVE PIX OFICIAL (FINTECH STYLE) -->
+      <div class="bento-card-pix">
+        <div class="pix-card-header">
+          <div class="pix-logo-badge">
+            <svg class="pix-svg-icon" viewBox="0 0 24 24">
+              <path d="M9.418 2.012a2.4 2.4 0 0 1 2.4 0l7.382 4.262a2.4 2.4 0 0 1 1.2 2.079v8.524a2.4 2.4 0 0 1-1.2 2.079l-7.382 4.262a2.4 2.4 0 0 1-2.4 0l-7.382-4.262a2.4 2.4 0 0 1-1.2-2.079V8.353a2.4 2.4 0 0 1 1.2-2.079L9.418 2.012zm1.2 2.079a.4.4 0 0 0-.4 0L2.836 8.353a.4.4 0 0 0-.2.347v8.524a.4.4 0 0 0 .2.347l7.382 4.262a.4.4 0 0 0 .4 0l7.382-4.262a.4.4 0 0 0 .2-.347V8.7a.4.4 0 0 0-.2-.347L10.618 4.091z"/>
+            </svg>
+            <span class="pix-label-text">Pagamento Instantâneo PIX</span>
+          </div>
+        </div>
+
+        <div class="pix-key-display">
+          <span class="pix-key-val" id="pix-val-text">contato@pixelstudio.com</span>
+          <button type="button" class="btn-copy-pix-action" id="btn-copy-pix">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
               <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
             </svg>
-          </div>
-          <div class="btn-text-block">
-            <span class="btn-title" id="pix-title-text">Chave PIX Instantânea</span>
-            <span class="btn-subtitle" id="pix-sub-text">Clique para copiar a chave</span>
-          </div>
+            <span id="copy-btn-label">Copiar</span>
+          </button>
         </div>
-        <span class="btn-right-pill pill-pix" id="pix-pill">Copiar</span>
-      </button>
+      </div>
 
-      <!-- 3. LOCALIZAÇÃO / COMO CHEGAR -->
-      <a href="https://maps.google.com" target="_blank" class="action-btn btn-gps-dark" id="btn-gps">
-        <div class="btn-left-content">
-          <div class="btn-icon-wrapper gps-icon-bg">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
+      <!-- CARD 3: LOCALIZAÇÃO & ENDEREÇO -->
+      <a href="https://maps.google.com" target="_blank" class="bento-card-location">
+        <div class="loc-left">
+          <div class="loc-icon-pin">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
           </div>
-          <div class="btn-text-block">
-            <span class="btn-title">Localização & Rota</span>
-            <span class="btn-subtitle" id="label-cidade">Campinas e Região</span>
+          <div class="loc-info">
+            <h4>Endereço & Rota</h4>
+            <p id="val-cidade">Campinas e Região</p>
           </div>
         </div>
-        <span class="btn-right-pill pill-gps">GPS</span>
+        <span class="loc-cta-badge">Abrir Mapa</span>
       </a>
 
+      <!-- CARD 4: SERVIÇOS & ESPECIALIDADES -->
+      <div class="bento-card-services">
+        <div class="services-header">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>Especialidades em Destaque</span>
+        </div>
+        <div class="services-list-grid" id="services-grid-box">
+          <div class="service-item-chip">
+            <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+            <span>Implantes & Próteses</span>
+          </div>
+          <div class="service-item-chip">
+            <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+            <span>Alinhadores Invisíveis</span>
+          </div>
+          <div class="service-item-chip">
+            <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+            <span>Estética Dental</span>
+          </div>
+          <div class="service-item-chip">
+            <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+            <span>Avaliação Digital</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5: HORÁRIOS -->
+      <div class="bento-card-hours">
+        <div class="hours-left">
+          <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+          <span>Segunda a Sexta: 08h às 19h</span>
+        </div>
+        <span class="hours-status-badge">Aberto Agora</span>
+      </div>
+
     </div>
 
-    <!-- Grade de Serviços e Diferenciais -->
-    <div class="services-grid-wrapper">
-      <div class="grid-header">
-        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-        <span>Especialidades & Diferenciais</span>
+    <!-- 6. OFERTA ESPECIAL NO RODAPÉ (CONVERSÃO DE R$ 35) -->
+    <div class="bento-promo-offer">
+      <div class="promo-tag-label">Oferta Especial</div>
+      <div class="promo-title-main">Tenha o seu cartão executivo com a sua marca, cores e PIX:</div>
+      <div class="promo-price-tag">
+        R$ 35 <span>à vista no PIX</span>
       </div>
-      <div class="tags-container" id="services-grid">
-        <div class="service-pill">
-          <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-          <span>Agendamento VIP</span>
-        </div>
-        <div class="service-pill">
-          <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-          <span>Orçamento Rápido</span>
-        </div>
-        <div class="service-pill">
-          <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-          <span>Atendimento Direto</span>
-        </div>
-        <div class="service-pill">
-          <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-          <span>Garantia Total</span>
-        </div>
-      </div>
+      <a href="https://wa.me/5511913393797?text=Ol%C3%A1%2C%20adorei%20o%20modelo%20de%20Cart%C3%A3o%20Digital%20Bento%20e%20quero%20o%20meu%20por%2035%20reais." target="_blank" class="btn-buy-card">
+        Fazer Meu Cartão por R$ 35
+      </a>
     </div>
 
-    <!-- Botão de Salvar Contato no Celular (Gera vCard na hora) -->
-    <button type="button" class="btn-vcard" id="btn-save-contact">
-      <svg viewBox="0 0 24 24"><path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/></svg>
-      <span>Salvar Contato na Agenda do Celular</span>
-    </button>
-
-    <!-- Rodapé Promocional (Oferta Irresistível R$ 35) -->
-    <div class="card-footer-vip">
-      <div class="promo-card">
-        <div class="promo-tag">Oferta Especial de Lançamento</div>
-        <div class="promo-title">Gostou desse modelo? Tenha o seu cartão VIP com a sua marca e links:</div>
-        <div class="promo-price">
-          R$ 35 <span>à vista no PIX</span>
-        </div>
-        <a href="https://wa.me/5511913393797?text=Ol%C3%A1%2C%20adorei%20o%20Cart%C3%A3o%20Digital%20VIP%20e%20quero%20fazer%20o%20meu%20por%2035%20reais." target="_blank" class="btn-acquire">
-          Garantir Meu Cartão por R$ 35
-        </a>
-      </div>
-      <div class="studio-credit">
-        Desenvolvido com exclusividade por <span>Pixel Studio</span>
-      </div>
+    <!-- CRÉDITO DO ESTÚDIO -->
+    <div class="footer-credit">
+      Tecnologia & Design por <span>Pixel Studio</span>
     </div>
 
   </div>
 
-  <!-- Toast Notification Flutuante -->
-  <div id="toast-notification">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#10b981">
+  <!-- TOAST NOTIFICATION FLUTUANTE -->
+  <div id="copy-toast">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="#32bcad">
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
     </svg>
-    <span id="toast-text">Chave PIX copiada com sucesso!</span>
+    <span id="toast-msg">Chave PIX copiada com sucesso!</span>
   </div>
 
   <script>
@@ -712,57 +928,50 @@
     const nichoParam = params.get('nicho');
     const cidadeParam = params.get('cidade');
 
-    const empresaNome = empresaParam ? decodeURIComponent(empresaParam) : 'Instituto Oral & Estética';
-    const nichoNome = nichoParam ? decodeURIComponent(nichoParam) : 'Odontologia Especializada';
+    const empresaNome = empresaParam ? decodeURIComponent(empresaParam) : 'Oralcamp Odontologia';
+    const nichoNome = nichoParam ? decodeURIComponent(nichoParam) : 'Clínica Odontológica Especializada';
     const cidadeNome = cidadeParam ? decodeURIComponent(cidadeParam) : 'Campinas e Região';
 
-    // Aplica no DOM
-    document.getElementById('label-empresa').textContent = empresaNome;
-    document.getElementById('doc-title').textContent = empresaNome + ' | Cartão Executivo VIP';
-    document.getElementById('label-nicho').textContent = 'Especialista em ' + nichoNome;
-    document.getElementById('label-cidade').textContent = cidadeNome;
+    document.getElementById('val-empresa').textContent = empresaNome;
+    document.getElementById('doc-title').textContent = empresaNome + ' | Cartão Digital';
+    document.getElementById('val-nicho').textContent = nichoNome;
+    document.getElementById('val-cidade').textContent = cidadeNome;
 
-    // Adaptação dos diferenciais se for gastronomia
+    // Se for gastronomia / restaurante
     if (nichoNome.toLowerCase().includes('hamburg') || nichoNome.toLowerCase().includes('restaurante') || nichoNome.toLowerCase().includes('pizz')) {
-      document.getElementById('services-grid').innerHTML = `
-        <div class="service-pill"><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span>Cardápio Digital</span></div>
-        <div class="service-pill"><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span>Delivery Direto</span></div>
-        <div class="service-pill"><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span>Sem Comissões</span></div>
-        <div class="service-pill"><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span>Entrega Rápida</span></div>
+      document.getElementById('val-bio').textContent = 'Pratos selecionados, delivery ágil e atendimento direto pelo WhatsApp sem taxas.';
+      document.getElementById('services-grid-box').innerHTML = `
+        <div class="service-item-chip"><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span>Cardápio Digital</span></div>
+        <div class="service-item-chip"><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span>Delivery Direto</span></div>
+        <div class="service-item-chip"><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span>Zero Taxas</span></div>
+        <div class="service-item-chip"><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span>Entrega Rápida</span></div>
       `;
     }
 
-    // Copiar Chave PIX com Feedback
-    const btnPix = document.getElementById('btn-pix');
-    const toast = document.getElementById('toast-notification');
-    const toastText = document.getElementById('toast-text');
-    const pixPill = document.getElementById('pix-pill');
+    // Copiar Chave PIX
+    const btnCopyPix = document.getElementById('btn-copy-pix');
+    const toast = document.getElementById('copy-toast');
+    const toastMsg = document.getElementById('toast-msg');
+    const copyBtnLabel = document.getElementById('copy-btn-label');
+    const pixVal = document.getElementById('pix-val-text').textContent;
 
-    const demoPixKey = 'contato@pixelstudio.com';
-
-    btnPix.addEventListener('click', () => {
-      navigator.clipboard.writeText(demoPixKey).then(() => {
-        pixPill.textContent = 'Copiado!';
-        pixPill.style.background = '#10b981';
-        pixPill.style.color = '#ffffff';
-
-        toastText.textContent = 'Chave PIX copiada: ' + demoPixKey;
+    btnCopyPix.addEventListener('click', () => {
+      navigator.clipboard.writeText(pixVal).then(() => {
+        copyBtnLabel.textContent = 'Copiado!';
+        toastMsg.textContent = 'Chave PIX copiada: ' + pixVal;
         toast.style.display = 'flex';
-
         setTimeout(() => {
           toast.style.display = 'none';
-          pixPill.textContent = 'Copiar';
-          pixPill.style.background = 'rgba(245, 158, 11, 0.15)';
-          pixPill.style.color = '#fcd34d';
+          copyBtnLabel.textContent = 'Copiar';
         }, 3000);
       }).catch(() => {
-        alert('Chave PIX: ' + demoPixKey);
+        alert('Chave PIX: ' + pixVal);
       });
     });
 
-    // Salvar Contato (.vcf / vCard download direto para a agenda do smartphone)
-    document.getElementById('btn-save-contact').addEventListener('click', () => {
-      const vcardData = [
+    // Salvar Contato no Celular (.vcf download instantâneo)
+    document.getElementById('btn-save-vcard').addEventListener('click', () => {
+      const vcard = [
         'BEGIN:VCARD',
         'VERSION:3.0',
         'FN:' + empresaNome,
@@ -774,15 +983,15 @@
         'END:VCARD'
       ].join('\r\n');
 
-      const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = empresaNome.replace(/[^a-zA-Z0-9]/g, '_') + '.vcf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = empresaNome.replace(/[^a-zA-Z0-9]/g, '_') + '.vcf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
 
-      toastText.textContent = 'Contato pronto para salvar na sua agenda!';
+      toastMsg.textContent = 'Contato pronto para salvar na sua agenda!';
       toast.style.display = 'flex';
       setTimeout(() => { toast.style.display = 'none'; }, 3000);
     });
