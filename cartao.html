@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title id="doc-title">Cartão Digital Interativo | Demonstração</title>
+  <meta name="description" content="Modelo de Cartão Digital Interativo para WhatsApp com PIX e agendamento direto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 24px 16px;
+    }
+
+    /* Container com proporção de tela de celular */
+    .card-container {
+      width: 100%;
+      max-width: 410px;
+      background: #1e293b;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 28px;
+      padding: 32px 20px 24px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Brilho decorativo no topo */
+    .card-container::before {
+      content: '';
+      position: absolute;
+      top: -90px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 280px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Badge Demonstrativo */
+    .demo-badge {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: rgba(56, 189, 248, 0.12);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .demo-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #38bdf8;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    /* Avatar e Identidade */
+    .avatar-wrapper {
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #334155, #1e293b);
+      border: 3px solid #38bdf8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+      overflow: hidden;
+    }
+    .avatar svg {
+      width: 48px;
+      height: 48px;
+      fill: #38bdf8;
+    }
+
+    .status-online {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      background: #22c55e;
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+      border: 2px solid #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .status-online::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: #ffffff;
+      border-radius: 50%;
+    }
+
+    h1.name {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+    p.specialty {
+      font-size: 13px;
+      font-weight: 500;
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    p.location {
+      font-size: 12px;
+      font-weight: 600;
+      color: #38bdf8;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 24px;
+    }
+    p.location svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    /* Botões de Ação Principal */
+    .actions-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .btn-action {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+
+    /* Botão WhatsApp */
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #ffffff;
+      box-shadow: 0 8px 20px -4px rgba(34, 197, 94, 0.4);
+    }
+    .btn-whatsapp:hover {
+      box-shadow: 0 10px 25px -4px rgba(34, 197, 94, 0.6);
+    }
+
+    /* Botão PIX */
+    .btn-pix {
+      background: #0f172a;
+      color: #f1f5f9;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .btn-pix:hover {
+      background: #172554;
+      border-color: #38bdf8;
+    }
+
+    /* Botão Localização */
+    .btn-map {
+      background: #0f172a;
+      color: #f1f5f9;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .btn-map:hover {
+      background: #334155;
+    }
+
+    .btn-inner-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-inner-left svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+    .btn-chevron {
+      width: 16px;
+      height: 16px;
+      opacity: 0.6;
+    }
+
+    /* Bloco de Serviços */
+    .services-box {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+    .services-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #64748b;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .services-title svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+    .services-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tag-item {
+      font-size: 11px;
+      font-weight: 600;
+      background: rgba(56, 189, 248, 0.08);
+      color: #93c5fd;
+      padding: 5px 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(56, 189, 248, 0.15);
+    }
+
+    /* Feedback de PIX Copiado */
+    #pix-toast {
+      position: fixed;
+      bottom: 24px;
+      background: #22c55e;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 12px 20px;
+      border-radius: 50px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      gap: 8px;
+      z-index: 999;
+      animation: popUp 0.3s ease;
+    }
+    @keyframes popUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Rodapé da Proposta */
+    .card-footer {
+      width: 100%;
+      padding-top: 16px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+    .promo-banner {
+      background: linear-gradient(135deg, rgba(234, 179, 8, 0.12), rgba(249, 115, 22, 0.12));
+      border: 1px solid rgba(234, 179, 8, 0.3);
+      padding: 12px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    .promo-banner p {
+      font-size: 12px;
+      font-weight: 600;
+      color: #fde047;
+      line-height: 1.4;
+    }
+    .promo-banner strong {
+      color: #ffffff;
+      font-size: 13px;
+    }
+    .btn-order {
+      width: 100%;
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 12px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+    .btn-order:hover {
+      background: #7dd3fc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-container">
+    <div class="demo-badge">Modelo Demonstrativo</div>
+
+    <!-- Foto / Logo -->
+    <div class="avatar-wrapper">
+      <div class="avatar" id="avatar-box">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+      </div>
+      <div class="status-online">Atendimento Ativo</div>
+    </div>
+
+    <!-- Identificação -->
+    <h1 class="name" id="card-name">Nome da Empresa / Profissional</h1>
+    <p class="specialty" id="card-specialty">Atendimento Personalizado & Serviços Especializados</p>
+    <p class="location" id="card-location">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <span id="city-text">Campinas e Região</span>
+    </p>
+
+    <!-- Botões de Ação Direta -->
+    <div class="actions-list">
+      
+      <!-- 1. WHATSAPP -->
+      <a href="https://wa.me/5511913393797?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento." target="_blank" class="btn-action btn-whatsapp">
+        <div class="btn-inner-left">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.974.532 1.831.815 2.796.815 3.183 0 5.769-2.587 5.769-5.767.001-3.18-2.584-5.766-5.769-5.766zm8.969 5.768c0 4.962-4.038 9-9 9-1.554 0-3.003-.396-4.269-1.088l-5.731 1.503 1.529-5.591c-.777-1.328-1.229-2.87-1.229-4.524 0-4.962 4.038-9 9-9s9 4.038 9 9z"/>
+          </svg>
+          <span>Chamar no WhatsApp</span>
+        </div>
+        <svg class="btn-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+
+      <!-- 2. COPIAR PIX -->
+      <button type="button" class="btn-action btn-pix" id="btn-copy-pix">
+        <div class="btn-inner-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span>Copiar Chave PIX</span>
+        </div>
+        <svg class="btn-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <!-- 3. LOCALIZAÇÃO / ENDEREÇO -->
+      <a href="https://maps.google.com" target="_blank" class="btn-action btn-map">
+        <div class="btn-inner-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Como Chegar (Google Maps)</span>
+        </div>
+        <svg class="btn-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+
+    </div>
+
+    <!-- Bloco de Serviços / Especialidades -->
+    <div class="services-box">
+      <div class="services-title">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span>Serviços & Atendimentos</span>
+      </div>
+      <div class="services-tags" id="services-tags">
+        <span class="tag-item">Orçamentos Rápidos</span>
+        <span class="tag-item">Agendamento Flexível</span>
+        <span class="tag-item">Atendimento Direto</span>
+        <span class="tag-item">Garantia de Qualidade</span>
+      </div>
+    </div>
+
+    <!-- Banner Promocional no Rodapé do Modelo -->
+    <div class="card-footer">
+      <div class="promo-banner">
+        <p>Gostou da praticidade? Tenha o seu cartão com seus dados e links por apenas <strong>R$ 35 no PIX</strong>.</p>
+      </div>
+      <a href="https://wa.me/5511913393797?text=Ol%C3%A1%2C%20gostei%20do%20modelo%20de%20Cart%C3%A3o%20Digital%20e%20quero%20o%20meu%20por%2035%20reais." target="_blank" class="btn-order">
+        Quero meu Cartão por R$ 35
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Toast Notificação PIX -->
+  <div id="pix-toast">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+      <path d="M20 6L9 17l-5-5"/>
+    </svg>
+    <span>Chave PIX copiada com sucesso!</span>
+  </div>
+
+  <script>
+    // Personalização dinâmica com base nos parâmetros da URL (nicho, empresa, cidade)
+    const params = new URLSearchParams(window.location.search);
+    const empresa = params.get('empresa');
+    const nicho = params.get('nicho');
+    const cidade = params.get('cidade');
+
+    if (empresa) {
+      document.getElementById('card-name').textContent = empresa;
+      document.getElementById('doc-title').textContent = empresa + ' | Cartão Digital';
+    }
+
+    if (nicho) {
+      document.getElementById('card-specialty').textContent = 'Especialista em ' + nicho;
+    }
+
+    if (cidade) {
+      document.getElementById('city-text').textContent = cidade;
+    }
+
+    // Ação do Botão PIX: Copia chave de demonstração e exibe aviso
+    const pixBtn = document.getElementById('btn-copy-pix');
+    const toast = document.getElementById('pix-toast');
+
+    pixBtn.addEventListener('click', () => {
+      const demoPix = 'contato@pixelstudio.com';
+      navigator.clipboard.writeText(demoPix).then(() => {
+        toast.style.display = 'flex';
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 3000);
+      }).catch(() => {
+        alert('Chave PIX: contato@pixelstudio.com');
+      });
+    });
+  </script>
+
+</body>
+</html>
